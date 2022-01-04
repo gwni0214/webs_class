@@ -139,19 +139,19 @@
     </pre>
     변수에는 하나의 값만 넣을 수 있습니다. 만약 변수 box에 값을 두 번 넣으면 어떻게 될까요? 다음과 같이 변수 box에
     새로운 데이터 30이 저장되면 가존에 저장되어 있던 데이터 100은 삭제되고 새로운 데이터 30이 저장됩니다.
-   <br>
-   <!-- <xmp> 태그를 이용하면 코딩한걸 그대로 출력가능 -->
-  
-       <xmp> 
-    <script>
-        var box;
-        box = 100;
-        box = 30;  // 박스에는 결국 30이 저장됩니다.
-        document.write(box); //30
-    </script>
+    <br>
+    <!-- <xmp> 태그를 이용하면 코딩한걸 그대로 출력가능 -->
+
+    <xmp>
+        <script>
+            var box;
+            box = 100;
+            box = 30; // 박스에는 결국 30이 저장됩니다.
+            document.write(box); //30
+        </script>
     </xmp>
-    
-   
+
+
     위에서 작성한 문서를 저장한 후 브라우저에서 확인하면 변수box에 마지막으로 저장된 데이터 30이 출력됩니다.
     <br>
 
@@ -206,17 +206,17 @@
         다음은 논리형 값, 비교 연산자, Boolean 메서드를 사용해 변수에 논리형 데이터를 저장한후 문서에 출력하는 예제와 결과화면입니다.
         <br>
         <xmp>
-        <script>
-            var a = true;
-            var b = false;
-            var c = 10 > 5;
-            var d = Boolean(null);
+            <script>
+                var a = true;
+                var b = false;
+                var c = 10 > 5;
+                var d = Boolean(null);
 
-            document.write(a, "<br>");
-            document.write(b, "<br>");
-            document.write(c, "<br>");
-            document.write(d, "<br>");
-        </script>
+                document.write(a, "<br>");
+                document.write(b, "<br>");
+                document.write(c, "<br>");
+                document.write(d, "<br>");
+            </script>
         </xmp>
         <script>
             var a = true;
@@ -253,13 +253,13 @@
 
     </p>
     <xmp>
-    <script>
-        var num = 100;
-        var str = "자바스크립트";
+        <script>
+            var num = 100;
+            var str = "자바스크립트";
 
-        document.write(typeof num, "<br>");
-        document.write(typeof str, "<br>");
-    </script>
+            document.write(typeof num, "<br>");
+            document.write(typeof str, "<br>");
+        </script>
     </xmp>
     <script>
         var num = 100;
