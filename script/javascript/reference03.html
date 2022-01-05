@@ -150,15 +150,34 @@
     <p>문자형(string)데이터는 다음과 같이 문자나 숫자를 큰떠옴표(" ")또는 작은따옴표(' ')로 감싸고 있습니다.
         또한 문자형 데이터에 HTML태그를 포함하여 출력하면 태그로 인식합니다.
         <br>
-        <div class="box">기본형 | var 변수="사용할 문자나 숫자"</div>
-        <br>
-        <div class="box">
-            <pre>
+
+        <div class="sample">
+            <h3>기본형</h3>
+            <div class="code">
+<pre class="line-numbers">
+<code class="language-js">
+    var 변수="사용할 문자나 숫자"
+</code>
+</pre>
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="sample">
+            <h3>예제</h3>
+            <div class="code">
+<pre class="line-numbers">
+<code class="language-js">
     var s ="javascript";
     var num="100";
     var tag="&lt;h1&gt;String&lt;/h1&gt;";
+</code>
 </pre>
+            </div>
         </div>
+
+        
         <br>
         <br>
 
@@ -168,35 +187,71 @@
         Number("100")를 이용하면 문자형 데이터를 숫자형 데이터로 바꿀 수 있습니다.
         <br>
         <br>
-        <div class="box">
-            기본형 | var 변수= 숫자; 또는 Number("문자형 숫자");
 
+        <div class="sample">
+            <h3>기본형</h3>
+            <div class="code">
+<pre class="line-numbers">
+<code class="language-js">
+    var 변수= 숫자; 또는 Number("문자형 숫자");
+</code>
+</pre>
+            </div>
         </div>
-        <br>
-        <div class="box">
-            <pre>
+
+        
+      <br>
+      <br>
+
+        <div class="sample">
+            <h3>예제</h3>
+            <div class="code">
+<pre class="line-numbers">
+<code class="language-js">
     var s=100;
     var t=Number("500"); //"500" -> 500
+</code>
 </pre>
+            </div>
         </div>
 
-        <br>
+
+        
+
+        <hr>
     </p>
     <h3>논리형</h3>
-    <p>논리형데이터(Boolean)는 true(참) 또는 false(거짓)가 있습니다.
+        논리형데이터(Boolean)는 true(참) 또는 false(거짓)가 있습니다.
         이 데이터는 주로 2개의 데이터를 비교할 때 나오는 결과입니다. 예를들어 '100보다 10이 크다'는 잘못된 비교이므로 false라는 결과를
         반환하게 됩니다. 논리형 데이터의 기본형은 다음과 같습니다.
-            <div class="box">
-                기본형| var 변수=true or false; 또는 Boolean(데이터);
-            </div>
             <br>
-            <div class="box">
-        <pre>
+            <br>
+            <div class="sample">
+                <h3>기본형</h3>
+                <div class="code">
+    <pre class="line-numbers">
+    <code class="language-js">
+    var 변수=true or false; 또는 Boolean(데이터);</code>
+    </pre>
+                </div>
+            </div>
+        
+            <br>
+            <br>
+
+            <div class="sample">
+                <h3>예제</h3>
+                <div class="code">
+    <pre class="line-numbers">
+    <code class="language-js">
     var s= true;
     var t=10>=100;    //false
-    var k=Boolean("hello");  //true
-</pre>
+    var k=Boolean("hello");  //true</code>
+    </pre>
+                </div>
             </div>
+
+            
             <br>
             
             
@@ -207,14 +262,19 @@
         "홍길동"을 입력하면 true를 반환합니다.
         <br>
         <br>
-        <div class="box">
-        <pre>
+
+        <div class="sample">
+            <h3>예제</h3>
+            <div class="code">
+<pre class="line-numbers">
+<code class="language-js">
     var m = Boolean(0)
     var k = Boolean("홍길동")
+</code>
 </pre>
-
+            </div>
         </div>
-        
+    
         <br>
         다음은 논리형 값, 비교 연산자, Boolean 메서드를 사용해 변수에 논리형 데이터를 저장한후 문서에 출력하는 예제와 결과화면입니다.
         <br>
@@ -239,21 +299,7 @@
         </div>
     </div>
     <br>
-    결과화면<br>
-        <div class="box">
-           
-            <script>
-                var a = true;
-                var b = false;
-                var c = 10 > 5;
-                var d = Boolean(null);
-    
-                document.write(a, "<br>");
-                document.write(b, "<br>");
-                document.write(c, "<br>");
-                document.write(d, "<br>");
-            </script>
-        </div>
+        
         <hr>
     <br>
     <h3>null & undefined 데이터</h3>
@@ -261,14 +307,21 @@
         undefined는 다음과 같이 변수s에 값이 등록되기 전의 기본값이고, null은 변수에 저장된 값이 null인
         경우를 가리킵니다. null은 변수에 저장된 데이터를 비우고자 할 때 사용하는 값입니다.
         <br>
-        <div class="box">
-            기본형
-<pre>
+        <br>
+        <div class="sample">
+            <h3>기본형</h3>
+            <div class="code">
+<pre class="line-numbers">
+<code class="language-js">
     var s; //undefined
     var t=hello;
     t=null;
- </pre>
+</code>
+</pre>
+            </div>
         </div>
+
+        
     <br>
     <h3>typeof</h3>
     <br>
@@ -276,10 +329,20 @@
         typeof는 지정한 데이터 또는 변수에 저장된 자료형을 알고싶을 때 사용합니다. 기본형은 다음과 같습니다.
         <br>
         <br>
-        <div class="box">
-           기본형 | typeof 변수 또는 데이터;
+
+        <div class="sample">
+            <h3>기본형</h3>
+            <div class="code">
+<pre class="line-numbers">
+<code class="language-js">
+    typeof 변수 또는 데이터;
+</code>
+</pre>
+            </div>
         </div>
-       
+
+
+        
         <br>
         다음은 typeof를 이용하여 변수에 저장된 자료형을 알아내는 예제입니다.
     <br>
@@ -294,7 +357,7 @@
     07:   var num = 100;
     08:   var str = "자바스크립트";
     09:   
-    10:   documnet.write(typeof num, "<br>"); // number
+    10:   documnet.write(typeof num, "&lt;br&gt;"); // number
     11:   document.write(typeof str);         // string     
     12:   &lt;/script&gt;    
 </code>
@@ -305,18 +368,7 @@
     <b>10~11행</b> 변수에 저장된 자료형(type)을 출력합니다. document.write(데이터, "&lt;br&gt;")는 화면에 데이터를 출력하고 줄 바꿈합니다.
     <br>
     <br>
-    결과화면<br>
-    <div class="box">
-        
-        <script>
-            var num = 100;
-            var str = "자바스크립트";
-
-            document.write(typeof num, "<br>");
-            document.write(typeof str, "<br>");
-        </script>
-
-    </div>
+    <hr>
 
     
 </body>
