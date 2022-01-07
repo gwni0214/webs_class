@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="asset/css/style.css">    
+    <link rel="stylesheet" href="asset/css/prism.css">    
+    
+    <!-- Script -->
+    <script src="asset/js/prism.js"></script>   
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+            <li><a href="reference01.html">기초 문법</a></li>
+            <li><a href="reference02.html">변수</a></li>
+            <li class="active"><a href="reference03.html">자료형</a></li>
+                   
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="main">
+        <div class="doc">
+            <h2>데이터 타입 (자료형)</h2>
+            <p>변수에는 여러가지 유형이 들어갈 수 있습니다. 프로그램 언어에 있어 가장 기본적인 데이터 타입이라고 합니다.
+                 데이터 타입에는 숫자, 문자열, 논리값, 특수값, 심벌, 배열, 함수 등을 표현할 수 있습니다.
+                </p>
+                <h3>숫자(Number)</h3>
+                <p>숫자형 데이터는 데이터를 따옴표로 감싸지 않고 그대로 표기합니다. 따옴표로 감싸져있는 숫자 데이터를 숫자 형식으로 표현하고 싶다면
+                     데이터 앞에 <strong>Number</strong>를 붙여 표현할 수 있습니다. </p>
+                     <div class="code">
+<pre><code>var a = 100;
+var b = Number("100");
+</code></pre>
+                     </div>
+
+                <h3>문자열(String)</h3>
+                <p>문자 데이터는 문자나 숫자를 큰떠옴표(" ")또는 작은따옴표(' ')로 감싸고 있습니다.
+                    문자형 데이터에 HTML태그를 포함하여 출력하면 태그로 인식합니다.</p>
+                    <div class="code">
+<pre><code>var a = "javascript";
+var b = "500";
+var c = "&lt;h1&gt;String&lt;/h1&gt;" // document.write(c); 출력 시 "String"이 태그의 영향을 받아서 나옵니다.  
+</code></pre>
+                    </div>
+                    
+                <h3>논리값(Boolean)</h3>
+                <p>논리형데이터(Boolean)는 true(참) 또는 false(거짓)가 있습니다. <br>
+                    이 데이터는 2개의 데이터를 비교할 때 나오는 결과입니다. 예를들어 '100이 10보다 크다'는 올바른 비교이므로 true라는 결과가 나옵니다.</p>
+                    <div class="code">
+<pre><code>const a = 100>10; // document.write(a); 출력 시 true.
+const b = 100&lt;30; // document.write(b); 출력시 false.
+</code></pre>
+                    </div>
+                    
+                <h3>특수값(Null)</h3>
+                    <p>Null은 변수에 저장된 값을  null으로 변경하는 경우입니다. 저장된 데이터를 비우고자 할 때 사용합니다. </p>
+                    <div class="code">
+<pre><code>var a = 100;
+a = null; // 이렇게 바꾼 후 출력 시 null이 표시됩니다.
+</code></pre>
+                    </div>
+                <h3>특수값(Undefined)</h3>
+                    <p>Undefined는 변수에 데이터를 등록하기 전의 기본 값 입니다. 출력 시 undefined로 표시됩니다.</p>
+                <h3>심벌(Symbol)</h3>
+                    <p>심볼은 변경 불가능한 값이며, 다른 값과 중복되지 않는 고유한 값입니다.하위호환성을 유지하면서 표준을 확장한다든지, 고유한 상수값을 만드는 데 사용할 수 있습니다.</p>
+                <h3>객체(Object)</h3>
+                    <p>객체는 데이터를 키와 값으로 정리하여 저장하는 방식 입니다. </p>
+                    객체의 예시는 자바스크립트 레퍼런스 <strong><a href="javascript01.html">객체의 표현 방식</a></strong> 에서 확인 할 수 있습니다. 
+                <h3>배열(Array)</h3>
+                <p>배열은 여러개의 데이터를 저장할 때 사용합니다.</p>
+                    배열의 예시는 <strong><a href="javascript01.html">배열의 표현 방식</a></strong>에서 확인 할 수 있습니다.
+                <h3>함수(Function)</h3>
+                    <p>자바스크립트에서는 함수도 하나의 타입(datatype)입니다.
+                        함수를 변수에 대입하거나, 배열 속에 포함 되거나, 객체 속에 포함 되거나 다른 함수 내에 중첩되어 정의될 수도 있습니다.
+                        </p>
+        </div>
+        
+
+       
+        
+
+    </main>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="asset/css/style.css">    
+    <link rel="stylesheet" href="asset/css/prism.css">    
+    
+    <!-- Script -->
+    <script src="asset/js/prism.js"></script>   
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+            <li class="active"><a href="reference01.html">기초 문법</a></li>
+            <li><a href="reference02.html">변수</a></li>
+            <li><a href="reference03.html">자료형</a></li>
+                    
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="main">
+        <div class="doc">
+            <h2>자바스크립트 선언문</h2>
+            <p>선언문은 자바스크립트 코드를 작성할 영역을 선언하는 것이라고 이해하면 됩니다.&lt;script&gt;라는 태그로 선언문이 시작된 곳부터&lt;/script&gt;라는 태그로 종료된 곳까지를 스크립트
+                영역이라고 부릅니다.</p>
+                <div class="code">
+<pre><code>&lt;script&gt;
+document.write("환영합니다");
+&lt;/script&gt;
+</code></pre>
+                </div>
+            <h2>자바스크립트 주석처리</h2>
+            <p>자바스크립트 선언문 안에서 코드가 아닌 설명글을 넣고 싶을 때는 주석 처리를 하면 됩니다. 이때 한 줄 주석일 경우에는 <strong>//한 줄 설명글</strong>로 작성하고, 여러 줄 주석일 경우에는
+                <strong>/*여러 줄 설명글*/</strong>로 작성하면 됩니다.</p>
+                <div class="line">
+<pre>//한 줄 설명글인 경우
+/*
+설명글이 여러 줄인 경우
+이렇게 처리합니다.
+*/
+&lt;!--HTML 소스의 설명글은 이렇게 처리합니다--&gt;
+</pre>
+                </div>
+                <h2>외부 스크립트를 내부로 가져오기</h2>
+                <p>외부 스크립트를 안으로 불러와서 작업 할 때는 해당 스크립트의 경로를 지정하여 코드를 작성해야 합니다.</p>
+                <div class="code">
+<pre><code>&lt;script src="JS 파일 경로"&gt;&lt;/script&gt;
+</code></pre>
+                </div>
+            <h2>코드 입력시 주의사항</h2>
+            <p>1. 자바스크립트는 대.소문자를 구분하여 작성합니다.</p>
+            <div class="line">
+                날짜 객체 생성 : New date( ); (X)<br>
+                날짜 객체 생성 : new Data( ); (O)
+            </div>
+            <p>2. 코드를 작성한 후에는 세미콜론 ( ; )을 쓰는것이 좋습니다.<br>
+            코드를 작성할 때에는 한 줄에 한 문장만 작성하는게 좋습니다.</p>
+            <div class="line">
+<pre><code>documnet.write("hi")     (X)
+document.write("hi"); documnet.write("bye"); (X)
+
+document.write("hi");    (O)
+documnet.write("bye"); (O)
+</code></pre>
+            </div>
+            <p>3.<strong>문자형(String)</strong> 데이터를 쓸 때는 큰따옴표와 작은따옴표를 구분해야합니다.</p>
+            <div class="line">
+                큰따옴표 겹침 오류<br>
+                documnet.write("책에 "자바스크립트는 대소문자를 구분해야 합니다"라고 나와 있다.");<br>
+                <strong>좋은 예</strong><br>
+                document.write('책에 "자바스크립트는 대소문자를 구분해야 합니다"라고 나와 있다.');<br>
+            </div>
+            <p>4. 코드를 작성할 때는 <strong>괄호</strong>의 짝이 맞아야 합니다.</p>
+            <div class="line">
+<pre><code>document.write("welcome!";   (X)
+document.write("welcome!");  (O)
+</code></pre>
+            </div>                       
+    </main>
+</body>
+</html>
