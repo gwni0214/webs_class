@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트</title>
     <!-- Style -->
-    <link rel="stylesheet" href="asset/css/style.css">    
-    <link rel="stylesheet" href="asset/css/prism.css">    
-    
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/prism.css">
+
     <!-- Script -->
-    <script src="asset/js/prism.js"></script>   
+    <script src="asset/js/prism.js"></script>
 </head>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
         <nav>
             <ul>
-            <li><a href="reference01.html">기초 문법</a></li>
-            <li class="active"><a href="reference02.html">변수</a></li>
-            <li><a href="reference03.html">자료형</a></li>                    
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li class="active"><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main id="main">
         <div class="doc">
             <h2>변수란?</h2>
@@ -32,15 +34,16 @@
                 새로운 데이터가 들어오면 기존에 있던 데이터는 메모리 공간에서 지원지게 됩니다.</p>
             <h2>변수 선언 방법</h2>
             <p>변수 선언하는 방법은 <strong>var</strong>키워드를 변수로 지정할 데이터 앞에 붙입니다.
-            var 이외에 <strong>let</strong>과 <strong>const</strong>를 사용할 수 있습니다.</p>
+                var 이외에 <strong>let</strong>과 <strong>const</strong>를 사용할 수 있습니다.</p>
             <div class="code">
-<pre><code>var 변수명 = 값;
+                <pre><code>var 변수명 = 값;
 let 변수명 = 값;
 const 변수명 = 값;
 </code></pre>
             </div>
-            <h2>데이터의 저장, 변경, 추가는 자바스크립트 레퍼런스의 <strong><a href="javascript01.html">데이터 저장하기</a></strong>를 봅시다.</h2>
-            
+            <h2>데이터의 저장, 변경, 추가는 자바스크립트 레퍼런스의 <strong><a href="javascript01.html#sample3">데이터 저장하기</a></strong>를 누르시면 볼
+                수 있습니다.</h2>
+
             <h2>변수명</h2>
             <p>자바스크립트에는 의미를 가진 단어들이 있기 때문에 사용자가 임의로 사용할 수 없는 단어들이 있습니다.
             </p>
@@ -48,27 +51,83 @@ const 변수명 = 값;
                 키워드 : 자바스크립트에서 사용하는 단어<br>
                 식별자 : 사용자가 임의로 사용하는 단어
             </div>
-
             <h3>식별자를 만드는 규칙</h3>
             <div class="line">
-            <ul>
-                <li>사용자가 사용할 수 있는 문자 : 알파벳(a~z, A~Z), 숫자(0~9), 밑줄(_), 달러기호($)</li>
-                <li>첫 글자는 숫자를 사용할 수 없습니다.</li>
-                <li>공백을 사용할 수 없습니다. : 밑줄(_) 사용가능, 하이픈(-)은 사용안됩니다.</li>
-                <li>특수기호를 사용할 수 없습니다. : 달러기호($)는 사용가능합니다.</li>
-                <li>키워드를 사용할 수 없습니다.</li>
-            </ul>
+                <ul>
+                    <li>사용자가 사용할 수 있는 문자 : 알파벳(a~z, A~Z), 숫자(0~9), 밑줄(_), 달러기호($)</li>
+                    <li>첫 글자는 숫자를 사용할 수 없습니다.</li>
+                    <li>공백을 사용할 수 없습니다. : 밑줄(_) 사용가능, 하이픈(-)은 사용안됩니다.</li>
+                    <li>특수기호를 사용할 수 없습니다. : 달러기호($)는 사용가능합니다.</li>
+                    <li>키워드를 사용할 수 없습니다.</li>
+                </ul>
             </div>
 
             <h3>단어를 조합할 때 규칙</h3>
             <div class="line">
-            <ul>
-                <li>언더스코어 노테이션 : (color_top) : 중간에 '_'를 사용합니다.</li>
-                <li>캐멜 노테이션 : (colorTop) : 두번째 단어의 첫 글자를 대문자로 사용합니다.</li>
-                <li>파스칼 노테이션 : (ColorTop) : 모든 단어의 첫 글자를 대문자로 사용합니다.</li>
-            </ul>
-            </div>            
-        </div>                       
+                <ul>
+                    <li>언더스코어 노테이션 : (color_top) : 중간에 '_'를 사용합니다.</li>
+                    <li>캐멜 노테이션 : (colorTop) : 두번째 단어의 첫 글자를 대문자로 사용합니다.</li>
+                    <li>파스칼 노테이션 : (ColorTop) : 모든 단어의 첫 글자를 대문자로 사용합니다.</li>
+                </ul>
+            </div>
+            <h3>키워드의 종류</h3>
+            <div class="line">
+                <ul>
+                    <li>break - loop문이나 switch문을 종료하기 위해 사용</li>
+
+                    <li>if - if문 실행</li>
+
+                    <li>else- if문 실행</li>
+
+                    <li>instanceof - 생성자의 prototype 속성이 객체의 프로토타입 체인 어딘가 존재하는지 판별합니다.</li>
+
+                    <li>switch - switch문 실행</li>
+
+                    <li>case - 표현식은 CASE 키워드로 시작하고 END 키워드로 끝납니다. 중간에는 숫자 섹션 또는 '절'이 있습니다.</li>
+
+                    <li>try - try 선언의 구성은 하나 혹은 그 이상의 선언을 포함한 try 블록 및 catch 항목이나 finally 항목 중 최소한 하나 혹은 둘 다 포함하여
+                        이루어집니다.</li>
+
+                    <li>catch - try에서 실행할 코드블럭을 표시하고 예외(exception)가 발생(throw)할 경우의 응답을 지정합니다.</li>
+
+                    <li>finally - try에서 오류가 발생하든 발생하지 않든 최종적으로 소스를 실행하는 역할을 합니다.</li>
+
+                    <li>typeof - 피연산자의 평가 전 자료형을 나타내는 문자열을 반환합니다.</li>
+
+                    <li>continue - 현재 또는 레이블이 지정된 루프의 현재 반복에서 명령문의 실행을 종료하고 반복문의 처음으로 돌아가여 루프문의 다음 코드를 실행합니다.</li>
+
+                    <li>for - 괄호로 감싸고 세미콜론으로 구분한 세 개의 선택식과, 반복을 수행할 문(주로 블럭문)으로 이루어져 있습니다.</li>
+
+                    <li>return - 함수에 return 뒤에 있는 값을 반환하고 함수를 종료한다.</li>
+
+                    <li>var - 변수를 선언하고, 선택적으로 초기화할 수 있습니다.</li>
+
+                    <li>new - 사용자 정의 객체 타입 또는 내장 객체 타입의 인스턴스를 생성한다.</li>
+
+                    <li>function - 지정된 매개변수(parameter)를 갖는 함수를 정의합니다.</li>
+
+                    <li>void - 주어진 표현식을 평가하고 undefined를 반환합니다.</li>
+
+                    <li>delete - 객체의 속성을 제거합니다. 제거한 객체의 참조를 어디에서도 사용하지 않는다면 나중에 자원을 회수합니다.</li>
+
+                    <li>this - 함수를 호출한 방법에 의해 결정됩니다. 실행중에는 할당으로 설정할 수 없고 함수를 호출할 때 마다 다를 수 있습니다.</li>
+
+                    <li>while - 조건문이 참일 때 실행되는 반복문이다. 조건은 문장안이 실행되기 전에 참, 거짓을 판단한다.</li>
+
+                    <li>do - 테스트 조건이 거짓으로 평가될 때까지 지정된 구문을 실행하는 루프를 만듭니다.단, 구문이 실행된 뒤에 테스트 조건이 평가됨으로 구문은 무조건 한 번은 실행됩니다.
+                    </li>
+
+                    <li>in - 명시된 속성이 명시된 객체에 존재하면 true를 반환합니다.</li>
+
+                    <li>throw - 사용자 정의 예외를 발생(throw)할 수 있습니다. 예외가 발생하면 현재 함수의 실행이 중지되고 (throw 이후의 명령문은 실행되지 않습니다.)</li>
+
+                    <li>with - 명령문의 범위 체인을 확장합니다.</li>
+
+                    <li>이 외에 다양한 키워드가 존재합니다.</li>
+                </ul>
+            </div>
+        </div>
     </main>
 </body>
+
 </html>
