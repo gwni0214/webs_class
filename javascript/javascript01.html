@@ -165,8 +165,7 @@
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
-                    <div class="result04"></div>
-                    <div class="result04_1"></div>
+                    <div class="result04"></div>                    
                 </div>
             </div>
             <!-- //sample4 -->
@@ -524,11 +523,13 @@
                 y = 300; //전역변수 200->300
             
               
-                document.querySelector(".result04").innerHTML ="함수 안<br>" + x + "<br>" + y + "<br>" + z;
+                document.querySelector(".result04").innerHTML +="<br>함수 안<br>" ;
+                document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>" + z + "<br>";
             }
             func();
 
-            document.querySelector(".result04_1").innerHTML ="함수 밖<br>" + x + "<br>" + y + "<br>" + z;
+            document.querySelector(".result04").innerHTML +="함수 밖<br>";
+            document.querySelector(".result04").innerHTML += x + "<br>" + y + "<br>" + z;
         }
         // 05. 상수 : 데이터 저장소 + 데이터 변경(X) : 변경 안되는 데이터 
         // let 이 아니라 const 를 사용함.
@@ -654,20 +655,26 @@
             const obj = {
                 a: 100,
                 b: [200, 300],
-                c: {x:400, y:500},
-                d: "Javascript",
-                e: function(){
-                    document.write("Javascript가 실행되었습니다.");
+                c: {
+                    x: 400,
+                    y: 500
                 },
-                f: function(){
-                    document.write(obj.d + "가 실행되었습니다.")
+                d: "javascript",
+                e: function () {
+                    document.querySelector(".result17").innerHTML += "javascript가 실행되었습니다." + "<br>";
                 },
-                g: function(){
-                    document.write(this.d + "가 실행되었습니다.")
+                f: function () {
+                    document.querySelector(".result17").innerHTML += obj.d + "가 실행되었습니다." + "<br>";
+                },
+                g: function () {
+                    document.querySelector(".result17").innerHTML += this.d + "가 실행되었습니다." + "<br>";
                 }
             }
 
-            document.querySelector(".result17").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.b[0] + "<br>"  + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>" + obj.d + "<br>" + "Javascript가 실행되었습니다." + "<br>" + "Javascript가 실행되었습니다." + "<br>" + "Javascript가 실행되었습니다.";             
+            document.querySelector(".result17").innerHTML += obj.a + "<br>" + obj.b + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>";
+            obj.e();
+            obj.f();
+            obj.g();
         }
     </script>
 </body>
