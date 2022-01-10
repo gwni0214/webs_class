@@ -152,21 +152,132 @@
 
    result = num2++; // result:20, num2:21 
    document.write(reuslt); // 21 출력
-
-
 &lt;/script&gt;</code></pre>
                     </div>
 
         <h3>비교 연산자</h3>
+                    <p>비교 연산자는 두 데이터를 '크다, 작다, 같다'와 같이 비교할 때 사용합니다. 연산된 결과는 참(True) 또는 거짓(False)로 반환됩니다.</p>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>종류</th>
+                                    <th>기본형</th>
+                                    <th>비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>A &gt; B</td>
+                                    <td>A가 B보다 크다.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>A &lt; B</td>
+                                    <td>A가 B보다 작다.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>A &gt;= B</td>
+                                    <td>A가B보다 크거나 같다.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>A &gt;= B</td>
+                                    <td>A가 B보다 작거나 같다.</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>A == B</td>
+                                    <td>A와 B는 같다.</td>
+                                    <td>숫자를 비교할 경우 자료형은 숫자,문자 상관없이 표기된 숫자만 일치하면 True를 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>A != B</td>
+                                    <td>A와 B는 다르다.</td>
+                                    <td>숫자를 비교할 경우 자료형은 숫자,문자 상관없이 표기된 숫자만 다르면 True를 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>A === B</td>
+                                    <td>A와 B는 같다.</td>
+                                    <td>숫자를 비교할 경우 숫자와 자료형까지 다 일치하면 True를 반환합니다.</td>
+                                </tr>
+                                <tr>
+                                    <td>A !== B</td>
+                                    <td>A와 B는 다르다.</td>
+                                    <td>숫자를 비교할 경우 숫자가 같아도 자료형이 하나라도 다르면 True를 반환합니다.</td>
+                                </tr>                             
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="code">
+<pre><code>&lt;script&gt;
+    var a = 10;
+    var b = 20;
+    var c = 10;
+    var f = "20";
+    var result;
 
+    result = a &gt; b; //False
+
+    result = a &lt; b; //True
+
+    result = a &lt;= b; //True
+
+    result = b == f; //True
+
+    result = a != b; //True
+
+    result = b ===f; //False
+&lt;/script&gt;</code></pre>
+                    </div>
         <h3>논리 연산자</h3>
-            
-        </div>
+            <p>논리 연산자에는 ||(or), &&(and), !(not)이 있으며 연산하는 데이터가 논리형 데이터인 경우 True 또는 False를 반환합니다.</p>
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>연산자</th>
+                            <th>예시</th>
+                            <th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&&</td>
+                            <td>X && Y</td>
+                            <td>둘다 true인 경우 true를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>||</td>
+                            <td>X || Y</td>
+                            <td>둘 중의 하나 이상이 true인 경우 true를 반환합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>!</td>
+                            <td>! X</td>
+                            <td>반대 값을 반환합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="code">
+<pre><code>&lt;script&gt;
+    var a = 10;
+    var b = 20;
         
-
-       
-        
-
+    document.write( a > b && a &lt; b); // 둘 중 하나가 아니므로 False.      
+    
+    document.write( a &lt; b && a &lt;= b); //둘 다 맞으므로 Treu.
+    
+    document.write( a > 200 || 50 > b); // 둘 중 하나가 맞기 때문에 True .   
+    
+    document.write( a > 200 || 50 &lt; b); // 둘 다 아니므로 False.
+    
+    document.write( !(a > 200)); //원래는 False 이지만 !(not연산자)때문에 True를 반환.
+&lt;/script&gt;</code></pre>
+            </div>            
+        </div>                       
     </main>
 </body>
 </html>

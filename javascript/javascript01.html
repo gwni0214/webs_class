@@ -519,14 +519,14 @@
             let z = "javascript";
             x = 200;      
             y = 300;          
-            
-            document.write(x);
-            document.write(y);
-            document.write(z);
+            document.write("함수 안<br>")
+            document.write(x, "<br>");
+            document.write(y, "<br>");
+            document.write(z, "<br>");
             }
             func();
 
-            document.querySelector(".result04").innerHTML = "함수안<br>" + func(); + "<br>"+  "함수 밖<br>" + x + "<br>" +  y + "<br>" + z + "<br>" ;
+            document.querySelector(".result04").innerHTML = func() + "<br>"+  "함수 밖<br>" + x + "<br>" +  y + "<br>" + z + "<br>" ;
                         
         }
         // 05. 상수 : 데이터 저장소 + 데이터 변경(X) : 변경 안되는 데이터 
