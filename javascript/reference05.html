@@ -127,10 +127,35 @@
 
     num1 <strong>%=</strong> num2; // num1 = num1 (30) % num2 (3);
     documnet.write(num1); // 0
+
+    //문자형 데이터에도 복합 대입 연산자를 사용 가능합니다.
+    var str = "문자1"
+    str += "문자2"
+    str += "문자3"
+    // "문자1문자2문자3"
 &lt;/script&gt;</code></pre>
                     </div>
 
         <h3>증감 연산자</h3>
+        <p>증감 연산자에는 숫자형 데이터를 1 씩 증가시키는 증가 연산자와 1씩 감소시키는 감소 연산자가 있습니다.</p>
+        <div class="code">
+<pre><code>&lt;script&gt;
+   var num1 = 10;
+   var num2 = 20;
+   var result;
+
+   num1--;  // 9
+   document.write(num1); // 9 출력
+
+   num1++;  // 10
+   document.write(num1); // 10 출력
+
+   result = num2++; // result:20, num2:21 
+   document.write(reuslt); // 21 출력
+
+
+&lt;/script&gt;</code></pre>
+                    </div>
 
         <h3>비교 연산자</h3>
 
