@@ -192,6 +192,7 @@ body {
     padding: 20px 20px 15px 20px;
     border-radius: 10px;
     background: #dedede;
+    overflow-x: auto;
 }
 
 .doc strong {
