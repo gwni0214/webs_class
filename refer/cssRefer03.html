@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="asset/css/style.css">
     <link rel="stylesheet" href="asset/css/prism.css">
 </head>
+
 <body>
     <header id="header">
         <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
@@ -20,9 +22,10 @@
     </header>
 
     <main id="contents">
-        <h2>CSS <em>단위</em></h2>
+        <h2><a href="css.html">CSS</a> <em>단위</em></h2>
         <div class="menu">
             <ul>
+                <li><a href="css.html">속성</a></li>
                 <li><a href="cssRefer01.html">기초 문법</a></li>
                 <li><a href="cssRefer02.html">Block/Inline</a></li>
                 <li class="active"><a href="cssRefer03.html">단위</a></li>
@@ -32,7 +35,52 @@
         <!-- //menu -->
 
         <div class="refer">
-            
+            <div class="doc">
+                <h3>CSS 단위</h3>
+                <p>CSS의 단위에는 총 7가지가 있습니다. </p>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>단위</th>
+                                <th>관련 사항</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>em</td>
+                                <td>em은 상위 요소의 font-size를 정의합니다. ex)1.5em 이런 식으로 정의합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>rem</td>
+                                <td>Root em를 뜻합니다."r"은 바로 "root(최상위)"를 뜻하며 html요소의 크기를 기준으로 합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>vh와vw</td>
+                                <td>vh 요소는 높이값의 100분의 1의 단위이고 vw는 너비값의 100분의 1 단위입니다.</td>
+                            </tr>
+                            <tr>
+                                <td>vmin과 vmax</td>
+                                <td>너비값과 높이값에따라 최대, 최소값을 지정할 수 있습니다.</td>
+                            </tr>
+                            <tr>
+                                <td>ex</td>
+                                <td>요소 font의 x-height값을 지정합니다.</td>
+                            </tr>
+                            <tr>
+                                <td>ch</td>
+                                <td>요소 font의 glyph "0" 의 사전 길이 (너비) 입니다.</td>
+                            </tr>
+                            <tr>
+                                <td>lh</td>
+                                <td>요소의 라인 높이를 지정합니다.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
         </div>
         <!--//refer-->
     </main>
@@ -40,4 +88,5 @@
     <!--script-->
     <script src="asset/js/prism.js"></script>
 </body>
+
 </html>

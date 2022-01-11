@@ -20,9 +20,10 @@
     </header>
 
     <main id="contents">
-        <h2>CSS <em>기초 문법</em></h2>
+        <h2><a href="css.html">CSS</a> <em>기초 문법</em></h2>
         <div class="menu">
             <ul>
+                <li><a href="css.html">속성</a></li>
                 <li class="active"><a href="cssRefer01.html">기초 문법</a></li>
                 <li><a href="cssRefer02.html">Block/Inline</a></li>
                 <li><a href="cssRefer03.html">단위</a></li>
@@ -32,6 +33,76 @@
         <!-- //menu -->
 
         <div class="refer">
+            <div class="doc">
+                <h3>CSS란?</h3>
+            <p>CSS는 HTML 등의 마크업 언어로 작성된 문서가 실제로 웹사이트에 표현되는 방법을 정해주는 스타일시트 언어입니다.</p>
+            <h3>CSS 주석 표시</h3>
+                <div class="code">
+<pre><code>{/*CSS주석*/} /*이렇게 표시합니다.*/</pre></code>
+            </div>
+            <h3>CSS 선언방법 3가지</h3>
+            <h4>내부 스타일</h4>
+            <p>HTML 파일 안에 &lt;style&gt; 태그로 스타일을 작성하는 방식입니다. 이 방식은 번들링 하지 않는 프로젝트에서는 대부분 HTML, CSS, JS 파일을 나누어 관리하는 것이 일반적 이므로 번들링하지 않는다면 자주 사용되지 않는 방식입니다.</p>
+            <div class="code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt; 
+&lt;head&gt;
+&lt;meta&gt;
+&lt;title&gt;CSS&lt;/title&gt; 
+
+<strong>&lt;style&gt;</strong>
+스타일 {
+    속성:값;
+}
+<strong>&lt;/style&gt;</strong>
+
+&lt;/head&gt;  
+&lt;body&gt; 
+&lt;/body&gt;
+&lt;/html&gt;                
+</code></pre>
+                            
+                </div>
+            <h4>외부 스타일</h4>
+            <p>link 태그를 이용하여 외부 CSS문서를 가져와서 연결하는 방식입니다. 실무에서 주로 사용하는 방식으로 대부분의 프로젝트에서 이방식을 사용하고 있습니다.</p>
+                <div class="code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt; 
+&lt;head&gt;
+&lt;meta&gt;
+&lt;title&gt;CSS&lt;/title&gt; 
+
+&lt;<strong>link</strong> rel="stylesheet" href="CSS파일 경로"&gt;
+
+&lt;/head&gt;  
+&lt;body&gt; 
+&lt;/body&gt;
+&lt;/html&gt;                
+</code></pre>
+                                            
+                </div>
+            <h4>인라인 스타일</h4>
+            <p>요소의 style 속성에 직접 스타일을 작성하는 방식 입니다. 우선순위상 우선하기 때문에 공통기능에 대해서 따로 파일로 관리하는 경우 변경이 불가능하기 때문에 유지보수에 어려움이 있는 방식입니다. 그렇기 때문에 권장하지 않는 방식입니다.</p>
+                <div class="code">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt; 
+
+&lt;head&gt; 
+&lt;meta&gt;
+&lt;title&gt;CSS&lt;/title&gt;
+&lt;/head&gt;  
+&lt;body&gt; 
+
+&lt;div <strong>style</strong>="color:red; margin:20px"&gt;
+...
+&lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;                
+</code></pre>
+                                                            
+                </div>
+            
             
         </div>
         <!--//refer-->
