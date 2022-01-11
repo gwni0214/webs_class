@@ -7,10 +7,10 @@ https://gwni0214.github.io/webs_class/
 https://gwni0214.github.io/webs_class/javascript/index.html
 
 ## HTML 레퍼런스
-https://gwni0214.github.io/webs_class/html/index.html
+https://gwni0214.github.io/webs_class/refer/html.html
 
 ## CSS 레퍼런스
-https://gwni0214.github.io/webs_class/css/index.html
+https://gwni0214.github.io/webs_class/refer/css.html
 
 ## LAYOUT
 https://gwni0214.github.io/webs_class/layout/index.html
