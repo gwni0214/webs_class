@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,27 +13,87 @@
     <link rel="icon" href="../assets/face/javascript.png" sizes="128x128">
 
     <!-- Style -->
-    <link rel="stylesheet" href="asset/css/style.css">    
-    <link rel="stylesheet" href="asset/css/prism.css">    
-    
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/prism.css">
+    <link rel="stylesheet" href="asset/css/dog.css">
+
     <!-- Script -->
-    <script src="asset/js/prism.js"></script>   
+    <script src="asset/js/prism.js"></script>
 </head>
+
 <body>
-    <header id="header">
-        <h1>Javascript 레퍼런스</h1>
-        <nav>
+    <main class="javascript">
+        
+            <div class="dog">
+                <div class='wrap'>
+                    <div class='body'>
+                        <div class='leg l'>
+                            <div class='paw'></div>
+                        </div>
+                        <div class='leg r'>
+                            <div class='paw'></div>
+                        </div>
+                        <div class='spots'></div>
+                        <div class='head'>
+                            <div class='snout'>
+                                <div class='nose'></div>
+                            </div>
+                            <div class='eyes'></div>
+                            <div class='ear'></div>
+                            <div class='ear right'></div>
+                            <div class='inner'>
+                                <div class='spot'></div>
+                            </div>
+                            <div class='eyes'></div>
+                            <div class='ear'></div>
+                            <div class='ear right'></div>
+                            <div class='inner'>
+                                <div class='spot'></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none">
+                    <defs>
+                        <filter id="squiggly-0">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="0" />
+                            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="2" />
+                        </filter>
+                        <filter id="squiggly-1">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="1" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+                        </filter>
+                        <filter id="squiggly-2">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="2" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+                        </filter>
+                        <filter id="squiggly-3">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="3" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" />
+                        </filter>
+                        <filter id="squiggly-4">
+                            <feTurbulence id="turbulence" baseFrequency="0.02" numOctaves="3" result="noise" seed="4" />
+                            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1" />
+                        </filter>
+                    </defs>
+                </svg>
+
+            </div>
+            <h1>Javascript</h1>
+        <nav class="menu">
             <ul>
                 <li><a href="javascript01.html">데이터 저장하기</a></li>
                 <li><a href="javascript02.html">데이터 불러오기</a></li>
                 <li><a href="javascript03.html">데이터 실행하기</a></li>
-                <li><a href="javascript04.html">데이터 제어하기</a></li>        
+                <li><a href="javascript04.html">데이터 제어하기</a></li>
             </ul>
         </nav>
-    </header>
-    
-    <main id="main">
-
     </main>
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="../javascript/asset/js/dog.js"></script>
 </body>
+
 </html>

@@ -6,127 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Reference</title>
-     <!-- 파비콘 -->
-     <link rel="shortcut icon" href="../assets/face/html.png">
-     <link rel="apple-touch-icon-precomposed" href="../assets/face/html.png">
-     <link rel="icon" href="../assets/face/html.png" sizes="128x128">
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/html.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/html.png">
+    <link rel="icon" href="../assets/face/html.png" sizes="128x128">
 
-    <style>
-        @font-face {
-            font-family: 'GmarketSans';
-            font-weight: 300;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
-            font-display: swap;
-        }
+    <!--CSS-->
+    <link rel="stylesheet" href="../html/asset/css/style.css">
 
-        @font-face {
-            font-family: 'GmarketSans';
-            font-weight: 500;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'GmarketSans';
-            font-weight: 700;
-            font-style: normal;
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
-            src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
-                url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
-            font-display: swap;
-        }
-
-        * {
-            font-family: 'GmarketSans';
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background: #f5f5f5;
-        }
-
-        #header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            border-bottom: 1px solid #000;
-
-        }
-
-        #header h1 {
-            font-weight: 500;
-            padding: 20px 10px 10px 20px;
-        }
-
-        #header strong {
-            font-weight: 300;
-            padding: 10px 20px 10px 10px;
-        }
-
-        #contents {
-            width: 1200px;
-            margin: 0 auto;
-        }
-
-        #contents h2 {
-            font-size: 80px;
-            text-align: center;
-            padding: 5% 5% 5% 5%;
-        }
-
-        #contents h2 em {
-            font-style: normal;
-            color: #00db72;
-        }
-
-        #contents .refer {
-            background: #fff;
-            padding: 60px;
-            border: 1px solid #000;
-        }
-
-        #contents .refer table {
-            width: 100%;
-            border: 1px solid #aaa;
-            border-collapse: collapse;
-        }
-
-        #contents .refer table th {
-            border: 1px solid #aaa;
-            padding: 15px;
-            background: #f5f5f5;
-            font-weight: 500;
-        }
-
-        #contents .refer table td {
-            border: 1px solid #aaa;
-            padding: 15px;
-            font-weight: 300;
-        }
-
-        #contents .refer table caption {
-            text-indent: -9999px;
-        }
-
-        #contents .refer table tbody tr:hover {
-            background: #00db72;
-            color: #fff;
-            cursor: grab;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -137,6 +25,13 @@
 
     <main id="contents">
         <h2>HTML <em>레퍼런스 북</em></h2>
+        <div class="menu">
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">웹표준/웹접근성/웹호환성</a></li>
+            </ul>
+            <!--//menu-->
+        </div>
         <section class="refer">
             <table>
                 <caption>HTML 레퍼런스의 속성과 설명을 나타내는 표 입니다.</caption>
@@ -161,7 +56,8 @@
                     </tr>
                     <tr>
                         <td>&lt;acronym&gt;</td>
-                        <td>&lt;acronym&gt;태그는 줄임말 또는 머리글자를 나타내며 title속성을 이용하여 전체 뜻이나 설명을 붙일 수 있습니다.HTML5에서는 &lt;acronym&gt; 태그를 더 이상 지원하지 않습니다.</td>
+                        <td>&lt;acronym&gt;태그는 줄임말 또는 머리글자를 나타내며 title속성을 이용하여 전체 뜻이나 설명을 붙일 수 있습니다.HTML5에서는
+                            &lt;acronym&gt; 태그를 더 이상 지원하지 않습니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;address&gt;</td>
@@ -169,7 +65,8 @@
                     </tr>
                     <tr>
                         <td>&lt;applet&gt;</td>
-                        <td>&lt;applet&gt;태그는 애플랫 요소를 설정합니다.HTML5에서 지원하지 않습니다. 대신 &lt;embed&gt; 태그와 &lt;object&gt; 태그를 이용합니다.</td>
+                        <td>&lt;applet&gt;태그는 애플랫 요소를 설정합니다.HTML5에서 지원하지 않습니다. 대신 &lt;embed&gt; 태그와 &lt;object&gt; 태그를
+                            이용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;area&gt;</td>
@@ -181,7 +78,8 @@
                     </tr>
                     <tr>
                         <td>&lt;aside&gt;</td>
-                        <td>&lt;aside&gt;태그는 주요 콘텐츠의 보조적 컨텐츠 섹션을 설정합니다. 웹 페이지의 메인 콘텐츠와 관련된 사이드의 정보, 광고 등 부분적인 정보를 나타낼 때 사용합니다.</td>
+                        <td>&lt;aside&gt;태그는 주요 콘텐츠의 보조적 컨텐츠 섹션을 설정합니다. 웹 페이지의 메인 콘텐츠와 관련된 사이드의 정보, 광고 등 부분적인 정보를 나타낼 때
+                            사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;audio&gt;</td>
@@ -193,7 +91,9 @@
                     </tr>
                     <tr>
                         <td>&lt;base&gt;</td>
-                        <td>&lt;base&gt;태그는 모든 문서의 기본이 되는 URL을 설정합니다. <head> 태그 안에 설정 할 수 있으며, 문서에서 한 번만 설정 할 수 있습니다.</td>
+                        <td>&lt;base&gt;태그는 모든 문서의 기본이 되는 URL을 설정합니다.
+
+                            <head> 태그 안에 설정 할 수 있으며, 문서에서 한 번만 설정 할 수 있습니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;basefont&gt;</td>
@@ -201,7 +101,8 @@
                     </tr>
                     <tr>
                         <td>&lt;bdi&gt;</td>
-                        <td>&lt;bdi&gt;태그는 텍스트의 출력 방향 영역을 설정합니다. 일반적인 글은 왼쪽에서 오른쪽으로 읽지만, 아랍어나 히브리어는 오른쪽에서 왼쪽으로 읽을 때 사용합니다.</td>
+                        <td>&lt;bdi&gt;태그는 텍스트의 출력 방향 영역을 설정합니다. 일반적인 글은 왼쪽에서 오른쪽으로 읽지만, 아랍어나 히브리어는 오른쪽에서 왼쪽으로 읽을 때
+                            사용합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;bdo&gt;</td>
@@ -487,7 +388,8 @@
                     </tr>
                     <tr>
                         <td>&lt;picture&gt;</td>
-                        <td>&lt;picture&gt;태그는 화면 크기에 따라 이미지를 정의합니다.&lt;picture&gt; 태그는 반응형 사이트와 관련이 있으면 화면 크기에 따라 그에 맞는 이미지를 보여주는 태그입니다. &lt;source&gt; 태그와 같이 사용하며 미디어 쿼리를 통해 표현합니다.</td>
+                        <td>&lt;picture&gt;태그는 화면 크기에 따라 이미지를 정의합니다.&lt;picture&gt; 태그는 반응형 사이트와 관련이 있으면 화면 크기에 따라 그에 맞는
+                            이미지를 보여주는 태그입니다. &lt;source&gt; 태그와 같이 사용하며 미디어 쿼리를 통해 표현합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;pre&gt;</td>
@@ -503,7 +405,7 @@
                     </tr>
                     <tr>
                         <td>&lt;rp&gt;</td>
-                        <td>&lt;rp&gt;태그는 루비 주석을 괄호로 표현하기 위해서 사용합니다.  </td>
+                        <td>&lt;rp&gt;태그는 루비 주석을 괄호로 표현하기 위해서 사용합니다. </td>
                     </tr>
                     <tr>
                         <td>&lt;rt&gt;</td>
@@ -515,7 +417,8 @@
                     </tr>
                     <tr>
                         <td>&lt;ruby&gt;</td>
-                        <td>&lt;ruby&gt;태그는 루비 문자를 정의합니다.루비 문자란 한자에 대한 읽는 법이나 일반적인 읽기 방법과 다르게 읽을 때 작은 글씨로 표현해주는 문자를 의미합니다.</td>
+                        <td>&lt;ruby&gt;태그는 루비 문자를 정의합니다.루비 문자란 한자에 대한 읽는 법이나 일반적인 읽기 방법과 다르게 읽을 때 작은 글씨로 표현해주는 문자를
+                            의미합니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;s&gt;</td>
@@ -523,7 +426,8 @@
                     </tr>
                     <tr>
                         <td>&lt;samp&gt;</td>
-                        <td>&lt;samp&gt;태그는 컴퓨터 프로그램으로 출력된 결과물을 나타내는 텍스트를 표현합니다. 스크립트의 결과값을 나타낼 때 사용하며 monotype의 폰트로 표현이 됩니다.</td>
+                        <td>&lt;samp&gt;태그는 컴퓨터 프로그램으로 출력된 결과물을 나타내는 텍스트를 표현합니다. 스크립트의 결과값을 나타낼 때 사용하며 monotype의 폰트로 표현이
+                            됩니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;script&gt;</td>
@@ -551,7 +455,8 @@
                     </tr>
                     <tr>
                         <td>&lt;strike&gt;</td>
-                        <td>&lt;strike&gt; 태그는 현재 사용하지 않는 태그입니다. 텍스트 위에 취소선(수평선)을 표현하기 위해 사용한 태그이지만 현재는 &lt;del&gt; 태그 또는 &lt;s&gt; 태그가 그 역할을 대신하고 있습니다.</td>
+                        <td>&lt;strike&gt; 태그는 현재 사용하지 않는 태그입니다. 텍스트 위에 취소선(수평선)을 표현하기 위해 사용한 태그이지만 현재는 &lt;del&gt; 태그
+                            또는 &lt;s&gt; 태그가 그 역할을 대신하고 있습니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;strong&gt;</td>
@@ -591,11 +496,16 @@
                     </tr>
                     <tr>
                         <td>&lt;template&gt;</td>
-                        <td>&lt;template&gt;태그는 페이지가 로드 될 때 렌더링되지 않고 자바스크립트를 이용하여 HTML을 표현해주는 태그입니다. 템플릿을 설정하고 내용은 스크립트를 통해 처리하는 방식입니다.</td>
+                        <td>&lt;template&gt;태그는 페이지가 로드 될 때 렌더링되지 않고 자바스크립트를 이용하여 HTML을 표현해주는 태그입니다. 템플릿을 설정하고 내용은 스크립트를
+                            통해 처리하는 방식입니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;textarea&gt;</td>
-                        <td>&lt;textarea&gt;태그는 여러줄의 텍스트를 편집할 수 있습니다. 코멘트 또는 피드백 양식으로 크기와 여러가지 속성을 설정할 수 있습니다. 접근성을 위해 &lt;label&gt; 요소를 같이 사용하며, 서버에 전송하기 위해 name 속성도 같이 사용합니다. row와 col 속성을 사용하면 텍스트 영역을 지원할 수 있으며, 브라우저마다 기본 값이 다를 수 있습니다. maxlength 속성을 이용하면 최대 문자수와 최소 문자수를 지정할 수 있으며, 필수 요소인 경우 필수요소로 설정할 수 있습니다. wrap 속성은 글의 줄바꿈을 설정할 수 있으며, placeholder를 이용하면 텍스트 영역의 미리보기 힌트 글자를 설정 할 수 있습니다.</td>
+                        <td>&lt;textarea&gt;태그는 여러줄의 텍스트를 편집할 수 있습니다. 코멘트 또는 피드백 양식으로 크기와 여러가지 속성을 설정할 수 있습니다. 접근성을 위해
+                            &lt;label&gt; 요소를 같이 사용하며, 서버에 전송하기 위해 name 속성도 같이 사용합니다. row와 col 속성을 사용하면 텍스트 영역을 지원할 수
+                            있으며, 브라우저마다 기본 값이 다를 수 있습니다. maxlength 속성을 이용하면 최대 문자수와 최소 문자수를 지정할 수 있으며, 필수 요소인 경우 필수요소로
+                            설정할 수 있습니다. wrap 속성은 글의 줄바꿈을 설정할 수 있으며, placeholder를 이용하면 텍스트 영역의 미리보기 힌트 글자를 설정 할 수 있습니다.
+                        </td>
                     </tr>
                     <tr>
                         <td>&lt;tfoot&gt;</td>
@@ -611,7 +521,8 @@
                     </tr>
                     <tr>
                         <td>&lt;time&gt;</td>
-                        <td>&lt;time&gt;태그는 시간의 특정 기간을 나타낼 때 사용합니다. 날짜를 인식하기 위해서는 datetime 속성을 같이 사용하며 엔진 결과나 알림 같은 기능을 개선 할 수 있습니다.</td>
+                        <td>&lt;time&gt;태그는 시간의 특정 기간을 나타낼 때 사용합니다. 날짜를 인식하기 위해서는 datetime 속성을 같이 사용하며 엔진 결과나 알림 같은 기능을
+                            개선 할 수 있습니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;title&gt;</td>
@@ -623,7 +534,8 @@
                     </tr>
                     <tr>
                         <td>&lt;u&gt;</td>
-                        <td>&lt;u&gt;태그는 HTML4에서는 밑줄을 표시하기 위해서 사용하였습니다. 하지만 밑줄 기능은 CSS로 충분히 표현 가능하기 때문에 더 이상 사용하지 않게 되었습니다.</td>
+                        <td>&lt;u&gt;태그는 HTML4에서는 밑줄을 표시하기 위해서 사용하였습니다. 하지만 밑줄 기능은 CSS로 충분히 표현 가능하기 때문에 더 이상 사용하지 않게
+                            되었습니다.</td>
                     </tr>
                     <tr>
                         <td>&lt;ul&gt;</td>
@@ -631,7 +543,7 @@
                     </tr>
                     <tr>
                         <td>&lt;var&gt;</td>
-                        <td>&lt;var&gt; 태그는 수학적인 변수나 프로그램의 변수를 쓸 때 사용합니다.  </td>
+                        <td>&lt;var&gt; 태그는 수학적인 변수나 프로그램의 변수를 쓸 때 사용합니다. </td>
                     </tr>
                     <tr>
                         <td>&lt;video&gt;</td>
@@ -639,7 +551,8 @@
                     </tr>
                     <tr>
                         <td>&lt;wbr&gt;</td>
-                        <td>&lt;wbr&gt;태그는 줄바꿈 할 위치를 정의할 때 사용합니다.사용은 제한적입니다. 일반적인 한글이나 영어에서는 해당이 되지 않습니다. 의미가 없는 단어나 해석 할 수 없는 단어의 줄바꿈을 할 때 사용합니다. </td>
+                        <td>&lt;wbr&gt;태그는 줄바꿈 할 위치를 정의할 때 사용합니다.사용은 제한적입니다. 일반적인 한글이나 영어에서는 해당이 되지 않습니다. 의미가 없는 단어나 해석
+                            할 수 없는 단어의 줄바꿈을 할 때 사용합니다. </td>
                     </tr>
                 </tbody>
 
