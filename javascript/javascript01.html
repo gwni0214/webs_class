@@ -141,20 +141,19 @@
 <pre class="line-numbers"><code class="language-js">{        
     // 변수 : 데이터 저장
     // 함수 : 데이터 실행
-    document.write("***04. 변수의 종류***");
-
+    
     let x = 100; //전역변수
     let y = 200; //전역변수
 
     function func( ){
-    let x = 100; //지역변수            
-    let z = "javascript";
-    x = 200;       // 지역변수 100 -> 200
-    y = 300;       // 전역변수 200 -> 300    
-    document.write("함수 안");
-    document.write(x);
-    document.write(y);
-    document.write(z);
+        let x = 100; //지역변수            
+        let z = "javascript";
+        x = 200;       // 지역변수 100 -> 200
+        y = 300;       // 전역변수 200 -> 300    
+        document.write("함수 안");
+        document.write(x);
+        document.write(y);
+        document.write(z);
     }
     func( );
     
@@ -334,7 +333,7 @@
     obj.a = 100;
     obj.b = 200;
     obj.c = "javascript";
-    
+        
     document.write(obj.a);
     document.write(obj.b);
     document.write(obj.c);
@@ -372,9 +371,9 @@
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{        
     const obj = [
-                {a: 100, b:200},
-                {c: "javascript"}
-                ];
+        {a: 100, b:200},
+        {c: "javascript"}
+    ];
                 
     document.write(obj[0].a);
     document.write(obj[0].b);
@@ -394,10 +393,10 @@
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{        
     const obj = {
-    a: 100,
-    b: [200, 300],
-    c: {x:400, y:500},
-    d: "javascript"
+        a: 100,
+        b: [200, 300],
+        c: {x:400, y:500},
+        d: "javascript"
     };
 
     document.write(obj.a);
@@ -444,20 +443,20 @@
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{        
     const obj = {
-    a: 100,
-    b: [200, 300],
-    c: {x: 400, y: 500},
-    d: "javascript",
-    e: function( ){
-        document.write("javascript가 실행되었습니다.");
-    },
-    f: function( ){
-        document.write(obj,d + "가 실행되었습니다.");
-    },
-    g: function( ){
-        document.write(this.d + "가 실행되었습니다.");
-    }
-    };
+        a: 100,
+        b: [200, 300],
+        c: {x: 400, y: 500},
+        d: "javascript",
+        e: function( ){
+            document.write("javascript가 실행되었습니다.");
+        },
+        f: function( ){
+            document.write(obj,d + "가 실행되었습니다.");
+        },
+        g: function( ){
+            document.write(this.d + "가 실행되었습니다.");
+        }
+        };
    
     document.write(obj.a);
     document.write(obj.b[0], obj.b[1]);
