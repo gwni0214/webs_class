@@ -183,6 +183,8 @@
     // x = 300; 한번 지정하면 이런식으로 바꿀 수 없음.
     // y = 400;
     // z = "jquery";
+    // const 변수를 데이터 변경 시, 오류로 인해 출력이 불가능함.
+    // const 는 재 할당, 재 선언이 불가능.
     
     document.write(x);
     document.write(y);
@@ -537,7 +539,8 @@
         {
             const x = 100;
             const y = 200;
-            const z = "javascript";        
+            const z = "javascript";      
+              
 
             document.querySelector(".result05").innerHTML = x + "<br>" + y + "<br>" + z;
            
@@ -668,7 +671,7 @@
                     document.querySelector(".result17").innerHTML += obj.d + "가 실행되었습니다." + "<br>";
                 },
                 g: function () {
-                    document.querySelector(".result17").innerHTML += this.d + "가 실행되었습니다." + "<br>";
+                    document.querySelector(".result17").innerHTML += this.d + "가 실행되었습니다." + "<br>"; //this = obj
                 }
             }
 
