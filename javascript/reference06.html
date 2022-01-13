@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png" sizes="128x128">
+    <!-- Style -->
+    <link rel="stylesheet" href="asset/css/style.css">    
+    <link rel="stylesheet" href="asset/css/prism.css">    
+    
+    <!-- Script -->
+    <script src="asset/js/prism.js"></script>   
+</head>
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+            <li><a href="reference01.html">기초 문법</a></li>
+            <li><a href="reference02.html">변수</a></li>
+            <li><a href="reference03.html">자료형</a></li>
+            <li><a href="reference04.html">for문</a></li>
+            <li><a href="reference05.html">연산자</a></li>
+            <li class="active"><a href="reference06.html">조건문</a></li>
+            <li><a href="reference07.html">반복문</a></li>                    
+            </ul>
+        </nav>
+    </header>
+    
+    <main id="main">
+        <div class="doc">
+            <h2>조건문</h2>
+            <p>조건문은 조건식의 값이 true인지, false인지에 따라 자바스크립트 코드를 제어합니다. 조건문의 종류에는 if문, else문, if else문이 있습니다.</p>
+            
+            <h3>if문</h3>
+            <div class="line">
+                if(조건식)<br>
+                &nbsp;&nbsp;&nbsp;자바스크립트 코드;<br>
+            </div>
+
+            <div class="code"><pre><code>&lt;/script&gt;
+{
+    var num = 100;
+    if(num&lt;500){ //True를 반환합니다. 
+        document.write("hello");
+    }
+    if(0){ //조건식에 0을 입력하면 False를 반환합니다. 
+        document.write("hello");
+    }
+}
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <div class="code">
+                <h3 class="mt0">코딩해보세요</h3>
+<pre><code>&lt;script&gt;
+{
+    var min = prompt("하루 통화량은 몇분?", "0");
+
+    if(min>=60) {
+        document.wirte("많음.") //60 이상을 입력하면 "많음." 출력. 60 미만이면 아무것도 출력하지 않음.
+    };  
+}
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <h4 class="mt30">조건식에 논리형 데이터가 아닌 다른형이 오는경우</h4>
+            <p>조건식에 true, false가 아닌 다른형의 데이터가 입력되어도 정상적으로 인식합니다.</p>
+            <div class="line">
+                0, null, "", undefined  값이 조건식에 오는 경우 false를 반환합니다.// 출력되지 않습니다.
+            </div>
+            <div class="line">
+                <h3 class="mt0">출력되는 경우</h3>
+                var num = 3;<br>
+                if(num){ document.write(num); }<br>
+                //true 이므로 3이 출력됩니다.<br>
+                <h3 class="mt0">출력되지 않는경우</h3>
+                var num = 0;<br>
+                if(num){ document.write(num); }<br>
+                //0은 false 이므로 출력되지 않습니다.<br>                
+            </div>
+
+            <h3>else 문</h3>
+            <p>true가 아닐경우, else. 즉 false의 경우에 따라 실행되는 코드입니다.</p>
+            <div class="line">
+                if(조건식){자바스크립트 코드1;}<br>
+                else {자바스크립트 코드2;}
+            </div>
+            <div class="code">
+                <h3 class="mt0">코딩해보세요</h3>
+<pre><code>&lt;script&gt;
+{
+    var min = prompt("하루 통화량은 몇분?", "0");
+
+    if(min>=60) {
+        document.wirte("많음.") //60 이상을 입력하면 "많음." 출력. 
+    }else {
+        document.write("적음") // 60 미만이면 "적음." 출력
+    }    
+}
+&lt;/script&gt;</code></pre>
+            </div>
+            <h3>if else 문</h3>
+            <p>if else 문은 두 가지 이상의 조건식과 정해놓은 조건을 만족하지 않았을 때 실행되는 코드로 이루어져 있습니다.</p>
+            <div class="code">
+<pre><code>{
+    const num = 100; //조건식의 변화에 따라 변수 값에 맞는 결과를 도출합니다.
+
+    if(num == 90){
+        document.write("실행되었습니다(num==90)");
+    } else if (num ==100){
+        document.write("실행되었습니다(num==100)");
+    } else if (num ==110){
+        document.write("실행되었습니다(num==110)");
+    } else if (num ==120){
+        document.write("실행되었습니다(num==120)");
+    } else {
+        document.write("실행되었습니다(num==값이없음)");
+    }
+}</code></pre>
+            </div>
+            <div class="code">
+                <h3 class="mt0">코딩해 보세요</h3>
+<pre><code>{
+    var mon = prompt("몇 월이니?", "0");
+
+    if(mon&gt;=9&&mon&lt;=11){      //9~11
+        document.write("가을이야.");
+    }else if(mon&gt;=6&&mon&lt;=8){   //6~8
+        document.write("여름이야.");
+    }else if(mon&gt;=3&&mon&lt;=5){   //3~5
+        document.write("봄이야.");
+    }else{                           // 나머지.
+        document.write("겨울이야.");
+    }        
+}</code></pre>
+            </div>
+            <h3>중첩 if 문</h3>
+            <p>조건문안에 조건문이 있으면 중첩if문이라고 합니다.</p>
+            <div class="code">                
+<pre><code>{
+    if (조건식1){       
+        if(조건식2){
+            자바스크립트 코드;// 조건식 1을 만족해야만 조건식2를 검사합니다. 만족하지 않으면 조건식1만 실행 후 종료.                                
+        }
+    }
+}</code></pre></div>            
+            <div class="code">  
+                <h3 class="mt0">코딩해 보세요</h3>              
+<pre><code>{
+     let a = 100;
+     let b = 100;
+     let c = 200;
+     let d = 200;
+
+     if(a==b){ //조건문1 이 만족하면 실행합니다.
+         if(c==d){
+            document.write("hello."); // 조건문 2가 만족하면 실행합니다.
+         }
+     } eles {
+        document.write("bye."); //조건문이 만족하지 않으면 실행합니다.
+     }
+}</code></pre></div>
+
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        </div>                       
+    </main>
+</body>
+</html>

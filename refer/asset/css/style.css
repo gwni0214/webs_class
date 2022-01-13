@@ -137,6 +137,11 @@ body {
     border-spacing: 0px
 }
 
+.refer .table table a {
+    text-decoration: none;
+    color: #000;
+}
+
 .refer .table table th {
     border: 1px solid #aaa;
     padding: 15px;
