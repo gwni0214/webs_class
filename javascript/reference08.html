@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/javascript.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/javascript.png">
+    <link rel="icon" href="../assets/face/javascript.png" sizes="128x128">
+    <!-- Style -->
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/prism.css">
+
+    <!-- Script -->
+    <script src="asset/js/prism.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">Javascript</a></h1>
+        <nav>
+            <ul>
+                <li><a href="reference01.html">기초 문법</a></li>
+                <li><a href="reference02.html">변수</a></li>
+                <li><a href="reference03.html">자료형</a></li>
+                <li><a href="reference04.html">for문</a></li>
+                <li><a href="reference05.html">연산자</a></li>
+                <li><a href="reference06.html">조건문</a></li>
+                <li><a href="reference07.html">반복문</a></li>
+                <li class="active"><a href="reference08.html">함수</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <div class="doc">
+
+            <h2>함수</h2>
+            <p>변수에는 데이터만 저장할 수 있고 코드는 저장할 수 없습니다. 하지만 함수를 이용하면 코드를 저장했다가 필요할 때 마다 호출하여 사용할 수 있습니다. 코드를 저장하는 보관소라고 생각하면
+                됩니다. 그 보관소에서 필요한걸 꺼내서 출력하는것을 함수 호출이라고 합니다.</p>
+
+            <h3>선언적 함수</h3>
+            <div class="line">
+                function 함수명(){<br>
+                자바스크립트 코드;<br>
+                }<br>
+                func();
+            </div>
+            <p>이런 식으로 코드를 저장한 것을 <strong>함수 정의문</strong>이라고 합니다. 변수를 선언할 때 var이나 let, const 를 사용한 것 처럼 함수를 선언할 때는
+                <strong>function</strong>키워드를 사용합니다.<br>
+                <br>함수를 선언한 후 호출하려면 <strong>함수명();</strong> 이렇게 호출합니다.</p>
+            <div class="code mt30">
+                <h3 class="mt0">코딩해보세요</h3>
+<pre><code>{
+    var count = 0;
+
+    myFnc();
+
+    function myFnc(){
+        count++;
+        document.write("hello" + count, "&lt;br&gt;");
+    }
+
+    myFnc();
+
+    function theFnc(){
+        count++;
+        document.write("bye" + count, "&lt;br&gt;");
+    }
+
+    theFnc();
+}</code></pre>
+            </div>
+            <div class="line">
+                결과<br>
+                hello1<br>
+                hello2<br>
+                bye3<br>
+            </div>
+
+            <h3>익명 함수 이건 검색하기</h3>
+            <p>문법</p>
+            <p>설명</p>
+            <div class="code">코딩해보세요</div>
+
+            <h3>매개변수 함수</h3>
+            <div class="line">
+                function 함수명(매개변수1, 매개변수2, 매개변수3,...매개변수n){<br>
+                자바스크립트 코드;<br>
+                }<br>
+                함수명(데이터1, 데이터2, 데이터3...데이터n);
+            </div>
+            <p>기본적인 선언적 함수는 코드를 실행할 때 단순히 함수명으로 호출해서 사용했습니다. 하지만 함수명을 호출하여 사용하면 원하는 값 만을 전달하지 못하고 전체 함수가 실행됩니다.<br>
+                하지만 매개변수가 있는 함수는 호출할 때 전달하고자 하는 값을 입력하여 호출할 수 있습니다. 위의 기본형은 매개변수의 예제로, 데이터1 은 매개변수1에 저장되고 데이터n은 매개변수n에
+                저장됩니다.
+                </p>
+            <div class="code mt30">
+                <h3 class="mt0">코딩해보세요</h3>
+<pre><code>{
+    function myFnc(name,area){
+        document.write("안녕하세요." + name + "입니다.", "&lt;br&gt;");
+        document.write("사는 곳은" + area + "입니다.", "&lt;br&gt;&lt;br&gt;");
+    }
+
+    myFnc("홍당무", "서울");
+
+    myFnc("깍두기", "부산");
+}</code></pre>
+            </div>
+            <div class="line">
+                결과<br>
+                안녕하세요. 홍당무입니다.<br>
+                사는 곳은 서울입니다.<br>
+                <br>
+                안녕하세요. 깍두기입니다.<br>
+                사는 곳은 부산입니다.
+            </div>
+
+            <h3>아규먼트 함수</h3>
+            <p>이건 나중에</p>
+
+            <h3>리턴값 함수</h3>
+            <div class="line">
+                function 함수명();{<br>
+                    자바스크립트 코드;<br>
+                    return 데이터값;<br>
+                    <br>
+                    자바스크립트 코드2;<br>
+                }<br>
+                let 변수 = 함수명();
+            </div>
+            <p>위는 return값 함수의 기본형입니다. 함수에서 return문이 실행되면 반복문의 break와 비슷하게 코드가 강제로 종료됩니다.<br>
+            return문이 사용되면 함수를 호출 했을 때 결과값을 바로 반환합니다.</p>
+            <div class="code">
+                <h3 class="mt0">평균점수구하기</h3>
+<pre><code>{
+    function testAvg(arrData){
+        let sum = 0;
+
+        for(let i=0; i&lt;arrData.length; i++){
+            sum += Number(prompt(arrData[i] + "점수는?", "0"));
+        }
+        let avg = sum/arrData.length;
+        return avg;        
+    }
+    let arrSubject = ["국어", "수학"];
+        
+    let result = testAvg(arrSubject);
+
+    document.write(result);
+}</code></pre>
+            </div>
+            <div class="line">
+                결과<br>
+                국어 점수와 수학 점수를 차례로 입력하면 평균 점수의 값이 출력됩니다.<br>
+            </div>
+
+            <div class="code">
+                <h3 class="mt0">이미지예제</h3>
+<pre><code>{
+&lt;head&gt; 
+    &lt;script&gt;
+        let num = 1;
+        function gallery(direct){
+            if(direct){
+                if(num==8)return;
+                num++;                
+            } else{
+                if(num==1)return;
+                num--;
+            }
+
+            let imgTag = document.getElementById("photo");
+            imgtag.setAttribute("src", "../class/img/img0" + num + ".jpg");
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div&gt;
+        &lt;p&gt;&lt;img src="../class/img/img01.jpg" id="photo" alt=""&gt;&lt;/p&gt;
+        &lt;p&gt;
+            &lt;button onclick="gallery(0)"&gt;이전&lt;/button&gt;
+            &lt;button onclick="gallery(1)"&gt;다음&lt;/button&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+}</code></pre>
+            </div>
+            <div class="line">
+                총 8개의 이미지를 사용해서 갤러리를 만드는 예제입니다. 처음화면에는 img01.jpg가 나타납니다. 여기에서 다음 버튼을 누르면 img01,02,03...순서대로 나타납니다.<br>
+                즉 이미지 파일명의 숫자가 1씩 증가되며 그림이 나타납니다. 이미지 넘버는 8번 까지만 있기때문에 9가 나오면 이미지를 불러올 수 없어 오류가 발생합니다.<br>
+                8보다 큰 값이 나오는 경우 리턴문으로 함수를 종료하여 문제를 해결합니다.
+            </div>
+
+        </div>
+
+    </main>
+    <script>
+    //     {
+    //     function testAvg(arrData){
+    //         let sum = 0;
+
+    //         for(let i=0; i<arrData.length; i++){
+    //             sum += Number(prompt(arrData[i] + "점수는?", "0"));
+    //         }
+    //         let avg = sum/arrData.length;
+    //         return avg;
+            
+    //     }
+
+    //     let arrSubject = ["국어", "수학"];
+            
+    //     let result = testAvg(arrSubject);
+
+    //     document.write(result);
+    // }
+    {
+
+    }
+    </script>
+</body>
+
+</html>
