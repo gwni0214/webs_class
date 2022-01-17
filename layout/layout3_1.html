@@ -1,59 +1,90 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout3</title>
+    <title>Layout</title>
     <style>
         * {
             margin: 0;
             padding: 0;
         }
-        body {
-            background-color: #E3F2FD;
-        }
+
         #wrap {
             width: 1200px;
             margin: 0 auto;
         }
+
         #header {
             width: 1200px;
             height: 100px;
             background-color: #BBDEFB;
         }
+
         #nav {
             width: 1200px;
             height: 100px;
+            display: flex;
+        }
+
+        #nav .nav1 {
+            width: 600px;
+            height: 100px;
             background-color: #90CAF9;
         }
+
+        #nav .nav2 {
+            width: 600px;
+            height: 100px;
+            background-color: #C4C4C4;
+        }
+
         #main {
             width: 1200px;
-            display: flex;   
+
+
         }
-        #main .aside {
+
+        #main .section1 {
+            width: 1200px;
+            height: 520px;
+            display: flex;
+
+
+        }
+
+        #main .section1 .aside {
             width: 400px;
-            height: 780px;
+            height: 520px;
             background-color: #64B5F6;
         }
-        #main .contents {
-            width: 800px;                   
+
+        #main .section1 .contents {
+            width: 800px;
+
+
         }
-        #main .contents .article1 {
+
+        #main .section1 .contents .art1 {
             width: 800px;
             height: 260px;
             background-color: #42A5F5;
         }
-        #main .contents .article2 {
+
+        #main .section1 .contents .art2 {
             width: 800px;
             height: 260px;
             background-color: #2196F3;
         }
-        #main .contents .article3 {
-            width: 800px;
+
+        #main .section2 {
+            width: 1200px;
             height: 260px;
             background-color: #1E88E5;
         }
+
         #footer {
             width: 1200px;
             height: 100px;
@@ -61,21 +92,26 @@
         }
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <header id="header"></header>
-        <nav id="nav"></nav>
+        <nav id="nav">
+            <div class="nav1"></div>
+            <div class="nav2"></div>
+        </nav>
         <main id="main">
-            <aside class="aside"></aside>
-            <section class="contents">
-                <article class="article1"></article>
-                <article class="article2"></article>
-                <article class="article3"></article>
+            <section class="section1">
+                <aside class="aside"></aside>
+                <section class="contents">
+                    <article class="art1"></article>
+                    <article class="art2"></article>
+                </section>
             </section>
+            <section class="section2"></section>
         </main>
         <footer id="footer"></footer>
-
-
     </div>
 </body>
+
 </html>

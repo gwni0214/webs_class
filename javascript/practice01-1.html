@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div class="back"><a href="practice01.html">Back</a></div>
     <main id="main">
         <div class="test">
               <h2>1. 1부터 100까지 출력하기</h2>
@@ -22,12 +23,15 @@
             <!--01-->
             <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    let num = 1;
-
-    while(num&lt;=100){
-        document.write(num);
-        num++;
+    function func( ){
+        let num = 1;
+    
+        while(num&lt;=100){
+            console.log(num);
+            num++;
+        }
     }
+    func( );
 }</code></pre>
             </div>   
             <!--02-->
@@ -35,52 +39,110 @@
 
             <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    for(let i =1; i&lt;=100; i++){
-        document.write(i);
+    function func( ){
+        for(let i =1; i&lt;=100; i++){
+            console.log(i);
+        }   
     }
+    func( );
 }</code></pre>
             </div>
             <!--03-->
             <h3>1.2 for문을 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
-            <p>조건1. 짝수만 출력하세요!</p>
-            <p>조건2. 5의 배수만 출력하세요!</p>
+            <p>조건1. 짝수만 출력하세요!</p>      
+            <p>조건2. 홀수만 출력하세요!</p> 
+            <h4>짝수</h4>     
             <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    for(let i =1; i&lt;=100; i++){
-        document.write(i);
+    function func( ){
+        for(let i =1; i&lt;=100; i++){
+            if(i%2==0){
+                console.log(i);
+            }
+        }
     }
+    func( );    
+    //다른방법1 (if 괄호 생략)
+    for(let i =1; i&lt;=100; i++){
+        if(i%2==0)
+            console.log(i);
+    }
+    //다른 방법2
+    for(let i =2; i&lt;=100; i+=2){        
+            console.log(i);
+    }
+}</code></pre>
+            </div>
+            <h4>홀수</h4>
+            <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    function func( ){
+        for(let i =1; i&lt;=100; i++){
+            if(i%2!=0){
+                console.log(i);
+            }
+        }
+    }
+    func( );
+    //다른 방법1 (if 괄호 생략)
+    for(let i =1; i&lt;=100; i++){
+        if(i%2!=0)
+            console.log(i);            
+    }
+    //다른 방법2
+    for(let i =1; i&lt;=100; i+=2){           
+        console.log(i);            
+    } 
 }</code></pre>
             </div> 
-            <!--04-->
-            <h3>1.2 for문을 이용해서 1부터 100까지 출력하는 함수를 작성해주세요.</h3>
-
-            <div class="code">
-<pre class="line-numbers"><code class="language-js">{
-    for(let i =1; i&lt;=100; i++){
-        document.write(i);
-    }
-}</code></pre>
-            </div>            
-        </div><!--//test-->       
+                                
+        </div>
+        <!--//test-->       
     </main>
     <!--script-->
     <script>
         //while문을 이용한 1~100 출력
-        {
-            let num = 1;
+        {   
+
+            function func1(){
+                let num = 1;
             
             while(num<=100){
-                document.write(num);
+                console.log(num);
                 num++;
             }
+            }
+            func1();
+            
         }
         document.write("<br>");
         //for문을 이용한 1~100 출력
         {
+            function func2(){
+                for(let i =1; i<=100; i++){
+                    console.log(i);
+                }   
+            }
+            func2();
+        }
+        document.write("<br>");
+        //for문 이용 1부터 100 짝수만 출력
+        {
             for(let i =1; i<=100; i++){
-                document.write(i);
+                    if(i%2==0){
+                        console.log(i);
+                    }
+                }  
+        }
+        //1~100 홀수
+        {
+            for(let i =1; i<=100; i++){
+                if(i%2!=0){
+                   console.log(i);
+                }
             }
         }
+        
     </script>
 </body>
 
