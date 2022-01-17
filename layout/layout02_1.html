@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 1200px;
+            height: 100px;
+            background-color: #D2E4CD;
+        }
+        #nav {
+            width: 1200px;
+            height: 100px;
+            background-color: #B7D4AF;
+            display: flex;
+            justify-content: center;
+            
+
+        }
+        #nav .centernav {
+            width: 400px;
+            height: 100px;
+            background-color: #8FBC82;
+            
+            
+        }
+        #main {
+            width: 1200px;
+            height: 780px;
+            display: flex;            
+        }
+        #main .left {
+            width: 300px;
+            height: 780px;
+            background-color: #9CC390;
+        }
+        #main .contents {
+            width: 600px;
+            height: 780px;            
+        }
+        #main .contents .art1 {
+            width: 600px;
+            height: 390px;
+            background-color: #88B779;
+        }
+        #main .contents .art2 {
+            width: 600px;
+            height: 390px;
+            background-color: #6A9B5A;
+        }
+        #main .right {
+            width: 300px;
+            height: 780px;
+            background-color: #9CC390;
+        }
+        #footer {
+            width: 1200px;
+            height: 100px;
+            background-color: #77AB64;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <nav id="nav">
+            <div class="centernav"></div>
+        </nav>
+        <main id="main">
+            <aside class="left"></aside>
+            <section class="contents">
+                <article class="art1"></article>
+                <article class="art2"></article>
+            </section>
+            <aside class="right"></aside>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
