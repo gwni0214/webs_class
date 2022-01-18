@@ -55,6 +55,10 @@
                 <li><a href="#sample6"> 화살표 함수 : 익명함수</a></li>
                 <li><a href="#sample7"> 화살표 함수 : 매개변수 함수</a></li>
                 <li><a href="#sample8"> 화살표 함수 : 리턴값 함수</a></li>
+                <li><a href="#sample8"> 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 함수</a></li>
+                <li><a href="#sample8"> 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략</a></li>
+                <li><a href="#sample8"> 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략</a></li>
+                <li><a href="#sample8"> 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략</a></li>
                 <li><a href="#sample9"> 내부 함수</a></li>
                 <li><a href="#sample10"> 즉시실행 함수</a></li>
                 <li><a href="#sample11"> 파라미터 함수</a></li>
@@ -167,10 +171,10 @@
                 <div class="code">
                     <pre class="line-numbers">
 <code class="language-js">{
-    func = () => { //function을 생략하고 화살표로 표시
+    func = ( ) =&gt; { //function을 생략하고 화살표로 표시
         document.write("함수가 실행되었습니다.");
     }
-    func();
+    func( );
 }</code></pre>
                 </div>
                 <div class="result result5t">
@@ -188,10 +192,10 @@
                 <div class="code">
                     <pre class="line-numbers">
 <code class="language-js">{
-    const func = () => {
-        document.write("함수가 실행되었습니다6.");
+    const func = ( ) =&gt; {
+        document.write("함수가 실행되었습니다.");
     }
-    func();
+    func( );
 }</code></pre>
                 </div>
                 <div class="result result6t">
@@ -209,7 +213,7 @@
                 <div class="code">
                     <pre class="line-numbers">
 <code class="language-js">{
-    func = (str) => {
+    func = (str) =&gt; {
         document.write(str);
     }
     func("함수가 실행되었습니다.");
@@ -230,8 +234,8 @@
                 <div class="code">
                     <pre class="line-numbers">
 <code class="language-js">{
-    func= ( ) =>{
-        const str = "함수가 실행되었습니다7.";
+    func= ( ) =&gt;{
+        const str = "함수가 실행되었습니다.";
         return str;
     }
     document.write(func( ));
@@ -245,6 +249,54 @@
                 </div>
             </div>
             <!-- //sample8 -->
+
+            <!-- //sample9 -->
+            <div id="sample8" class="sample">
+                <h3>09. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수</h3>
+                <div class="code">
+                    <pre class="line-numbers">
+<code class="language-js">{
+    const func = (str) =&gt; {
+        return str;        
+    }
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>
+                </div>
+                <div class="result result9t">
+                    <h4>결과보기</h4>
+                    <div class="result9">
+                        함수가 실행되었습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- //sample9 -->
+
+            <!-- //sample10 -->
+            <div id="sample8" class="sample">
+                <h3>10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 함수 + 괄호 생략</h3>
+                <div class="code">
+                    <pre class="line-numbers">
+<code class="language-js">{
+    const func = str =&gt; { //매개변수가 하나일 경우 괄호 생략 가능.
+        return str;        
+    }
+    document.write(func("함수가 실행되었습니다."));
+}</code></pre>
+                </div>
+                <div class="result result10t">
+                    <h4>결과보기</h4>
+                    <div class="result10">
+                        함수가 실행되었습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- //sample10 -->
+
+            <!-- //sample11 -->
+            <!-- //sample11 -->
+
+            <!-- //sample12 -->
+            <!-- //sample12 -->
         </div>
         <!--//script-->
 
@@ -340,7 +392,26 @@
             const func = (str) => {
                 return str;        
             }
-            document.write(func("함수가 실행되었습니다8."));
+            document.write(func("함수가 실행되었습니다."));
+        } 
+        //10. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략
+        {
+            const func = str => { //매개변수가 하나일 경우 괄호 생략 가능
+                return str;
+            }
+            document.write("함수가 실행되었습니다99.")
+        }
+        //11. 화살표 함수 : 익명함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략
+        {
+            const func = str => str;
+
+            document.write("함수가 생략 1233")
+        }
+        //12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호생략 + 리턴 생략
+        {
+             func = str => str;
+
+            document.write("함수가 생략 13")
         }
     </script>
 </body>
