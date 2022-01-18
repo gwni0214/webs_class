@@ -24,8 +24,17 @@
 //     });
 // });
 
-//결과보기 버튼을 클릭하면 경고창을 띄워 주세요.
-    document.querySelector(".result").addEventListener("click", function(){
-        alert("ddd");
+
+//결과 보기 토글
+    document.querySelectorAll(".result").forEach(function(el){
+        el.addEventListener("click", function(){
+            document.querySelectorAll(".result > div").forEach(function(el){
+                el.classList.toggle("on")
+            });
+        });
     });
+    
+    
+        
+   
     // document.querySelector(".result").addEventListener("click", ()=>{});
