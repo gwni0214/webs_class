@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout</title>
+    <title>Layout05_2</title>
     <style>
         * {
             margin: 0;
@@ -14,50 +14,62 @@
             width: 100%;
         }
         #header {
-            width: 100%;
             height: 100px;
             background-color: #EFEBE9;
         }
         #nav {
-            width: 100%;
             height: 100px;
-            background-color: #BCAAA4;
+            background-color: #BCAAA3;
         }
         #contents {
-            width: 100%;
             height: 780px;
             background-color: #8D6E63;
         }
         #footer {
-            width: 100%;
             height: 100px;
             background-color: #4E342E;
         }
         .container {
             width: 1200px;
-            margin: 0 auto;
             height: inherit;
+            margin: 0 auto;
             background-color: rgba(0,0,0,0.3);
+        }
+        #nav .container .nav1 {
+            width: 400px;
+            height: 100px;
+            background-color: #98695A;
         }
         #contents .container {
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
         }
-        #contents .container .aside {
-            width: 400px;
-            height: 780px;
-            background-color: #795548;
-        }
         #contents .container .article1 {
             width: 800px;
             height: 390px;
             background-color: #6D4C41;
+            display: flex;
         }
         #contents .container .article2 {
             width: 800px;
             height: 390px;
             background-color: #5D4037;
+        }
+        #contents .container .aside {
+            width: 400px;
+            height: 780px;
+            background-color: #795548;
+        }
+        #contents .container .article1 .box1 {
+            width: 50%;
+            height: 390px;
+            background-color: #6D4C41;
+        }
+        #contents .container .article1 .box2 {
+            width: 50%;
+            height: 390px;
+            background-color: #98695A;
         }
     </style>
 </head>
@@ -67,13 +79,18 @@
             <div class="container"></div>
         </header>
         <nav id="nav">
-            <div class="container"></div>
+            <div class="container">
+                <div class="nav1"></div>
+            </div>
         </nav>
         <section id="contents">
             <div class="container">
-                <aside class="aside"></aside>
-                <article class="article1"></article>
-                <article class="article2"></article>
+                <div class="article1">
+                    <div class="box1"></div>
+                    <div class="box2"></div>
+                </div>
+                <div class="article2"></div>
+                <div class="aside"></div>
             </div>
         </section>
         <footer id="footer">
