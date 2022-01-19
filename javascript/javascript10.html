@@ -102,7 +102,7 @@
             
              <!-- sample2 -->
              <div id="sample2" class="sample">
-                <h3>01. 요소 메서드 : .classList.toggle( )</h3>
+                <h3>02. 요소 메서드 : .classList.toggle( )</h3>
                 <div class="view">
                     <div class="view1"><img src="asset/img/image07.jpg" alt="이미지07"></div>
                     <div class="view2"><img src="asset/img/image08.jpg" alt="이미지08"></div>
@@ -112,11 +112,18 @@
                     <div class="view6"><img src="asset/img/image12.jpg" alt="이미지12"></div>                    
                 </div>
                 <div class="btn">
+                    <a href="#C" class="btn0">리셋</a>
                     <a href="#C" class="btn1">이 버튼을 클릭(selected)하면 두번째 이미지가 선택 또는 해제 됩니다.</a>
                     <a href="#C" class="btn2">이 버튼을 클릭(selected)하면 모든 이미지가 선택 또는 해제 됩니다.</a>               
                 </div>                
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    //리셋
+    document.querySelector("#sample2 .btn0").addEventListener("click", function(){
+        document.querySelectorAll("#sample2 .view > div").forEach(function(el){
+            el.classList.remove("selected");
+        });
+    });
     // 두번째 이미지 선택 또는 해제 
     document.querySelector("#sample2 .btn1").addEventListener("click", function(){
         document.querySelector("#sample2 .view2").classList.toggle("selected");
@@ -126,15 +133,12 @@
         document.querySelectorAll("#sample2 .view > div").forEach(function(el){
             el.classList.toggle("selected");
         });
-    });
-
-    //두번째 이미지를 클릭하면 두번째 이미지를 선택 또는 해제
-    document.querySelector("#sample2 .view2").addEventListener("click", function(){
-        document.querySelector("#sample2 .view2").classList.toggle("selected");
-    });
-    //첫번재 이미지를 클릭하면 첫번째 이미지를 선택 또는 해제
-    document.querySelector("#sample2 .view1").addEventListener("click", function(){
-        document.querySelector("#sample2 .view1").classList.toggle("selected");
+    });        
+    //각각의 이미지를 클릭하면 각각의 이미지를 선택 또는 해제
+    document.querySelectorAll("#sample2 .view > div").forEach(function(el){
+        el.addEventListener("click",function(){
+            el.classList.toggle("selected");
+        });
     });
 }</code></pre>
                 </div>                               
@@ -143,7 +147,7 @@
 
              <!-- sample3 -->
              <div id="sample3" class="sample">
-                <h3>01. 요소 메서드 : .classList.contains( )</h3>
+                <h3>03. 요소 메서드 : .classList.contains( )</h3>
                 <div class="view">
                     <div class="view1"><img src="asset/img/image13.jpg" alt="이미지13"></div>
                     <div class="view2 selected"><img src="asset/img/image14.jpg" alt="이미지14"></div>
@@ -154,12 +158,39 @@
                 </div>
                 <div class="btn">
                     <a href="#C" class="btn0">리셋</a>
-                    <a href="#C" class="btn1">이 버튼을 클릭(selected)하면 선택된 클래스(selected)를 찾은 후 클래스를 삭제합니다.</a>
-                    <a href="#C" class="btn2">이 버튼을 클릭(selected)하면 선택된 클래스(selected)를 찾은 후 파란색으로 나오게 합니다.</a>
+                    <a href="#C" class="btn1">이 버튼을 클릭하면 선택된 클래스(selected)를 찾은 후 클래스를 삭제합니다.</a>
+                    <a href="#C" class="btn2">이 버튼을 클릭하면 선택된 클래스(selected)를 찾은 후 파란색으로 나오게 합니다.</a>
                 </div>                
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-   
+    //리셋
+    document.querySelector("#sample3 .btn0").addEventListener("click", function(){
+        document.querySelectorAll("#sample3 .view > div").forEach(function(el){
+            if(el.classList.contains("blue")){
+                el.classList.remove("blue");
+            }else{  document.querySelector("#sample3 .view2").classList.add("selected");
+                    document.querySelector("#sample3 .view4").classList.add("selected");
+                    document.querySelector("#sample3 .view6").classList.add("selected");
+
+            }
+        });            
+    });
+    //버튼을 클릭(selected)하면 선택된 클래스(selected)를 찾은 후 클래스를 삭제
+    document.querySelector("#sample3 .btn1").addEventListener("click", function(){
+        document.querySelectorAll("#sample3 .view > div").forEach(function(el){
+            if(el.classList.contains("selected")){
+                el.classList.remove("selected");
+            }
+        });
+    });         
+    // 클릭하면 선택된 클래스를 찾은 후 색이 파란색으로 나오게하시오
+    document.querySelector("#sample3 .btn2").addEventListener("click", function(){
+        document.querySelectorAll("#sample3 .view > div").forEach(function(el){
+            if(el.classList.contains("selected")){
+                el.classList.add("blue");
+            }
+        });
+    });
 }</code></pre>
                 </div>                               
             </div>
@@ -189,6 +220,12 @@
             });
         });
         //sample 02
+        //리셋
+        document.querySelector("#sample2 .btn0").addEventListener("click", function(){
+            document.querySelectorAll("#sample2 .view > div").forEach(function(el){
+                el.classList.remove("selected");
+            });
+        });
         // 두번째 이미지 선택 또는 해제 
         document.querySelector("#sample2 .btn1").addEventListener("click", function(){
             document.querySelector("#sample2 .view2").classList.toggle("selected");
@@ -198,17 +235,16 @@
             document.querySelectorAll("#sample2 .view > div").forEach(function(el){
                 el.classList.toggle("selected");
             });
+        });        
+        //각각의 이미지를 클릭하면 각각의 이미지를 선택 또는 해제
+        document.querySelectorAll("#sample2 .view > div").forEach(function(el){
+            el.addEventListener("click",function(){
+                el.classList.toggle("selected");
+            });
         });
+      
 
-        //숙제
-        //두번째 이미지를 클릭하면 두번째 이미지를 선택 또는 해제
-        document.querySelector("#sample2 .view2").addEventListener("click", function(){
-            document.querySelector("#sample2 .view2").classList.toggle("selected");
-        });
-        //첫번재 이미지를 클릭하면 첫번째 이미지를 선택 또는 해제
-        document.querySelector("#sample2 .view1").addEventListener("click", function(){
-            document.querySelector("#sample2 .view1").classList.toggle("selected");
-        });
+        
 
         //sample 03
         //리셋
@@ -221,10 +257,7 @@
                         document.querySelector("#sample3 .view6").classList.add("selected");
 
                 }
-            });
-            // document.querySelector("#sample3 .view2").classList.add("selected");
-            // document.querySelector("#sample3 .view4").classList.add("selected");
-            // document.querySelector("#sample3 .view6").classList.add("selected");
+            });            
         });
         //버튼을 클릭(selected)하면 선택된 클래스(selected)를 찾은 후 클래스를 삭제
         document.querySelector("#sample3 .btn1").addEventListener("click", function(){
@@ -233,8 +266,7 @@
                     el.classList.remove("selected");
                 }
             });
-        });
-        //숙제 
+        });         
         // 클릭하면 선택된 클래스를 찾은 후 색이 파란색으로 나오게하시오
         document.querySelector("#sample3 .btn2").addEventListener("click", function(){
             document.querySelectorAll("#sample3 .view > div").forEach(function(el){
@@ -243,6 +275,13 @@
                 }
             });
         });
+        // document.querySelector("#sample3 .btn2").addEventListener("click", function(){
+        //     document.querySelectorAll("#sample3 .view > div").forEach(function(el){
+        //         if(el.classList.contains("selected")){
+        //             el.classList.add("blue");
+        //         }
+        //     });
+        // });
 
     </script>
 </body>
