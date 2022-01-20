@@ -6,13 +6,7 @@
         });
     });
 
-    // document.querySelectorAll(".result").forEach(function(el){
-    //     el.addEventListener("click", function(){
-    //         document.querySelectorAll(".result > div").forEach(function(el){
-    //             el.classList.toggle("on")
-    //         });
-    //     });
-    // });
+   
     
         
    
