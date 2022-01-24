@@ -14,3 +14,7 @@ https://gwni0214.github.io/webs_class/refer/css.html
 
 ## LAYOUT
 https://gwni0214.github.io/webs_class/layout/index.html
+
+## 웹 표준 사이트 제작
+https://gwni0214.github.io/webs_class/site/webClass/index.html
+
