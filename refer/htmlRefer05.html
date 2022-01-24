@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Reference</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/html.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/html.png">
+    <link rel="icon" href="../assets/face/html.png" sizes="128x128">
+    <!--CSS-->
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <strong>박근희</strong>
+    </header>
+
+    <main id="contents">
+        <h2>HTML<em>웹표준</em></h2>
+        <div class="menu">
+            <ul>
+                <li><a href="html.html">속성</a></li>
+                <li><a href="htmlRefer01.html">기초 문법</a></li>
+                <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="htmlRefer03.html">시멘틱 태그</a></li>
+                <li><a href="htmlRefer04.html">SEO</a></li>
+                <li class="active"><a href="htmlRefer05.html">그리드 시스템</a></li>
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>그리드 시스템이란?</h3>
+                <p>그리드 시스템(Grid System)에서 ‘Grid’는 격자나 바둑판 모양의 눈금을 뜻하며 일반적으로는 수직과 수평으로 면이 분할된 것을 의미합니다. 1970년대 중반부터 본격적으로
+                    사용된 그리드 시스템은 디자인의 레이아웃에 규칙을 부여하는 수단입니다. 편집디자인(인쇄물)에서 시작해 현재 웹 개발 분야에도 적용하여 웹 페이지를 제작하는 기초 단계에서 그리드
+                    시스템을 사용하면 제작을 쉽고 빠르게 진행할 수 있습니다.
+                우리는 레이아웃을 구상할 때 <strong>Figma</strong>프로그램을 사용하기 때문에 Figma 내의 레이아웃 그리드 기능을 사용하면 됩니다.</p>
+                <h3>그리드의 구성</h3>
+                <p>
+                    그리드는 Columns, Gutters, Margins 로 이루어져 있습니다.<br>
+                    
+                </p>
+
+                <h3>그리드 시스템의 장점</h3>
+                <p>
+                    디자인 레이아웃은 모든 측정값이 동일한 규칙을 따르면 자동으로보다 일관된 UI를 얻게 됩니다. 그리드 시스템은 균일한 요소와 간격을 사용하여 플랫폼, 환경 및 화면 크기에 일관성을
+                    부여하고 그래픽 요소의 체계적인 배열을 도와줍니다. 또한 협업의 목적으로 내부의 기준을 정하는 것에 도움이 되며, 또한 반응형 디자인의 경우 해상도 대응이 쉬워지고 디자이너와
+                    개발자 사이의 쉬운 커뮤니케이션 시스템이 됩니다.
+                </p>
+
+                <h3>반응형 그리드 시스템</h3>
+                <p>
+                    최근에는 디바이스 환경에 따라 해상도가 등장하면서 다양한 크기의 해상도를 지원하는 반응형 그리드 시스템이 있습니다. 고정 그리드 시스템과 형태는 비슷하지만, 칼럼의 너비를 고정
+                    값이 아닌 백분율로 지정하고 디바이스 별 브레이크 포인트를 지정하여 화면 크기와 방향에 맞게 레이아웃을 조정합니다.
+                </p>
+                <h3>브레이크 포인트</h3>
+                <p>특정 레이아웃 요구사항이 있는 미리 결정된 화면 크기의 범위입니다. 각 브레이크 포인트 범위는 디스플레이 크기에 따라 칼럼 수와 권장 마진 및 거터를 결정합니다.</p>
+                <h3>브레이크 포인트 지정 방법</h3>
+                <p>1. 해상도 점유율을 통계적인 수치로 검사하여 점유율이 가장 높은 해상도를 선택하여 제작하거나, 일정 비율 이하로 낮은 해상도를 제외하고 제작합니다.
+                    <br>
+                    2. 웹사이트 프론트 개발자는 미디어 쿼리를 이용하여 각 브레이크 포인트로 제작합니다.<br>
+                    
+                    3. 디자인 작업 시에는 모바일, 태블릿, 데스크톱의 경우로 시안을 최소한으로 작업하고, 브레이크 포인트 마다 약간의 간격조정이 있음을 이해하고 있어야 합니다.</p>
+            </div>
+
+        </div>
+        <!--//refer-->
+    </main>
+
+    <!--script-->
+    <script src="asset/js/prism.js"></script>
+</body>
+
+</html>
