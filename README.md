@@ -6,11 +6,10 @@ https://gwni0214.github.io/webs_class/
 ## 자바스크립트
 https://gwni0214.github.io/webs_class/javascript/index.html
 
-## HTML 레퍼런스
-https://gwni0214.github.io/webs_class/refer/html.html
+## HTML/CSS 레퍼런스
+https://gwni0214.github.io/webs_class/refer/index.html
 
-## CSS 레퍼런스
-https://gwni0214.github.io/webs_class/refer/css.html
+
 
 ## LAYOUT
 https://gwni0214.github.io/webs_class/layout/index.html
