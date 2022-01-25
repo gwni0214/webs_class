@@ -17,7 +17,7 @@
 
 <body>
     <header id="header">
-        <h1><a href="#">라인 중학교 1학년 코딩반</a></h1>
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
         <strong>박근희</strong>
     </header>
 
@@ -65,8 +65,8 @@
                     <table>
                         <colgroup>
                             <col style="width: 20%;">
-                            <col style="width: 20%;">
-                            <col style="width: 60%;">
+                            <col style="width: 25%;">
+                            <col style="width: 55%;">
                         </colgroup>
                         <thead>
                             <tr>
@@ -245,12 +245,12 @@
                                 <td>p태그의 첫 번째 글자를 선택합니다.</td>
                             </tr>
                             <tr>
-                                <th>::first-before</th>
+                                <th>::before</th>
                                 <td>p::before {content: '시작'}</td>
                                 <td>p태그의 내용 바로 앞에 '시작'이라는 텍스트가 추가됩니다.</td>
                             </tr>
                             <tr>
-                                <th>::first-after</th>
+                                <th>::after</th>
                                 <td>p::after {content: '끝'}</td>
                                 <td>p태그의 내용 바로 뒤에 '끝'이라는 텍스트가 추가됩니다.</td>
                             </tr>
@@ -291,63 +291,63 @@
                             </tr>
                             <tr>
                                 <th>:last-child</th>
-                                <td>li:first-child {color: #fff;}</td>
+                                <td>li:last-child {color: #fff;}</td>
                                 <td>li 태그의 마지막 자식의 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
-                                <th>:first-of-type()</th>
+                                <th>:first-of-type</th>
                                 <td>li:first-of-type {color: #fff;}</td>
-                                <td></td>
+                                <td>형제 관계인 li태그들 중 첫 번째 태그의 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
-                                <th>:last-of-type()</th>
+                                <th>:last-of-type</th>
                                 <td>li:last-of-type {color: #fff;}</td>
-                                <td></td>
+                                <td>형제 관계인 li태그들 중 마지막 태그의 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
-                                <th>:nth-child</th>
+                                <th>:nth-child()</th>
                                 <td>li:nth-child(2) {color: #fff;}</td>
-                                <td></td>
+                                <td>li태그의 두 번째 자식의 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
-                                <th>:nth-last-child</th>
-                                <td>li:nth-child(2) {color: #fff;}</td>
-                                <td></td>
+                                <th>:nth-last-child()</th>
+                                <td>li:nth-last-child(2) {color: #fff;}</td>
+                                <td>li태그의 끝에서 부터 두 번째의 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:nth-of-type()</th>
-                                <td>li:nth-child(2) {color: #fff;}</td>
-                                <td></td>
+                                <td>li:nth-of-type(2) {color: #fff;}</td>
+                                <td>같은 유형인 li태그의 두 번째 태그의 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:nth-last-of-type()</th>
-                                <td>li:nth-child(2) {color: #fff;}</td>
-                                <td></td>
+                                <td>li:nth-last-of-type(2) {color: #fff;}</td>
+                                <td>같은 유형인 li태그의 끝에서 두 번째 태그의 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:only-child</th>
-                                <td>li: {color: #fff;}</td>
-                                <td></td>
+                                <td>li:only-child {color: #fff;}</td>
+                                <td>부모 요소안에 자식 태그li가 유일하게 하나일 때 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:only-of-type()</th>
-                                <td>li: {color: #fff;}</td>
-                                <td></td>
+                                <td>li:only-of-type() {color: #fff;}</td>
+                                <td>같은 유형의 형제가 없고 li 하나만 있을 때 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:not()</th>
                                 <td>li:not(nth-child(2)) {color: #fff;}</td>
-                                <td>2 번째만 제외하고,</td>
+                                <td>li태그의 2 번째 자식만 제외하고, 글씨 색을 하얀색으로 변경합니다. </td>
                             </tr>
                             <tr>
                                 <th>:root</th>
                                 <td>:root {color: #fff;}</td>
-                                <td></td>
+                                <td>웹 문서 구조에서 가장 상위 요소를 선택하며 모든 요소의 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:empty</th>
                                 <td>:empty {color: #fff;}</td>
-                                <td></td>
+                                <td>자식이 전혀 없는 요소의 글씨 색을 하얀색으로 변경합니다. 공백이 있으면 적용되지 않습니다.</td>
                             </tr>
                             
                             
@@ -378,22 +378,22 @@
                             <tr>
                                 <th>:link</th>
                                 <td>a:link {color: #fff}</td>
-                                <td>링크가 걸려있으면 하얀색으로</td>
+                                <td>링크가 걸려있으면 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:visited</th>
                                 <td>a:visited {color: #fff}</td>
-                                <td></td>
+                                <td>방문했던 사이트 링크의 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:hover</th>
                                 <td>a:hover {color: #fff}</td>
-                                <td></td>
+                                <td>링크에 마우스를 올리면 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:active</th>
                                 <td>a:active {color: #fff}</td>
-                                <td></td>
+                                <td>링크가 활성화 되었을 때 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>                            
                         </tbody>
                     </table>
@@ -422,22 +422,22 @@
                             <tr>
                                 <th>:checked</th>
                                 <td>input:checked {color: #fff}</td>
-                                <td></td>
+                                <td>input 요소가 선택 상태일 때 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:focus</th>
                                 <td>input:focus {color: #fff}</td>
-                                <td></td>
+                                <td>input의 기본값 상태(focus)일 때 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:enalbed</th>
                                 <td>input:enabled {color: #fff}</td>
-                                <td></td>
+                                <td>input 요소가 활성화 상태일 때 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                             <tr>
                                 <th>:disalbed</th>
                                 <td>input:disabled {color: #fff}</td>
-                                <td></td>
+                                <td>input 요소가 비활성화 상태일 때 글씨 색을 하얀색으로 변경합니다.</td>
                             </tr>
                                                      
                         </tbody>
