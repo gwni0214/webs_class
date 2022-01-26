@@ -1,3 +1,13 @@
+
+#wrap {
+    height: 20000px;
+}
+/*컨테이너*/
+.container {
+    width: 1200px;
+    margin: 0 auto;
+    /* background: rgba(0, 0, 0, 0.3); */
+}
 /*float을 사용한 경우
 #header {
 
@@ -204,7 +214,7 @@
 }
 /*배너*/
 #banner {}
-.imgType {
+.img_type {
     width: 100%;
     height: 700px;
     /* background-image: url(../img/bg01.jpg);    
@@ -219,3 +229,46 @@
     2.CSS 속성을 통해서 표현 : background 속성 : 의미가 없는 이미지(배경, 색 표현) --> ir 효과 (대체 문자를 css속성으로 표현)
     3.이미지 스프라이트 기법 : background와 ir효과를 통해서 이미지를 표현.
 */
+
+/*이미지 텍스트 유형*/
+/*유형1(img_text_type)*/
+.iType01 {
+    padding: 150px 0;
+    overflow: hidden;
+}
+.iType01 .text {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+    background-color: #ccc;
+}
+.iType01 .img1 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    margin-right: 20px;
+    background-image: url(../img/test@1x.jpg);
+    background-size: 100%;
+}
+.iType01 .img2 {
+    float: left;
+    width: 386.66px;
+    height: 530px;
+    background-color: #ccc;
+    background-image: url(../img/img_text_bg2.jpg);
+    background-size: 100%;
+
+
+
+}
+@media (-webkit-min-device-pixel-ratio: 1.5){
+    .iType01 .img1 {
+        background-image: url(../img/test@2x.jpg);
+    }
+}
+@media (-webkit-min-device-pixel-ratio: 2.5){
+    .iType01 .img1 {
+        background-image: url(../img/test@3x.jpg);
+    }
+}
