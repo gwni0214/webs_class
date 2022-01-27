@@ -241,8 +241,31 @@
     width: 386.66px;
     height: 530px;
     margin-right: 20px;
-    background-color: #ccc;
 }
+.iType01 .text .text_title {
+    font-family: 'GmarketSans';        
+    font-size: 50px;
+   font-weight: 500;
+   margin: 70px 0 45px -4px;
+}
+.iType01 .text .text_desc {
+    font-weight: 300;
+    font-family: NEXONLv1Gothic;   
+    font-size: 18px;
+    color: #888;
+    margin-bottom: 55px;
+}
+.iType01 .text .text_more {
+    font-family: NEXONLv1Gothic;
+    font-size: 18px;    
+}
+.iType01 .text .text_more a {
+    color: #af3029;
+}
+.iType01 .text .text_more svg {
+   vertical-align: 2px;
+}
+
 .iType01 .img1 {
     float: left;
     width: 386.66px;
@@ -254,21 +277,79 @@
 .iType01 .img2 {
     float: left;
     width: 386.66px;
-    height: 530px;
-    background-color: #ccc;
+    height: 530px;    
     background-image: url(../img/img_text_bg2.jpg);
     background-size: 100%;
-
-
-
 }
+/*itType02*/
+.iType02 {
+    padding: 150px 0;     
+    overflow: hidden;
+    min-width: 1200px;    
+}
+.iType02_left {
+    float: left;
+    width: 48.5%;
+    height: 535px;    
+    background: url(../img/img_text_bg3.jpg) no-repeat center center;
+    background-size: cover;
+    margin-right: 1.5%;
+}
+.iType02_right {
+    font-family: 'GmarketSans';
+    float: left;
+    width: 48.5%;
+    height: 535px;
+    margin-left: 1.5%;
+}
+.iType02_right .sub {
+    display: inline-block;    
+    font-size: 16px;
+    color: #7c7c7c;
+    text-align: left;
+    /* text-decoration: underline;
+    text-underline-position: under;  */
+    border-bottom: 1px solid #7c7c7c;
+    margin-top: 43px;
+    margin-bottom: 10px;
+}
+.iType02_right .title {
+    font-size: 50px;
+    font-weight: 500;   
+    line-height: normal; 
+    margin-bottom: 38px;
+    white-space: nowrap;
+}
+.iType02_right .desc {
+    font-size: 24px;
+    font-weight: 300;
+    margin-bottom: 38px;        
+}
+.iType02_right .view {
+   display: inline-block;
+    padding: 9px 46px;
+    background-color: #000;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.4;   
+    text-align: center;        
+}
+
+
 @media (-webkit-min-device-pixel-ratio: 1.5){
     .iType01 .img1 {
         background-image: url(../img/img_text_bg1@2x.jpg);
+    }
+    .iType01 .img2 {
+        background-image: url(../img/img_text_bg2@2x.jpg);
     }
 }
 @media (-webkit-min-device-pixel-ratio: 2.5){
     .iType01 .img1 {
         background-image: url(../img/img_text_bg1@3x.jpg);
+    }
+    .iType01 .img2 {
+        background-image: url(../img/img_text_bg2@3x.jpg);
     }
 }
