@@ -29,6 +29,7 @@ td,
 input,
 select,
 button,
+table,
 article,
 aside,
 details,
@@ -65,4 +66,46 @@ a {
 }
 a:hover {
     color: #390;
+}
+/* 폰트 초기화 */
+body,
+button,
+input,
+select,
+table,
+textarea {
+    color: #222;
+    font-family: 'Nanum Gothic', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕', dotum, 돋움;
+    font-size: 13px;
+    line-height: 1.5;
+}
+/*ir 효과
+ir_pm : 의미있는 이미지의 대체 텍스트를 제공하는 경우 사용한다.
+ir_wa : 의미있는 이미지의 대체 텍스트로 이미지가 없어도 대체 텍스트를 보여주고 싶을 때 사용한다.
+ir_so : 대체 텍스트가 아닌 접근성을 위한 숨김 텍스트를 제공할 때 사용한다.
+*/
+.ir_pm {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+.ir_wa {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+.ir_so {
+    overflow: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
 }
