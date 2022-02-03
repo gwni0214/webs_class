@@ -268,11 +268,38 @@ img {
 .script .sample .view > div img {
     border-radius: 1em;
 }
-.script .sample .btn {
-    border: 1px solid #e6e6e6;
-    border-top: 0;
-    padding: 2%;
+.script .sample .table {
+    border-left: 1px solid #e6e6e6;
+    border-right: 1px solid #e6e6e6;
+    padding: 20px;
 }
+.script .sample .table table {
+    border: 1px solid #e6e6e6;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+.script .sample .table table th {
+    padding: 10px 5px;
+    font-weight: normal;
+}
+.script .sample .table table td {
+    padding: 10px 5px;
+    border: 1px solid #e6e6e6;
+}
+
+.script .sample .table td[class*="_R"],
+.script .sample .table td[class*="_P"] {
+    color: #fff;
+    transition: all 0.2s;
+    cursor: help;
+}
+.script .sample .table td[class*="_R"]:hover,
+.script .sample .table td[class*="_P"]:hover {
+    color: #000;
+}
+
+
 .script .sample .btn a {
     border: 1px solid #333;
     border-radius: 2rem;
@@ -311,6 +338,16 @@ img {
 
     .script .sample .code pre {
         font-size: 14px;
+    }
+    .script .sample .table {
+        overflow-x: scroll;
+    }
+    .script .sample .table table {
+        width: 700px;
+    }
+    .script .sample .table td[class*="_R"],
+    .script .sample .table td[class*="_P"] {
+        color: #000;       
     }
 }
 
