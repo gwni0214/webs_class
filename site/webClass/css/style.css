@@ -381,7 +381,8 @@
     opacity: 0.8;
     position: absolute;
     left: 33px;
-    bottom: 35px;   
+    bottom: 35px; 
+    padding: 10px;  
 }
 .img_type01 .img-wrap .right-cont h4{
     margin-top: 15px;
