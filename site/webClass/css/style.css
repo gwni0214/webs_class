@@ -231,42 +231,42 @@
 */
 
 /*이미지 텍스트 유형*/
-/*유형1(img_text_type)*/
-.iType01 {
+/*유형1(img_text_type01)*/
+.img_text_type01 {
     padding: 150px 0;
     overflow: hidden;
 }
-.iType01 .text {
+.img_text_type01 .text {
     float: left;
     width: 386.66px;
     height: 530px;
     margin-right: 20px;
 }
-.iType01 .text .text_title {
+.img_text_type01 .text .text_title {
     font-family: 'GmarketSans';        
     font-size: 50px;
    font-weight: 500;
    margin: 70px 0 45px -4px;
 }
-.iType01 .text .text_desc {
+.img_text_type01 .text .text_desc {
     font-weight: 300;
     font-family: NEXONLv1Gothic;   
     font-size: 18px;
     color: #888;
     margin-bottom: 55px;
 }
-.iType01 .text .text_more {
+.img_text_type01 .text .text_more {
     font-family: NEXONLv1Gothic;
     font-size: 18px;    
 }
-.iType01 .text .text_more a {
+.img_text_type01 .text .text_more a {
     color: #af3029;
 }
-.iType01 .text .text_more svg {
+.img_text_type01 .text .text_more svg {
    vertical-align: 2px;
 }
 
-.iType01 .img1 {
+.img_text_type01 .img1 {
     float: left;
     width: 386.66px;
     height: 530px;
@@ -274,20 +274,21 @@
     background-image: url(../img/img_text_bg1.jpg);
     background-size: 100%;
 }
-.iType01 .img2 {
+.img_text_type01 .img2 {
     float: left;
     width: 386.66px;
     height: 530px;    
     background-image: url(../img/img_text_bg2.jpg);
     background-size: 100%;
 }
-/*itType02*/
-.iType02 {
+/*이미지 텍스트 유형*/
+/*유형1(img_text_type02)*/
+.img_text_type02 {
     padding: 150px 0;     
     overflow: hidden;
     min-width: 1200px;    
 }
-.iType02_left {
+.img_text_type02 .left {
     float: left;
     width: 48.5%;
     height: 535px;    
@@ -295,14 +296,14 @@
     background-size: cover;
     margin-right: 1.5%;
 }
-.iType02_right {
+.img_text_type02 .right {
     font-family: 'GmarketSans';
     float: left;
     width: 48.5%;
     height: 535px;
     margin-left: 1.5%;
 }
-.iType02_right .sub {
+.img_text_type02 .right .sub {
     display: inline-block;    
     font-size: 16px;
     color: #7c7c7c;
@@ -313,19 +314,19 @@
     margin-top: 43px;
     margin-bottom: 10px;
 }
-.iType02_right .title {
+.img_text_type02 .right .title {
     font-size: 50px;
     font-weight: 500;   
     line-height: normal; 
     margin-bottom: 38px;
     white-space: nowrap;
 }
-.iType02_right .desc {
+.img_text_type02 .right .desc {
     font-size: 24px;
     font-weight: 300;
     margin-bottom: 38px;        
 }
-.iType02_right .view {
+.img_text_type02 .right .view {
    display: inline-block;
     padding: 9px 46px;
     background-color: #000;
@@ -334,6 +335,88 @@
     font-weight: 300;
     line-height: 1.4;   
     text-align: center;        
+}
+/*이미지 유형 01 (img_type01)*/
+.img_type01 {
+    padding: 150px 0;
+    height: 500px;
+    margin-bottom: 500px;
+}
+.img_type01 h3 {
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+.img_type01 h3 em {
+    font-size: 20px;
+    color: #777;
+    vertical-align: -4px;
+    
+}
+.img_type01 .img-wrap {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.img_type01 .img-wrap .left {
+    position: relative;
+    width: 590px;
+    height: 360px;
+  background: url(../img/img_type_bg1.jpg);
+}
+.img_type01 .img-wrap .right {
+    position: relative;
+    width: 590px;
+    height: 360px;
+   background: url(../img/img_type_bg2.jpg);
+}
+.img_type01 .img-wrap .left-cont {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.img_type01 .img-wrap .right-cont {
+    background: #9A481D;
+    width: 428px;
+    height: 143px;
+    opacity: 0.8;
+    position: absolute;
+    left: 33px;
+    bottom: 35px;   
+}
+.img_type01 .img-wrap .right-cont h4{
+    margin-top: 15px;
+}
+.img_type01 .img-wrap .right-cont a {
+    margin-left: 15px;
+}
+.img_type01 .img-wrap h4 {
+    font-size: 30px;
+    color: #fff;
+    font-weight: 500;    
+}
+.img_type01 .img-wrap p {
+    font-size: 14px;
+    color: #fff;
+    padding-right: 100px;
+    margin-bottom: 15px;    
+}
+.img_type01 .img-wrap .left a {
+    color: #fff;
+    font-size: 14px;
+    background: #9A481D;
+    padding: 10px 20px;
+    display: inline-block;
+}
+.img_type01 .img-wrap .right a {
+    color: #fff;
+    font-size: 14px;
+    display: inline-block;
+}
+/*이미지 유형 01 (img_type02)*/
+.img_type02 {
+    
 }
 
 
