@@ -351,13 +351,11 @@
 .img_type01 h3 em {
     font-size: 20px;
     color: #777;
-    vertical-align: -4px;
-    
+    vertical-align: -4px;    
 }
 .img_type01 .img-wrap {
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: space-between;    
 }
 .img_type01 .img-wrap .left {
     position: relative;
@@ -418,8 +416,6 @@
 .img_type02 {
     
 }
-
-
 @media (-webkit-min-device-pixel-ratio: 1.5){
     .iType01 .img1 {
         background-image: url(../img/img_text_bg1@2x.jpg);

@@ -514,7 +514,15 @@
                 </div>
                 <div class="code">
 <pre class="line-numbers"><code class="language-js">{
+    const arrNum1 = [100, 200, 300, 400, 500];
+    const arrReduce1 = arrNum1.reduce(element=>element);
     
+    document.querySelector(".sample07_R1").innerHTML = arrReduce1;
+
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const arrReduce2 = arrNum2.reduce((previuos, current)=> previuos + current);
+    
+    document.querySelector(".sample07_R2").innerHTML = arrReduce2; 
 }</code></pre>
                 </div>                               
             </div>
