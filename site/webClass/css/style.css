@@ -375,7 +375,7 @@
     bottom: 20px;
 }
 .img_type01 .img-wrap .right-cont {
-    background: #B59140;
+    background: rgba(181,145,64,0.5);
     width: 428px;
     height: 143px;
     opacity: 0.8;
