@@ -1135,7 +1135,7 @@
 
             document.querySelector(".sample03_N2").innerHTML = 2;
             document.querySelector(".sample03_Q2").innerHTML = "[100, 200, 300, 400, 500]";
-            document.querySelector(".sample03_M2").innerHTML = ".pop(600)";
+            document.querySelector(".sample03_M2").innerHTML = ".pop()";
             document.querySelector(".sample03_P2").innerHTML = arrPop;
             document.querySelector(".sample03_R2").innerHTML = arrNum;
         }
@@ -1559,20 +1559,52 @@
         {
             const arrBox1 = [100, 200, 300, 400 ,500, 600, 700];
             const arrBox2 = [100, 200, 300, 400 ,500, 600, 700];
+            const arrBox3 = [100, 200, 300, 400 ,500, 600, 700];
+            const arrBox4 = [100, 200, 300, 400 ,500, 600, 700];
+            const arrBox5 = [100, 200, 300, 400 ,500, 600, 700];
+            const arrBox6 = [100, 200, 300, 400 ,500, 600, 700];
             // 300, 400 만 출력하게.
             const result = arrBox1.splice(2,2);
             const result2 = arrBox2.slice(2,4);
             console.log(result);
             console.log(result2);
             // 100,300,500,700 만 출력하게.
-
+            for(let i = 0; i<arrBox3.length; i+=2){
+                    console.log(arrBox3[i]);
+                };
+            const result4 = arrBox4.filter(el => {
+                if(el%200!=0){
+                    return true;
+                }               
+            });
+            console.log(result4);
+           
             //700 만 출력. 
+            const result5 = arrBox5.slice(6);
+            const result6 = arrBox6.splice(6);
+            console.log(result5);
+            console.log(result6);
 
             const arrText = ["j", "b", "c", "d", "e"];
+            const arrText2 = ["j", "b", "c", "d", "e"];
+            const arrText3 = ["j", "b", "c", "d", "e"];
 
-            //j 
+            //j
+            const result7 = arrText.slice(0,1);
+            const result8 = arrText2.splice(0,1);
+            console.log(result7);
+            console.log(result8);
 
             // jc
+            
+            for(let i=0; i<arrText3.length; i++){
+                if(arrText3[i]="b"){
+                    continue;
+                } if(arrText3[i]="d"){
+                    break;
+                }
+            }
+            console.log(arrText3);
 
             //jbcd
         }
