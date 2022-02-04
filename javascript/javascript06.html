@@ -77,7 +77,7 @@
                 <li>16.배열 메서드 : includes( ) : 배열 요소 검색 : 반환(Boolean)</li>
 
                 <li>17.배열 메서드 : find( ) : 배열 요소 검색 : 반환(요소)</li>                
-                <li>18.배열 메서드 : findIndex( ) : 배열 첫 요소 검색 : 반환(요소)</li>
+                <li>18.배열 메서드 : findIndex( ) : 배열 첫 요소 검색 : 반환(숫자)</li>
 
                 <li>19.배열 메서드 : filter( ) : 조건에 만족하는 배열 요소 검색 : 반환(배열)</li>
                 <li>20.배열 메서드 : map( ) : 배열 요소를 추출해서 새로운 배열로 만듬 : 반환(배열)</li>
@@ -836,7 +836,226 @@
 }</code></pre>
                 </div>                               
             </div>
-            <!-- //sample9 -->
+            <!-- //sample10 -->
+
+            <!-- sample11 -->
+            <div id="sample10" class="sample">
+                <h3>17. find / findIndex</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 4%">
+                            <col style="width: 32%">
+                            <col style="width: 30%">
+                            <col style="width: 34%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>결괏값</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample11_N1"></td>
+                                <td class="sample11_Q1"></td>
+                                <td class="sample11_M1"></td>
+                                <td class="sample11_R1"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample11_N2"></td>
+                                <td class="sample11_Q2"></td>
+                                <td class="sample11_M2"></td>
+                                <td class="sample11_R2"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample11_N3"></td>
+                                <td class="sample11_Q3"></td>
+                                <td class="sample11_M3"></td>
+                                <td class="sample11_R3"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample11_N4"></td>
+                                <td class="sample11_Q4"></td>
+                                <td class="sample11_M4"></td>
+                                <td class="sample11_R4"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample11_N5"></td>
+                                <td class="sample11_Q5"></td>
+                                <td class="sample11_M5"></td>
+                                <td class="sample11_R5"></td>
+                            </tr>                                                                                                                                      
+                        </tbody>
+                    </table>
+                </div>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arrNum = [100, 200, 300, 400, 500];
+            
+    const result = arrNum.find(el=>el === 300);
+    
+    document.querySelector(".sample11_R1").innerHTML = result;
+
+    const result2 = arrNum.find(el=>el === 600);
+    
+    document.querySelector(".sample11_R2").innerHTML = result2;
+
+    const arrText = ["javascript", "react", "vue"];
+    const result3 = arrText.find(el=>el === "javascript");
+
+    document.querySelector(".sample11_R3").innerHTML = result3;
+
+    const arrText2 = ["javascript", "react", "vue"];
+    const result4 = arrText2.findIndex(el=>el === "javascript");
+
+    document.querySelector(".sample11_R4").innerHTML = result4;
+
+    const arrText3 = ["javascript", "react", "vue"];
+    const result5 = arrText3.findIndex(el=>el === "html");
+
+    document.querySelector(".sample11_R5").innerHTML = result5;   
+}</code></pre>
+                </div>                               
+            </div>
+            <!-- //sample11 -->
+
+            <!-- sample12 -->
+            <div id="sample12" class="sample">
+                <h3>19. filter</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 4%">
+                            <col style="width: 32%">
+                            <col style="width: 30%">
+                            <col style="width: 34%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>결괏값</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample12_N1"></td>
+                                <td class="sample12_Q1"></td>
+                                <td class="sample12_M1"></td>
+                                <td class="sample12_R1"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample12_N2"></td>
+                                <td class="sample12_Q2"></td>
+                                <td class="sample12_M2"></td>
+                                <td class="sample12_R2"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample12_N3"></td>
+                                <td class="sample12_Q3"></td>
+                                <td class="sample12_M3"></td>
+                                <td class="sample12_R3"></td>
+                            </tr>                                                                                                                                                                                      
+                        </tbody>
+                    </table>
+                </div>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arrNum = [100, 200, 300, 400, 500];
+    const result = arrNum.filter(el=>el === 300);
+
+    document.querySelector(".sample12_R1").innerHTML = result;
+
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const result2 = arrNum.filter(el=>el === 600);
+
+    document.querySelector(".sample12_R2").innerHTML = result2;
+
+    const arrNum3 = [100, 200, 300, 400, 500];
+    const result3 = arrNum3.filter(el => el >= 300);
+
+    document.querySelector(".sample12_R3").innerHTML = result3;  
+}</code></pre>
+                </div>                               
+            </div>
+            <!-- //sample12 -->
+
+            <!-- sample13 -->
+            <div id="sample13" class="sample">
+                <h3>20. map</h3>
+                <div class="table">
+                    <table>
+                        <colgroup>
+                            <col style="width: 4%">
+                            <col style="width: 32%">
+                            <col style="width: 30%">
+                            <col style="width: 34%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>기본값</th>
+                                <th>메서드</th>
+                                <th>결괏값</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="sample13_N1"></td>
+                                <td class="sample13_Q1"></td>
+                                <td class="sample13_M1"></td>
+                                <td class="sample13_R1"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample13_N2"></td>
+                                <td class="sample13_Q2"></td>
+                                <td class="sample13_M2"></td>
+                                <td class="sample13_R2"></td>
+                            </tr>
+                            <tr>
+                                <td class="sample13_N3"></td>
+                                <td class="sample13_Q3"></td>
+                                <td class="sample13_M3"></td>
+                                <td class="sample13_R3"></td>
+                            </tr>  
+                            <tr>
+                                <td class="sample13_N4"></td>
+                                <td class="sample13_Q4"></td>
+                                <td class="sample13_M4"></td>
+                                <td class="sample13_R4"></td>
+                            </tr>                                                                                                                                                                                     
+                        </tbody>
+                    </table>
+                </div>
+                <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arrNum = [100, 200, 300, 400, 500];
+    const result = arrNum.map(el => el);
+
+    document.querySelector(".sample13_R1").innerHTML = result;
+    
+    const arrNum2 = [100, 200, 300, 400, 500];
+    const result2 = arrNum2.map(el => el + "j");
+
+    document.querySelector(".sample13_R2").innerHTML = result2;
+
+    const arrNum3 = [100, 200, 300, 400, 500];
+    const result3 = arrNum3.map(el => el + 100);
+
+    document.querySelector(".sample13_R3").innerHTML = result3;
+
+    const arrNum4 = [{a:100}, {a:200}, {a:300}];
+    const result4 = arrNum4.map(el => el.a);
+
+    document.querySelector(".sample13_R4").innerHTML = result4;  
+}</code></pre>
+                </div>                               
+            </div>
+            <!-- //sample13 -->
         </div>
         <!-- //script -->
     </main>
@@ -1222,25 +1441,122 @@
         }
          //{11}
         //  17.배열 메서드 : find( ) : 배열 요소 검색 : 반환(요소)   
-        // 18.배열 메서드 : findIndex( ) : 배열 첫 요소 검색 : 반환(요소)
-        //함수의 4가지 유형
-        //선언적 함수
-        function func(){
-            console.log("hi");
-        };
-        // 익명함수
-        let func1 = function(){
-            console.log("hi");
+        // 18.배열 메서드 : findIndex( ) : 배열 첫 요소 검색 : 반환(숫자)
+        // const result = arrNum.find(function(element){
+            //     return element === 300;
+            // });
+            // const result = arrNum.find((element)=>{
+            //     return element === 300;
+            // });
+            //함수의 괄호, 리턴 생략가능함을 숙지하고 있자.
+            // 대입 연산자  이퀄이 3개면 타입까지 일치해야 함. 문자열 인지 숫자인지 잘 파악하도록.
+        {
+            const arrNum = [100, 200, 300, 400, 500];
+            
+            const result = arrNum.find(el=>el === 300);
+            
+            document.querySelector(".sample11_N1").innerHTML = 1;
+            document.querySelector(".sample11_Q1").innerHTML = "[100, 200, 300, 400 ,500]";
+            document.querySelector(".sample11_M1").innerHTML = ".find(el=>el === 300);";
+            document.querySelector(".sample11_R1").innerHTML = result;
+
+            const result2 = arrNum.find(el=>el === 600);
+            
+            document.querySelector(".sample11_N2").innerHTML = 2;
+            document.querySelector(".sample11_Q2").innerHTML = "[100, 200, 300, 400 ,500]";
+            document.querySelector(".sample11_M2").innerHTML = ".find(el=>el === 300);";
+            document.querySelector(".sample11_R2").innerHTML = result2;
+
+            const arrText = ["javascript", "react", "vue"];
+            const result3 = arrText.find(el=>el === "javascript");
+
+            document.querySelector(".sample11_N3").innerHTML = 3;
+            document.querySelector(".sample11_Q3").innerHTML = "['javascript', 'react', 'vue']";
+            document.querySelector(".sample11_M3").innerHTML = ".find(el=>el === 'javascript';";
+            document.querySelector(".sample11_R3").innerHTML = result3;
+
+            const arrText2 = ["javascript", "react", "vue"];
+            const result4 = arrText2.findIndex(el=>el === "javascript");
+
+            document.querySelector(".sample11_N4").innerHTML = 4;
+            document.querySelector(".sample11_Q4").innerHTML = "['javascript', 'react', 'vue']";
+            document.querySelector(".sample11_M4").innerHTML = ".findIndex(el=>el === 'javascript';";
+            document.querySelector(".sample11_R4").innerHTML = result4;
+
+            const arrText3 = ["javascript", "react", "vue"];
+            const result5 = arrText3.findIndex(el=>el === "html");
+
+            document.querySelector(".sample11_N5").innerHTML = 5;
+            document.querySelector(".sample11_Q5").innerHTML = "['javascript', 'react', 'vue']";
+            document.querySelector(".sample11_M5").innerHTML = ".findIndex(el=>el === 'html';";
+            document.querySelector(".sample11_R5").innerHTML = result5;
         }
-        //매개변수 함수
-        function func(el){
-            console.log(el);
+        //{12}
+        // 19.배열 메서드 : filter( ) : 조건에 만족하는 배열 요소 검색 : 반환(배열)
+        // 배열.fliter(콜백함수); 
+      
+        {
+            const arrNum = [100, 200, 300, 400, 500];
+            const result = arrNum.filter(el=>el === 300);
+
+            document.querySelector(".sample12_N1").innerHTML = 1;
+            document.querySelector(".sample12_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample12_M1").innerHTML = ".filter(el=>el === 300);";
+            document.querySelector(".sample12_R1").innerHTML = result;
+
+            const arrNum2 = [100, 200, 300, 400, 500];
+            const result2 = arrNum.filter(el=>el === 600);
+
+            document.querySelector(".sample12_N2").innerHTML = 2;
+            document.querySelector(".sample12_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample12_M2").innerHTML = ".filter(el=>el === 600);";
+            document.querySelector(".sample12_R2").innerHTML = result2;
+
+            const arrNum3 = [100, 200, 300, 400, 500];
+            const result3 = arrNum3.filter(el => el >= 300);
+
+            document.querySelector(".sample12_N3").innerHTML = 3;
+            document.querySelector(".sample12_Q3").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample12_M3").innerHTML = ".filter(el=>el >= 300);";
+            document.querySelector(".sample12_R3").innerHTML = result3;          
+        }             
+          // 20.배열 메서드 : map( ) : 배열 요소를 추출해서 새로운 배열로 만듬 : 반환(배열)
+        //배열.map(콜백함수);
+        {
+            const arrNum = [100, 200, 300, 400, 500];
+            const result = arrNum.map(el => el);
+
+            document.querySelector(".sample13_N1").innerHTML = 1;
+            document.querySelector(".sample13_Q1").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample13_M1").innerHTML = ".map(el=>el);";
+            document.querySelector(".sample13_R1").innerHTML = result;
+            
+            const arrNum2 = [100, 200, 300, 400, 500];
+            const result2 = arrNum2.map(el => el + "j");
+
+            document.querySelector(".sample13_N2").innerHTML = 2;
+            document.querySelector(".sample13_Q2").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample13_M2").innerHTML = ".map(el=>el + 'j');";
+            document.querySelector(".sample13_R2").innerHTML = result2;
+
+            const arrNum3 = [100, 200, 300, 400, 500];
+            const result3 = arrNum3.map(el => el + 100);
+
+            document.querySelector(".sample13_N3").innerHTML = 3;
+            document.querySelector(".sample13_Q3").innerHTML = "[100, 200, 300, 400, 500]";
+            document.querySelector(".sample13_M3").innerHTML = ".map(el=>el + 100);";
+            document.querySelector(".sample13_R3").innerHTML = result3;
+
+            const arrNum4 = [{a:100}, {a:200}, {a:300}];
+            const result4 = arrNum4.map(el => el.a);
+
+            document.querySelector(".sample13_N4").innerHTML = 4;
+            document.querySelector(".sample13_Q4").innerHTML = "[{a:100},{a:200},{a:300}]";
+            document.querySelector(".sample13_M4").innerHTML = ".map(el=>el.a);";
+            document.querySelector(".sample13_R4").innerHTML = result4;
         }
-        //리턴값 함수
-        function func(){
-            let result = console.log("hi");
-            return result;
-        }
+        
+        
     </script>
 </body>
 </html>
