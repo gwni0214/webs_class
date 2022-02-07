@@ -28,11 +28,12 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'NexonLv1Gothic';
+            font-size: 16px;
             line-height: 1.6;
             word-break: break-all;
             color: #223547;
         }
-        a{
+        a {
             text-decoration: none;
             color: #223547;
         }
@@ -53,14 +54,14 @@
             line-height: 30px;
             transition: all 0.3s;
         }
-        .number .active a {
+        .number li.active a {
             background: #223547;
             color: #fff;
         }
         .board {
             margin: 5vw 10vw 10vw 10vw;
             width: 80vw;
-            background: #f1f3f6;
+            background: #F1F3F6;
             border: 2px solid #223547;
             padding: 3vw;
             text-align: center;
@@ -71,12 +72,12 @@
         }
         .board .sub a {
             font-size: 20px;
-            border-bottom: 1px solid #223547; 
+            border-bottom: 1px solid #223547;
         }
-        .board h1 a {
+        .board h1 a{
             font-family: 'TmonMonsori';
             font-size: 80px;
-            margin-bottom: 2vw;
+            margin-bottom: 1vw;
         }
         .board .search {
             margin-bottom: 3vw;
@@ -91,33 +92,24 @@
             border-radius: 40px;
             width: 50%;
         }
-        .board .count {
-            text-align: right;
-            color: #777;
-        }
-        .board .count em {
-            font-style: normal;
-        }
         .board .list {
             text-align: left;
-            color: #223547;
         }
         .board .list li {
-            background-color: #bdd6e6; 
+            background-color: #BDD6E6;
             margin: 5px 0;
             padding: 7px 10px;
             border-radius: 4px;
             list-style: none;
-            transition: all 0,3s;
+            transition: all 0.3s;
         }
+        .board .list li.hide{
+                display: none;
+            }
         .board .list li:hover {
-            background-color: #a5c3d5;
-            cursor: pointer;
+            background-color: #A5C3D5;
+            cursor: grabbing
         }
-        .board .list li.hide {
-            display: none;
-        }
-
         @media (max-width: 800px){
             .board {
                 margin: 2vw 2vw 2vw 2vw;
@@ -130,7 +122,7 @@
             .board .sub a {
                 font-size: 14px;
             }
-            .board h1 a {
+            .board h1 a{
                 font-size: 40px;
             }
             .board .search input {
@@ -141,13 +133,6 @@
             .board .list li {
                 font-size: 14px;
             }
-        }
-        /**/
-        .board .list li {
-            display: none;
-        }
-        .board .list li.show {
-            display: block;
         }
     </style>
 </head>
@@ -273,8 +258,8 @@
                     <li data-name="font-variant"><strong>font-variant</strong> : font-variant 속성은 글꼴의 변형을 정의합니다.</li>                                      
                     <li data-name="font-weight"><strong>font-weight</strong> : font-weight 속성은 폰트의 두께를 정의합니다.</li>                                      
                     <li data-name="grid"><strong>grid</strong> : grid의 속성들을 한번에 일괄적용 할 수 있는 속성입니다.</li>                                      
-                    <li data-name=">grid-area"><strong>>grid-area</strong> : grid의 요소들을 배치할 수 있는 속성으로 row/column 또는 grid-template-areas에 등록된 이름을 사용할 수 있습니다.</li>                                      
-                    <li data-name="grid-auto-columns"><strong>grid-auto-columns</strong> : 설정하지 않은 그리드의 행/열 트랙 크기를 자동으로 설정합니다.</li>                                      
+                    <li data-name="grid-area"><strong>>grid-area</strong> : grid의 요소들을 배치할 수 있는 속성으로 row/column 또는 grid-template-areas에 등록된 이름을 사용할 수 있습니다.</li>                                      
+                    <li data-name=""><strong></strong> : </li>                                      
                     <li data-name=""><strong></strong> : </li>                                      
                     <li data-name=""><strong></strong> : </li>                                      
                     <li data-name=""><strong></strong> : </li>                                      
