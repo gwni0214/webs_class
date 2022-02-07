@@ -10,95 +10,50 @@
 }
 /*float을 사용한 경우
 #header {
-
     border-bottom: 1px solid #eee;
-
     padding: 10px;
-
     min-width: 1200px;
-
     white-space: nowrap;
-
 }
-
 #header .logo {
-
     float: left;
-
     width: 20%;
-
 }
-
 #header .logo a {
-
     font-size: 30px;
-
     padding: 12px 18px;
-
     display: inline-block;
-
 }
-
 #header .logo em {
-
     font-size: 18px;
-
     font-weight: 300;
-
 }
-
 #header .menu {
-
     float: left;
-
     width: 60%;
-
     text-align: center;
-
 }
-
 #header .menu li {
-
     display: inline;
-
 }
-
 #header .menu li a {
-
     display: inline-block;
-
     padding: 20px 30px;
-
     margin: 0 10px;
-
 }
-
 #header .member {
-
     float: right;
-
     width: 20%;
-
     text-align: right;
-
     padding: 7px 10px;
-
 }
-
 #header .member a {
-
     display: inline-block;
-
     border: 1px solid #000;
-
     border-radius: 50px;
-
     padding: 9px 22px;
-
     font-size: 16px;
-
 }*/
-
 /*flex를 사용한 경우*/
 /* flex: 0 0 20%; grow, shrink, basis 순서대로 속기 가능 */
 /* #header {
@@ -107,13 +62,9 @@
     justify-content: space-around;
     padding: 10px;
     min-width: 1200px;
-
     white-space: nowrap;
-
-   
 }
 #header .logo {        
-    
     flex: 0 0 20%;
 }
 #header .logo a {
@@ -124,7 +75,6 @@
 #header .menu {
     flex: 0 0 60%;
     text-align: center;
-
 }
 #header .menu li {
     display: inline;
@@ -137,20 +87,13 @@
     flex: 0 0 20%;
     text-align: right;
     padding: 10px 18px;
-
 }
 #header .member a {
     display: inline-block;
-
     border: 1px solid #000;
-
     border-radius: 50px;
-
     padding: 9px 22px;
-
-    
 } */
-
 /*03. Grid를 사용하는 경우*/
 #header {
     border-bottom: 1px solid #eee;    
@@ -222,14 +165,12 @@
     background-position: center; 
     background-size: cover;*/
     background: url(../img/bg01.jpg) no-repeat center / cover;
-    
 }
 /*웹 사이트에서 이미지를 표현하는 방법
     1.HTML 태그를 통해서 표현 : img 태그 :의미가 있는 이미지(로고, 메뉴 등) --> alt(대체 문자)
     2.CSS 속성을 통해서 표현 : background 속성 : 의미가 없는 이미지(배경, 색 표현) --> ir 효과 (대체 문자를 css속성으로 표현)
     3.이미지 스프라이트 기법 : background와 ir효과를 통해서 이미지를 표현.
 */
-
 /*이미지 텍스트 유형*/
 /*유형1(img_text_type01)*/
 .img_text_type01 {
@@ -265,7 +206,6 @@
 .img_text_type01 .text .text_more svg {
    vertical-align: 2px;
 }
-
 .img_text_type01 .img1 {
     float: left;
     width: 386.66px;
@@ -368,8 +308,6 @@
     height: 360px;
    background: url(../img/img_type_bg2.jpg);
    overflow: hidden;
-
-   
 }
 .img_type01 .img-wrap .left-cont {
     position: absolute;
@@ -377,7 +315,6 @@
     bottom: 20px;
     bottom: -90px;
     transition: bottom 0.33s cubic-bezier(0.04, 0.48, 0.26, 1.19);
-   
 }
 .img_type01 .img-wrap .left:hover .left-cont {
     bottom: 20px;
@@ -442,11 +379,9 @@
     color: #777;
     vertical-align: -4px;    
 }
-
 .img_type02 .img-wrap ul {
     display: flex;
     justify-content: space-between;
-    
 }
 .img_type02 .img-wrap li {
     width: 387px;
@@ -454,8 +389,6 @@
     background-size: 100%;
     position: relative;
     perspective: 800px;
-
-
 }
 .img_type02 .img-wrap li::after {
     content: '';
@@ -473,7 +406,6 @@
 .img_type02 .img-wrap li:hover::after {
     opacity: 0.8;
     transform: rotateX(0deg);
-
 }
 .img_type02 .img-wrap li span {
     position: absolute;
@@ -485,14 +417,12 @@
     text-align: center;
     transition: all 0.3s ease-in-out;
 }
-
 .img_type02 .img-wrap li span em {
     display: block;
     font-size: 30px;
     font-weight: 500;
     color: #fff;
     transition: all 0.3s;
-
 }
 .img_type02 .img-wrap li span a {
     display: block;
@@ -504,7 +434,6 @@
     color: #fff;
     transition: all 0.3s;
     opacity: 0;
-
 }
 .img_type02 .img-wrap li:hover span {
     top: 50%;
