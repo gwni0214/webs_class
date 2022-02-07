@@ -222,7 +222,7 @@
                     <li data-name="clear"><strong>clear</strong> : clear 속성은 float 요소의 성질을 차단합니다.</li>                                      
                     <li data-name="clip"><strong>clip</strong> : clip 속성은 보이는 영역을 설정합니다.</li>                                      
                     <li data-name="clip-path"><strong>clip-path</strong> : clip-path 속성은 기본 모양을 지정하거나 클리핑 경로로 사용할 SVG 경로를 참조하는 데 사용됩니다.</li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
+                    <li data-name="color"><strong>color</strong> : color 속성은 글씨 색을 설정합니다.</li>                                      
                     <li data-name=""><strong></strong> : </li>                                      
                     <li data-name=""><strong></strong> : </li>                                      
                     <li data-name=""><strong></strong> : </li>                                      
@@ -245,26 +245,26 @@
 
     <!--script-->
     <script>
-        const searchBox = document.querySelector("#search-box");
-        const cssList = document.querySelectorAll(".list ul li");
-        
+const searchBox = document.querySelector("#search-box");
+const cssList = document.querySelectorAll(".list ul li");
 
-        searchBox.addEventListener("keyup", ()=>{
-            const searchWord = searchBox.value;//사용자가 입력한 데이터 저장소 
-            cssList.forEach(el=>{
-                console.log(el.dataset.name);
 
-                const cssName = el.dataset.name;//css 속성값(data-name)만 딱 골라서 배열화 시킴.
+searchBox.addEventListener("keyup", ()=>{
+    const searchWord = searchBox.value;//사용자가 입력한 데이터 저장소 
+    cssList.forEach(el=>{
+        console.log(el.dataset.name);
 
-                if(cssName.indexOf(searchWord)){
-                   el.classList.add("hide");
-                } else {
-                    el.classList.remove("hide");
+        const cssName = el.dataset.name;//css 속성값(data-name)만 딱 골라서 배열화 시킴.
 
-                }
-            })
-            // console.log(searchWord);
-        })
+        if(cssName.indexOf(searchWord)){
+            el.classList.add("hide");
+        } else {
+            el.classList.remove("hide");
+
+        }
+    })
+    // console.log(searchWord);
+})
 
         // let numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         //for문 이용해서 1부터 9까지 출력 
