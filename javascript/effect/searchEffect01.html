@@ -73,7 +73,7 @@
             font-size: 20px;
             border-bottom: 1px solid #223547; 
         }
-        .board h1 {
+        .board h1 a {
             font-family: 'TmonMonsori';
             font-size: 80px;
             margin-bottom: 2vw;
@@ -91,8 +91,16 @@
             border-radius: 40px;
             width: 50%;
         }
+        .board .count {
+            text-align: right;
+            color: #777;
+        }
+        .board .count em {
+            font-style: normal;
+        }
         .board .list {
             text-align: left;
+            color: #223547;
         }
         .board .list li {
             background-color: #bdd6e6; 
@@ -122,7 +130,7 @@
             .board .sub a {
                 font-size: 14px;
             }
-            .board h1 {
+            .board h1 a {
                 font-size: 40px;
             }
             .board .search input {
@@ -133,6 +141,13 @@
             .board .list li {
                 font-size: 14px;
             }
+        }
+        /**/
+        .board .list li {
+            display: none;
+        }
+        .board .list li.show {
+            display: block;
         }
     </style>
 </head>
@@ -223,17 +238,43 @@
                     <li data-name="clip"><strong>clip</strong> : clip 속성은 보이는 영역을 설정합니다.</li>                                      
                     <li data-name="clip-path"><strong>clip-path</strong> : clip-path 속성은 기본 모양을 지정하거나 클리핑 경로로 사용할 SVG 경로를 참조하는 데 사용됩니다.</li>                                      
                     <li data-name="color"><strong>color</strong> : color 속성은 글씨 색을 설정합니다.</li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
-                    <li data-name=""><strong></strong> : </li>                                      
+                    <li data-name="column-count"><strong>column-count</strong> : column-count 속성은 컬럼의 수를 정의합니다.</li>                                      
+                    <li data-name="column-fill"><strong>column-fill</strong> : column-fill 속성은 열의 지정방법을 정의합니다.</li>                                      
+                    <li data-name="column-gap"><strong>column-gap</strong> : column-gap 속성은 컬럼의 간격을 정의합니다.</li>                                      
+                    <li data-name="column-rule"><strong>column-rule</strong> : column-rule 속성은 컬럼 라인의 가로값, 스타일, 컬러를 정의합니다.</li>                                      
+                    <li data-name="column-rule-color"><strong>column-rule-color</strong> : column-rule-color 속성은 컬럼의 라인 색을 정의합니다.</li>                                      
+                    <li data-name="column-rule-style"><strong>column-rule-style</strong> : column-rule-style 속성은 컬럼 라인의 스타일을 정의합니다.</li>                                      
+                    <li data-name="column-rule-width"><strong>column-rule-width</strong> : column-rule-width 속성은 컬럼 라인의 가로값을 정의합니다.</li>                                      
+                    <li data-name="column-span"><strong>column-span</strong> : column-span 속성은 열의 속성을 정의합니다.</li>                                      
+                    <li data-name="column-width"><strong>column-width</strong> : column-width 속성은 컬럼의 가로 값을 정의합니다.</li>                                      
+                    <li data-name="columns"><strong>columns</strong> : columns 속성은 열의 폭과 열의 수를 정의합니다.</li>                                      
+                    <li data-name="content"><strong>content</strong> : content 속성은 콘텐츠 내용을 설정합니다.</li>                                      
+                    <li data-name="counter-increment"><strong>counter-increment</strong> : counter-increment 속성은 콘텐츠의 순서 상태를 정의합니다.</li>                                      
+                    <li data-name="counter-reset"><strong>counter-reset</strong> : counter-reset 속성은 콘텐츠의 숫자를 초기화합니다.</li>                                      
+                    <li data-name="cursor"><strong>cursor</strong> : cursor 속성은 마우스 오버시 마우스 포인터를 정의합니다.</li>                                      
+                    <li data-name="direction"><strong>direction</strong> : direction 속성은 문장의 방향을 설정합니다.</li>                                      
+                    <li data-name="display"><strong>display</strong> : display 속성은 요소의 성질을 정의합니다.</li>                                      
+                    <li data-name="empty-cells"><strong>empty-cells</strong> : empty-cells 속성은 테이블의 빈요소의 속성을 설정합니다.</li>                                      
+                    <li data-name="filter"><strong>filter</strong> : filter 속성은 그래픽 효과를 설정합니다.</li>                                      
+                    <li data-name="flex"><strong>flex</strong> : flex 속성은 콘텐츠의 성질을 flex로 정의합니다.</li>                                      
+                    <li data-name="flex-basis"><strong>flex-basis</strong> : flex-basis 속성은 요소의 기본 단위를 정의합니다.</li>                                      
+                    <li data-name="flex-direction"><strong>flex-direction</strong> : flex-direction 속성은 요소의 정렬 방향을 정의합니다.</li>                                      
+                    <li data-name="flex-flow"><strong>flex-flow</strong> : flex-flow 속성은 요소의 정렬 방향과 줄 속성을 설정합니다.</li>                                      
+                    <li data-name="flex-grow"><strong>flex-grow</strong> : flex-grow 속성은 요소의 크기를 숫자를 통해 정의합니다.</li>                                      
+                    <li data-name="flex-shrink"><strong>flex-shrink</strong> : flex-shrink 속성은 요소의 크기를 숫자를 통해 줄여줍니다.</li>                                      
+                    <li data-name="flex-wrap"><strong>flex-wrap</strong> : flex-wrap 속성은 요소의 줄 속성을 설정합니다.</li>                                      
+                    <li data-name="float "><strong>float </strong> : float 속성은 블록요소의 정렬 상태를 설정합니다.</li>                                      
+                    <li data-name="font"><strong>font</strong> : font 속성은 폰트에 관한 설정을 정의합니다.</li>                                      
+                    <li data-name="font-family"><strong>font-family</strong> : font-family 속성은 폰트 종류를 설정합니다.</li>                                      
+                    <li data-name="font-size"><strong>font-size</strong> : font-size 속성은 폰트 사이즈 속성을 설정합니다.</li>                                      
+                    <li data-name="font-size-adjust"><strong>font-size-adjust</strong> : font-size-adjust 속성은 소문자를 기준으로 폰트 크기를 설정합니다.</li>                                      
+                    <li data-name="font-stretch"><strong>font-stretch</strong> : font-stretch 속성은 폰트의 굵기를 정의합니다.</li>                                      
+                    <li data-name="font-style"><strong>font-style</strong> : font-style 속성은 폰트의 스타일을 정의합니다.</li>                                      
+                    <li data-name="font-variant"><strong>font-variant</strong> : font-variant 속성은 글꼴의 변형을 정의합니다.</li>                                      
+                    <li data-name="font-weight"><strong>font-weight</strong> : font-weight 속성은 폰트의 두께를 정의합니다.</li>                                      
+                    <li data-name="grid"><strong>grid</strong> : grid의 속성들을 한번에 일괄적용 할 수 있는 속성입니다.</li>                                      
+                    <li data-name=">grid-area"><strong>>grid-area</strong> : grid의 요소들을 배치할 수 있는 속성으로 row/column 또는 grid-template-areas에 등록된 이름을 사용할 수 있습니다.</li>                                      
+                    <li data-name="grid-auto-columns"><strong>grid-auto-columns</strong> : 설정하지 않은 그리드의 행/열 트랙 크기를 자동으로 설정합니다.</li>                                      
                     <li data-name=""><strong></strong> : </li>                                      
                     <li data-name=""><strong></strong> : </li>                                      
                     <li data-name=""><strong></strong> : </li>                                      
