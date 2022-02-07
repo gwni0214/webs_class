@@ -39,7 +39,7 @@
                 <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul>
-                <li class="active"><a href="practice.html">데이터 연습하기</a></li>
+                <li><a href="practice.html">데이터 연습하기</a></li>
             </ul>
             <ul>
                 <li><a href="sample_menu.html">메뉴 이펙트</a></li>
@@ -47,7 +47,7 @@
                 <li><a href="sample_mouse.html">마우스 이펙트</a></li>
                 <li><a href="sample_parallax.html">패럴랙스 이펙트</a></li>
                 <li><a href="sample_slide.html">슬라이드 이펙트</a></li>
-                <li><a href="sample_game.html">게임 이펙트</a></li>
+                <li class="active"><a href="sample_game.html">게임 이펙트</a></li>
             </ul> 
         </nav>
     </header>
@@ -55,14 +55,71 @@
     <main id="main">
         <div class="list">
             <ul>
-                <li><a href="practice01.html">01. 1부터 100까지 출력하기</a></li>
-                <li><a href="practice02.html">02. 구구단 출력하기</a></li>
-                <li><a href="practice03.html">03. 테이블 출력하기</a></li>
+                <li><a href="sample01.html">01. 탭 메뉴</a></li>
+                <li><a href="#">02. 아코디언 메뉴</a></li>
+              
             </ul>
         </div>
         <!-- //list -->
     </main>
     <!--//main-->
+
+    <script>
+        {
+        let direct = 0;
+        let num = "1";
+
+        function func(num){
+            if(num){
+                if(num ==2)direct++;                
+            } else{
+                if(num==1)direct--;
+            }
+        }
+        func(8);
+        document.write(num);
+    }
+    {
+        let num = 0;
+        while(true){
+            num++;
+            if(num==3){
+                continue;
+            }
+            if(num>6){
+                break;
+            }
+            document.write(num);
+        }
+    }
+    {
+        const obj = {
+            a: 100,
+            b: 200
+        };
+
+        for(let key in obj){
+            document.write(key);
+            document.write(obj[key]);
+        }
+    }
+    {
+        {
+            document.write("<br>****** 정답20 ******<br>");
+            let direct = 1;
+            function gallery(num){
+                if(num){
+                    if(num == 2) direct++;
+                } else {
+                    if(num == 1) direct--;
+                }
+            }
+            gallery(2);
+            document.write(direct);
+        }
+    }
+
+    </script>
 </body>
 
 </html>
