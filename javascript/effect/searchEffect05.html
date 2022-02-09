@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>search Effect</title>
+    <title>search Effect5</title>
     <!-- 파비콘 -->
     <link rel="shortcut icon" href="../../assets/face/javascript.png">
     <link rel="apple-touch-icon-precomposed" href="../../assets/face/javascript.png">
@@ -429,7 +429,7 @@
         const searchBox = document.querySelectorAll(".search span");   //조회수 버튼
         const cssList = document.querySelector(".list ul");  //속성 리스트
         const cssCount = document.querySelector(".count em"); //속성 갯수
-
+        
         searchBox.forEach(span=>{
             span.addEventListener("click", ()=>{
                 onClickButton();
@@ -473,8 +473,7 @@
             // console.log(i.name);
             list = `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`;
             cssList.innerHTML += list;
-            }
-                
+            }                
         }
         upDataList();
                        
