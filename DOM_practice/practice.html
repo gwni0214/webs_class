@@ -14,6 +14,27 @@
             header.appendChild(textNode);
             document.body.appendChild(header);
         }
+
+        arr = [
+            {a:100, b:100},
+            {a:200, b:100},
+            {a:300, b:100}
+        ];
+        for(let i=0; i<arr.length; i++){
+            console.log(arr[i].a);    
+        }
+        arr.forEach(element => {
+            console.log(element.a);
+        });
+        arr.map((el,index)=>{
+            console.log(index);
+        })
+        for(let el of arr){
+            console.log(el.a);
+        }
+        for(let a in arr){
+            console.log(arr[a].b);
+        }
     </script>
 </body>
 </html>
