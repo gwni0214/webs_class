@@ -466,29 +466,29 @@
 
                 
 
-        const searchBox = document.querySelectorAll(".search span");   //조회수 버튼
-        const cssList = document.querySelector(".list ul");  //속성 리스트
-        const cssCount = document.querySelector(".count em"); //속성 갯수
-        //목록 보여주기
-        let listHTML ='';               //HTML에 보여줄 리스트를 전역 변수로 지정.
-        function upDataList(list){         //목록 보여주기 함수.
-            listHTML ='';
-        for(const data of list){        //어디에 있는 목록인지
-            listHTML +=  `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`;   // 복합대입연산자 += 사용해서 다 나오게. 
-        }
-        cssList.innerHTML = listHTML;   //for문을 이용해서 나오는 결과를 HTML로 출력.
-        }
-        upDataList(cssProperty);        //재활용하기 편하게 매개변수 함수로 만들기.
+    const searchBox = document.querySelectorAll(".search span");   //조회수 버튼
+    const cssList = document.querySelector(".list ul");  //속성 리스트
+    const cssCount = document.querySelector(".count em"); //속성 갯수
+    //목록 보여주기
+    let listHTML ='';               //HTML에 보여줄 리스트를 전역 변수로 지정.
+    function upDataList(list){         //목록 보여주기 함수.
+        listHTML ='';
+    for(const data of list){        //어디에 있는 목록인지
+        listHTML +=  `<li>${data.name} : ${data.desc} <span>${data.view}</span></li>`;   // 복합대입연산자 += 사용해서 다 나오게. 
+    }
+    cssList.innerHTML = listHTML;   //for문을 이용해서 나오는 결과를 HTML로 출력.
+    }
+    upDataList(cssProperty);        //재활용하기 편하게 매개변수 함수로 만들기.
 
-        //버튼 클릭하기
-        searchBox.forEach(span => {         //버튼 클릭하는 이벤트.
-            span.addEventListener("click", () => {
-               const target =  span.dataset.view;   //HTML <span>의 데이터 속성값 view
-               const filterList = cssProperty.filter(data => data.view >= target);  //target의 값을 조건에 맞춰서 변수로 지정.
+    //버튼 클릭하기
+    searchBox.forEach(span => {         //버튼 클릭하는 이벤트.
+        span.addEventListener("click", () => {
+            const target =  span.dataset.view;   //HTML <span>의 데이터 속성값 view
+            const filterList = cssProperty.filter(data => data.view >= target);  //target의 값을 조건에 맞춰서 변수로 지정.
 
-               upDataList(filterList);  //함수의 재활용. 
-            })
+            upDataList(filterList);  //함수의 재활용. 
         })
+    })
 
 
 
