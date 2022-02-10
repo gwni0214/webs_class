@@ -15,26 +15,36 @@
             document.body.appendChild(header);
         }
 
-        arr = [
-            {a:100, b:100},
-            {a:200, b:100},
-            {a:300, b:100}
-        ];
-        for(let i=0; i<arr.length; i++){
-            console.log(arr[i].a);    
-        }
-        arr.forEach(element => {
-            console.log(element.a);
-        });
-        arr.map((el,index)=>{
-            console.log(index);
+        // arr = [
+        //     {a:100, b:100},
+        //     {a:200, b:100},
+        //     {a:300, b:100}
+        // ];
+        // for(let i=0; i<arr.length; i++){
+        //     console.log(arr[i].a);    
+        // }
+        // arr.forEach(element => {
+        //     console.log(element.a);
+        // });
+        // arr.map((el,index)=>{
+        //     console.log(index);
+        // })
+        // for(let el of arr){
+        //     console.log(el.a);
+        // }
+        // for(let a in arr){
+        //     console.log(arr[a].b);
+        // }
+        const arr = [1,2,3,4,5];
+
+        arr.forEach(el=>{
+          console.log(el);
         })
-        for(let el of arr){
-            console.log(el.a);
-        }
-        for(let a in arr){
-            console.log(arr[a].b);
-        }
+        
+        arr.map(el=>{
+            console.log(el);
+        })
+   
     </script>
 </body>
 </html>
