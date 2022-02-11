@@ -21,6 +21,7 @@
             background-position: right 0 top 207px;            
             background-size: 1022px 853px;
             background-repeat: no-repeat;
+            height: 3000px;
         }
         #header {
             padding-top: 52px;
@@ -190,10 +191,189 @@
             height: 24px;
             background: url(img/cl5.png) no-repeat;
         }
+       
+        #contents1 {
+            width: 100%;
+            display: flex;
+        }
+        #contents1 .cont_area1 {
+            width: 50%;
+            height: 388px;
+            background: #fcefe9;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        #contents1 .cont_area1 h4 {
+            margin-top: 110px;
+            margin-left: 100px;
+            margin-bottom: 90px;
+            width: 182px;
+            height: 88px;
+            font-size: 34px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.29;
+            letter-spacing: normal;
+            text-align: left;
+            color: #3d3d3f;
+        }
+        #contents1 .cont_area1 a {
+            margin-left: 100px;
+            font-size: 20px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.6px;
+            text-align: left;
+            color: #000;
+        }
+        .cont_area1 .area_img01 {
+            margin-bottom: 18px;
+            width: 409px;
+            height: 351px;
+            background: url(img/cont1_img01.png);
+            mix-blend-mode: darken;
+
+        }
+        #contents1 .cont_area2 {
+            width: 50%;
+            height: 388px;
+            background: #fae2c8;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+           
+        }
+        #contents1 .cont_area2 h4 {
+            margin-top: 110px;
+            margin-left: 67px;
+            margin-bottom: 90px;
+            width: 182px;
+            height: 88px;
+            font-size: 34px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.29;
+            letter-spacing: normal;
+            text-align: left;
+            color: #3d3d3f;
+        }
+        #contents1 .cont_area2 a {
+            margin-left: 67px;
+            font-size: 20px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.6px;
+            text-align: left;
+            color: #000;
+        }
+        .area_img02 {
+            margin-top: 106px;
+            margin-bottom: 66px;
+            width: 351px;
+            height: 216px;
+            background: url(img/cont1_img02.png);
+            mix-blend-mode: darken;
+
+        }
+        #contents2 {
+            padding-top: 170px;
+        }
+        #contents2 .cont2_area1 {
+            display: flex;
+            justify-content: space-between;
+        }
+        #contents2 .cont2_area1 h3 {
+            font-size: 50px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.5px;
+            text-align: left;
+            color: #3d3d3f;
+            line-height: 1;
+            margin-right: 45px;
+        }
+        #contents2 .cont2_area1 a {
+            margin-top: 21px;
+            margin-right: 45px;
+            margin-left: 45px;
+            font-size: 23px;
+            font-weight: 500;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #a9a7a6;
+        }
+        #contents2 .cont2_area1 span {
+            margin-top: 21px;
+            margin-left: 60px;
+            font-size: 17px;
+            text-align: center;
+            align-self: center;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #3d3d3f;
+        }
+        #contents2 .cont2_area1 .arrowBox {
+            margin-top: 30px;
+            width: 34px;
+            height: 19px;
+            background: #e9e9e9;
+            margin-right: 200px;
+        }
+        .arrowBox .arrow01 {
+            width: 24px;
+            height: 14px;
+            margin-right: 5px;
+            background: url(img/arrow01.svg);
+        }
+        .cont2_area2 {
+            padding-top: 105px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .cont2_area2 ul {
+            
+        }
+        .cont2_area2 li {
+            margin: 0 60px;
+            display: inline-block;
+            font-size: 18px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: left;
+            color: #a9a7a6;
+        }
+        .cont2_area2 li.active {
+            color: #3d3d3f;
+        }
+        .cont2_area3 {
+            margin-top: 130px;
+            height: 1200px;
+            background: #222;
+        }
         .container {
             margin: 0 auto;
             width: 1249px;
             height: inherit;
+            background: rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -257,6 +437,43 @@
                     </div>
                 </article>
             </div>
+        </section>
+        <!--//banner-->
+        <section id="contents1">
+            <article class="cont_area1">
+                <h4>Residential
+                    Furniture</h4>
+                    <a href="#">Browse Collection</a>
+                    <div class="area_img01"></div>
+            </article>
+            <article class="cont_area2">
+                <h4>Hospitality
+                    Furniture</h4>
+                <a href="#">Browse Collection</a>
+                <div class="area_img02"></div>
+            </article>
+        </section>
+        <!--//contents1-->
+        <section id="contents2" class="container">
+            <article class="cont2_area1">
+                <h3>PRODUCTS</h3>
+                <a href="#">Best Selling</a>
+                <a href="#">Most Popular</a>
+                <span>See All</span>
+                <div class="arrowBox">
+                    <div class="arrow01"></div>
+                </div>
+            </article>
+            <article class="cont2_area2">
+                <ul>
+                    <li>All</li>
+                    <li>Bed</li>
+                    <li>Sofa</li>
+                    <li class="active">Chair</li>
+                    <li>Light</li>
+                </ul>
+            </article>
+            <article class="cont2_area3"></article>            
         </section>
     </div>
 </body>
