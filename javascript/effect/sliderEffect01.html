@@ -12,11 +12,83 @@
     <style>
         @import url(../asset/css/NexonLv1Gothic.css);
         @import url(../asset/css/atom-one-dark.min.css.css);
-        @import url(../asset/css/custom.css);        
+        @import url(../asset/css/custom.css);
+        /*slider*/
+        .slider__wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .slider__img {
+            position: relative;
+            width: 800px;
+            height: 480px;
+        }
+        .slider {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .slider::before {
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            padding: 5px 10px 3px;
+        }
+        .slider:nth-child(1):before {
+            content: '이미지1';
+        }
+        .slider:nth-child(2):before {
+            content: '이미지2';
+        }
+        .slider:nth-child(3):before {
+            content: '이미지3';
+        }
+        .slider:nth-child(4):before {
+            content: '이미지4';
+        }
+        .slider:nth-child(5):before {
+            content: '이미지5';
+        }
+        .slider:nth-child(1) {
+            z-index: 5;
+        }
+        .slider:nth-child(2) {
+            z-index: 4;
+        }
+        .slider:nth-child(3) {
+            z-index: 3;
+        }
+        .slider:nth-child(4) {
+            z-index: 2;
+        }
+        .slider:nth-child(5) {
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
+    <!--main-->
+    <main>
+        <section id="sliderType01">
+            <div class="slider__wrap">
+                <div class="slider__img">
+                    <div class="slider"><img src="img/image01.jpg" alt="이미지1"></div>
+                    <div class="slider"><img src="img/image02.jpg" alt="이미지2"></div>
+                    <div class="slider"><img src="img/image03.jpg" alt="이미지3"></div>
+                    <div class="slider"><img src="img/image04.jpg" alt="이미지4"></div>
+                    <div class="slider"><img src="img/image05.jpg" alt="이미지5"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--//main-->
+
     <!--info-->
+    <div class="info">
     <div class="title">
         <h1><a href="sliderEffect.html">Javascript SliderEffect01</a></h1>
         <p>이미지 슬라이드 - 페이드 효과</p>
@@ -55,16 +127,60 @@
                             <div class="view-cont">
                                 <div>
 <pre><code class="language-js">
-const modal = function(){
-    document.querySelector(".source-btn").addEventListener("click", ()=>{
-        document.querySelector("#modal").classList.add("show");
-    });
-    //modal-close
-    document.querySelector(".modal-close").addEventListener("click", ()=>{
-    document.querySelector("#modal").classList.remove("show");
-    })
-}
-modal();
+    &lt;main>
+        &lt;section id="sliderType01">
+            &lt;div class="slider__wrap">
+                &lt;div class="slider__img">
+                    &lt;div class="slider">&lt;img src="img/image01.jpg" alt="이미지1">&lt;/div>
+                    &lt;div class="slider">&lt;img src="img/image02.jpg" alt="이미지2">&lt;/div>
+                    &lt;div class="slider">&lt;img src="img/image03.jpg" alt="이미지3">&lt;/div>
+                    &lt;div class="slider">&lt;img src="img/image04.jpg" alt="이미지4">&lt;/div>
+                    &lt;div class="slider">&lt;img src="img/image05.jpg" alt="이미지5">&lt;/div>
+                &lt;/div>
+            &lt;/div>
+        &lt;/section>
+    &lt;/main>
+    &lt;!--//main-->
+
+    &lt;!--info-->
+    &lt;div class="info">
+    &lt;div class="title">
+        &lt;h1>&lt;a href="sliderEffect.html">Javascript SliderEffect01&lt;/a></h1>
+        &lt;p>이미지 슬라이드 - 페이드 효과&lt;/p>
+        &lt;/div>
+        &lt;div class="number">
+            &lt;ul>
+                &lt;li class="active">&lt;a href="sliderEffect01.html">1&lt;/a></li>
+                &lt;li>&lt;a href="sliderEffect02.html">2&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="sliderEffect03.html">3&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="sliderEffect04.html">4&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="sliderEffect05.html">5&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="sliderEffect06.html">6&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="sliderEffect07.html">7&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="sliderEffect08.html">8&lt;/a>&lt;/li>               
+            &lt;/ul>
+        &lt;/div>
+        &lt;div class="source">
+            &lt;button class="source-btn">소스보기</button>
+            &lt;div id="modal">
+                &lt;div class="modal-wrap">
+                    &lt;div class="modal-cont">
+                        &lt;div class="code-view">
+                            &lt;div class="view-header" aria-hidden="true">
+                                &lt;span>&lt;/span>
+                                &lt;span>&lt;/span>
+                                &lt;span>&lt;/span>
+                            &lt;/div>
+                            &lt;div class="view-title">
+                                &lt;ul>
+                                    &lt;li class="active">&lt;a href="#">HTML&lt;/a></li>
+                                    &lt;li>&lt;a href="#">CSS&lt;/a></li>
+                                    &lt;li>&lt;a href="#">Javascript&lt;/a></li>
+                                    &lt;li>&lt;a href="#">jQuery&lt;/a></li>
+                                &lt;/ul>
+                            &lt;/div>
+                            &lt;div class="view-cont"> *4
+                                &lt;/div>
 </code></pre>
                                 </div>
                                 <div>
@@ -82,6 +198,10 @@ a {
 }
 li {
     list-style: none;
+}
+img {
+    width: 100%;
+    vertical-align: top; /*이미지 여백 제거*/
 }
 body {
     width: 100%;
@@ -310,11 +430,57 @@ const modal = function(){
     })
 }
 modal();
+
+//tabMenu
+const tabMenu = function(){
+     const tabBtn = document.querySelectorAll(".view-title > ul > li");
+     const tabCont = document.querySelectorAll(".view-cont > div");
+
+     //각각의 버튼을 클릭하면 경고창을 띄어주세요
+     tabBtn.forEach((btn, index)=>{
+         btn.addEventListener("click",()=>{
+             //모든 클래스 active 삭제
+             tabBtn.forEach(el=>{
+              el.classList.remove("active");
+             })
+             //클릭한건 액티브 추가  
+             btn.classList.add("active");                        
+
+             //모든 컨텐츠 박스 안보이게
+             tabCont.forEach(cont=>{
+              cont.style.display = "none";
+             });
+             //내가 클릭한 콘텐츠 박스는 보이게
+             tabCont[index].style.display = "block";
+         });
+     })
+ }
+ tabMenu();
+
+//slider01
+const sliderWrap = document.querySelector(".slider__wrap")
+const sliderImg = document.querySelector(".slider__img")
+const slider = document.querySelectorAll(".slider")
+
+let currentIndex = 0; //현재 보이는 이미지
+let sliderCount = slider.length; //이미지 갯수
+
+setInterval(() => {
+    let nextIndex =(currentIndex + 1) % 5; //1 2 3 4 0 1 2 3 4 0... 5로 나눠서 나머지 값만 나오게. 
+    slider[currentIndex].style.opacity = "0"    //첫 번째 이미지를 안보이게
+    slider[nextIndex].style.opacity = "1"               //두 번째 이미지를 보이게
+    currentIndex = nextIndex;               //nextIndex 값을 currentIndex에 대입시켜서 계속 반복.
+    
+    slider.forEach(slider => {
+        slider.style.transition = "all 0.3s";       //트랜지션 효과를 써서 부드럽게 움직이도록
+    });
+
+}, 2000);
 </code></pre>
                                 </div>
                                 <div>
 <pre><code class="language-js">
-//jQuery를 이용한 방법.
+//jQuery를 이용한 방법. -modal
 const modal = function(){
     $(".source-btn").click(()=>{
         $("#modal").addClass("show");
@@ -332,6 +498,7 @@ modal();
                 </div>                
             </div>
         </div>
+    </div>
         <!--//info-->
 
         <!--script-->
@@ -341,8 +508,28 @@ modal();
            highlight();
            modal();
            tabMenu();
-       </script>
-           
+
+        //slider01
+        const sliderWrap = document.querySelector(".slider__wrap")
+        const sliderImg = document.querySelector(".slider__img")
+        const slider = document.querySelectorAll(".slider")
+
+        let currentIndex = 0; //현재 보이는 이미지
+        let sliderCount = slider.length; //이미지 갯수
+
+        setInterval(() => {
+            let nextIndex =(currentIndex + 1) % 5; //1 2 3 4 0 1 2 3 4 0... 5로 나눠서 나머지 값만 나오게. 
+            slider[currentIndex].style.opacity = "0"    //첫 번째 이미지를 안보이게
+            slider[nextIndex].style.opacity = "1"               //두 번째 이미지를 보이게
+            currentIndex = nextIndex;               //nextIndex 값을 currentIndex에 대입시켜서 계속 반복.
+            
+            slider.forEach(slider => {
+                slider.style.transition = "all 0.3s";       //트랜지션 효과를 써서 부드럽게 움직이도록
+            });
+        
+        }, 2000);
+        //함수의 재활용. 함수의 반복실행. setInterval  티스토리 정리
+    </script>           
     </div>
 </body>
 </html>

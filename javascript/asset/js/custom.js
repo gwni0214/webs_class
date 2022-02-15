@@ -4,17 +4,17 @@
  }
  
  //modal
- const modal = function(){
-     document.querySelector(".source-btn").addEventListener("click", ()=>{
-         document.querySelector("#modal").classList.add("show");
-         document.querySelector("#modal").classList.remove("hide");
+ const modal = function(){              
+     document.querySelector(".source-btn").addEventListener("click", ()=>{  //버튼을 클릭했을 때 이벤트 지정.
+         document.querySelector("#modal").classList.add("show");        //처음에는 보여야 하므로 hide 클래스를 제거.
+         document.querySelector("#modal").classList.remove("hide");     
      });
-     //modal-close
+     //modal-close 닫기 버튼 클릭 했을 때.
      document.querySelector(".modal-close").addEventListener("click", ()=>{
-     document.querySelector("#modal").classList.add("hide");
+     document.querySelector("#modal").classList.add("hide"); // 닫기를 클릭하면 안보여야 하므로 hide클래스를 추가.
      })
  }
- modal();
+ modal(); //모달 창 함수를 실행.
 
  //tabMenu
  const tabMenu = function(){
@@ -40,7 +40,7 @@
          });
      })
  }
- tabMenu();                               
+ tabMenu();        //탭 메뉴 함수를 실행.                       
    
 
 // <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

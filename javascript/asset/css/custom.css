@@ -13,6 +13,10 @@ a {
 li {
     list-style: none;
 }
+img {
+    width: 100%;
+    vertical-align: top; /*이미지 여백 제거*/
+}
 body {
     width: 100%;
     height: 100vh;
