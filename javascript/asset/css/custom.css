@@ -219,7 +219,7 @@ body::before {
 .view-cont {
     height: 100%;
     background: #282c34;
-    padding-top: 65px;
+    padding-top: 40px;
 }
 .view-cont > div {
     display: none;
