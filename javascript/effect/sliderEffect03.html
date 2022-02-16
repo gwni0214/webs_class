@@ -300,7 +300,7 @@
         sliderInner.appendChild(sliderClone);                 
         function sliderEffect(){
         currentIndex++;
-        sliderInner.style.transition = "all 0.3s";          
+        sliderInner.style.transition = "all 0.3s ease";          
         sliderInner.style.transform = "translateX(-"+ sliderWidth * currentIndex +"px)";        
         //마지막 사진에 갔을 때
         if(currentIndex == sliderCount){                  
