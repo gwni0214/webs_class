@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Reference</title>
+    <!-- 파비콘 -->
+    <link rel="shortcut icon" href="../assets/face/html.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/face/html.png">
+    <link rel="icon" href="../assets/face/html.png" sizes="128x128">
+    <!--CSS-->
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link rel="stylesheet" href="asset/css/prism.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">라인 중학교 1학년 코딩반</a></h1>
+        <strong>박근희</strong>
+    </header>
+
+    <main id="contents">
+        <h2>HTML<em>form/input 태그</em></h2>
+        <div class="menu">
+            <ul>
+                <li><a href="html.html">속성</a></li>
+                <li><a href="htmlRefer01.html">기초 문법</a></li>
+                <li><a href="htmlRefer02.html">웹표준/웹접근성/웹호환성</a></li>
+                <li><a href="htmlRefer03.html">시멘틱 태그</a></li>
+                <li><a href="htmlRefer04.html">SEO</a></li>
+                <li><a href="htmlRefer05.html">그리드 시스템</a></li>
+                <li><a href="htmlRefer06.html">벤더 프리픽스</a></li>
+                <li><a href="htmlRefer07.html">웹 사이트 이미지 표현방법</a></li>
+                <li class="active"><a href="htmlRefer08.html">form/input</a></li>
+
+            </ul>
+        </div>
+        <!-- //menu -->
+
+        <div class="refer">
+            <div class="doc">
+                <h3>form/input</h3>
+                <h4>form</h4>
+                <p>&lt;form> 태그는 웹 페이지에서의 입력 양식을 의미합니다.
+                    로그인 창이나, 회원가입 폼 등이 이에 해당되죠.
+                    사용자로부터 데이터를 입력받을 때 사용하며, 의도에 따라 다음의 11가지 태그들을 적절하게 조합해서 사용합니다.
+                    <br>
+                    텍스트 필드에 글자를 입력하거나, 체크박스나 라디오 버튼을 클릭하고 제출 버튼을 누르면 백엔드 서버에 양식이 전달되어 정보를 처리하게 됩니다.
+                    <br>
+                    사용자로부터 입력을 받을 수 있는 HTLM 입력 폼(form)을 정의할 때 사용합니다.
+                </p>
+                &lt;form> 요소는 다음과 같은 요소들을 하나 이상 포함할 수 있습니다.
+                <ul>
+                    <li>&lt;button> </li>
+                    <li>&lt;fieldset></li>
+                    <li>&lt;input> </li>
+                    <li>&lt;label> </li>
+                    <li>&lt;option> </li>
+                    <li>&lt;optgroup></li>
+                    <li>&lt;select> </li>
+                    <li>&lt;textarea></li>
+                </ul>
+                <p>제일 많이 사용되는건 input태그 입니다.</p>
+
+                <p>&lt;form> 태그는 전체 양식을 의미하며, 화면에 보이지 않는 추상적인 태그입니다.
+                    실제로 사용자가 양식을 입력하기 위한 태그는 &lt;input> 태그 등이 사용됩니다.
+                    <br>
+                    type 속성을 통해 종류를 나타내며, name을 통해 데이터의 이름, value를 통해 기본 값을 지정합니다.</p>
+                <h4>HTML5 에서 새롭게 추가된 속성</h4>
+                <div class="table">
+                    <table>
+                        <thead>
+                            <tr class="bg">
+                                <th>속성명</th>
+                                <th class="new"></th>
+                                <th>속성값</th>
+                                <th style="width:49%;">설명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p>accept</p>
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>
+                                    <p>파일 타입</p>
+                                </td>
+                                <td>
+                                    <p>서버로 업로드할 수 있는 파일 타입을 콤마(,)로 구분된 리스트로 명시함.</p>
+
+                                    <p><span style="color:#FF0000;">HTML5에서는 더 이상 지원하지 않음.</span></p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><a href="/html-tag-attrs/form-accept-charset">accept-charset</a></p>
+                                </td>
+                                <td>
+                                    <p>&nbsp;</p>
+                                </td>
+                                <td>
+                                    <p>문자셋</p>
+                                </td>
+                                <td>
+                                    <p>폼 데이터(form data)가 서버로 제출될 때 사용되는 문자 인코딩(character encoding) 방식을 명시함.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><a href="/html-tag-attrs/form-action">action</a></p>
+                                </td>
+                                <td>
+                                    <p>&nbsp;</p>
+                                </td>
+                                <td>
+                                    <p>URL</p>
+                                </td>
+                                <td>
+                                    <p>폼 데이터가 서버로 제출될 때 해당 데이터가 도착할 URL을 명시함.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><a href="/html-tag-attrs/form-autocomplete">autocomplete</a></p>
+                                </td>
+                                <td></td>
+                                <td>
+                                    <p>on</p>
+
+                                    <p>off</p>
+                                </td>
+                                <td>
+                                    <p>&lt;form&gt; 요소에서 자동 완성 기능을 사용할지 여부를 명시함.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><a href="/html-tag-attrs/form-enctype">enctype</a></p>
+                                </td>
+                                <td>
+                                    <p>&nbsp;</p>
+                                </td>
+                                <td>
+                                    <p>application/x-www-form-urlencoded</p>
+
+                                    <p>multipart/form-data</p>
+
+                                    <p>text/plain</p>
+                                </td>
+                                <td>
+                                    <p>폼 데이터가 서버로 제출될 때 해당 데이터가 인코딩되는 방법을 명시함.</p>
+
+                                    <p>(단, &lt;form&gt; 요소의 method 속성값이 &ldquo;post&rdquo;인 경우에만 사용할 수 있음)</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><a href="/html-tag-attrs/form-method">method</a></p>
+                                </td>
+                                <td>
+                                    <p>&nbsp;</p>
+                                </td>
+                                <td>
+                                    <p>get</p>
+
+                                    <p>post</p>
+                                </td>
+                                <td>
+                                    <p>폼 데이터가 서버로 제출될 때 사용되는 HTTP 메소드를 명시함.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><a href="/html-tag-attrs/form-name">name</a></p>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+                                    <p>텍스트</p>
+                                </td>
+                                <td>
+                                    <p>&lt;form&gt; 요소의 이름을 명시함.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><a href="/htmlTagAtt/form_novalidate">novalidate</a></p>
+                                </td>
+                                <td>
+                                    <p>&nbsp;</p>
+                                </td>
+                                <td>
+                                    <p>novalidate</p>
+                                </td>
+                                <td>
+                                    <p>폼 데이터가 서버로 제출될 때 해당 데이터의 유효성을 검사하지 않음을 명시함.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><a href="/html-tag-attrs/form-target">target</a></p>
+                                </td>
+                                <td>
+                                    <p>&nbsp;</p>
+                                </td>
+                                <td>
+                                    <p>_blank</p>
+
+                                    <p>_self</p>
+
+                                    <p>_parent</p>
+
+                                    <p>_top</p>
+                                </td>
+                                <td>
+                                    <p>폼 데이터를 서버로 제출한 후 받는 응답이 열릴 위치를 명시함.</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h4>form의 자식태그</h4>
+                <div class="table">
+                    <table>
+                        <tbody>
+                            <tr style="height: 19px;">
+                                <td style="width: 15.2325%; text-align: left;"><b><b>&lt;button&gt;
+                                            <b><b><b><b><b><b><b><b><b><b>📌</b></b></b></b></b></b></b></b></b></b></b><span></span></b>
+                                </td>
+                                <td style="width: 84.6512%;"><span style="color: #333333;">클릭 가능한 버튼이다. 기본 type은
+                                        submit이다.</span><span style="color: #333333;"><span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15.2325%; text-align: left;"><b><b>&lt;input&gt;
+                                            <b><b><b><b><b><b><b><b><b><b>📌</b></b></b></b></b></b></b></b></b></b><span></span></b></b>
+                                </td>
+                                <td style="width: 84.6512%;"><span style="color: #333333;">22가지 type을 지원한다. 기본 type은
+                                        text이다.
+                                        <span style="color: #333333;">&lt;form&gt;과 가장 많이 쓰이는 요소 중
+                                            하나이다.<span>&nbsp;</span></span></span></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 15.2325%; text-align: left;"><b><b>&lt;label&gt;</b></b></td>
+                                <td style="width: 84.6512%;"><span style="color: #333333;">&lt;form&gt;에 '라벨'을 달아주는
+                                        역할이다.</span><span style="color: #333333;">&nbsp;<br /></span><u><b><span
+                                                style="color: #333333;">&lt;label&gt; 의 for 속성과 &lt;input&gt; 의 id 속성이
+                                                서로
+                                                같거나 <u><b><span style="color: #333333;">&lt;label&gt;의 자식으로
+                                                            &lt;input&gt;을
+                                                            두어야</span></b></u>&nbsp;한다.</span></b></u><br /><span
+                                        style="color: #333333;">&lt;input&gt;에 focus가 오면 스크린리더가 &lt;label&gt;을 읽기 때문에
+                                        접근성
+                                        측면에서 중요하다.</span><br /><span style="color: #333333;">버튼이 너무 작더라도 &lt;label&gt;을
+                                        눌러
+                                        선택, 토글할 수 있어 유용하다.</span></td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 15.2325%; text-align: left;"><b>&lt;select<b><b>&gt;</b></b></b></td>
+                                <td style="width: 84.6512%;"><span
+                                        style="color: #333333;">&lt;option&gt;의&nbsp;</span>드랍다운을
+                                    만들어준다.<span>&nbsp;</span><span style="color: #333333;">기본값으로 가장 첫번째 &lt;option&gt;이
+                                        선택되며
+                                        직접 입력은 불가능하다.<br /></span>size 속성으로 드랍다운이 아니라 한 번에 여러 개를 보여주는 스크롤로 만들 수 있다.</td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 15.2325%; text-align: left;">
+                                    <b><b><b>&lt;</b>optgroup<b><b>&gt;</b></b></b></b></td>
+                                <td style="width: 84.6512%;"><span style="color: #333333;">&lt;select&gt;를 카테고리별로 묶을 수
+                                        있다.</span></td>
+                            </tr>
+                            <tr style="height: 38px;">
+                                <td style="width: 15.2325%; text-align: left;">
+                                    <b><b><b>&lt;</b>datalist<b><b>&gt;</b></b></b></b></td>
+                                <td style="width: 84.6512%;"><span style="color: #333333;"><span
+                                            style="color: #333333;">&lt;option&gt;의 드랍다운을 만들어준다. 검색기록 자동완성과 같이 직접 입력이
+                                            가능하다.<br />&lt;datalist&gt; 의 id 속성과 &lt;input&gt; 의 list 속성이 서로 같아야
+                                            한다.</span></span></td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 15.2325%; text-align: left;">
+                                    <b><b>&lt;</b>option<b><b>&gt;</b></b></b>
+                                </td>
+                                <td style="width: 84.6512%;">드랍다운 리스트에 어떤 옵션을 담을지 정의한다. value 속성을 가진다.</td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 15.2325%; text-align: left;">
+                                    <b><b>&lt;</b>fieldset<b><b>&gt;</b></b></b>
+                                </td>
+                                <td style="width: 84.6512%;"><span style="color: #333333;">&lt;form&gt; 에서 관련 요소를 그룹화할 때
+                                        사용한다. 관련 요소 주위에 상자를 그려준다.</span></td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 15.2325%; text-align: left;">
+                                    <b><b>&lt;</b>legend<b><b>&gt;</b></b></b>
+                                </td>
+                                <td style="width: 84.6512%;"><span style="color: #333333;">&lt;fieldset&gt; 요소 첫번째
+                                        자식으로<span><span>&nbsp;</span>&lt;</span></span><span
+                                        style="color: #333333;">fieldset&gt; 그룹을 설명하는 캡션 역할을 한다.</span></td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 15.2325%; text-align: left;">
+                                    <b><b>&lt;</b>output<b><b>&gt;</b></b></b>
+                                </td>
+                                <td style="width: 84.6512%;"><span>&lt;form&gt;의 oninput속성에 있는 계산을 수행하고 결과를
+                                        &lt;output&gt;
+                                        요소에 표시한다.</span></td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 15.2325%; text-align: left;">
+                                    <b><b><b>&lt;</b>textarea<b><b>&gt;</b></b></b></b></td>
+                                <td style="width: 84.6512%;">여러 줄을 입력할 수 있는 텍스트필드이다. rows 속성은 몇 줄 보일지를, cols 속성은너비를
+                                    지정해준다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="table">
+                        <h3 data-ke-size="size23">&lt;form&gt; 자체에 가질 수 있는 속성</h3>
+                        <table>
+                            <tbody>
+                                <tr style="height: 19px;">
+                                    <td style="width: 15.4651%; height: 19px; text-align: left;">
+                                        <b><b><b><b>name</b></b></b></b></td>
+                                    <td style="width: 84.5349%; height: 19px;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span><span
+                                                        style="color: #333333;">&lt;form&gt;</span> </span></span><span
+                                                style="color: #333333;">의 이름을 적는다.<span>&nbsp;</span></span><span
+                                                style="color: #333333;">(text)</span></span></td>
+                                </tr>
+                                <tr style="height: 19px;">
+                                    <td style="width: 15.4651%; height: 19px; text-align: left;">
+                                        <b><b><b>autocomplete</b></b></b></td>
+                                    <td style="width: 84.5349%; height: 19px;"><span style="color: #333333;"><span
+                                                style="color: #333333;">자동완성 기능 사용여부를
+                                                지정한다.<span>&nbsp;</span></span><span style="color: #333333;">(on,
+                                                off)</span></span></td>
+                                </tr>
+                                <tr style="height: 19px;">
+                                    <td style="width: 15.4651%; height: 19px; text-align: left;"><b><b><b><span
+                                                        style="color: #333333;">novalidate</span></b></b></b></td>
+                                    <td style="width: 84.5349%; height: 19px;"><span style="color: #333333;"><span
+                                                style="color: #333333;">제출 시 입력된 값의 유효성을 검사하지 않도록
+                                                지정한다.<span>&nbsp;</span></span><span
+                                                style="color: #333333;">(novalidate)</span></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 15.4651%; text-align: left;"><b><b><b><b><b><b><b>action
+                                                                    <b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>📌</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b><span></span></b></b></b></b></b></b></b>
+                                    </td>
+                                    <td style="width: 84.5349%;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span style="color: #333333;"><span
+                                                        style="color: #333333;"><span
+                                                            style="color: #333333;">&lt;form&gt;</span>&nbsp;제출 시 데이터를
+                                                        어디로 보낼지 적는다.<span>&nbsp;</span></span><span
+                                                        style="color: #333333;">(URL)</span></span></span></span></td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 15.4651%; text-align: left;"><b><b><b><b><b><b><b><b>method
+                                                                        <b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>📌</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b>
+                                    </td>
+                                    <td style="width: 84.5349%;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span style="color: #333333;"><span
+                                                        style="color: #333333;">데이터를 보낼 때 사용할 HTTP 메서드를
+                                                        지정한다.<span>&nbsp;</span></span><span
+                                                        style="color: #333333;">(get, post)</span></span></span></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 15.4651%; text-align: left;">
+                                        <b><b><b><b><b><b>charset</b></b></b></b></b></b></td>
+                                    <td style="width: 84.5349%;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span style="color: #333333;"><span
+                                                        style="color: #333333;">&lt;form&gt;</span>&nbsp;제출 시 사용할 문자
+                                                    인코딩을 지정한다.<span>&nbsp;</span></span><span
+                                                    style="color: #333333;">(character_set)</span></span></span></td>
+                                </tr>
+                                <tr style="height: 38px;">
+                                    <td style="width: 15.4651%; height: 38px; text-align: left;"><b><span
+                                                style="color: #333333;">enctype</span></b></td>
+                                    <td style="width: 84.5349%; height: 38px;"><span style="color: #333333;">POST 메서드로
+                                            데이터를 서버에 제출할 경우 인코딩을 지정한다.</span><br /><span
+                                            style="color: #333333;">(application/x-www-form-urlencoded,<span>&nbsp;</span></span><span
+                                            style="color: #333333;">multipart/form-data,<span>&nbsp;</span></span><span
+                                            style="color: #333333;">text/plain)</span></td>
+                                </tr>
+                                <tr style="height: 38px;">
+                                    <td style="width: 15.4651%; height: 38px; text-align: left;"><b><span
+                                                style="color: #333333;"><b><span
+                                                        style="color: #333333;">target</span></b></span></b></td>
+                                    <td style="width: 84.5349%; height: 38px;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span style="color: #333333;">form 제출 후 받은 응답을
+                                                    어디에 표시할지 키워드를 적는다.</span><br /></span><span
+                                                style="color: #333333;">(_blank, _self, _parent, _top)</span></span>
+                                    </td>
+                                </tr>
+                                <tr style="height: 19px;">
+                                    <td style="width: 15.4651%; height: 19px; text-align: left;"><b>rel</b></td>
+                                    <td style="width: 84.5349%; height: 19px;"><span style="color: #333333;">현재
+                                            문서와<span>&nbsp;</span></span><span style="color: #333333;">연결된
+                                            리소스</span><span style="color: #333333;"><span>&nbsp;</span>간의 관계를
+                                            적는다.<br /></span><span style="color: #333333;">(external, help,
+                                            license</span><span style="color: #333333;">, nofollow, noopener,
+                                            noreferrer, opener,<span>&nbsp;</span></span><span
+                                            style="color: #333333;">prev,<span>&nbsp;</span></span><span
+                                            style="color: #333333;">next,<span>&nbsp;</span></span><span
+                                            style="color: #333333;">search)</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3 data-ke-size="size23">&lt;form&gt; 의 메서드</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td style="width: 15.4651%;"><b><b><b><b>reset()</b></b></b></b></td>
+                                    <td style="width: 84.5349%;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span><span style="color: #333333;"><span
+                                                            style="color: #333333;">&lt;form&gt; 내부의 모든 값(value)을
+                                                            초기화해준다. </span>초기화 버튼(&lt;button type="reset"&gt;)을 클릭한 것과
+                                                        같은 효과이다.</span><span style="color: #333333;"><br />기본값(default
+                                                        value)을 지정해놨다면 이 값으로 다시 초기화된다.</span><br /></span></span></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 15.4651%;"><b><b><b>submit()</b></b></b></td>
+                                    <td style="width: 84.5349%;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span style="color: #333333;"><span
+                                                        style="color: #333333;">&lt;form&gt; 을&nbsp;</span></span><span
+                                                    style="color: #333333;">제출한다. 제출 버튼(<span
+                                                        style="color: #333333;">&lt;button type="submit"&gt;)을 클릭한 것과 같은
+                                                        효과이다.</span></span><br /></span></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <hr />
+
+                <h4>input 태그</h4>
+                <p> 웹 기반 양식에서 사용자의 데이터를 받을 수 있는 대화형 컨트롤을 생성합니다. 사용자 에이전트에 따라서 다양한 종류의 입력 데이터 유형과 컨트롤 위젯이 존재합니다. 입력 유형과
+                    특성의 다양한 조합 가능성으로 인해, &lt;input> 요소는 HTML에서 제일 강력하고 복잡한 요소 중 하나입니다.22가지 type을 지원합니다. submit, reset,
+                    button 이외에 문자열, 숫자, 시간, 파일 등 데이터 형식에 따른 다양한 선택지가 있습니다.
+
+                </p>
+                <div class="table">
+                    <h3 data-ke-size="size23">&lt;input type=" "&gt; 속성</h3>
+                    <table>
+                        <tbody>
+                            <tr style="height: 57px;">
+                                <td style="width: 19.5349%; height: 57px;"><b><b>type="submit" <b>📌</b></b></b></td>
+                                <td style="width: 80.3488%; height: 57px; text-align: left;"><span
+                                        style="color: #333333;"><span style="color: #333333;">&lt;input&gt;을 form
+                                            handler에 데이터를 제출하기 위한 버튼으로 지정한다.</span><span
+                                            style="color: #333333;"><span><br /></span></span><span
+                                            style="color: #333333;">form handler는</span><span
+                                            style="color: #333333;"><span>&nbsp;</span><span
+                                                style="color: #333333;">보통</span><span
+                                                style="color: #333333;"><span>&nbsp;</span></span>데이터를 처리하는 서버단 페이지로
+                                            지정된다.<br /><span>버튼에 value 속성을 지정하면 &lt;input&gt;에 기본값(default value)로
+                                                표시된다.</span></span></span></td>
+                            </tr>
+                            <tr style="height: 38px;">
+                                <td style="width: 19.5349%; height: 38px;"><b><b><b><b><b>type="</b></b>reset"
+                                                <b>📌</b></b></b></b></td>
+                                <td style="width: 80.3488%; height: 38px;"><span style="color: #333333;"><span
+                                            style="color: #333333;">&lt;input&gt;을 초기화버튼으로 지정한다. 클릭
+                                            시<span>&nbsp;</span></span><span style="color: #333333;">&lt;form&gt; 내부의 모든
+                                            값(value)을 초기화해준다.<br />기본값(default value)을 지정해놨다면 이 값으로 다시
+                                            초기화된다.</span></span></td>
+                            </tr>
+                            <tr style="height: 38px;">
+                                <td style="width: 19.5349%; height: 21px;"><b><b><b>type="</b></b>button" <b>📌</b></b>
+                                </td>
+                                <td style="width: 80.3488%; height: 21px;"><span
+                                        style="color: #333333;">&lt;input&gt;을</span><span
+                                        style="color: #333333;">&nbsp;버튼으로 지정한다.</span></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 19.5349%;"><b><b><b>type="</b></b>img"</b></td>
+                                <td style="width: 80.3488%;"><span style="color: #333333;">&lt;input&gt;을 이미지버튼으로
+                                        지정한다.<br /><i><span>&lt;</span><span>input</span><span><span>&nbsp;</span>type<span>="image"</span><span>&nbsp;</span>src<span>="img_submit.gif"</span><span>&nbsp;</span>alt<span>="Submit"</span><span>&nbsp;</span>width<span>="48"</span><span>&nbsp;</span>height<span>="48"</span></span><span>&gt;</span></i><br /></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 55px;">
+                                <td style="width: 19.5349%; height: 55px;">
+                                    <b><b><b><b><b>type="</b></b>text"</b></b></b></td>
+                                <td style="width: 80.3488%; height: 55px;"><span style="color: #333333;"><span
+                                            style="color: #333333;">&lt;input&gt;을 한 줄 입력 가능한 텍스트필드로 지정한다. input의 기본
+                                            type이다.<br />size값을 지정하면 필드 너비가 자동조정된다. 기본 size값은
+                                            "20"이다.</span></span><br />
+                                       
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;">
+                                    <b><b><b><b><b>type="</b></b>search"</b></b></b></td>
+                                <td style="width: 80.3488%; height: 19px;"><span style="color: #333333;"><span
+                                            style="color: #333333;"><span style="color: #333333;"><span
+                                                    style="color: #333333;">&lt;input&gt;을 검색필드로 지정한다. 일반적인 텍스트필드처럼
+                                                    동작한다.<br /></span></span></span></span>
+                                    <span
+                                        style="color: #333333;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><br /></span></span></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 56px;">
+                                <td style="width: 19.5349%; height: 56px;">
+                                    <b><b><b><b><b><b>type="</b></b>password"</b></b></b></b></td>
+                                <td style="width: 80.3488%; height: 56px;"><span style="color: #333333;"><span
+                                            style="color: #333333;"><span style="color: #333333;"><span
+                                                    style="color: #333333;">&lt;input&gt;을 암호필드로 지정한다. 입력한 텍스트<span
+                                                        style="color: #333333;">는 별표나 원으로
+                                                        마스킹된다.<br /></span></span></span></span></span>
+                                   <span
+                                        style="color: #333333;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span
+                                                    style="color: #333333;"><br /></span></span><span
+                                                style="color: #333333;"></span></span></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;">
+                                    <b><b><b><b><b><b>type="</b></b>tel"</b></b></b></b></td>
+                                <td style="width: 80.3488%; height: 19px;"><span style="color: #333333;"><span
+                                            style="color: #333333;"><span style="color: #333333;"><span
+                                                    style="color: #333333;"><span style="color: #333333;">&lt;input&gt;을
+                                                        전화번호 필드로
+                                                        지정한다.<br /><span>pattern</span><span>="[0-9]{3}-[0-9]{2}-[0-9]{3}"과
+                                                            함께 사용해서 형식을 지정할 수
+                                                            있다.</span><br /></span></span></span></span></span>
+                                    <span
+                                        style="color: #333333;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span
+                                                    style="color: #333333;"><br /></span></span></span></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;">
+                                    <b><b><b><b><b><b>type="</b></b>email"</b></b></b></b></td>
+                                <td style="width: 80.3488%; height: 19px;"><span style="color: #333333;"><span
+                                            style="color: #333333;"><span style="color: #333333;"><span
+                                                    style="color: #333333;"><span style="color: #333333;"><span
+                                                            style="color: #333333;"><span
+                                                                style="color: #333333;">&lt;input&gt;을<span><span>&nbsp;</span>이메일을
+                                                                    포함해야하는 입력필드로 지정한다.<br /><span
+                                                                        style="color: #333333;">브라우저에 따라 제출 시 이메일 주소
+                                                                        유효성검사가 자동으로 이루어진다.<br /></span><span>일부 스마트폰에서는
+                                                                        type="email"을 인식하고 키보드에 ".com"를 추가로
+                                                                        띄워준다.<br /></span></span></span></span></span></span></span></span></span>
+                                  <span
+                                        style="color: #333333;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span
+                                                    style="color: #333333;"><br /></span></span></span></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;">
+                                    <b><b><b><b><b><b>type="</b></b>url"</b></b></b></b></td>
+                                <td style="width: 80.3488%; height: 19px;"><span style="color: #333333;"><span
+                                            style="color: #333333;"><span style="color: #333333;"><span
+                                                    style="color: #333333;"><span style="color: #333333;">&lt;input&gt;을
+                                                        URL주소를 포함해야하는 입력필드로
+                                                        지정한다.<br /></span></span></span></span></span>
+                                   <span
+                                        style="color: #333333;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span
+                                                    style="color: #333333;"><br /></span></span></span></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 71px;">
+                                <td style="width: 19.5349%; height: 71px;">
+                                    <b><b><b><b><b><b><b>type="</b></b>number"</b></b></b></b></b></td>
+                                <td style="width: 80.3488%; height: 71px;"><span style="color: #333333;"><span
+                                            style="color: #333333;"><span style="color: #333333;"><span
+                                                    style="color: #333333;"><span style="color: #333333;"><span
+                                                            style="color: #333333;"><span style="color: #333333;"><span
+                                                                    style="color: #333333;"><span
+                                                                        style="color: #333333;">&lt;input&gt;을 숫자 입력만
+                                                                        가능한 필드로 지정한다.<br />min, max값을 지정하면 자릿수에 따라 필드
+                                                                        너비가 자동조정된다. (그림은 min="-10000"일
+                                                                        때)<br /></span></span></span></span></span></span></span></span></span>
+                                  <span
+                                        style="color: #333333;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span style="color: #333333;"><span
+                                                        style="color: #333333;"><br /></span></span></span></span></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 86px;">
+                                <td style="width: 19.5349%; height: 86px;">
+                                    <b><b><b><b><b><b><b>type="</b></b>range"</b></b></b></b></b></td>
+                                <td style="width: 80.3488%; height: 86px;"><span style="color: #333333;"><span
+                                            style="color: #333333;"><span style="color: #333333;"><span
+                                                    style="color: #333333;"><span style="color: #333333;"><span
+                                                            style="color: #333333;"><span style="color: #333333;"><span
+                                                                    style="color: #333333;">&lt;input&gt;을 슬라이드 컨트롤과 범위
+                                                                    내 숫자를 선택할 수 있는 컨트롤로 지정한다.<br />기본 범위는 0부터 100이고,
+                                                                    min, max, step 속성을 추가로 지정할 수
+                                                                    있다.<br /></span></span><br /></span></span></span></span></span></span>
+                                   <span
+                                        style="color: #333333;"><span style="color: #333333;"><span
+                                                style="color: #333333;"><span style="color: #333333;"><span
+                                                        style="color: #333333;"><br /></span></span></span></span></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;"><b><b><b><b>type="</b></b>radio"</b></b></td>
+                                <td style="width: 80.3488%; height: 19px;"><span
+                                        style="color: #333333;">&lt;input&gt;을<span>&nbsp;</span></span><span
+                                        style="color: #333333;"><span style="color: #333333;">라디오버튼으로 지정한다. 선택지 중 단 하나의
+                                            항목만 선택할 수 있다.<br /></span></span>
+                                  
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;"><b><b><b>type="</b></b>checkbox"</b></td>
+                                <td style="width: 80.3488%; height: 19px;"><span
+                                        style="color: #333333;">&lt;input&gt;을<span> 체크박스</span></span><span
+                                        style="color: #333333;">로 지정한다.<span>&nbsp;</span></span>선택지 중 0개, 1개 또는 여러 개를
+                                    선택할 수 있다.<br />
+                                  
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;"><b><b><b>type="</b></b>color"</b></td>
+                                <td style="width: 80.3488%; height: 19px;"><span style="color: #333333;"><span
+                                            style="color: #333333;">&lt;input&gt;을 색상팔레트로 지정한다. value="#ff0000"과 같이
+                                            헥사코드로 기본값을 지정할 수 있다.<br /></span></span>
+                                    <span
+                                        style="color: #333333;"><span></span></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 71px;">
+                                <td style="width: 19.5349%; height: 71px;"><b><b><b>type="</b></b>time"</b></td>
+                                <td style="width: 80.3488%; height: 71px;"><span style="color: #333333;"><span
+                                            style="color: #333333;"><span style="color: #333333;">&lt;input&gt;을 Time
+                                                Picker로 지정한다. (no time zone)<br /></span></span></span>
+                                   <span
+                                        style="color: #333333;"><span style="color: #333333;"><br /></span></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;"><b><b><b>type="</b></b>date"</b></td>
+                                <td style="width: 80.3488%; height: 19px;"><span style="color: #333333;"><span
+                                            style="color: #333333;">&lt;input&gt;을 Date Picker로 지정한다. <br />min, max속성으로
+                                            날짜 범위를 지정하면 Date Picker 캘린더에 지정한 기간만 활성화된다.<br /></span></span>
+                                  
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;"><b><b><b>type="</b></b>datetime-local"</b>
+                                </td>
+                                <td style="width: 80.3488%; height: 19px;"><span style="color: #333333;"><span
+                                            style="color: #333333;">&lt;input&gt;을 Date Picker &amp; 시간입력 필드로
+                                            지정한다.<span><span style="color: #333333;">&nbsp;(no time
+                                                    zone)<br /></span></span></span></span>
+                                   
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;"><b><b><b>type="</b></b>week"</b></td>
+                                <td style="width: 80.3488%; height: 19px;"><span style="color: #333333;">&lt;input&gt;을
+                                        Week Picker로 지정한다.<br /></span>
+                                   
+                                </td>
+                            </tr>
+                            <tr style="height: 104px;">
+                                <td style="width: 19.5349%; height: 104px;"><b><b><b><b>type="</b></b>month"</b></b>
+                                </td>
+                                <td style="width: 80.3488%; height: 104px;"><span style="color: #333333;"><span
+                                            style="color: #333333;"><span style="color: #333333;">&lt;input&gt;을 연도와 달을
+                                                Picker로 지정한다.<br /></span></span></span>
+                                    <span
+                                        style="color: #333333;"><br /></span>
+                                </td>
+                            </tr>
+                            <tr style="height: 19px;">
+                                <td style="width: 19.5349%; height: 19px;"><b><b><b>type="</b></b>file"</b></td>
+                                <td style="width: 80.3488%; height: 19px;">&nbsp;&lt;input&gt;을 '파일선택 버튼'과 '선택된 파일 표시'로
+                                    지정한다.&nbsp;<br />
+                                   
+                                    
+                                </td>
+                            </tr>
+                            <tr style="height: 38px;">
+                                <td style="width: 19.5349%; height: 21px; text-align: left;">
+                                    <b><b><b><b>type="</b></b>hidden"</b></b></td>
+                                <td style="width: 80.3488%; height: 21px; text-align: left;">&lt;input&gt;을 숨겨진 입력필드로
+                                    지정한다.<br /><span>사용자가 보거나 수정할 수 없는 데이터를 포함하는 용도로 사용한다.<br /><span
+                                            style="color: #333333;">개발자 도구에서보거나 편집할 수 있으므로 보안의 형태로 사용해서는
+                                            안된다.</span><br /><i>&lt;input type="hidden" id="custId" name="custId"
+                                            value="3487"&gt;</i></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br>
+                <p>이 외에도 input 태그는 다양한 속성을 가지고 있습니다. 자주 쓰는 속성 이외에는 MDN 같은 사이트를 참고합시다.</p>
+
+
+
+
+            </div>
+            <!--//refer-->
+    </main>
+
+    <!--script-->
+    <script src="asset/js/prism.js"></script>
+</body>
+
+</html>
