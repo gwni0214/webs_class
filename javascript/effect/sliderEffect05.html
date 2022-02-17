@@ -150,69 +150,126 @@
                                 <div>
 <pre><code class="language-html">
     &lt;main>
-    &lt;section id="sliderType01">
-        &lt;div class="slider__wrap">
-            &lt;div class="slider__img">
-                &lt;div class="slider">&lt;img src="img/image06.jpg" alt="이미지1">&lt;/div>
-                &lt;div class="slider">&lt;img src="img/image07.jpg" alt="이미지2">&lt;/div>
-                &lt;div class="slider">&lt;img src="img/image08.jpg" alt="이미지3">&lt;/div>
-                &lt;div class="slider">&lt;img src="img/image09.jpg" alt="이미지4">&lt;/div>
-                &lt;div class="slider">&lt;img src="img/image10.jpg" alt="이미지5">&lt;/div>
+        &lt;section id="sliderType01">
+            &lt;div class="slider__wrap">
+                &lt;div class="slider__img">
+                    &lt;div class="slider__inner">
+                        &lt;div class="slider">&lt;img src="img/image16.jpg" alt="이미지1">&lt;/div>
+                        &lt;div class="slider">&lt;img src="img/image17.jpg" alt="이미지2">&lt;/div>
+                        &lt;div class="slider">&lt;img src="img/image18.jpg" alt="이미지3">&lt;/div>
+                        &lt;div class="slider">&lt;img src="img/image19.jpg" alt="이미지4">&lt;/div>
+                        &lt;div class="slider">&lt;img src="img/image20.jpg" alt="이미지5">&lt;/div>
+                    &lt;/div>
+                &lt;/div>
+                &lt;div class="slider__btn">
+                    &lt;a href="#" class="prev">prev&lt;/a>
+                    &lt;a href="#" class="next">next&lt;/a>
+                &lt;/div>
             &lt;/div>
-        &lt;/div>
-    &lt;/section>
-&lt;/main>
-&lt;!--//main-->
-
-&lt;!--info-->
-&lt;div class="info">
-&lt;div class="title">
-    &lt;h1>&lt;a href="sliderEffect.html">Javascript SliderEffect01&lt;/a></h1>
-    &lt;p>이미지 슬라이드 - 페이드 효과&lt;/p>
-    &lt;/div>
-    &lt;div class="number">
-        &lt;ul>
-            &lt;li class="active">&lt;a href="sliderEffect01.html">1&lt;/a></li>
-            &lt;li>&lt;a href="sliderEffect02.html">2&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="sliderEffect03.html">3&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="sliderEffect04.html">4&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="sliderEffect05.html">5&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="sliderEffect06.html">6&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="sliderEffect07.html">7&lt;/a>&lt;/li>
-            &lt;li>&lt;a href="sliderEffect08.html">8&lt;/a>&lt;/li>               
-        &lt;/ul>
-    &lt;/div>
-    &lt;div class="source">
-        &lt;button class="source-btn">소스보기</button>
-        &lt;div id="modal">
-            &lt;div class="modal-wrap">
-                &lt;div class="modal-cont">
-                    &lt;div class="code-view">
-                        &lt;div class="view-header" aria-hidden="true">
-                            &lt;span>&lt;/span>
-                            &lt;span>&lt;/span>
-                            &lt;span>&lt;/span>
-                        &lt;/div>
-                        &lt;div class="view-title">
-                            &lt;ul>
-                                &lt;li class="active">&lt;a href="#">HTML&lt;/a></li>
-                                &lt;li>&lt;a href="#">CSS&lt;/a></li>
-                                &lt;li>&lt;a href="#">Javascript&lt;/a></li>
-                                &lt;li>&lt;a href="#">jQuery&lt;/a></li>
-                            &lt;/ul>
-                        &lt;/div>
-                        &lt;div class="view-cont"> *4
-                            &lt;/div>
+        &lt;/section>
+    &lt;/main>
 </code></pre>
                                 </div>
                                 <div>
 <pre><code class="language-css">
+    .slider__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .slider__img {  /*화면보이는 구간*/
+        width: 800px;
+        height: 480px;
+        overflow: hidden;
+       
+    }
+    .slider__inner {    /*이미지 움직이는 영역*/
+        display: flex;
+        flex-wrap: wrap;
+        width: 4800px;      /*이미지 총 길이*/
+        transform: translateX(0);     
+    }
+    .slider {
+       width: 800px;
+       position: relative;
+    }
+    .slider::before {
+        position: absolute;
+        left: 5px;
+        top: 5px;
+        background: rgba(0,0,0,0.4);
+        color: #fff;
+        padding: 5px 10px 3px;
+    }
+    .slider:nth-child(1):before {
+        content: '이미지1';
+    }
+    .slider:nth-child(2):before {
+        content: '이미지2';
+    }
+    .slider:nth-child(3):before {
+        content: '이미지3';
+    }
+    .slider:nth-child(4):before {
+        content: '이미지4';
+    }
+    .slider:nth-child(5):before {
+        content: '이미지5';
+    }
     
+    .slider__btn a {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        width: 50px;
+        height: 50px;
+        background: rgba(0,0,0,0.4);
+        line-height: 50px;
+        transition: all 0.2s;
+        display: block;
+        color: #fff;
+        text-decoration: none;
+    }
+    .slider__btn a.prev {
+        left: 0;
+    }
+    .slider__btn a.next {
+        right: 0;
+    }
+    .slider__btn a:hover {
+        background: rgb(241,96,86);
+    }   
 </code></pre>
                                 </div>
                                 <div>
 <pre><code class="language-js">
-   
+    const sliderWrap = document.querySelector(".slider__wrap");
+    const sliderImg = document.querySelector(".slider__img");      
+    const sliderInner = document.querySelector(".slider__inner"); 
+    const slider = document.querySelectorAll(".slider");       
+    const sliderBtn = document.querySelector(".slider__btn");      
+    const sliderBtnPrev = sliderBtn.querySelector(".prev");       
+    const sliderBtnNext = sliderBtn.querySelector(".next");
+
+    let currentIndex = 0;   
+    let sliderCount = slider.length;                   
+    let sliderWidth = sliderImg.offsetWidth;  
+
+    function gotoSlider(num){                      
+        sliderInner.style.transition = "all 400ms";
+        sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";               
+        currentIndex = num;         
+    }        
+    sliderBtnPrev.addEventListener("click", ()=>{      
+        let prevIndex = (currentIndex +(sliderCount-1)) %  sliderCount;                                    
+          gotoSlider(prevIndex);                                                                                                                                                                   
+    })
+    sliderBtnNext.addEventListener("click", ()=>{       
+        let nextIndex = (currentIndex + 1) % sliderCount;                         
+        gotoSlider(nextIndex);                          
+    });   
 </code></pre>
                                 </div>
                                 <div>
@@ -244,42 +301,55 @@
         const sliderImg = document.querySelector(".slider__img");      
         const sliderInner = document.querySelector(".slider__inner"); 
         const slider = document.querySelectorAll(".slider");       
-        const sliderBtn = document.querySelector(".slider__btn");       
+        const sliderBtn = document.querySelector(".slider__btn");      
         const sliderBtnPrev = sliderBtn.querySelector(".prev");       
         const sliderBtnNext = sliderBtn.querySelector(".next");
 
         let currentIndex = 0;   
         let sliderCount = slider.length;                   
-        let sliderWidth = sliderImg.offsetWidth;
+        let sliderWidth = sliderImg.offsetWidth;  
 
-        function gotoSlider(num){                       //슬라이드가 넘어가는 동작을 함수로 만들기.
+        function gotoSlider(num){                      
             sliderInner.style.transition = "all 400ms";
-            sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";     //매개변수 num을 만들어서 num값의 순서만큼 이동
-            // currentIndex--;
-            // currentIndex++;
-            currentIndex = num;         //현재 인덱스 값 = 매개변수 num 값
-        }
-        
-        sliderBtnPrev.addEventListener("click", ()=>{       //이전 버튼을 클릭하면 이전 이미지로 이동하는 이벤트 생성.
-            let prevIndex = (currentIndex +(sliderCount-1)) %  sliderCount;              //이전 인덱스는 현재 인덱스 -1로 변수 설정.
-                                                                                        //현재 인덱스 +(전체 갯수-1) % 전체갯수를 하면 나머지가 43210..
-            // 첫 번째 이미지에 있을 때 0 --> 4           
-            // if(currentIndex == 0){
-            //     prevIndex = sliderCount -1;
-            // }
-            
-            gotoSlider(prevIndex);                          //gotoSlider 의 매개변수가 이전 인덱스 값 (-1)로 설정하고 실행.
-                      
+            sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";               
+            currentIndex = num;         
+        }        
+        sliderBtnPrev.addEventListener("click", ()=>{      
+            let prevIndex = (currentIndex +(sliderCount-1)) %  sliderCount;                                    
+              gotoSlider(prevIndex);                                                                                                                                                                   
         })
-        sliderBtnNext.addEventListener("click", ()=>{       //다음 버튼을 클릭하면 다음 이미지로 이동하는 이벤트 생성.
-            let nextIndex = (currentIndex + 1) % sliderCount;               //다음 인덱스는 현재 인덱스 +1로 변수 설정.
-            //이미지 총 갯수 이상 넘어가지 않게. 01234 01234..
-
-            gotoSlider(nextIndex);                          //gotoSlider 의 매개변수가 다음 인덱스 값 (+1)로 설정하고 실행.
-        })
+        sliderBtnNext.addEventListener("click", ()=>{       
+            let nextIndex = (currentIndex + 1) % sliderCount;                         
+            gotoSlider(nextIndex);                          
+        });
         
 
-        
+        // let currentIndex = 0;   
+        // let sliderCount = slider.length;                   
+        // let sliderWidth = sliderImg.offsetWidth;    //sliderImg의 가로값을 변수로 지정.
+
+        // function gotoSlider(num){                       //슬라이드가 넘어가는 동작을 함수로 만들기.
+        //     sliderInner.style.transition = "all 400ms";
+        //     sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";     //매개변수 num을 만들어서 num값의 순서만큼 이동
+        //     // currentIndex--;
+        //     // currentIndex++;
+        //     currentIndex = num;         //현재 인덱스 값 = 매개변수 num 값
+        // }        
+        // sliderBtnPrev.addEventListener("click", ()=>{       //이전 버튼을 클릭하면 이전 이미지로 이동하는 이벤트 생성.
+        //     let prevIndex = (currentIndex +(sliderCount-1)) %  sliderCount;              //이전 인덱스는 현재 인덱스 -1로 변수 설정.
+        //                     //현재 인덱스 +(전체 갯수-1) % 전체갯수를 하면 나머지가 43210..
+        //       gotoSlider(prevIndex);                                                    //gotoSlider 의 매개변수가 이전 인덱스 값 (-1)로 설정하고 실행.                                                                        
+        //     // 첫 번째 이미지에 있을 때 0 --> 4           
+        //     // if(currentIndex == 0){
+        //     //     prevIndex = sliderCount -1;
+        //     // } 이 if문을 위에 변수 지정할 때 처럼 한 줄로 표현이 가능하다. 둘다 맞으니 알아두자.                                            
+        // })
+        // sliderBtnNext.addEventListener("click", ()=>{       //다음 버튼을 클릭하면 다음 이미지로 이동하는 이벤트 생성.
+        //     let nextIndex = (currentIndex + 1) % sliderCount;               //다음 인덱스는 현재 인덱스 +1로 변수 설정.
+        //     //이미지 총 갯수 이상 넘어가지 않게. 01234 01234..
+
+        //     gotoSlider(nextIndex);                          //gotoSlider 의 매개변수가 다음 인덱스 값 (+1)로 설정하고 실행.
+        // });
     
         
 
