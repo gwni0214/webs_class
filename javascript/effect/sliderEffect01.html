@@ -481,10 +481,11 @@ modal();
         let sliderCount = slider.length; //이미지 갯수
 
         setInterval(() => {
-            let nextIndex =(currentIndex + 1) % 5; //1 2 3 4 0 1 2 3 4 0... 5로 나눠서 나머지 값만 나오게. 
+            let nextIndex =(currentIndex + 1) % 5; // 1 2 3 4 0 1 2 3 4 0... 5로 나눠서 나머지 값만 나오게. 
             slider[currentIndex].style.opacity = "0"    //첫 번째 이미지를 안보이게
             slider[nextIndex].style.opacity = "1"               //두 번째 이미지를 보이게
             currentIndex = nextIndex;               //nextIndex 값을 currentIndex에 대입시켜서 계속 반복.
+          
             
             slider.forEach(slider => {
                 slider.style.transition = "all 0.3s";       //트랜지션 효과를 써서 부드럽게 움직이도록
