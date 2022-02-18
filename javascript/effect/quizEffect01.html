@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+    <style>
+        @font-face {
+            font-family: 'DungGeunMo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Cafe24Dangdanghae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.2/Cafe24Dangdanghae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+            font-family: 'DungGeunMo';                
+        }
+        a{
+            text-decoration: none;
+        }
+        body {
+            height: 100vh;
+            background-color: #f6f6f6;
+            background-image:
+                linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(#cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(#e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px,  transparent 100px),
+                linear-gradient(transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+                linear-gradient(90deg, #e0e0e0 0px, #e0e0e0 1px, transparent 1px, transparent 99px, #e0e0e0 99px, #e0e0e0 100px),
+                linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
+                linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
+                linear-gradient(#cdcccc, #cdcccc);
+            background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;            
+        }
+        #header {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background: #262626;
+            color: #fff;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            z-index: 10;
+        }
+        #header::before {
+            content: '';
+            border: 4px ridge #a3a3a3;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: calc(100% - 16px);
+            height: calc(100% - 18px);
+            z-index: -1;
+        }
+        #header h1 {
+            padding: 0 0 3px 10px;
+        }
+        #header nav {}
+        #header nav li {
+            list-style: none;
+            display: inline;
+        }
+        #header nav li a {
+            color: #fff;
+            display: inline-block;
+            padding: 10px;
+            transition: all 0.2s;
+        }
+        #header nav li a:hover {
+            opacity: 0.5;
+        }
+        .quiz__wrap {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           margin-top: 150px;
+           flex-wrap: wrap;
+        }
+        .quiz {
+            max-width: 500px;
+            height: 500px;
+            background: #fff;
+            border: 8px ridge #cacaca;
+            margin: 10px;
+        }
+        .quiz__category {
+            background: #cacaca;
+            text-align: center;
+            font-size: 14px;
+            color: #3b3b3b;
+            border: 3px ridge #cacaca;
+            padding: 3px 0;
+            position: relative;
+        }
+        .quiz__category::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            width: 5px;
+            height: 5px;
+            border: 6px ridge #648a30; 
+        }
+        .quiz__category::after {
+            content: '';
+            position: absolute;
+            right: 2px;
+            top: 2px;
+            width: 5px;
+            height: 5px;
+            border: 6px ridge #648a30; 
+        }
+        .quiz__question {            
+            border-bottom: 6px ridge #cacaca;
+            border-top: 6px ridge #cacaca;
+            padding: 13px 30px;
+            font-size: 24px;
+            line-height: 1.6;
+        }
+        .quiz__number {
+            font-family: 'Cafe24Dangdanghae';
+            color: #648a30;
+        }
+        .quiz__title {
+            font-family: 'Cafe24Dangdanghae';
+        }
+        .quiz__answer {
+            background: #f5f5f5;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>Quiz</h1>
+        <nav>
+            <ul>
+                <li><a href="#">주관식 한 문제</a></li>
+                <li><a href="#">주관식 여러 문제</a></li>
+                <li><a href="#">객관식 문제</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main">
+        <div class="quiz__wrap">            
+            <div class="quiz">
+                <h2 class="quiz__category">HTML 퀴즈</h2>
+                <h3 class="quiz__question">
+                    <span class="quiz__number">01.</span>
+                    <span class="quiz__title">웹 페이지와 그 내용을 구조화하기 위해 사용하는 코드는 무엇인가요?</span>
+                </h3>
+                <div class="quiz__answer"></div>
+            </div>
+          
+        </div>
+    </main>
+
+    <footer id="footer">
+
+    </footer>
+</body>
+</html>
