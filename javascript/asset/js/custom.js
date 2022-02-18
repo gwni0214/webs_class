@@ -21,7 +21,7 @@
      const tabBtn = document.querySelectorAll(".view-title > ul > li");
      const tabCont = document.querySelectorAll(".view-cont > div");
 
-     //각각의 버튼을 클릭하면 경고창을 띄어주세요
+     
      tabBtn.forEach((btn, index)=>{
          btn.addEventListener("click",()=>{
              //모든 클래스 active 삭제
