@@ -180,7 +180,7 @@
             line-height: 120px;
             text-align: center;
             background: #f5534f;
-            opacity: 0;
+     
         }
         .quiz__view .false {
             position: absolute;
@@ -194,7 +194,7 @@
             line-height: 120px;
             text-align: center;
             color: #f5534f;
-            opacity: 0;
+          
         }
         .quiz__answer {
             border-top: 6px ridge #cacaca;
@@ -868,6 +868,8 @@ display: none;
         const quizConfirm =  document.querySelector(".quiz__confirm");      //정답 확인 버튼
         const quizResult =  document.querySelector(".quiz__result");        //정답 결과
         const quizDog = document.querySelector(".dog");                     //강아지
+        const quizTrue = document.querySelector(".true");                    //정답입니다
+        const quizFalse = document.querySelector(".false");                  //틀렸습니다.
 
         //문제 정보
         const answerType = "javascript"
@@ -894,6 +896,27 @@ display: none;
             quizDog.classList.remove("like");
         })
         //주말숙제 서치 이펙트 참고해서  인풋 값 비교해서  버튼 클릭하면 정답입니다, 아닙니다~ 나오게 
+
+        const inputBox = document.querySelector(".quiz__input");
+        quizConfirm.addEventListener("click", ()=>{
+          console.log(inputBox.value);
+
+          factCheck();
+        })
+
+        function factCheck(){
+            const quizData = inputBox.value
+            if(quizData==inputBox.value){
+                quizDog.classList.add("like");
+                quizFalse.style.display = "none"
+            } else {
+                quizDog.classList.remove("like");
+                
+                quizFalse.style.display = "block";
+            }   
+
+            
+        }
     </script>
 </body>
 </html>
