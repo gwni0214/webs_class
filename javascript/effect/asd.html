@@ -8,9 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
     <style>
-        @import url(../asset/css/atom-one-dark.min.css.css);
-        @import url(../asset/css/window98.css);
-        @import url(../asset/css/quizDog.css);
+        @import url(css/cdnjs.css);
+        @import url(css/window98Custom.css);
+        @import url(css/dog.css);
+
         @font-face {
             font-family: 'DungGeunMo';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
@@ -24,7 +25,6 @@
             font-weight: normal;
             font-style: normal;
         }
-
 
         *,
         *:before,
@@ -187,7 +187,6 @@
         .quiz__ask {
             font-family: 'Cafe24Dangdanghae';
             color: #000;
-
         }
 
         .quiz__view {
@@ -199,14 +198,14 @@
             position: absolute;
             left: 70%;
             top: 100px;
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
+            color: #fff;
             border-radius: 50%;
             z-index: 100;
-            line-height: 100px;
+            line-height: 120px;
             text-align: center;
-            color: #fff;
-            background-color: #f5534f;
+            background: #f5534f;
             opacity: 0;
         }
 
@@ -214,15 +213,14 @@
             position: absolute;
             right: 70%;
             top: 100px;
-            width: 100px;
-            height: 100px;
-            background-color: #fff;
+            width: 120px;
+            height: 120px;
+            background: rgb(198, 199, 177);
             border-radius: 50%;
             z-index: 100;
-            line-height: 100px;
+            line-height: 120px;
             text-align: center;
             color: #f5534f;
-            background-color: #fff;
             opacity: 0;
         }
 
@@ -270,8 +268,6 @@
             font-family: 'Cafe24Dangdanghae';
             margin-bottom: 10px;
         }
-
-       
     </style>
 </head>
 
@@ -280,8 +276,8 @@
         <h1><a href="./quizEffect.html">Quiz</a></h1>
         <nav>
             <ul>
-                <li class="active"><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li class="active"><a href="quizEffect02.html">2</a></li>
                 <li><a href="quizEffect03.html">3</a></li>
                 <li><a href="quizEffect04.html">4</a></li>
                 <li><a href="quizEffect05.html">5</a></li>
@@ -299,6 +295,8 @@
                     <span class="quiz__ask"></span>
                 </h3>
                 <div class="quiz__view">
+                    <div class="false">틀렸습니다!</div>
+                    <div class="true">정답입니다!</div>
                     <div class="dog">
                         <div class='dog'>
                             <div class='head'>
@@ -321,6 +319,7 @@
                     </div>
                 </div>
                 <div class="quiz__answer">
+                    <input type="text" placeholder="정답을 적어주세요!" class="quiz__input" autofocus autocomplete="off">
                     <button class="quiz__confirm">정답 확인하기</button>
                     <div class="quiz__result"></div>
                 </div>
@@ -328,36 +327,36 @@
         </div>
 
 
-          <!-- 윈도우 버전 -->
+        <!-- 윈도우 버전 -->
         <div class="source">
             <button class="source-btn">소스보기</button>
             <div id="modal">
                 <div class="modal-wrap">
                     <div class="modal-cont">
-        <div class="window">
-            <div class="title-bar">
-              <div class="minimize">
-                <div class="symbol"></div>
-              </div>
-              <div class="maximize">
-                <div class="symbol"></div>
-              </div>
-              <div class="close">
-                <div class="symbol"></div>
-              </div>
-            </div>
-            <div class="menu-bar">
-                <span class="active">HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Jquery</span>
-            </div>
-            <div class="content-container">
-              <div class="content">
-                <div class="main">
-                    <div class="view-cont">
-                        <div>
-                            <pre><code class="language-html">&lt;div class="quiz__wrap"&gt;
+                        <div class="window">
+                            <div class="title-bar">
+                                <div class="minimize">
+                                    <div class="symbol"></div>
+                                </div>
+                                <div class="maximize">
+                                    <div class="symbol"></div>
+                                </div>
+                                <div class="close">
+                                    <div class="symbol"></div>
+                                </div>
+                            </div>
+                            <div class="menu-bar">
+                                <span class="active">HTML</span>
+                                <span>CSS</span>
+                                <span>JavaScript</span>
+                                <span>Jquery</span>
+                            </div>
+                            <div class="content-container">
+                                <div class="content">
+                                    <div class="main">
+                                        <div class="view-cont">
+                                            <div>
+                                                <pre><code class="language-html">&lt;div class="quiz__wrap"&gt;
 &lt;div class="quiz"&gt;
     &lt;h2 class="quiz__Type"&gt;&lt;/h2&gt;
     &lt;h3 class="quiz__question"&gt;
@@ -365,6 +364,8 @@
         &lt;span class="quiz__ask"&gt;&lt;/span&gt;
     &lt;/h3&gt;
     &lt;div class="quiz__view"&gt;
+    &lt;div class="false"&gt;틀렸습니다!&lt;/div&gt;
+    &lt;div class="true"&gt;정답입니다!&lt;/div&gt;
         &lt;div class="dog"&gt;
             &lt;div class='dog'&gt;
                 &lt;div class='head'&gt;
@@ -392,9 +393,9 @@
 &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-                        </div>
-                        <div>
-                            <pre><code class="language-css">.quiz__wrap {
+                                            </div>
+                                            <div>
+                                                <pre><code class="language-css">.quiz__wrap {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -541,68 +542,81 @@
     }
                         
 </code></pre>
-                        </div>
-                        <div>
-                            <pre><code class="language-javascript">    const quizType = document.querySelector(".quiz__Type") //퀴즈 종류
+                                            </div>
+                                            <div>
+                                                <pre><code class="language-javascript">    const quizType = document.querySelector(".quiz__Type") //퀴즈 종류
     const quizNumber = document.querySelector(".quiz__number") //퀴즈 번호
     const quizAsk = document.querySelector(".quiz__ask") //퀴즈 질문
     const quizConfirm = document.querySelector(".quiz__confirm") //정답 확인 버튼
     const quizResult = document.querySelector(".quiz__result") //정답 결과
     const quizDog = document.querySelector(".quiz__view .dog") //강아지
+    const quizInput = document.querySelector(".quiz__input") //인풋박스
+    const viewtTrue = document.querySelector(".true") //인풋박스
+    const viewFalse = document.querySelector(".false") //인풋박스
 
     //문제 정보
-    const answerType = "HTML"
+    const answerType = "CSS"
     const answerNum = 1;
-    const answerAsk = "컨텐츠의 구조를 정의하는 마크업 언어는 무엇일까요?";
-    const answerResult = "HTML";
+    const answerAsk = " 이 속성은 하나의 플렉스 아이템이 자신의 컨테이너가
+    차지하는 공간에 맞추기 위해 크기를 키우거나 줄이는 방법을 설정하는 속성
+    입니다. 무엇일까요? ";
+    const answerResult = "flex";
 
     //문제 출력
     quizType.textContent = answerType;
     quizNumber.textContent = answerNum + ". ";
     quizAsk.textContent = answerAsk;
     quizResult.textContent = answerResult;
-                                
-    //정답 확인
+
     quizConfirm.addEventListener("click", () => {
         quizConfirm.style.display = "none"
         quizResult.style.display = "block"
+
+    const searchWord = quizInput.value; //사용자가 입력한 데이터 저장소
+
+    if(searchWord == answerResult){
         quizDog.classList.add("like")
+        viewtTrue.style.opacity = 1;
+    }else {
+        quizDog.classList.add("dislike")
+        viewFalse.style.opacity = 1;
+    }
     })
 </code></pre>
-                        </div>
-                        <div>
-                            <pre><code class="language-javascript">
+                                            </div>
+                                            <div>
+                                                <pre><code class="language-javascript">
 
 </code></pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="scroll">
+                                        <div class="start"></div>
+                                        <div class="progress"></div>
+                                        <div class="end"></div>
+                                    </div>
+                                </div>
+                                <div class="scroll -row">
+                                    <div class="start"></div>
+                                    <div class="progress"></div>
+                                    <div class="end"></div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="scroll">
-                  <div class="start"></div>
-                  <div class="progress"></div>
-                  <div class="end"></div>
-                </div>
-              </div>
-              <div class="scroll -row">
-                <div class="start"></div>
-                <div class="progress"></div>
-                <div class="end"></div>
-              </div>
-            </div>
-        </div>
-        <button class="modal-close">닫기</button>
-        <!-- //윈도우 버전 -->
-        
+                        <button class="modal-close">닫기</button>
+                        <!-- //윈도우 버전 -->
     </main>
     <footer id="footer">
-        <a href="mailto:sbxjs6999@naver.com">sbxjs6999@naver.com</a>
+        <a href="mailto:ekfvoddl0321@gmail.com">ekfvoddl0321@gmail.com</a>
     </footer>
 
     <!-- script -->
-    <script src="../asset/js/highlight.min.js"></script>
-    <script src="../asset/js/window98.js"></script>
+    <script src="js/highlight.min.js"></script>
+    <script src="js/window98.js"></script>
+
     <script>
-         hljs.highlightAll();
+        hljs.highlightAll();
         modal()
         tabMenu()
 
@@ -612,26 +626,41 @@
         const quizConfirm = document.querySelector(".quiz__confirm") //정답 확인 버튼
         const quizResult = document.querySelector(".quiz__result") //정답 결과
         const quizDog = document.querySelector(".quiz__view .dog") //강아지
+        const quizInput = document.querySelector(".quiz__input") //인풋박스
+        const viewtTrue = document.querySelector(".true") //인풋박스
+        const viewFalse = document.querySelector(".false") //인풋박스
+
+
         //문제 정보
-        const answerType = "HTML"
+        const answerType = "CSS"
         const answerNum = 1;
-        const answerAsk = "컨텐츠의 구조를 정의하는 마크업 언어는 무엇일까요?";
-        const answerResult = "HTML";
+        const answerAsk = " 이 속성은 하나의 플렉스 아이템이 자신의 컨테이너가 차지하는 공간에 맞추기 위해 크기를 키우거나 줄이는 방법을 설정하는 속성입니다. 무엇일까요? ";
+        const answerResult = "flex";
         //문제 출력
         quizType.textContent = answerType;
         quizNumber.textContent = answerNum + ". ";
         quizAsk.textContent = answerAsk;
         quizResult.textContent = answerResult;
 
+
+
         //정답확인
         //정답 버튼을 클릭하면 정답 확인은 안보이게  / 숨겨진 정답은 보이게
         //정답을 확인하면 강아지가 웃고있어야한다.
-
-        //정답 확인
         quizConfirm.addEventListener("click", () => {
             quizConfirm.style.display = "none"
             quizResult.style.display = "block"
-            quizDog.classList.add("like")
+
+            const searchWord = quizInput.value; //사용자가 입력한 데이터 저장소
+
+            if (searchWord == answerResult) {
+                quizDog.classList.add("like")
+                viewtTrue.style.opacity = 1;
+            } else {
+                quizDog.classList.add("dislike")
+                viewFalse.style.opacity = 1;
+            }
+
         })
     </script>
 </body>
