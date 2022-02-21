@@ -184,9 +184,11 @@
             line-height: 120px;
             text-align: center;
             background: #f5534f;
-            display: none;
+            opacity: 0;
+    
      
         }
+      
         .quiz__view .false {
             position: absolute;
             right: 70%;
@@ -199,9 +201,39 @@
             line-height: 120px;
             text-align: center;
             color: #f5534f;
-            display: none;
-
-          
+            opacity: 0;
+                
+        }
+        .quiz__view.dislike .false {
+            opacity: 1;
+            animation: wobble 0.6s;
+        }
+        .quiz__view.like .true {
+            opacity: 1;
+            animation: wobble 0.6s;
+        }
+        @keyframes wobble {
+            0% {      
+                transform: translateZ(0)
+            }
+            15% {       
+                transform: translate3d(-25%, 0, 0) rotate(-5deg)
+            }
+            30% {       
+                transform: translate3d(20%, 0, 0) rotate(3deg)
+            }
+            45% {        
+                transform: translate3d(-15%, 0, 0) rotate(-3deg)
+            }
+            60% {       
+                transform: translate3d(10%, 0, 0) rotate(2deg)
+            }
+            75% {       
+                transform: translate3d(-5%, 0, 0) rotate(-1deg)
+            }
+            100% {    
+                transform: translateZ(0)
+            }
         }
         .quiz__answer {
             border-top: 6px ridge #cacaca;
@@ -232,7 +264,7 @@
             background: #fff;
             font-family: 'Cafe24Dangdanghae';
             text-shadow: 1px 1px 1px #fff;
-            display: none;
+          
             color: #262626;
             
         }
@@ -328,7 +360,7 @@
                 <span class="active">HTML</span>
                 <span>CSS</span>
                 <span>JavaScript</span>
-                <span>Jquery</span>
+               
             </div>
             <div class="content-container">
               <div class="content">
@@ -698,11 +730,7 @@
     }
 </code></pre>
                         </div>
-                        <div>
-                            <pre><code class="language-javascript">
-
-</code></pre>
-                        </div>
+                       
                     </div>
                 </div>
                 <div class="scroll">
@@ -739,7 +767,7 @@
         const quizAsk =  document.querySelector(".quiz__ask");              //퀴즈 질문
         const quizConfirm =  document.querySelector(".quiz__confirm");      //정답 확인 버튼
         const quizResult =  document.querySelector(".quiz__result");        //정답 결과
-        const quizDog = document.querySelector(".dog");                     //강아지
+        const quizView = document.querySelector(".quiz__view");                     //강아지
         const quizTrue = document.querySelector(".true");                    //정답입니다
         const quizFalse = document.querySelector(".false");                  //틀렸습니다.
 
@@ -753,8 +781,9 @@
         quizType.textContent = answerType;
         quizNumber.textContent = answerNum + ".";
         quizAsk.textContent = answerAsk;
-        quizResult.textContent = answerResult;
+        quizResult.textContent = "정답은 "+ answerResult + "입니다.";
 
+        quizResult.style.display = "none";
         //정답 확인
         //정답 버튼을 클릭하면 정답확인은 안보이게, 숨겨진 정답은 보이게
         quizConfirm.addEventListener("click", ()=>{
@@ -762,30 +791,23 @@
             quizResult.style.display = "block";           
             quizDog.classList.add("like");
         })
-        quizResult.addEventListener("click", ()=>{
-            quizConfirm.style.display = "block";
-            quizResult.style.display = "none";
-            quizDog.classList.remove("like");
-        })
+       
        
         //정답이 맞으면 정답입니다~, 아니면 틀렸습니다~ 강아지도 웃고 울고 나오게
         const inputBox = document.querySelector(".quiz__input");
-        const quizData = inputBox.value                         //인풋 박스에 입력한 값
+        const quizData = inputBox.value.toLowerCase().trim();                         //인풋 박스에 입력한 값
         quizConfirm.addEventListener("click", ()=>{
          
           factCheck();                                      // 팩트체크 함수를 만들어서 실행.
         })
         function factCheck(){           
             if(answerResult==inputBox.value){               // 만약 결과(정답)이 입력한 값과 같으면
-                quizDog.classList.remove("dislike");        //dislike 클래스 삭제
-                quizDog.classList.add("like");              //like 클래스 추가
-                quizFalse.style.display = "none"            //틀렸습니다 안보이게
-                quizTrue.style.display = "block"            //정답 입니다 보이게
+                quizView.classList.add("like");              //like 클래스 추가              
+                quizResult.style.display = "none";
             } if(answerResult!=inputBox.value){             // 입력한 값과 정답이 틀리면
-                quizDog.classList.remove("like");           //like 클래스 삭제 
-                quizDog.classList.add("dislike");           //dislike 클래스 추가
-                quizTrue.style.display = "none"             //정답입니다 안보이게
-                quizFalse.style.display = "block"           //틀렸습니다가 보이게
+                quizView.classList.add("dislike");           //dislike 클래스 추가   
+                inputBox.style.display = "none";
+           
             }            
         };
     </script>
