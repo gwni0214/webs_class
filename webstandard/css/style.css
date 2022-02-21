@@ -1007,8 +1007,8 @@ width: 0; height: 0; overflow: hidden;
 
 .login_content .lc_btn {
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 12px;
+    top: -4px;
     width: 62px;
     height: 47px;
     background: #fff;
