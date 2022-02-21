@@ -118,6 +118,7 @@
            justify-content: center;
            margin-top: 150px;
            flex-wrap: wrap;
+           height: 100vh;
         }
         .quiz {
             max-width: 500px;
@@ -540,11 +541,11 @@
         //     quizResult[i].textContent = quizInfo[i].answerResult;
         // }; 
         //forEach
-        quizInfo.forEach((el,index)=>{
-            quizType[index].textContent = quizInfo[index].answerType;
-            quizNumber[index].textContent = quizInfo[index].answerNum + ".";
-            quizAsk[index].textContent = quizInfo[index].answerAsk;
-            quizResult[index].textContent = "정답은 " + quizInfo[index].answerResult + " 입니다.";
+        quizInfo.forEach((el,index)=>{                                  //다중 선택자로 선택해서 배열화 된 데이터를 forEach문으로 적용.
+            quizType[index].textContent = quizInfo[index].answerType;           //문제 타입
+            quizNumber[index].textContent = quizInfo[index].answerNum + ".";    //문제 번호
+            quizAsk[index].textContent = quizInfo[index].answerAsk;             //문제 질문
+            quizResult[index].textContent = "정답은 " + quizInfo[index].answerResult + " 입니다.";  //문제 정답
         })
         //정답 숨기기
         quizResult.forEach(el=>{
@@ -556,21 +557,21 @@
                 // el.style.display = "none";
                 // quizResult[index].style.display = "block";      //해당 순서의quizResult가 보여져야 하므로 [index]를 추가.
                 //사용자 정답 == quizInfo의 정답
-                const userWord = quizInput[index].value.toLowerCase().trim();
+                const userWord = quizInput[index].value.toLowerCase().trim();   //input창에 들어갈 데이터의 조건도 같이 변수화 시킨다.
 
                 if(userWord == quizInfo[index].answerResult){
                     quizView[index].classList.remove("dislike");
-                    quizView[index].classList.add("like");
+                    quizView[index].classList.add("like");                      // 정답이면 like 클래스 추가
                     quizConfirm[index].style.display = "none";
                 } else {
                     quizView[index].classList.remove("like");
-                    quizView[index].classList.add("dislike");
+                    quizView[index].classList.add("dislike");                   //오답이면 dislike 클래스 추가
                     quizConfirm[index].style.display = "none";
                     quizResult[index].style.display = "block";
                     quizInput[index].style.display = "none";
                 }
             })
-        })
+        });
        
     </script>
 </body>
