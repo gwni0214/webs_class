@@ -502,7 +502,7 @@
         function updataQuiz(){
             //타입, 문제, 정답, 보기
             quizType.textContent = quizInfo[0].answerType;
-            quizNumber.textContent = quizInfo[0].answerNum;
+            quizNumber.textContent = quizInfo[0].answerNum + ".";
             quizAsk.textContent = quizInfo[0].answerAsk;
             quizResult.textContent = quizInfo[0].answerEx;             
             quizChoice.forEach((el,index)=>{                    //choice 보기를 다중선택자로 사용해서 출력시키기
