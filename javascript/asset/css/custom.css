@@ -58,6 +58,34 @@ body.img08 {
     background-image:  url(../../effect/img/image08.jpg);
 
 }
+body.img09 {
+    background-image:  url(../../effect/img/image09.jpg);
+
+}
+body.img10 {
+    background-image:  url(../../effect/img/image10.jpg);
+
+}
+body.img11 {
+    background-image:  url(../../effect/img/image11.jpg);
+
+}
+body.img12 {
+    background-image:  url(../../effect/img/image12.jpg);
+
+}
+body.img13 {
+    background-image:  url(../../effect/img/image13.jpg);
+
+}
+body.img14 {
+    background-image:  url(../../effect/img/image14.jpg);
+
+}
+body.img15 {
+    background-image:  url(../../effect/img/image15.jpg);
+
+}
 body::before {
     content: '';
     position: absolute;
@@ -129,6 +157,14 @@ body::before {
 .source button:hover {
     background: #fff;
     color: #000;
+}
+/*attr*/
+.attr {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 14px;
+    line-height: 1.6;
 }
 /*modal*/
 #modal {
