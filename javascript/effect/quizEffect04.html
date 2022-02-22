@@ -441,7 +441,66 @@
                         </div>
                         <div>
 <pre><code class="language-javascript">  
-   
+    const quizType = document.querySelector(".quiz__type");         //문제유형
+    const quizNumber = document.querySelector(".quiz__number");     //문제 번호
+    const quizAsk = document.querySelector(".quiz__ask");           //문제 질문
+    const quizConfirm = document.querySelector(".quiz__confirm");   //문제 정답버튼
+    const quizResult = document.querySelector(".quiz__result");     //문제 정답
+    const quizView = document.querySelector(".quiz__view");         //문제 화면
+    const quizSelects = document.querySelector(".quiz__selects");   //객관식 보기
+    const quizChoice = document.querySelectorAll(".choice");   //객관식 보기
+    const quizSelect = document.querySelectorAll(".select");   //선택하는 보기 input
+    
+    //문제 정보
+    const quizInfo = [
+        {
+            answerType : "javascript",
+            answerNum : 1,                                                   
+            answerAsk : "객체 기반의 스크립트 프로그래밍 언어는 무엇입니까?",
+            answerChoice : ["javascript", "html", "css", "jqeury"],
+            answerResult : "1",
+            answerEx : "객체 기반의 스크립트 프로그래밍 언어는 자바스크립트입니다."
+        }                    
+    ];
+    
+    //문제 출력
+    function updataQuiz(){
+        //타입, 문제, 정답, 보기
+        quizType.textContent = quizInfo[0].answerType;
+        quizNumber.textContent = quizInfo[0].answerNum + ".";
+        quizAsk.textContent = quizInfo[0].answerAsk;
+        quizResult.textContent = quizInfo[0].answerEx;             
+        quizChoice.forEach((el,index)=>{                    //choice 보기를 다중선택자로 사용해서 출력시키기
+            el.textContent = quizInfo[0].answerChoice[index];
+        })
+
+        //설명 감추기
+        quizResult.style.display = "none";
+    }
+    updataQuiz();
+
+    //정답 확인
+    function answerQuiz(){
+        //사용자가 클릭한 input --> checked : 사용자가 선택한 정답 == 객체 안에 정답
+        for(let i =0; i&lt;quizSelect.length; i++){
+            if(quizSelect[i].checked == true){                          //사용자가 체크한 보기가 true 일 때의 조건문
+                if(quizSelect[i].value == quizInfo[0].answerResult){    //체크한 보기의 값과 정답이 일치했을 때. 정답/오답
+                    //정답
+                    quizView.classList.remove("dislike");               
+                    quizView.classList.add("like");                     // 정답일 때 like 클래스 추가
+                    quizConfirm.style.display = "none";                 // 정답일 때 정답 확인 버튼 안보이게
+                    quizResult.style.display = "block";                 //정답일 때 설명 칸 보이게
+                } else {
+                    //오답                                        
+                    quizView.classList.remove("like");                 
+                    quizView.classList.add("dislike");               //오답일 때 dislike 클래스 추가
+                    quizConfirm.style.display = "none";
+                    quizResult.style.display = "block";
+                }
+            }
+        }
+    }
+    quizConfirm.addEventListener("click",answerQuiz);            //클릭하는 함수 실행.  
 </code></pre>
                         </div>
                        
