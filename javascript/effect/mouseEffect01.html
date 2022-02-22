@@ -188,22 +188,22 @@
         
         //출력용
         window.addEventListener("mousemove",(event)=>{
-            document.querySelector(".clientX").innerText = event.clientX;
-            document.querySelector(".clientY").innerText = event.clientY;
-            document.querySelector(".offsetX").innerText = event.offsetX;
-            document.querySelector(".offsetY").innerText = event.offsetY;
-            document.querySelector(".pageX").innerText = event.pageX;
-            document.querySelector(".pageY").innerText = event.pageY;
-            document.querySelector(".screenX").innerText = event.screenX;
-            document.querySelector(".screenY").innerText = event.screenY;
+            document.querySelector(".clientX").innerText = event.clientX;   //브라우저 기준 x좌표
+            document.querySelector(".clientY").innerText = event.clientY;   //브라우저 기준 y좌표
+            document.querySelector(".offsetX").innerText = event.offsetX;   //요소 기준 x 좌표
+            document.querySelector(".offsetY").innerText = event.offsetY;   //요소 기준 y 좌표
+            document.querySelector(".pageX").innerText = event.pageX;       //페이지 기준 x 좌표
+            document.querySelector(".pageY").innerText = event.pageY;       //페이지 기준 y 좌표
+            document.querySelector(".screenX").innerText = event.screenX;   //디바이스 기준 x 좌표
+            document.querySelector(".screenY").innerText = event.screenY;   //디바이스 기준 y 좌표
         })
         //마우스 움직이기
         window.addEventListener("mousemove",(e)=>{
-            document.querySelector(".cursor").style.left = e.clientX - 25 + "px";
+            document.querySelector(".cursor").style.left = e.clientX - 25 + "px";   //원 안으로 중심이 들어가야해서 -25px 을 줌.
             document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
         })
         //마우스 오버 효과    
-        const mouseStyle = document.querySelectorAll(".mouse__wrap span");            
+        const mouseStyle = document.querySelectorAll(".mouse__wrap span");     //모든 span 태그를 변수로 지정       
         //for               
         // for(let i =0; i<mouseStyle.length; i++){
         //     mouseStyle[i].addEventListener("mouseover",()=>{
@@ -216,11 +216,11 @@
         
         //forEach
         mouseStyle.forEach((e,i)=>{
-            e.addEventListener("mouseover",()=>{
-                document.querySelector(".cursor").classList.add("style"+(i+1));
+            e.addEventListener("mouseover",()=>{                                //마우스 오버 효과를 index 순서에 따라 각각 적용. 
+                document.querySelector(".cursor").classList.add("style"+(i+1)); // 스타일 클래스를 추가
             });
-            e.addEventListener("mouseout",()=>{
-            document.querySelector(".cursor").classList.remove("style"+(i+1));
+            e.addEventListener("mouseout",()=>{                                 //마우스 아웃을 하면
+            document.querySelector(".cursor").classList.remove("style"+(i+1));  //스타일 클래스 삭제
             });
         });
         
