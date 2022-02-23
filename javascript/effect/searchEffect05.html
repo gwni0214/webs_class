@@ -469,7 +469,13 @@
 
     const searchBox = document.querySelectorAll(".search span");   //조회수 버튼
     const cssList = document.querySelector(".list ul");  //속성 리스트
-    const cssCount = document.querySelector(".count em"); //속성 갯수
+    const cssCount = document.querySelector(".count"); //속성 갯수
+    //전체 갯수 보여주기
+    cssProperty.forEach((el,index)=>{
+    
+        cssCount.innerText = "전체 목록 갯수 : "+ (index+1) +"개" ;
+    })
+    
     //목록 보여주기
     let listHTML ='';               //HTML에 보여줄 리스트를 전역 변수로 지정.
     function upDataList(list){         //목록 보여주기 함수.

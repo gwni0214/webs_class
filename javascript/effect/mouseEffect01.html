@@ -41,8 +41,8 @@
         }
         .cursor {
             position: absolute;
-            left: 0;
-            top: 0;
+            left: -100px;
+            top: -100px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -319,9 +319,14 @@
         })
         //마우스 움직이기
         window.addEventListener("mousemove",(e)=>{
-            document.querySelector(".cursor").style.left = e.clientX - 25 + "px";   //원 안으로 중심이 들어가야해서 -25px 을 줌.
-            document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
-        })
+            // document.querySelector(".cursor").style.left = e.clientX - 25 + "px";   //원 안으로 중심이 들어가야해서 -25px 을 줌.
+            // document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
+
+            let x = e.clientX - 25 + "px";
+            let y = e.clientY - 25 + "px";
+            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;   //이렇게도 표현 가능.
+        });
+
         //마우스 오버 효과    
         const mouseStyle = document.querySelectorAll(".mouse__wrap span");     //모든 span 태그를 변수로 지정       
         //for               
@@ -335,15 +340,26 @@
         // };
         
         //forEach
-        mouseStyle.forEach((e,i)=>{
-            e.addEventListener("mouseover",()=>{                                //마우스 오버 효과를 index 순서에 따라 각각 적용. 
-                document.querySelector(".cursor").classList.add("style"+(i+1)); // 스타일 클래스를 추가
-            });
-            e.addEventListener("mouseout",()=>{                                 //마우스 아웃을 하면
-            document.querySelector(".cursor").classList.remove("style"+(i+1));  //스타일 클래스 삭제
-            });
-        });
+        // mouseStyle.forEach((e,i)=>{
+        //     e.addEventListener("mouseover",()=>{                                //마우스 오버 효과를 index 순서에 따라 각각 적용. 
+        //         document.querySelector(".cursor").classList.add("style"+(i+1)); // 스타일 클래스를 추가
+        //     });
+        //     e.addEventListener("mouseout",()=>{                                 //마우스 아웃을 하면
+        //     document.querySelector(".cursor").classList.remove("style"+(i+1));  //스타일 클래스 삭제
+        //     });
+        // });
         
+        //getAttribute 방법
+        //span에 마우스 오버 했을 때 속성값 alret()
+        mouseStyle.forEach(el=>{  
+            let attr = el.getAttribute("class");   // getAttribute()로 class를 가져와서 변수화 시킨다.      
+            el.addEventListener("mouseover",()=>{
+                document.querySelector(".cursor").classList.add(attr);
+            })
+            el.addEventListener("mouseout",()=>{
+                document.querySelector(".cursor").classList.remove(attr);
+            })
+        })
      </script>           
 </body>
 </html>

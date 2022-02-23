@@ -86,6 +86,10 @@ body.img15 {
     background-image:  url(../../effect/img/image15.jpg);
 
 }
+body.img22 {
+    background-image:  url(../../effect/img/image22.jpg);
+
+}
 body::before {
     content: '';
     position: absolute;
@@ -97,6 +101,7 @@ body::before {
     z-index: -1;
 }
 /*info*/
+
 .title {
     position: absolute;
     left: 20px;
