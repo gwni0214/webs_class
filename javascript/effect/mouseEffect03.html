@@ -221,7 +221,7 @@
                
         function follow(e){
                        
-            //gsap는 클래스 선택자를 바로 서도 된다.
+            //gsap는 클래스 선택자를 바로 써도 된다.
             gsap.to(".cursor", {duration: .3, left: e.pageX - circle.width/2, top:  e.pageY - circle.height/2}); //circle3의 가로,세로 값/2를 빼서 가운데로 오게.
             //출력용
             document.querySelector(".pageX").innerText = e.pageX;

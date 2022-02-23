@@ -34,7 +34,6 @@
             text-decoration: none;
         }
         body {
-           
             background-color: #f6f6f6;
             background-image:
                 linear-gradient(90deg, #cdcccc 0px, #cdcccc 1px, transparent 1px, transparent 99px,  transparent 100px),
@@ -46,38 +45,32 @@
                 linear-gradient(90deg, transparent 0px, transparent 5px, #f6f6f6 5px, #f6f6f6 95px, transparent 95px, transparent 100px),
                 linear-gradient(transparent 0px, transparent 1px, #f6f6f6 1px, #f6f6f6 99px, transparent 99px, transparent 100px),
                 linear-gradient(#cdcccc, #cdcccc);
-            background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;            
+            background-size:100px 100%, 100% 100px, 100% 10px, 10px 100%, 100% 100px, 100px 100%, 100px 100%, 100px 100px, 100px 100px;
         }
+
         #header {
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 0; top: 0;
             width: 100%;
             background: #262626;
             color: #fff;
             display: flex;
-            padding: 10px;
             justify-content: space-between;
             align-items: center;
+            padding: 10px;
             z-index: 10;
         }
         #header::before {
             content: '';
             border: 4px ridge #a3a3a3;
             position: absolute;
-            left: 5px;
-            top: 5px;
+            left: 5px; top: 5px;
             width: calc(100% - 10px);
             height: calc(100% - 10px);
-            z-index: -1;
+            z-index: -1
         }
         #header h1 {
             padding: 3px 0 6px 10px;
-        }
-        #header h1 a {
-            text-decoration: none;
-            color: #fff;
-
         }
         #header nav {
             padding-right: 10px;
@@ -103,12 +96,13 @@
         #footer {
             margin-top: 200px;
             width: 100%;
-            background: #fff;
+            background: #939393;
             text-align: center;
             padding: 20px;
+            position: relative;
         }
         #footer a {
-            color: #262626;
+            color: #fff;
             font-size: 16px;
         }
         /*quiz__wrap*/
@@ -118,7 +112,7 @@
            justify-content: center;
            margin-top: 150px;
            flex-wrap: wrap;
-           height: 100vh;
+          
         }
         .quiz {
             max-width: 500px;
