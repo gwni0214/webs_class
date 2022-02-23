@@ -341,39 +341,39 @@
             //span에 오버 했을 때 클래스 active를 추가 / 나갔을 때 active 삭제
             document.querySelectorAll(".mouse__wrap span").forEach((el)=>{
                 el.addEventListener("mouseenter",()=>{                  //mouseover 대신 mouseenter를 쓸 수 있음
-                        cursor.classList.add("active");
+                        cursor.classList.add("active");                 //active 클래스 추가
                         follow.classList.add("active");
                     });
                 el.addEventListener("mouseleave",()=>{                  //mouseout 대신 mouseleave를 쓸 수 있음
-                    cursor.classList.remove("active");
+                    cursor.classList.remove("active");                  //active 클래스 삭제
                     follow.classList.remove("active");
                 });
             });
             //info에 마우스 오버 했을때
             document.querySelector(".title").addEventListener("mouseover",()=>{
-                cursor.classList.add("show");
-                follow.classList.add("show");
+                cursor.classList.add("show");                                   //마우스 오버하면 show 클래스 추가
+                follow.classList.add("show");                                   
             });
             document.querySelector(".title").addEventListener("mouseout",()=>{
-                cursor.classList.remove("show");
+                cursor.classList.remove("show");                                //마우스 아웃하면 show 클래스 삭제
                 follow.classList.remove("show");
             })
             //number에 마우스 오버
             document.querySelector(".number").addEventListener("mouseover",()=>{
-                cursor.classList.add("show2");
+                cursor.classList.add("show2");                                  //마우스 오버하면 show2 클래스 추가
                 follow.classList.add("show2");
             });
             document.querySelector(".number").addEventListener("mouseout",()=>{
-                cursor.classList.remove("show2");
+                cursor.classList.remove("show2");                               //마우스 아웃하면 show2 클래스 삭제
                 follow.classList.remove("show2");
             })
             //소스보기에 마우스 오버
             document.querySelector(".source-btn").addEventListener("mouseover",()=>{
-                cursor.classList.add("show2");
+                cursor.classList.add("show2");                                      //마우스 오버하면 show2 클래스 추가
                 follow.classList.add("show2");
             });
             document.querySelector(".source-btn").addEventListener("mouseout",()=>{
-                cursor.classList.remove("show2");
+                cursor.classList.remove("show2");                                   //마우스 아웃하면 show2 클래스 삭제
                 follow.classList.remove("show2");
             })
                       
