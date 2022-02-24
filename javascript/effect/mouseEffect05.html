@@ -30,8 +30,8 @@
         .mouse__img {
             position: relative;
             text-align: center;
-            perspective: 600px; /*perspective원근점 설정*/
-            transform:  rotateX(0deg) rotateY(0deg); 
+             /*perspective원근점 설정*/
+            transform: perspective(600px) rotateX(0deg) rotateY(0deg); 
             transform-style: preserve-3d;
             will-change: transform;
             /* transition: all 0.3s; */
@@ -184,8 +184,8 @@
         .mouse__img {
             position: relative;
             text-align: center;
-            perspective: 600px; /*perspective원근점 설정*/
-            transform:  rotateX(0deg) rotateY(0deg); 
+             /*perspective원근점 설정*/
+            transform: perspective(600px) rotateX(0deg) rotateY(0deg); 
             transform-style: preserve-3d;
             will-change: transform;
             /* transition: all 0.3s; */
@@ -345,7 +345,7 @@
             //이미지 움직이기
             //transform:  rotateX(0deg) rotateY(0deg);
             const imgMove = document.querySelector(".mouse__img");
-            imgMove.style.transform = "rotateX("+softPageY+"deg) rotateY("+ -softPageX+"deg)";    //rotate 스타일 속성값을 centerPage 좌표값 변수로 지정해서 마우스 움직이면 위치가 움직이게.
+            imgMove.style.transform = "perspective(600px) rotateX("+softPageY+"deg) rotateY("+ -softPageX+"deg)";    //rotate 스타일 속성값을 centerPage 좌표값 변수로 지정해서 마우스 움직이면 위치가 움직이게.
 
             //원 반지름 크기 가로세로
             let circleWidth = mousePageX - circle.width/2;
