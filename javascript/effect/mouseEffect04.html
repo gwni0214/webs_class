@@ -29,15 +29,16 @@
         }
         .mouse__img {
             position: relative;
+            cursor: none;
         }
         .mouse__img figure {
             width: 50vw;
             height: 53vh;
-            /* overflow: hidden; */
+            overflow: hidden;
             transition: transform 500ms cubic-bezier(0.25, 0.46, 0.45, 0.84);
             position: relative;
             /* background-color: #ccc; */
-            border: 3px solid #fff;
+            
         }
         .mouse__img figure:hover {
             transform: scale(1.025);            
@@ -48,7 +49,7 @@
             top: -5%;
             width: 110%;
             height: 110%;
-            opacity: 0.7;
+            /* opacity: 0.7; */
             /* background-size: cover; */
             object-fit: cover; 
         }
@@ -64,8 +65,8 @@
         }
         .cursor {
             position: absolute;
-            left: 0;
-            top: 0;           
+            left: -30px;
+            top: -30px;           
             width: 20px;
             height: 20px;
             z-index: 1000;
@@ -74,7 +75,14 @@
             user-select: none;
             pointer-events: none;                                  
         }
-       
+       .cursor ul {
+           position: absolute;
+           left: 40px;
+           top: 0;
+       }
+       .cursor li {
+           white-space: nowrap;
+       }
                  
     </style>
 
@@ -82,8 +90,9 @@
 <body class="img10">
     <!--main-->
     <main>
-        <section id="mouseType01">
-            <div class="cursor"></div>           
+        <section id="mouseType03">
+            <div class="cursor">               
+            </div>           
             <div class="mouse__wrap">
                 <div class="mouse__img">
                     <figure>
@@ -159,10 +168,10 @@
             </div>
             <div class="attr">
                 <ul>                    
-                    <li>pageX : <span class="pageX">0</span>px</li>
-                    <li>pageY : <span class="pageY">0</span>px</li>                   
-                    <li>standardX : <span class="standardX">0</span>px</li>                   
-                    <li>standardY : <span class="standardY">0</span>px</li>                   
+                    <li>mousepageX : <span class="mousepageX">0</span>px</li>
+                    <li>mousepageY : <span class="mousepageY">0</span>px</li>                   
+                    <li>centerPageX : <span class="centerPageX">0</span>px</li>                   
+                    <li>centerPageY : <span class="centerPageY">0</span>px</li>                   
                 </ul>
             </div>
         </div>
@@ -177,28 +186,45 @@
         modal();
         tabMenu();
 
-        const circle = document.querySelector(".cursor").getBoundingClientRect();
-
+        const circle = document.querySelector(".cursor").getBoundingClientRect();   //커서의 길이 속성을 가져온다.
+        
+        //가운데 이미지 내에서 움직이는 함수 설정
         document.querySelector(".mouse__img").addEventListener("mousemove",(e)=>{
-            //커서
+            //커서 움직이는 애니메이션를 gsap로 설정
             gsap.to(".cursor", {duration: .2, left: e.pageX - circle.width/2, top: e.pageY - circle.height/2});
 
             //마우스 좌표값
             let mousepageX = e.pageX;
             let mousepageY = e.pageY;
-            //마우스 좌표값을 가운데로 초기화
-            
+                      
+            //전체 가로, 세로값
+            //window.innerWidth 1920 : 브라우저 크기
+            //window.outerWidth 1920 : 브라우저 전체 크기
+            //window.screenWidth  : 화면 크기
+            //window.screenHeight  : 화면 크기
 
+             //마우스 좌표값을 이미지 가운데로 초기화 
+             //전체길이/2 - 마우스 x좌표값 == 0
+             //가운데 이미지 안에서의 좌표값
+            let centerPageX = window.innerWidth/2 - mousepageX;
+            let centerPageY = window.innerHeight/2 - mousepageY;
+            
+            //이미지 움직이기
+            // const imgMove = document.querySelector(".mouse__img figure img");
+            // imgMove.style.transform = "translate("+ centerPageX/20 +"px, "+ centerPageY/20 +"px)";
+
+            gsap.to(".mouse__img figure img", {duration: 0.3, x: centerPageX/20, y: centerPageY/20});   //gsap로 애니메이션 설정.
+            //출력
+            document.querySelector(".mousepageX").textContent = mousepageX;
+            document.querySelector(".mousepageY").textContent = mousepageY;
+            document.querySelector(".centerPageX").textContent = centerPageX;
+            document.querySelector(".centerPageY").textContent = centerPageY;
+            
             
         });
 
         
-            //전체 가로값
-            //innerWidth 1920 : 브라우저 크기
-            //outerWidth 1920 : 브라우저 전체 크기
-        let windowWidth = window.innerWidth;
-            let windowHeight = window.screenHeight;
-            console.log(windowWidth);
+            
         
         
 
