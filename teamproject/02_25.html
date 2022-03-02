@@ -1046,7 +1046,7 @@
 
         .slider__img {
             margin-top: 10vh;
-            margin-left: 9vw;
+            margin-left: 7vw;
             overflow: hidden;
             width: 740px;
             height: 606px;
@@ -1550,7 +1550,7 @@
 
 
         })
-
+        //슬라이드
         const sliderImg = document.querySelector(".slider__img")
         const sliderInner = document.querySelector(".slider__inner")
         const slider = document.querySelectorAll(".slider")
@@ -1560,7 +1560,7 @@
         let sliderWidth = sliderImg.offsetWidth;
         let sliderClone = sliderInner.firstElementChild.cloneNode(true);
         sliderInner.appendChild(sliderClone);
-
+        console.log(sliderWidth);
         function sliderEffect() {
             currentIndex++;
             sliderInner.style.transition = "all 0.6s";
