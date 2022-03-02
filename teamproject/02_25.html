@@ -112,7 +112,7 @@
 
         @media (max-width: 450px) {
             #header {
-                height: 100%;
+                height: auto;
             }
 
             #header ul {
@@ -1580,16 +1580,15 @@
         let nav = document.querySelectorAll("#header ul li");
          
             for(let i =1; i<= nav.length; i++){
-                if(scrollTop >= document.querySelector("#section0"+ i).offsetTop -2){
+                if(scrollTop >= document.querySelector("#section0"+ i).offsetTop +300){
                 document.querySelectorAll("#header ul li").forEach(li => {                    
                     li.classList.remove("active");
                 }) 
                 document.querySelector("#header ul li:nth-child("+i+")").classList.add("active");                                           
-                }
+                }               
             }
         })
         
-
         //menu
         const header_menu = document.querySelector(".menu")
         const header_a = document.querySelector(".menu a")

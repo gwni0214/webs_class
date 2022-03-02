@@ -401,26 +401,28 @@
             //     })
             //     document.querySelector("#parallax__nav ul li:nth-child(9)").classList.add("active");
             // }
-            
+
             //스크롤이 내려감에 따라서 액티브가 바뀌도록 하는 스크립트
-            let nav = document.querySelectorAll("#parallax__nav ul li");         
-            for(let i =1; i<= nav.length; i++){
-                if(scrollTop >= document.getElementById("section0"+ i).offsetTop -2){
-                document.querySelectorAll("#parallax__nav ul li").forEach(li => {                    
-                    li.classList.remove("active");
-                }) 
-                document.querySelector("#parallax__nav ul li:nth-child("+i+")").classList.add("active");                                           
-                }
-            }
+            // let nav = document.querySelectorAll("#parallax__nav ul li");         
+            // for(let i =1; i<= nav.length; i++){
+            //     if(scrollTop >= document.getElementById("section0"+ i).offsetTop -2){
+            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {                    
+            //         li.classList.remove("active");
+            //     }) 
+            //     document.querySelector("#parallax__nav ul li:nth-child("+i+")").classList.add("active");                                           
+            //     }
+            // }
             //forEach
-        //     document.querySelectorAll(".content__item").forEach( (e, i) => {
-        //         if(scrollTop >= element.offsetTop -2){
-        //             document.querySelectorAll("#parallax__nav ul li").forEach(li => {                    
-        //             li.classList.remove("active");                
-        //         });
-        //         document.querySelector("#parallax__nav ul li:nth-child("+(i+1)+")").classList.add("active"); 
-        //     }
-        // });
+            document.querySelectorAll(".content__item").forEach((e,i)=>{
+                if (scrollTop >= e.offsetTop -2){
+                    document.querySelectorAll("#parallax__nav ul li").forEach( li => {
+                        li.classList.remove("active")
+                    })
+                    document.querySelector("#parallax__nav li:nth-child("+(i+1)+")").classList.add("active")
+                }
+            })
+       
+
 
 
             //info
