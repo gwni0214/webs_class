@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #wrap {
+            width: 100%;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 50px;
+            background: #c27ec4;
+        }
+        #main {
+            display: flex;
+        }
+        .cont1 {
+            width: 30%;
+            height: 780px;
+            background: #b162b8;
+        }
+        .cont2 {
+            width: 40%;
+            height: 780px;
+            background: #a047ac;
+        }
+        .cont3 {
+            width: 30%;
+            height: 780px;
+            background: #823e9d;
+        }
+        #footer {
+            width: 100%;
+            height: 50px;
+            background: #7e338b;
+        }
+        @media (max-width: 1300px){
+            #wrap {
+                width: 100%;
+            }
+            #main {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            #header {
+                width: 100%;
+                height: 100px;
+            }
+            .cont1 {
+                width: 30%;
+                height: 580px;
+            }
+            .cont2 {
+                width: 70%;
+                height: 580px;
+            }
+            .cont3 {
+                width: 100%;
+                height: 200px;
+            }
+            #footer {
+                width: 100%;
+                height: 100px;
+            }
+        }
+        @media (max-width: 768px){
+            #wrap {
+              width: 100%;
+            }
+            #header {
+                width: 100%;
+                height: 100px;
+            }
+            .cont1 {
+                display: none;
+            }
+            .cont2 {
+                width: 100%;
+                height: 380px;
+            }
+            .cont3 {
+                width: 100%;
+                height: 380px;
+            }
+            #footer {
+                width: 100%;
+                height: 100px;
+            }            
+        }
+        @media (max-width: 480px){
+            #header {
+                width: 100%;
+                height: 200px;
+            }
+            .cont1 {
+                display: none;
+            }
+            .cont2 {
+                width: 100%;
+                height: 380px;
+            }
+            .cont3 {
+                width: 100%;
+                height: 380px;
+            }
+            #footer {
+                width: 100%;
+                height: 200px;
+            }     
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <main id="main">
+            <article class="cont1"></article>
+            <article class="cont2"></article>
+            <article class="cont3"></article>
+        </main>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

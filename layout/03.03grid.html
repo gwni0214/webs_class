@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-areas: 
+                "header header"
+                "aside art1"
+                "aside art2"
+                "aside art3"
+                "footer footer"                
+            ;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 50px 260px 260px 260px 50px;
+        }
+        #header {
+            grid-area: header ;
+            background: #fae77e;
+        }
+        #aside {
+            grid-area:aside ;
+            background: #f7ba49;
+        }
+        #art1 {
+            grid-area:art1;
+            background: #f6c31c;
+        }
+        #art2 {
+            grid-area: art2;
+            background: #f0f400;
+        }
+        #art3 {
+            grid-area: art3;
+            background: #e5c300;
+        }
+        #footer {
+            grid-area: footer;
+            background: #d19900;
+        }
+        @media (max-width: 1280px){
+            #wrap {
+                width: 100%;
+                grid-template-areas: 
+                "header header"
+                "aside art1"
+                "aside art2"
+                "art3 art3"
+                "footer footer"                
+            ;
+            grid-template-columns: 30% 70%;
+            grid-template-rows: 100px 360px 360px 260px 50px;
+            }           
+        }
+        @media (max-width: 768px){
+            #wrap {
+                width: 100%;
+                grid-template-areas: 
+                "header header"
+                "aside aside"
+                "art1 art2"
+                "art3 art3"
+                "footer footer"                
+            ;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 100px 100px 360px 100px 50px;
+            }           
+        }
+        @media (max-width: 600px){
+            #wrap {
+                width: 100%;
+                grid-template-areas: 
+                "header "
+                "aside "
+                "art1 "
+                " art2"
+                "footer "                
+            ;
+            grid-template-columns: 100%;
+            grid-template-rows: 100px 360px 360px 360px 50px;
+            } 
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <aside id="aside"></aside>
+        <article id="art1"></article>
+        <article id="art2"></article>
+        <article id="art3"></article>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>

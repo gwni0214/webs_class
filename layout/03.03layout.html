@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+        #wrap {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            width: 100%;
+            height: 100px;
+            background: #999;
+        }
+        #section1 {
+            width: 100%;
+            height: 600px;
+            background: #888;
+        }
+        #section2 {
+            width: 100%;
+            height: 600px;
+            background: #777;
+            display: grid;
+            grid-template-areas: 
+                "cont cont cont cont cont"
+                "cont cont cont cont cont"
+            ;
+            grid-template-columns: auto;
+            grid-template-columns: auto;                        
+        }
+        .cont {
+            width: 100px;
+            height: 100px;
+            background: green;
+            margin: auto;
+            border-radius: 10px;
+        }
+        #footer {
+            width: 100%;
+            height: 100px;
+            background: #222;
+        }
+        @media (max-width: 1280px){
+            #wrap {
+                width: 100%;               
+            }
+            #section2 {
+                width: 100%;
+                height: 600px;
+                background: #777;
+                display: grid;
+                grid-template-areas: 
+                    "cont cont cont cont cont"
+                    "cont cont cont cont cont"
+                ;
+                grid-template-columns: auto;
+                grid-template-columns: auto;                        
+            }       
+        }
+        @media (max-width: 768px){
+            #section1 {
+                width: 100%;
+                height: 300px;
+                background: #888;
+            }
+            #section2 {
+                width: 100%;
+                height: 900px;
+                background: #777;
+                display: grid;
+                grid-template-areas: 
+                    "cont cont cont"
+                    "cont cont cont"
+                    "cont cont cont"
+                ;
+                grid-template-columns: auto;
+                grid-template-columns: auto;                        
+            }
+            .cont10 {
+                display: none;
+            }
+        }        
+        @media (max-width: 600px){
+            #section1 {
+                width: 100%;
+                height: 200px;
+                background: #888;
+            }
+            #section2 {
+                width: 100%;
+                height: 1000px;
+                background: #777;
+                display: grid;
+                grid-template-areas: 
+                    "cont cont "
+                    "cont cont "
+                    "cont cont "
+                    "cont cont "
+                    "cont cont "
+                ;
+                grid-template-columns: auto;
+                grid-template-columns: auto;                        
+            }
+            .cont10 {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header"></header>
+        <section id="section1"></section>
+        <section id="section2">
+            <div class="cont"></div>
+            <div class="cont"></div>
+            <div class="cont"></div>
+            <div class="cont"></div>
+            <div class="cont"></div>
+            <div class="cont"></div>
+            <div class="cont"></div>
+            <div class="cont"></div>
+            <div class="cont"></div>
+            <div class="cont cont10"></div>
+        </section>
+        <footer id="footer"></footer>
+    </div>
+</body>
+</html>
