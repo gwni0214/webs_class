@@ -218,16 +218,52 @@
             list-style: none;
             line-height: 1.6;
         }
+        #parallax__dot {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            background: rgba(0,0,0,0.4);
+            padding: 20px 10px;
+            border-radius: 30px;
+        }
+        #parallax__dot li {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            list-style: none;
+            margin: 12px 8px;
+            box-shadow: 0 0 0 2px rgba(255,255,255,0);
+            transition: box-shadow 0.2s ease;
+        }
+        #parallax__dot li a {
+            background: #fff;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+        #parallax__dot li.active {
+            box-shadow: 0 0 0 2px rgba(255,255,255,1);
+        }
+        #parallax__dot li.active a {
+            transform: scale(0.4);
+        }
     </style>
 </head>
 
 <body>
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">Javascript Parallax Effect01</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 메뉴 이동</p>
+        <h1><a href="parallaxEffect.html">Javascript Parallax Effect02</a></h1>
+        <p>패럴랙스 스크롤링 효과 - 사이드 메뉴</p>
         <ul>
-            <li class="active"><a href="parallaxEffect01.html">1</a></li>
-            <li><a href="parallaxEffect02.html">2</a></li>
+            <li><a href="parallaxEffect01.html">1</a></li>
+            <li class="active"><a href="parallaxEffect02.html">2</a></li>
             <li><a href="parallaxEffect03.html">3</a></li>
             <li><a href="parallaxEffect04.html">4</a></li>
             <li><a href="parallaxEffect05.html">5</a></li>
@@ -237,20 +273,20 @@
     </header>
     <!--//parallax__title-->
 
-    <nav id="parallax__nav">
+    <nav id="parallax__dot">
         <ul>
-            <li class="active"><a href="#section01">s1</a></li>
-            <li><a href="#section02">s2</a></li>
-            <li><a href="#section03">s3</a></li>
-            <li><a href="#section04">s4</a></li>
-            <li><a href="#section05">s5</a></li>
-            <li><a href="#section06">s6</a></li>
-            <li><a href="#section07">s7</a></li>
-            <li><a href="#section08">s8</a></li>
-            <li><a href="#section09">s9</a></li>
+            <li class="active"><a href="#section01"><span>s1</span></a></li>
+            <li><a href="#section02"><span>s2</span></a></li>
+            <li><a href="#section03"><span>s3</span></a></li>
+            <li><a href="#section04"><span>s4</span></a></li>
+            <li><a href="#section05"><span>s5</span></a></li>
+            <li><a href="#section06"><span>s6</span></a></li>
+            <li><a href="#section07"><span>s7</span></a></li>
+            <li><a href="#section08"><span>s8</span></a></li>
+            <li><a href="#section09"><span>s9</span></a></li>
         </ul>
     </nav>
-    <!--//parallax__nav-->
+    <!--//parallax__dot-->
 
     <!--main-->
     <main id="parallax__cont">
@@ -360,58 +396,68 @@
 
     <!--script-->
     <script>
-        //el의 속성값 (a태그) href - 아이디 섹션값을 지정해서 클릭하면 부드럽게 이동하기 
-        document.querySelectorAll("#parallax__nav li a").forEach(li =>{
-            li.addEventListener("click", (e)=>{
+            // window.screenY;     //ie에서 작동 X
+            // window.pageYOffset;
+            // document.documentElement.scrollTop;
+            // document.documentElement.scrollLeft;(X 가로값);
+
+            //스크롤 값으로 이동하기 (메서드)
+            // window.scroll()
+            // window.scrollTo() (0,0) 기준 절대적 위치
+            // window.scrollBy() (내가 있는 위치 기준) 상대적 위치
+
+            // element.scroll()
+            // element.scrollTo()
+            // element.scrollBy()
+            // element.scrollIntoView()
+        document.querySelectorAll("#parallax__dot a").forEach(el=>{
+            el.addEventListener("click", (e)=>{
                 e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                })
+
+                // window.scroll(0, 1000);
+                // window.scroll({left: 0, top: 1000});
+                // window.scroll({left: 0, top: 1000, behavior: "smooth"});
+                // window.scrollTo(0, 1000);
+                // window.scrollTo({left: 0, top: 1000});
+                // window.scrollTo({left: 0, top: 1000, behavior: "smooth"});
+
+                //scrollBy는 현재 기준점 을 기준으로 하기 때문에 현 위치에서 이동함.
+                // window.scrollBy(0, 1000);
+                // window.scrollBy({left: 0, top: 1000});
+                // window.scrollBy({left: 0, top: 1000, behavior: "smooth"});
+
+                document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+                //el의 속성값 (a태그) href - 아이디 섹션값을 지정해서 클릭하면 부드럽게 이동하기 
             })
         })
-        //스크롤 값 구하기 
+        //스크롤 Y축 값 구하기
         window.addEventListener("scroll", ()=>{
-            //3가지 방법을 쓸 수 있음.
-            // let scrollTop = window.pageYOffset;
-            // let scrollTop = document.documentElement.scrollTop;
-            // let scrollTop = window.scrollY;
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-        
+            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+
+            document.querySelector(".srcollTop").innerText = Math.round(scrollTop);
+
             //스크롤이 내려감에 따라서 액티브가 바뀌도록 하는 스크립트
-            // let nav = document.querySelectorAll("#parallax__nav ul li");         
-            // for(let i =1; i<= nav.length; i++){
-            //     if(scrollTop >= document.getElementById("section0"+ i).offsetTop -2){
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {                    
-            //         li.classList.remove("active");
-            //     }) 
-            //     document.querySelector("#parallax__nav ul li:nth-child("+i+")").classList.add("active");                                           
+            //for문
+            // for(let i =1; i<=9; i++){
+            //     if(scrollTop >= document.getElementById("section0"+ i).offsetTop-2){
+            //         document.querySelectorAll("#parallax__dot li").forEach(li=>{
+            //             li.classList.remove("active");                        
+            //         })
+            //         document.querySelector("#parallax__dot ul li:nth-child("+i+")").classList.add("active");
             //     }
-            // }
+            // }           
             //forEach
             document.querySelectorAll(".content__item").forEach((e,i)=>{
                 if (scrollTop >= e.offsetTop -2){
-                    document.querySelectorAll("#parallax__nav ul li").forEach( li => {
+                    document.querySelectorAll("#parallax__dot ul li").forEach( li => {
                         li.classList.remove("active")
                     })
-                    document.querySelector("#parallax__nav li:nth-child("+(i+1)+")").classList.add("active")
+                    document.querySelector("#parallax__dot li:nth-child("+(i+1)+")").classList.add("active")
                 }
             })
+        });
+        
        
-
-
-
-            //info
-            document.querySelector(".srcollTop span").innerText = Math.round(scrollTop);    //스크롤 탑 값을 구해서 출력
-            document.querySelector(".offset1").innerText = document.getElementById("section01").offsetTop;
-            document.querySelector(".offset2").innerText = document.getElementById("section02").offsetTop;
-            document.querySelector(".offset3").innerText = document.getElementById("section03").offsetTop;
-            document.querySelector(".offset4").innerText = document.getElementById("section04").offsetTop;
-            document.querySelector(".offset5").innerText = document.getElementById("section05").offsetTop;
-            document.querySelector(".offset6").innerText = document.getElementById("section06").offsetTop;
-            document.querySelector(".offset7").innerText = document.getElementById("section07").offsetTop;
-            document.querySelector(".offset8").innerText = document.getElementById("section08").offsetTop;
-            document.querySelector(".offset9").innerText = document.getElementById("section09").offsetTop;
-        })
     </script>
     
 </body>

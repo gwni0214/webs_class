@@ -66,21 +66,24 @@
         #parallax__nav {
             position: fixed;
             right: 20px;
-            top: 20px;
+            top: -200px;
             z-index: 1000;
             background-color: rgba(0,0,0,0.4);
             padding: 15px 20px;
             border-radius: 50px;
+            transition: top 0.3s ease-in-out;
+        }
+        #parallax__nav.show {
+            top: 20px;
         }
         #parallax__nav li {
             list-style: none;
             display: inline;
         }
         #parallax__nav li a {            
-            display: inline-block;
-            width: 30px;
+            display: inline-block;           
             height: 30px;
-            padding: 5px;
+            padding: 5px 20px;
             text-align: center;
             line-height: 30px;
             
@@ -88,7 +91,7 @@
         #parallax__nav li.active a {
             background: #fff;
             color: #000;
-            border-radius: 50%;
+            border-radius: 30px;
         }
         #parallax__cont {
             max-width: 1600px;
@@ -218,17 +221,18 @@
             list-style: none;
             line-height: 1.6;
         }
+       
     </style>
 </head>
 
 <body>
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">Javascript Parallax Effect01</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 메뉴 이동</p>
+        <h1><a href="parallaxEffect.html">Javascript Parallax Effect03</a></h1>
+        <p>패럴랙스 스크롤링 효과 - 숨김 메뉴</p>
         <ul>
-            <li class="active"><a href="parallaxEffect01.html">1</a></li>
+            <li><a href="parallaxEffect01.html">1</a></li>
             <li><a href="parallaxEffect02.html">2</a></li>
-            <li><a href="parallaxEffect03.html">3</a></li>
+            <li class="active"><a href="parallaxEffect03.html">3</a></li>
             <li><a href="parallaxEffect04.html">4</a></li>
             <li><a href="parallaxEffect05.html">5</a></li>
             <li><a href="parallaxEffect06.html">6</a></li>
@@ -239,18 +243,18 @@
 
     <nav id="parallax__nav">
         <ul>
-            <li class="active"><a href="#section01">s1</a></li>
-            <li><a href="#section02">s2</a></li>
-            <li><a href="#section03">s3</a></li>
-            <li><a href="#section04">s4</a></li>
-            <li><a href="#section05">s5</a></li>
-            <li><a href="#section06">s6</a></li>
-            <li><a href="#section07">s7</a></li>
-            <li><a href="#section08">s8</a></li>
-            <li><a href="#section09">s9</a></li>
+            <li class="active"><a href="#section01"><span>메뉴1</span></a></li>
+            <li><a href="#section02"><span>메뉴2</span></a></li>
+            <li><a href="#section03"><span>메뉴3</span></a></li>
+            <li><a href="#section04"><span>메뉴4</span></a></li>
+            <li><a href="#section05"><span>메뉴5</span></a></li>
+            <li><a href="#section06"><span>메뉴6</span></a></li>
+            <li><a href="#section07"><span>메뉴7</span></a></li>
+            <li><a href="#section08"><span>메뉴8</span></a></li>
+            <li><a href="#section09"><span>메뉴9</span></a></li>
         </ul>
     </nav>
-    <!--//parallax__nav-->
+    <!--//parallax__dot-->
 
     <!--main-->
     <main id="parallax__cont">
@@ -369,14 +373,18 @@
                 })
             })
         })
-        //스크롤 값 구하기 
-        window.addEventListener("scroll", ()=>{
-            //3가지 방법을 쓸 수 있음.
-            // let scrollTop = window.pageYOffset;
-            // let scrollTop = document.documentElement.scrollTop;
-            // let scrollTop = window.scrollY;
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-        
+        window.addEventListener("scroll",()=>{
+            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+            
+            //스크롤 값이 0 보다 크면 show 클래스를 추가 
+            // if(scrollTop > 0){
+            //     document.querySelector("#parallax__nav").classList.add("show");
+            // } else {
+            //     document.querySelector("#parallax__nav").classList.remove("show");
+            // }
+            //스크롤 Y값 출력
+            document.querySelector(".srcollTop").innerText = Math.round(scrollTop);
+
             //스크롤이 내려감에 따라서 액티브가 바뀌도록 하는 스크립트
             // let nav = document.querySelectorAll("#parallax__nav ul li");         
             // for(let i =1; i<= nav.length; i++){
@@ -396,22 +404,43 @@
                     document.querySelector("#parallax__nav li:nth-child("+(i+1)+")").classList.add("active")
                 }
             })
+        });
+
+        //스크롤 값에 따라 메뉴 클래스 show의 추가/삭제.
+        let nowScroll = true;
+        let lastScroll = 0;
+
+        function scrollProgress(){
+            nowScroll = true;
+            //setInterval 함수를 사용해서 빠르게 반복. 
+            setInterval(() => {
+                if(nowScroll){
+                    nowScroll = false;
+                    //0.3초안에 false로 바뀌는 순간마다 hasScroll 함수를 실행.
+                    hasScroll();
+                }
+            }, 300);
+
+            console.log(nowScroll);
+        }
+        function hasScroll(){
+            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+            //scrollTop(현재 스크롤 값)이 lastScroll보다 작으면 = 스크롤이 올라갈 때. (위로 갈 때.)
+            if(scrollTop < lastScroll){
+                document.querySelector("#parallax__nav").classList.add("show");
+            } else {
+                document.querySelector("#parallax__nav").classList.remove("show");
+            }
+            lastScroll = scrollTop;     //두 값이 같아야 바로 이전의 스크롤 값이 구해진다.
+
+            // console.log("lastScroll :" + lastScroll)
+            // console.log("scrollTop :" + scrollTop)
+
+        }
+        window.addEventListener("scroll",scrollProgress); //스크롤 하면 scrollProgress 함수가 실행.
+        
+        
        
-
-
-
-            //info
-            document.querySelector(".srcollTop span").innerText = Math.round(scrollTop);    //스크롤 탑 값을 구해서 출력
-            document.querySelector(".offset1").innerText = document.getElementById("section01").offsetTop;
-            document.querySelector(".offset2").innerText = document.getElementById("section02").offsetTop;
-            document.querySelector(".offset3").innerText = document.getElementById("section03").offsetTop;
-            document.querySelector(".offset4").innerText = document.getElementById("section04").offsetTop;
-            document.querySelector(".offset5").innerText = document.getElementById("section05").offsetTop;
-            document.querySelector(".offset6").innerText = document.getElementById("section06").offsetTop;
-            document.querySelector(".offset7").innerText = document.getElementById("section07").offsetTop;
-            document.querySelector(".offset8").innerText = document.getElementById("section08").offsetTop;
-            document.querySelector(".offset9").innerText = document.getElementById("section09").offsetTop;
-        })
     </script>
     
 </body>

@@ -369,15 +369,15 @@
             </div>
             <!-- //sample13 -->
             <!-- //sample14 -->
-            <div id="sample13" class="sample">
+            <div id="sample14" class="sample">
                 <h3>14. 즉시실행 함수</h3>
                 <div class="code">
                     <pre class="line-numbers">
 <code class="language-js">{
     (function (){
         document.write("함수가 실행되었습니다.")
-    }
-    ());
+    })
+    ();
 
     (()=>{
         document.write("함수가 실행되었습니다.");
@@ -422,7 +422,11 @@
         document.write(arguments[0]);
         document.write(arguments[1]);
     }
+<<<<<<< HEAD
     func("함수가 실행되었습니다.", "함수가 실행되었습니다.");
+=======
+    func("함수가 실행되었습니다.", "함수가 실행되었습니다.")  
+>>>>>>> 0414bb9af57ef83289370dbfd2bd948609ac2a7d
 }</code></pre>
                 </div>
                 <div class="result">
@@ -574,16 +578,16 @@
         //     func();
         // }
        //14. 즉시실행 함수
-    //    {
-    //        (function (){
-    //            document.write("함수가 실행되었습니다.")
-    //        }
-    //        ());
+       {
+        //    (function (){
+        //        document.write("함수가 실행되었습니다.")
+        //    })
+        //    ();
 
-    //        (()=>{
-    //            document.write("함수가 실행되었습니다.");
-    //        })();
-    //    }
+        //    (()=>{
+        //        document.write("함수가 실행되었습니다.");
+        //    })();
+       }
     //15. 파라미터 함수 
     // {
     //     function func(str="함수가 실행되었습니다."){
@@ -592,6 +596,7 @@
     //     func();
     // }
     //16. 아규먼트 함수
+<<<<<<< HEAD
     // {
     //     function func(a, b){
     //         document.write(arguments[0]);
@@ -599,6 +604,15 @@
     //     }
     //     func("함수가 실행되었습니다.", "함수가 실행되었습니다.");
     // }
+=======
+    {
+        function func(a, b){
+            document.write(arguments[0]);
+            document.write(arguments[1]);
+        }
+        func("함수가 실행되었습니다.", "함수가 실행되었습니다.")
+    }
+>>>>>>> 0414bb9af57ef83289370dbfd2bd948609ac2a7d
     //17. 
     </script>
 </body>
