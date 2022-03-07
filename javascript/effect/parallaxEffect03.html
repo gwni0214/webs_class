@@ -416,6 +416,7 @@
             setInterval(() => {
                 if(nowScroll){
                     nowScroll = false;
+                    //0.3초안에 false로 바뀌는 순간마다 hasScroll 함수를 실행.
                     hasScroll();
                 }
             }, 300);
