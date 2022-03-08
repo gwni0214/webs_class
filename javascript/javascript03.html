@@ -444,13 +444,27 @@
                 <div class="code">
                     <pre class="line-numbers">
 <code class="language-js">{
-     
+    // function func(){
+        //     document.write("함수가 실행되었습니다.");
+        //     func();
+        // }
+        // func();  이렇게되면 무한 반복 실행이 됩니다.
+
+        function func(num){
+            if(num &lt;=1){
+                document.write("함수가 실행되었습니다.");
+            }   else {
+                document.write("함수가 실행되어습니다.");
+                func(num-1);
+            }
+        }
+        func(5);
 }</code></pre>
                 </div>
                 <div class="result">
                     <h4>결과보기</h4>
                     <div>
-                        함수가 실행되었습니다.
+                        함수가 실행되었습니다. (다섯번 실행)
                     </div>
                 </div>
             </div>
@@ -650,7 +664,7 @@
     //     func();
     // }
     //16. 아규먼트 함수
-<<<<<<< HEAD
+
     {
         // function func(a, b){
         //     document.write(arguments[0]);
@@ -684,17 +698,11 @@
     {
 
     }
-=======
 
-    // {
-    //     function func(a, b){
-    //         document.write(arguments[0]);
-    //         document.write(arguments[1]);
-    //     }
-    //     func("함수가 실행되었습니다.", "함수가 실행되었습니다.");
-    // }
 
->>>>>>> a8c964ba973994f5837042804e97149da8ba9dd1
+    
+
+
     </script>
 </body>
 
