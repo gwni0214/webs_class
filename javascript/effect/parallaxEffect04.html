@@ -222,18 +222,80 @@
             line-height: 1.6;
         }
        
+        /*option*/
+        /*한번에 나타나기*/
+        /* #contents > section {
+            opacity: 0;
+            transition: all 1s;
+        }
+        #contents > section.show {
+            opacity: 1;
+        } */
+
+        /*개별적으로 나타나기*/
+        #contents > section .content__item__num {
+            opacity: 0;
+            transform: translateY(200px);
+            transition: all 1s 0.1s ease;
+        }
+        #contents > section .content__item__title {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 1s 0.3s ease;
+        }
+        #contents > section .content__item__imgWrap {
+            opacity: 0;
+            transform: translateY(200px) rotate(30deg) skew(20deg);
+            transition: all 1s 0.6s ease;
+        }
+        #contents > section .content__item__desc {
+            opacity: 0;
+            transition: all 1s 0.9s cubic-bezier(0.01, 0.26, 0.25, 1);
+            transform: translateX(-200px);
+        }
+        /*show*/
+        #contents > section.show .content__item__num {
+            opacity: 0.07;
+            transform: translateY(0);
+        }
+        #contents > section.show .content__item__title {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        #contents > section.show .content__item__imgWrap {
+            opacity: 1;
+            transform: translateY(0) rotate(0) skew(0);
+        }
+        #contents > section.show .content__item__desc {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        #contents > .content__item:nth-child(even) .content__item__title {
+            transform: translateX(100px);
+        }
+        #contents > .content__item:nth-child(even).show .content__item__title {
+            transform: translateX(0);
+        }
+        #contents > .content__item:nth-child(even) .content__item__desc {
+            transform: translateX(200px);
+        }
+        #contents > .content__item:nth-child(even).show .content__item__desc {
+            transform: translateX(0);
+        }
+
+       
     </style>
 </head>
 
 <body>
     <header id="parallax__title">
-        <h1><a href="parallaxEffect.html">Javascript Parallax Effect03</a></h1>
-        <p>패럴랙스 스크롤링 효과 - 숨김 메뉴</p>
+        <h1><a href="parallaxEffect.html">Javascript Parallax Effect04</a></h1>
+        <p>패럴랙스 스크롤링 효과 - 나타나기</p>
         <ul>
             <li><a href="parallaxEffect01.html">1</a></li>
             <li><a href="parallaxEffect02.html">2</a></li>
-            <li class="active"><a href="parallaxEffect03.html">3</a></li>
-            <li><a href="parallaxEffect04.html">4</a></li>
+            <li><a href="parallaxEffect03.html">3</a></li>
+            <li class="active"><a href="parallaxEffect04.html">4</a></li>
             <li><a href="parallaxEffect05.html">5</a></li>
             <li><a href="parallaxEffect06.html">6</a></li>
             <li><a href="parallaxEffect07.html">7</a></li>
@@ -364,85 +426,27 @@
 
     <!--script-->
     <script>
-        //el의 속성값 (a태그) href - 아이디 섹션값을 지정해서 클릭하면 부드럽게 이동하기 
-        document.querySelectorAll("#parallax__nav li a").forEach(li =>{
-            li.addEventListener("click", (e)=>{
-                e.preventDefault();
-                document.querySelector(li.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth"
-                })
-            })
-        })
-        window.addEventListener("scroll",()=>{
+        // window.addEventListener("scroll",()=>{
+        //     let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+
+        //     document.querySelector(".srcollTop").innerText = Math.round(scrollTop);
+        // })
+        //requestAnimationFrame()을 이용한 보다 효율적인 코딩.
+        function scroll(){
             let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
-            
-            //스크롤 값이 0 보다 크면 show 클래스를 추가 
-            // if(scrollTop > 0){
-            //     document.querySelector("#parallax__nav").classList.add("show");
-            // } else {
-            //     document.querySelector("#parallax__nav").classList.remove("show");
-            // }
-            //스크롤 Y값 출력
             document.querySelector(".srcollTop").innerText = Math.round(scrollTop);
 
-            //스크롤이 내려감에 따라서 액티브가 바뀌도록 하는 스크립트
-            // let nav = document.querySelectorAll("#parallax__nav ul li");         
-            // for(let i =1; i<= nav.length; i++){
-            //     if(scrollTop >= document.getElementById("section0"+ i).offsetTop -2){
-            //     document.querySelectorAll("#parallax__nav ul li").forEach(li => {                    
-            //         li.classList.remove("active");
-            //     }) 
-            //     document.querySelector("#parallax__nav ul li:nth-child("+i+")").classList.add("active");                                           
-            //     }
-            // }
-            //forEach
-            document.querySelectorAll(".content__item").forEach((e,i)=>{
-                if (scrollTop >= e.offsetTop -2){
-                    document.querySelectorAll("#parallax__nav ul li").forEach( li => {
-                        li.classList.remove("active")
-                    })
-                    document.querySelector("#parallax__nav li:nth-child("+(i+1)+")").classList.add("active")
+            //forEach 을 이용한 show 클래스 추가
+            document.querySelectorAll(".content__item").forEach((el,i)=>{
+                if(scrollTop > el.offsetTop - window.innerHeight/2){
+                    el.classList.add("show");
                 }
-            })
-        });
-
-        //스크롤 값에 따라 메뉴 클래스 show의 추가/삭제.
-        let nowScroll = true;
-        let lastScroll = 0;
-
-        function scrollProgress(){
-            nowScroll = true;
-            //setInterval 함수를 사용해서 빠르게 반복. 
-            setInterval(() => {
-                if(nowScroll){
-                    nowScroll = false;
-                    //0.3초안에 false로 바뀌는 순간마다 hasScroll 함수를 실행.
-                    hasScroll();
-                }
-            }, 300);
-
-            console.log(nowScroll);
+            });
+            
+            requestAnimationFrame(scroll)   //재귀함수의 예 (자기자신을 호출)
         }
-        function hasScroll(){
-            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
-            //scrollTop(현재 스크롤 값)이 lastScroll보다 작으면 = 스크롤이 올라갈 때. (위로 갈 때.)
-            if(scrollTop < lastScroll){
-                document.querySelector("#parallax__nav").classList.add("show");
-            } else {
-                document.querySelector("#parallax__nav").classList.remove("show");
-            }
-            lastScroll = scrollTop;     //두 값이 같아야 바로 이전의 스크롤 값이 구해진다.
-
-            // console.log("lastScroll :" + lastScroll)
-            // console.log("scrollTop :" + scrollTop)
-
-        }
-        window.addEventListener("scroll",scrollProgress); //스크롤 하면 scrollProgress 함수가 실행.
-        
-        
+        scroll();
        
-    </script>
-    
+    </script>    
 </body>
-
 </html>
