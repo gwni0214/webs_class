@@ -424,17 +424,14 @@
 
         //만약에 reveal 클래스가 있는데
         //글씨를 span으로 감싸주고
-        //글씨를 다시 넣어주기 
-        //여러개 글씨 쪼개기
+        //글씨를 다시 넣어주기         
         const descWrap = document.querySelectorAll(".content__item__desc");
         descWrap.forEach(desc=>{            
-            if(desc.classList.contains("reveal")){
-                let splitText = desc.innerText;
-                let splitWrap = splitText;
-                splitWrap = "<span>" + splitWrap + "</span>";
-                desc.innerHTML = splitWrap; 
-            }
-                               
+            if(desc.classList.contains("reveal")){  //content__item__desc에 reveal 클래스가 포함되어 있으면.
+                let Text = desc.innerText;                
+                Text = "<span>" + Text + "</span>";
+                desc.innerHTML = Text; 
+            }                               
         });
         
 
@@ -447,24 +444,22 @@
 
             reveal.forEach(el=>{
                let revealOffset = el.offsetTop + el.parentElement.offsetTop;
-               let revealDelay = el.dataset.delay;
+               let revealDelay = el.dataset.delay;                          //data-delay 변수 지정.
                
             //    if(scrollTop > revealOffset - window.innerHeight/2){
             //        el.classList.add("show");
             //    }
             //시간차로 작동하게 작업
                 if(scrollTop > revealOffset - window.innerHeight/2){
-                    if(revealDelay == undefined){
+                    if(revealDelay == undefined){               //data가 없으면 show 클래스 그냥 추가.
                         el.classList.add("show");
-                    } else {
+                    } else {                                    //data-delay가 있으면 시간차로 show 추가.
                         setTimeout(()=>{
                             el.classList.add("show");
-                        },revealDelay)
+                        },revealDelay)              //변수 지정한 data-delay값 (500)
                     }
                 }
-            })
-            
-            
+            })                        
             requestAnimationFrame(scroll)   //재귀함수의 예 (자기자신을 호출)
         }
         scroll();
