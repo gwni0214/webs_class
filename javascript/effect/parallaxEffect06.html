@@ -242,14 +242,170 @@
         .content__item__desc.show span:nth-child(20) {opacity: 1;} */
 
         /*순차적으로 나타나기*/
-        .content__item__desc span {
+        #section01 .content__item__desc span {
             opacity: 0;
+            min-width: 1.4vw;
             transition: all 0.33s ease-in-out;
         }
-        .content__item__desc span.show {
+        #section01 .content__item__desc span.show {
             opacity: 1;
         }
-       
+        /*section02*/
+        #section02 .content__item__desc span {
+            opacity: 0;
+            display: inline-block;
+            min-width: 1.4vw;
+            transform: translateY(70px) ;
+            transition: all 0.33s cubic-bezier(0, 0.47, 0.58, 1);
+        }
+        #section02 .content__item__desc span.show {
+            opacity: 1;
+            transform: translateY(0) ;
+        }
+        /*section03*/
+        #section03 .content__item__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section03 .content__item__desc span.show {
+            opacity: 1;
+            animation: tada 0.3s;
+        }
+        @keyframes tada {
+            0% {transform: scaleX(1)}
+
+            10%,
+            20% {transform: scale3d(.9, .9, .9) rotate(-3deg)}
+
+            30%,
+            50%,
+            70%,
+            90% {transform: scale3d(1.1, 1.1, 1.1) rotate(3deg)}
+
+            40%,
+            60%,
+            80% {transform: scale3d(1.1, 1.1, 1.1) rotate(-3deg)}
+
+            to {transform: scaleX(1)}
+        }
+        /*section04*/
+        #section04 .content__item__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section04 .content__item__desc span.show {
+            opacity: 1;
+            animation: jello 0.3s;
+        }
+        @keyframes jello {
+
+            0%,
+            11.1%,
+            to {transform: translateZ(0)}
+
+            22.2% {transform: skewX(-12.5deg) skewY(-12.5deg)}
+
+            33.3% {transform: skewX(6.25deg) skewY(6.25deg)}
+
+            44.4% {transform: skewX(-3.125deg) skewY(-3.125deg)}
+
+            55.5% {transform: skewX(1.5625deg) skewY(1.5625deg)}
+
+            66.6% {transform: skewX(-.78125deg) skewY(-.78125deg)}
+
+            77.7% {transform: skewX(.390625deg) skewY(.390625deg)}
+
+            88.8% {transform: skewX(-.1953125deg) skewY(-.1953125deg)}
+        }
+        /*section05*/
+        #section05 .content__item__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section05 .content__item__desc span.show {
+            opacity: 1;
+            animation: backInUp 0.3s;
+        }
+        @keyframes backInUp {
+            0% {transform: translateY(1200px) scale(.7);opacity: .7}
+
+            80% {transform: translateY(0) scale(.7); opacity: .7}
+
+            to {transform: scale(1); opacity: 1}
+        }
+        /*section06*/
+        #section06 .content__item__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section06 .content__item__desc span.show {
+            opacity: 1;
+            animation: fadeInTopLeft 0.3s;
+        }
+        @keyframes fadeInTopLeft {
+            0% {opacity: 0; transform: translate3d(-100%, -100%, 0)}
+
+            to {opacity: 1; transform: translateZ(0)}
+        }
+        /*section07*/
+        #section07 .content__item__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section07 .content__item__desc span.show {
+            opacity: 1;
+            animation: flipInY 0.3s;
+        }
+        @keyframes flipInY {
+            0% {transform: perspective(400px) rotateY(90deg); animation-timing-function: ease-in; opacity: 0}
+
+            40% {transform: perspective(400px) rotateY(-20deg); animation-timing-function: ease-in}
+
+            60% {transform: perspective(400px) rotateY(10deg); opacity: 1}
+
+            80% {transform: perspective(400px) rotateY(-5deg)}
+
+            to {transform: perspective(400px)}
+        }
+        /*section08*/
+        #section08 .content__item__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section08 .content__item__desc span.show {
+            opacity: 1;
+            animation: rollIn 0.3s;
+        }
+        @keyframes rollIn {
+            0% {opacity: 0; transform: translate3d(-100%, 0, 0) rotate(-120deg)}
+
+            to {opacity: 1; transform: translateZ(0)}
+        }
+        /*section09*/
+        #section09 .content__item__desc span {
+            display: inline-block;
+            min-width: 1.4vw;
+            opacity: 0;
+        }
+        #section09 .content__item__desc span.show {
+            opacity: 1;
+            animation: lightSpeedInRight 0.3s;
+        }
+        @keyframes lightSpeedInRight {
+            0% {transform: translate3d(100%, 0, 0) skewX(-30deg); opacity: 0}
+
+            60% {transform: skewX(20deg); opacity: 1}
+
+            80% {transform: skewX(-5deg)}
+
+            to {transform: translateZ(0)}
+        }
     </style>
 </head>
 
@@ -417,7 +573,7 @@
                         //setTimeout 함수를 이용해서 인덱스+1 값만큼 반복 실행. 0.05초 마다. 
                         setTimeout(()=>{
                             span.classList.add("show");
-                        }, 50 * (index+1))                        
+                        }, 50 * (index+1))                                                
                     })
                 }
             })
