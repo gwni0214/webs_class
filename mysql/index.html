@@ -61,7 +61,7 @@
             </div>
             <nav class="collapse navbar-collapse bs-navbar-collapse pull-right" role="navigation">
                 <ul class="nav navbar-nav">
-                    <li><a href="https://websinssa.tistory.com/">Tistory</a></li>
+                    <li><a href="https://gwni0214.tistory.com/">Tistory</a></li>
                     <li><a href="https://codepen.io/gwni0214">Codepen</a></li>
                 </ul>
             </nav>
@@ -178,16 +178,16 @@ Query OK, 0 rows affected (0.00 sec)
                         create table 테이블 이름;
                     </div>
                     <pre class="language-js"><code>
-    CREATE TABLE myData (
-        myMemberID int(10) unsigned auto_increment comment "회원의 고유번호",
-        youEmail varchar(40) NOT NULL comment "회원 아이디",
-        youName varchar(12) NOT NULL comment "회원 이름",
-        youPass varchar(20) NOT NULL comment "회원 비밀번호",
-        youBirth varchar(12) NOT NULL comment "회원 생일",
-        youAge varchar(10) NOT NULL comment "회원 나이",
-        regTime int(11) NOT NULL comment "회원 가입 시간",
-        PRIMARY KEY (myMemberID)
-    ) charset=utf8 comment "회원 정보 테이블";
+CREATE TABLE myData (
+    myMemberID int(10) unsigned auto_increment comment "회원의 고유번호",
+    youEmail varchar(40) NOT NULL comment "회원 아이디",
+    youName varchar(12) NOT NULL comment "회원 이름",
+    youPass varchar(20) NOT NULL comment "회원 비밀번호",
+    youBirth varchar(12) NOT NULL comment "회원 생일",
+    youAge varchar(10) NOT NULL comment "회원 나이",
+    regTime int(11) NOT NULL comment "회원 가입 시간",
+    PRIMARY KEY (myMemberID)
+) charset=utf8 comment "회원 정보 테이블";
 </code></pre>
                     <h3 id="intro5-2" class="page-header">테이블 전체 보기</h3>
                     <div class="bs-callout bs-callout-info">
@@ -320,8 +320,7 @@ ALTER TABLE mymember2 DROP regTime;
                     <div class="bs-callout bs-callout-info">
                         INSERT INTO 테이블 이름(필드명) VALUES(데이터);
                     </div>
-<pre class="language-js"><code>
-INSERT INTO myData(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('sbxjs6999@naver.com','박근희','1234','1997-02-14','26','1234');
+<pre class="language-js"><code>INSERT INTO myData(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES('sbxjs6999@naver.com','박근희','1234','1997-02-14','26','1234');
 </code></pre>
                     <h3 id="intro7-2" class="page-header">데이터 불러오기</h3>
                     <div class="bs-callout bs-callout-info">
