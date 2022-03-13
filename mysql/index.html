@@ -296,13 +296,13 @@ mysql> desc mymember2;
                     <div class="bs-callout bs-callout-info">
                         ALTER TABLE 테이블이름 DROP 삭제할 필드명
                     </div>
-<pre class="language-js"><code>ALTER TABLE mymember2 DROP youGender;
-ALTER TABLE mymember2 DROP youEmail;
-ALTER TABLE mymember2 DROP youPass;
-ALTER TABLE mymember2 DROP youBirth;
-ALTER TABLE mymember2 DROP youAddress;
-ALTER TABLE mymember2 DROP youAge;
-ALTER TABLE mymember2 DROP regTime;
+<pre class="language-js"><code>ALTER TABLE mymember DROP youGender;
+ALTER TABLE mymember DROP youEmail;
+ALTER TABLE mymember DROP youPass;
+ALTER TABLE mymember DROP youBirth;
+ALTER TABLE mymember DROP youAddress;
+ALTER TABLE mymember DROP youAge;
+ALTER TABLE mymember DROP regTime;
 +------------+------------------+------+-----+---------+----------------+
 | Field      | Type             | Null | Key | Default | Extra          |
 +------------+------------------+------+-----+---------+----------------+
@@ -327,7 +327,7 @@ ALTER TABLE mymember2 DROP regTime;
                         SELECT 대상 * FROM 테이블이름;
                     </div>
                     <h4>전체 데이터 불러오기</h4>
-<pre class="language-js"><code>SELECT *FROM mymember;
+<pre class="language-js"><code>SELECT *FROM myData;
 +------------+-----------------------+---------+---------+------------+--------+---------+
 | myMemberID | youEmail              | youName | youPass | youBirth   | youAge | regTime |
 +------------+-----------------------+---------+---------+------------+--------+---------+
