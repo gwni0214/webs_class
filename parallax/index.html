@@ -87,7 +87,22 @@
             white-space: nowrap;
         }
         .section02__img01 {
-            width: 50vw;
+            width: 70vw;
+            
+        }
+        .section02__img01_site {
+            width: 50vw;           
+            height: calc(100% - 5vw);           
+            position: absolute;
+            left: 50%;
+            top: 1.5vw;
+            transform: translate(-49%);
+            border-radius: 1vw 1vw 0 0;
+            overflow: hidden;            
+        }
+        .scroll {
+            position: absolute;
+            top: 0;
         }
     </style>
 </head>
@@ -151,10 +166,16 @@
             </div>
             <div class="section02__img01 fixed"
                 data-10000 = "transform:translate(-50%, -50%) scale(0.8); top: 200%;"  
-                data-10500 = "transform:translate(-50%, -50%) scale(1); top: 100%;"  
-                data-12000 = "transform:translate(-50%, -50%) scale(1); top: 50%;"   
+                data-11000 = "transform:translate(-50%, -50%) scale(1); top: 100%;"  
+                data-12000 = "transform:translate(-50%, -50%) scale(1); top: 60%;"   
             >
-                <img src="img/macbook2.png" alt="이미지">                          
+                <img src="img/macbook2.png" alt="이미지">
+                <div class="section02__img01_site">
+                    <div class="scroll"
+                        data-12000 = "top: 0%;"    
+                        data-13500 = "top: -300%;"
+                    ><img src="img/site01.jpg" alt="사이트"></div>                    
+                </div>                          
             </div>
         </section>
         <!--//section02-->
