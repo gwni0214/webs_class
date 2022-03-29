@@ -524,7 +524,7 @@
             </div>
             <!-- //sample20 -->
 
-             <!-- //sample20 -->
+             <!-- //sample21 -->
              <div id="sample21" class="sample">
                 <h3>21. 객체 리터럴 함수</h3>
                 <div class="code">
@@ -540,7 +540,25 @@
                     </div>
                 </div>
             </div>
-            <!-- //sample20 -->
+            <!-- //sample21 -->
+
+            <!-- //sample22 -->
+            <div id="sample22" class="sample">
+                <h3>22. 클래스</h3>
+                <div class="code">
+                    <pre class="line-numbers">
+<code class="language-js">{
+     
+}</code></pre>
+                </div>
+                <div class="result">
+                    <h4>결과보기</h4>
+                    <div>
+                        함수가 실행되었습니다.
+                    </div>
+                </div>
+            </div>
+            <!-- //sample22 -->
         </div>
         <!--//script-->
 
@@ -731,63 +749,63 @@
 
     //18. 콜백 함수 : 다른 함수에 인수로 넘겨지는 함수 /비동기 방식 함수
     {   
-        // function func(){
-        //     document.write("함수가 실행되었습니다.2");
-        // }
+        function func(){
+            document.write("함수가 실행되었습니다.2");
+        }
 
-        // function callback(str){
-        //     document.write("함수가 실행되었습니다.1");
-        //     str();
-        // }
-        // callback(func);
+        function callback(str){
+            document.write("함수가 실행되었습니다.1");
+            str();
+        }
+        callback(func);
         
     }
     // 콜백 함수 : 반복문
     {   
-        // function func(){
-        //     document.write("함수가 실행되었습니다.");
-        // }
-        // function callback(num){
-        //     for(let i =1; i<=5; i++){
-        //         num(i);
-        //     }
-        // }
-        // callback(func);
+        function func(){
+            document.write("함수가 실행되었습니다.");
+        }
+        function callback(num){
+            for(let i =1; i<=5; i++){
+                num(i);
+            }
+        }
+        callback(func);
     }
     // 콜백 함수 : 동기/ 비동기
     {
-        // function funcA(){
-        //     document.write("funcA가 실행되었습니다.");
-        // }
-        // function funcB(){
-        //     document.write("funcB가 실행되었습니다.");
-        // }
-        // funcA();
-        // funcB();
+        function funcA(){
+            document.write("funcA가 실행되었습니다.");
+        }
+        function funcB(){
+            document.write("funcB가 실행되었습니다.");
+        }
+        funcA();
+        funcB();
 
-        // function funcC(){
-        //     setTimeout(()=>{
-        //         console.log("C");
-        //     },1000)            
-        // }
-        // function funcD(){
-        //     console.log("D")
-        // }
-        // funcC();
-        // funcD();
+        function funcC(){
+            setTimeout(()=>{
+                console.log("C");
+            },1000)            
+        }
+        function funcD(){
+            console.log("D")
+        }
+        funcC();
+        funcD();
 
-        // function funcE(callback){
-        //     setTimeout(()=>{
-        //         console.log("E");
-        //         callback();
-        //     },1000);
-        // }
-        // function funcF(){
-        //     console.log("F");
-        // }
-        // funcE(function(){
-        //     funcF();
-        // })
+        function funcE(callback){
+            setTimeout(()=>{
+                console.log("E");
+                callback();
+            },1000);
+        }
+        function funcF(){
+            console.log("F");
+        }
+        funcE(function(){
+            funcF();
+        })
     }
     //함수 유형 : 함수와 매개변수를 이용한 형태
     // {
