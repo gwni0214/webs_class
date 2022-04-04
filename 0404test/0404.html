@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>롯데월드</title>
+    
+    <style>
+        /* 넥슨고딕Lv1 */
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 300;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicLight.ttf') format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicRegular.ttf') format("truetype");
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 700;
+            font-style: normal;
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot');
+            src: url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.eot?#iefix') format('embedded-opentype'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff2') format('woff2'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.woff') format('woff'),
+                url('https://cdn.jsdelivr.net/gh/webfontworld/NexonLv1Gothic/NexonLv1GothicBold.ttf') format("truetype");
+            font-display: swap;
+        }
+        * {
+           padding: 0;
+           margin: 0; 
+           font-family: 'NexonLv1Gothic';
+        }
+        .clearfix::before, .clearfix::after {display: block; content: ''; clear: both;}
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        ul {
+            text-decoration: none;
+        }
+        li {
+            text-decoration: none;
+            list-style: none;
+        }
+         body {
+            
+         }
+        .container {
+            width: 960px;
+            margin: 0 auto;        
+        }
+        /* #header {
+           display: flex;          
+           padding-top: 50px;
+           margin-bottom: 15px;
+        }
+        #header .logo {
+           display: inline;
+        }
+        #header .logo img {
+            display: inline-block;
+            width: 100px;
+            height: 80px;
+        }
+        #header .nav {
+            display: inline;
+            
+        }
+        #header .nav ul {
+            padding-top: 50px;
+            float: right;
+            display: inline;
+        }
+        #header .nav li {            
+            display: inline;
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 16px;
+
+        } */
+        #header {height: 100px;}
+        #header h1 {float: left; padding-top: 5px;}
+        #header h1 img {width: 130px;}
+        #header .nav {float: right; z-index: 100; position: relative; margin-top: 20px;}
+        #header .nav li {position: relative; float: left; width: 120px; text-align: center;}
+        #header .nav li a {display: block; padding: 20px 15px; background: #ccc; white-space: nowrap;}
+        #header .nav li a:hover {background: #ddd;}
+        #header .nav li ul.submenu {display: none; position: absolute; left: 0; top: 59px; background: #ddd;}
+        #header .nav li ul.submenu li a {padding: 10px;}
+        #header .nav li ul.submenu li a:hover {background: #999;}
+        /*header*/
+        #main {
+           
+        }
+        .banner {
+           margin-bottom: 30px;
+        }
+        .banner img {
+            width: 960px;
+            height: 350px;
+        }
+        .cont1 {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        .notice {position: relative; padding: 30px;}
+        .notice ul li {float: left; margin-right: 20px;}
+        .notice ul li a {font-size: 24px; color: #999; font-weight: bold;}
+        .notice ul li.active a {color: #000;}
+        .notice ul li ul {position: absolute; left: 30px; top: 70px;}
+        .notice ul li ul li {width: 95%; padding: 5px 0;}
+        .notice ul li ul li a {float: left; width: 60%; font-size: 16px; color: #333;
+            overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: normal;}
+        .notice ul li ul li span {float: right; width: 20%;}
+        .notice .more {position: absolute; right: -50px; top: 35px;}
+
+
+        .cont1 .popon {
+            width: 470px;
+        }
+        .popon__cont {
+            width: 470px;
+          
+          
+        }
+        .popon__cont img {
+            width: 470px;
+            height: 195px;
+           
+        }
+        .cont2 {
+            padding-bottom: 50px;
+            border-bottom: 1px solid #ccc;
+        }
+        .cont2 h3 {
+            margin-bottom: 20px;
+        }
+        .img__slide {
+            display: flex;
+            justify-content: space-between;
+        }
+        .img__slide img {
+            width: 220px;
+            height: 220px;
+        }
+        .imgbox {
+            display: flex;
+            flex-direction: column;
+        }
+        .imgbox span {
+            color: #777;
+            margin-top: 20px;
+        }
+        #footer {
+            margin-top: 30px;
+            color: #ccc;
+            font-size: 14px;
+        }
+        .footer__cont {
+
+        }
+        .footer__cont li {
+            margin-top: 10px;
+        }
+        .footer__cont li:nth-child(3) {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header" class="clearfix">
+        <div class="container">
+        <h1><a href="#"><img src="img/logo.jpg" alt="롯데월드"></a></h1>
+        <nav class="nav">
+            <ul class="clearfix">
+                <li><a href="#">즐길거리</a>
+                    <ul class="submenu">
+                        <li><a href="#">subMenu-1</a></li>
+                        <li><a href="#">subMenu-2</a></li>
+                        <li><a href="#">subMenu-3</a></li>
+                        <li><a href="#">subMenu-4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">요금/우대혜택</a>
+                    <ul class="submenu">
+                        <li><a href="#">subMenu-1</a></li>
+                        <li><a href="#">subMenu-2</a></li>
+                        <li><a href="#">subMenu-3</a></li>
+                        <li><a href="#">subMenu-4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">참여프로그램</a>
+                    <ul class="submenu">
+                        <li><a href="#">subMenu-1</a></li>
+                        <li><a href="#">subMenu-2</a></li>
+                        <li><a href="#">subMenu-3</a></li>
+                        <li><a href="#">subMenu-4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">이용가이드</a>
+                    <ul class="submenu">
+                        <li><a href="#">subMenu-1</a></li>
+                        <li><a href="#">subMenu-2</a></li>
+                        <li><a href="#">subMenu-3</a></li>
+                        <li><a href="#">subMenu-4</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">소통서비스</a>
+                    <ul class="submenu">
+                        <li><a href="#">subMenu-1</a></li>
+                        <li><a href="#">subMenu-2</a></li>
+                        <li><a href="#">subMenu-3</a></li>
+                        <li><a href="#">subMenu-4</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="container">
+            <div class="banner">
+                <img src="img/banner.jpg" alt="배너">
+            </div>
+            <div class="cont1">
+                <article class="notice">
+                    <ul class="clearfix">
+                        <li class="active"><a href="#">롯데월드 소식</a>
+                            <ul>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">1. 첫번째 목록입니다. 첫번째 목록입니다. 첫번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">뉴스&middot;공지</a>
+                            <ul>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                                <li><a href="#">2. 두번째 목록입니다. 두번째 목록입니다. 두번째 목록입니다.</a><span>2019.05.03</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <a href="#" class="more">더보기 +</a>
+                </article>
+                <aside class="popon">
+                    <div class="popon__cont">
+                        <img src="img/popon.jpg" alt="팝온">
+                    </div>
+                </aside>
+            </div>
+            <div class="cont2">
+                <h3>특별한 경험</h3>
+                <div class="img__slide">
+                    <div class="imgbox">
+                        <img src="img/slide1.png" alt="슬라이드">
+                        <span>연간회원안내</span>
+                    </div>
+                    <div class="imgbox">
+                        <img src="img/slide2.jpg" alt="슬라이드">
+                        <span>프리미엄투어</span>
+                    </div>
+                    <div class="imgbox">
+                        <img src="img/slide3.jpg" alt="슬라이드">
+                        <span>공연참여 프로그램</span>
+                    </div>
+                    <div class="imgbox">
+                        <img src="img/slide4.jpg" alt="슬라이드">
+                        <span>단체프로그램</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <ul class="footer__cont">
+                <li>서울 특별시 송파구 올림픽로240 호텔롯데 롯데월드 | 대표자: 박동기</li>
+                <li>사업자 등록번호: 219-85-00014 | 통신판매업 신고번호: 송파 제5513호 | 전화: 1661-2000</li>
+                <li>COPYRIGHT 2018 LOTTEWORLD ALLRIGHTS RESERVED.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="script/script.js"></script>
+    
+   
+</body>
+</html>
