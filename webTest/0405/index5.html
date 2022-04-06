@@ -5,11 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>쿡킷</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+       #header {}
+       li {
+           list-style: none;
+       }
+       #header ul {
+           display: flex;
+           justify-content: space-between;
+          
+       }
+       #header ul > li {
+           text-align: center;
+           position: relative;
+           
+       }
+       #header ul > li .sub {
+        display: flex;
+        flex-direction: column;
+        position: absolute;        
+        left: 0;
+        top: 50px;
+       }
+       #header ul > li .sub > li {
+          width: 50px;
+       }
+    </style>
 </head>
 <body>
     <div id="wrap">
-        <header id="head">
-            <div></div>
+        <header id="header">
+            <ul>
+                <li>메뉴1
+                    <ul class="sub">
+                        <li>서브1</li>
+                        <li>서브2</li>
+                        <li>서브3</li>
+                    </ul>
+                </li>
+                <li>메뉴2
+                    <ul class="sub">
+                        <li>서브1</li>
+                        <li>서브2</li>
+                        <li>서브3</li>
+                    </ul>
+                </li>
+            </ul>
         </header>
         <main id="main"></main>
         <footer id="footer"></footer>
