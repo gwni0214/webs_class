@@ -280,6 +280,8 @@
         const musicArtist =musicWrap.querySelector(".music__song .artist");
         const musicAudio =musicWrap.querySelector("#main-audio");
         const musicPlay =musicWrap.querySelector("#control_play");        
+        const musicPrevBtn =musicWrap.querySelector("#control_prev");        
+        const musicNextBtn =musicWrap.querySelector("#control_next");        
 
         let musicIndex = 5;
         //음악 재생 
@@ -293,21 +295,38 @@
         window.addEventListener("load", ()=>{
             loadMusic(musicIndex);
         });
-
+        //플레이 버튼
         function playMusic(){
             musicWrap.classList.add("paused");
             musicPlay.innerText = "pause";
             musicAudio.play();
         }
+        //정지 버튼
         function pauseMusic(){
             musicWrap.classList.remove("paused");
             musicPlay.innerText = "play_arrow";
             musicAudio.pause();
         }
+        //이전 곡 듣기 (1 이전으로 가면 안됨)
+        function prevMusic(){
+            musicIndex--;                        
+            musicIndex < 1 ? musicIndex=allMusic.length : musicIndex = musicIndex;
+            loadMusic(musicIndex);
+            playMusic();
+        }
+        //다음 곡 듣기 (20 넘어서 가면 안됨)
+        function nextMusic(){
+            musicIndex++;            
+            musicIndex > 20 ? musicIndex= 1 : musicIndex = musicIndex;
+            loadMusic(musicIndex);
+            playMusic();
+        }
         musicPlay.addEventListener("click",()=>{
             const isMusicPaused = musicWrap.classList.contains("paused");
             isMusicPaused ? pauseMusic() : playMusic();           
         });
+        musicPrevBtn.addEventListener("click", prevMusic);
+        musicNextBtn.addEventListener("click", nextMusic);
     </script>
 </body>
 </html>
