@@ -54,67 +54,67 @@ let allMusic = [
         audio: "song9"
     },
     {
-        name: "music-10",
+        name: "Sunday Morning",
         artist: "youtube_FreeMusic",
         img: "image10",
         audio: "song10"
     },
     {
-        name: "music-11",
+        name: "별이 빛나는 밤",
         artist: "youtube_FreeMusic",
         img: "image11",
         audio: "song11"
     },
     {
-        name: "music-12",
+        name: "Bravo my life",
         artist: "youtube_FreeMusic",
         img: "image12",
         audio: "song12"
     },
     {
-        name: "music-13",
+        name: "Good Time",
         artist: "youtube_FreeMusic",
         img: "image13",
         audio: "song13"
     },
     {
-        name: "music-14",
+        name: "Party Tonight",
         artist: "youtube_FreeMusic",
         img: "image14",
         audio: "song14"
     },
     {
-        name: "music-15",
+        name: "HUMBLE.",
         artist: "youtube_FreeMusic",
         img: "image15",
         audio: "song15"
     },
     {
-        name: "music-16",
+        name: "Raspberry",
         artist: "youtube_FreeMusic",
         img: "image16",
         audio: "song16"
     },
     {
-        name: "music-17",
+        name: "Oye Como Va",
         artist: "youtube_FreeMusic",
         img: "image17",
         audio: "song17"
     },
     {
-        name: "music-18",
+        name: "Black Spiderman",
         artist: "youtube_FreeMusic",
         img: "image18",
         audio: "song18"
     },
     {
-        name: "music-19",
+        name: "좋니",
         artist: "youtube_FreeMusic",
         img: "image19",
         audio: "song19"
     },
     {
-        name: "music-20",
+        name: "Lost Stars",
         artist: "youtube_FreeMusic",
         img: "image20",
         audio: "song20"
