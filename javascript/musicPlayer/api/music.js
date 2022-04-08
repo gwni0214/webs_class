@@ -118,5 +118,5 @@ let allMusic = [
         artist: "youtube_FreeMusic",
         img: "image20",
         audio: "song20"
-    },
+    }
 ];
