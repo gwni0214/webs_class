@@ -23,5 +23,8 @@ https://gwni0214.github.io/webs_class/teamproject/index.html
 ## 뮤직 플레이어
 https://gwni0214.github.io/webs_class/javascript/musicPlayer/index.html
 
+## 타자연습 게임
+https://gwni0214.github.io/webs_class/javascript/typingGame/index.html
+
 ## 스크롤링 패럴랙스
 https://gwni0214.github.io/webs_class/parallax/index.html
