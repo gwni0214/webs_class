@@ -333,10 +333,13 @@
             let y = e.pageY;
             // circle.style.left = x + "px";
             // circle.style.top = y + "px";
+            //gsap를 이용해서 더 부드러운 애니메이션 효과 주기
             gsap.set(circle,{left:x,top:y});
             let size = Math.random() * 100;
+            //랜덤한 사이즈를 주어서 방울방울이 크기가 다르도록 효과
             circle.style.width = 20 + size + "px";
             circle.style.height = 20 + size + "px";
+            //바디에 자식요소로 circle이 생기도록 추가
             body.appendChild(circle);
             setTimeout(function () {
                 circle.remove();
