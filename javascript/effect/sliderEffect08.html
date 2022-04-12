@@ -552,7 +552,14 @@
             stopPlay();
         });
         
-        
+        document.querySelectorAll(".slider__dot .dot").forEach((el,i)=>{
+            el.addEventListener("mouseenter", () => {
+            stopPlay();
+            });
+            el.addEventListener("click",()=>{
+                gotoSlider(i);
+            })
+        });
     
         
 

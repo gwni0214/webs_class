@@ -430,6 +430,7 @@
             sliderDot.innerHTML = dotIndex;
             sliderDot.firstElementChild.classList.add("active");
         }
+        dotInit();
         // 닷 버튼 활성화
         function dotActive(){
             let dotAll = document.querySelectorAll(".slider__dot .dot");
@@ -465,7 +466,8 @@
         sliderBtnNext.addEventListener("click", ()=>{gotoSlider(1)});
         sliderInner.addEventListener("transitionend", checkIndex);  //트랜지션 했을때 이벤트 함수
 
-        dotInit();
+        
+        
         
     
         
