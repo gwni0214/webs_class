@@ -549,6 +549,12 @@
             document.querySelector(".play").classList.add("show");                                  
             stopPlay();
         });
+        sliderBtnNext.addEventListener("mouseenter", ()=>{
+            stopPlay();
+        });
+        sliderBtnPrev.addEventListener("mouseenter", ()=>{
+            stopPlay();
+        });
         
         document.querySelectorAll(".slider__dot .dot").forEach((el,i)=>{
             el.addEventListener("mouseenter", () => {
