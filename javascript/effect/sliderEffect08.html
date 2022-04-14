@@ -82,6 +82,11 @@
         .slider__btn a.prev {
             left: 0;
             text-align: center;
+            
+        }
+        .noSlide {
+            user-select: none;
+            pointer-events: none;
         }
         .slider__btn a.next {
             right: 0;
@@ -507,12 +512,20 @@
         sliderBtnPrev.addEventListener("click", ()=>{
             let prevIndex = currentIndex -1
             gotoSlider(prevIndex);
+            sliderBtnPrev.classList.add("noSlide");
+            setTimeout(function(){
+                sliderBtnPrev.classList.remove("noSlide");
+            },1000);
         });
 
         //다음 버튼
         sliderBtnNext.addEventListener("click", ()=>{
             let nextIndex = currentIndex +1
             gotoSlider(nextIndex);
+            sliderBtnNext.classList.add("noSlide");
+            setTimeout(function(){
+                sliderBtnNext.classList.remove("noSlide");
+            },1000);
         });
         
         sliderInner.addEventListener("transitionend", ()=>{
