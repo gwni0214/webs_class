@@ -1,15 +1,421 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        a {
+            color: #222;
+            text-decoration: none;
+        }
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+        }
+        li {
+            list-style: none;
+            display: inline;
+        }
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            margin-top: 30px;
+        }
+        h1 {
+            
+        }
+        h1 a {
+            width: 120px;
+            display: block;
+        }
+        h1 a img {
+            width: 100%;
+            vertical-align: top;
+        }
+        #header ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+         
+        }
+        #header ul > li {
+            
+            font-weight: 600;
+            font-size: 20px;
+            position: relative;
+            display: inline-block;
+           padding: 20px;
+            
+        }
+        #header ul li:hover {
+            background: #777;
+        }
+        #header ul li .sub_menu {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            width: inherit;
+            left: 0;
+            top: 60px;
+            background: #ccc;
+            display: none;  
+            z-index: 1000;                                  
+        }
+        #header ul li:hover .sub_menu {
+            display: block;
+            
+        }
+        #header ul li .sub_menu li {
+            display: inline-block;
+            margin: auto;
+            white-space: nowrap;
+            margin-bottom: 10px;
+            font-size: 14px;            
+        }
+        #main {
+
+            margin-bottom: 100px;
+        }
+        .banner {
+           
+        }
+        .slider_img {
+            overflow: hidden;
+        }
+        .slider_inner {
+            width: 3000px;
+            display: flex;
+            position: relative;
+            
+        }
+        .slider_inner .img {
+            position: relative;            
+        }
+        .slider_inner .img img {
+            width: 100%;
+        }
+        .slider_inner .img span {
+            display: block;
+            padding: 30px;
+            background: rgba(0,0,0,0.6);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 20px;
+            color: #fff;
+        }
+        .deli_cont {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px
+        }
+        .deli1 {
+            background: #f5f5f5;
+            width: 49%;
+            height: 200px 
+             
+                        
+        }
+        .deli1 .deli_img {
+            float: right;
+            margin-top: -20px;
+        }
+        .deli1 .deli_img img {
+            width: 100%;
+        }
+        .deli2 {
+            background: #f5f5f5;
+            width: 49%;
+            height: 200px            
+        }
+        .tab {
+            margin-top: 30px;
+        }
+        .best_box {
+            margin-top: 30px;
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .card1 {
+            width: 32%;
+            position: relative;
+        }
+        .card1 img {
+            width: 100%;
+        }
+        .food_img {
+            position: relative;
+        }
+        .food_img > span {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            background: rgba(0,0,0,0.5);
+        }
+        .food_img > span em {
+            display: block;
+        }
+        .cart {
+            
+            width: 40px;
+            height: 40px;
+         position: absolute;
+         right: 0;
+         bottom: 0;
+        }
+        .cart img {
+            width: 100%;
+        }
+        .review_box {
+            margin-top: 30px;
+            width: 1000px;
+            display: flex;
+            justify-content: space-between;
+            display: none;
+          
+        }
+        .tab h3 {
+            cursor: pointer;
+        }
+        .tab h3 span.hide {
+            color: rgb(163, 163, 163);
+        }
+        #footer {
+            background: rgb(32,32,32);
+            width: 100%;
+          
+          
+            
+        }
+        .Fcontainer {
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .footer_img {
+            width: 20%;
+        }
+        .footer_img  img{
+            width: 100%;
+        }
+        .fooer_info {}
+        .fooer_info ul {
+      
+        }
+        .fooer_info ul li {
+            display: inline-block;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
-    hello
-    <div>
-        asdsa
-    </div>
+   <div class="wrap">
+       <div class="container">
+            <header id="header">
+                <h1><a href="#"><img src="img/logo.jpg" alt="logo"></a></h1>
+                <nav>
+                    <ul>
+                        <li class="menu"><a href="#">쿡킷소개</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu"><a>쿡킷소개</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu"><a>쿡킷소개</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu"><a>쿡킷소개</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu"><a>쿡킷소개</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                                <li><a href="#">sub-menu1</a></li>
+                            </ul>                        
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+       <main id="main">
+           <div class="container">
+               <div class="banner">
+                   <div class="slider_img">
+                       <div class="slider_inner">
+                           <div class="img"><img src="img/banner.jpg" alt="banner"><span>이미지1</span></div>
+                           <div class="img"><img src="img/banner.jpg" alt="banner"><span>이미지2</span></div>
+                           <div class="img"><img src="img/banner.jpg" alt="banner"><span>이미지3</span></div>
+                       </div>
+                   </div>
+               </div>
+               <div class="deli_cont">
+                   <div class="deli1">
+                       <div class="text_box">
+                           <h4>우리집도 배송가능?</h4>
+                           <span>배송가능한지 알려드림</span>
+                           <div class="text_img">
+                               <img src="img/place.jpg" alt="place">
+                               <a href="#">배송지 검색</a>
+                           </div>
+                       </div>
+                       <div class="deli_img">
+                           <img src="img/deli1.jpg" alt="deli1">
+                       </div>
+                   </div>
+                   <div class="deli2">
+                    <div class="text_box">
+                        <h4>우리집도 배송가능?</h4>
+                        <span>배송가능한지 알려드림</span>
+                        <div class="text_img">
+                            <img src="img/place.jpg" alt="place">
+                            <a href="#">배송지 검색</a>
+                        </div>
+                    </div>
+                    <div class="deli_img">
+                        <img src="img/deli1.jpg" alt="deli1">
+                    </div>
+                   </div>
+               </div>
+               <div class="tab">
+                <h3><span class="best">실시간 베스트</span> | <span class="review hide">생생한 리뷰</span></h3>
+                <div class="best_box">
+                    <div class="card1">
+                        <div class="food_img">
+                            <img src="img/food1.jpg" alt="food1">
+                            <span>BEST<em>01</em></span>
+                        </div>
+                        <h4>평양식 어복쟁반</h4>
+                        <p>33,800원 <em>/3인분</em></p>
+                        <div class="cart"><img src="img/cart.jpg" alt="cart"></div>
+                        
+                    </div>
+                    <div class="card1">
+                        <div class="food_img">
+                            <img src="img/food1.jpg" alt="food1">
+                            <span>BEST<em>01</em></span>
+                        </div>
+                        <h4>평양식 어복쟁반</h4>
+                        <p>33,800원 <em>/3인분</em></p>
+                        <div class="cart"><img src="img/cart.jpg" alt="cart"></div>
+                    </div>
+                    <div class="card1">
+                        <div class="food_img">
+                            <img src="img/food1.jpg" alt="food1">
+                            <span>BEST<em>01</em></span>
+                        </div>
+                        <h4>평양식 어복쟁반</h4>
+                        <p>33,800원 <em>/3인분</em></p>
+                        <div class="cart"><img src="img/cart.jpg" alt="cart"></div>
+                    </div>
+                </div>
+                <div class="review_box">
+                    <div class="card1">
+                        <div class="food_img">
+                            <img src="img/food1.jpg" alt="food1">
+                            <span>BEST<em>04</em></span>
+                        </div>
+                        <h4>평양식 어복쟁반</h4>
+                        <p>33,800원 <em>/3인분</em></p>
+                        <div class="cart"><img src="img/cart.jpg" alt="cart"></div>
+                        
+                    </div>
+                    <div class="card1">
+                        <div class="food_img">
+                            <img src="img/food1.jpg" alt="food1">
+                            <span>BEST<em>05</em></span>
+                        </div>
+                        <h4>평양식 어복쟁반</h4>
+                        <p>33,800원 <em>/3인분</em></p>
+                        <div class="cart"><img src="img/cart.jpg" alt="cart"></div>
+                    </div>
+                    <div class="card1">
+                        <div class="food_img">
+                            <img src="img/food1.jpg" alt="food1">
+                            <span>BEST<em>06</em></span>
+                        </div>
+                        <h4>평양식 어복쟁반</h4>
+                        <p>33,800원 <em>/3인분</em></p>
+                        <div class="cart"><img src="img/cart.jpg" alt="cart"></div>
+                    </div>
+                </div>
+               </div>
+           </div>
+       </main>
+       <footer id="footer">
+           <div class="Fcontainer">
+            <div class="footer_img"><img src="img/footer.jpg" alt="foter"></div>
+            <div class="fooer_info">
+                <ul>
+                    <li>이용약관</li>
+                    <li>이용약관</li>
+                    <li>이용약관</li>
+                    <li>이용약관</li>
+                </ul>
+            </div>
+        </div>
+       </footer>
+   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <script>
+       //탭메뉴
+       $(".best").click(function(){
+            $(this).removeClass("hide");
+            $(".review").addClass("hide");
+            $(".best_box").css("display","flex");
+            $(".review_box").css("display","none");
+       });
+       $(".review").click(function(){
+            $(this).removeClass("hide");
+            $(".best").addClass("hide");
+            $(".best_box").css("display","none");
+            $(".review_box").css("display","flex");
+        });
+        let currentIndex = 0;
+        setInterval(function(){
+            if(currentIndex < 2){
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            let slidePosition = currentIndex * (-1000) + "px";
+            $(".slider_inner").animate({left: slidePosition});
+        },3000);
+   </script>
 </body>
 </html>
