@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메모리게임</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+        }
+        body {
+            background: #ECB390;
+        }
+        .wrap__card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .card__inner {
+            width: 700px;
+            height: 700px;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+        .cards li {
+            width: calc(100% / 4 - 10px);
+            height: calc(100% / 4 - 10px);
+          
+            perspective: 1000px;    /*원근점 설정*/
+            transform-style: preserve-3d; /*3D 쓰겠다고 선언*/
+            position: relative;        
+            
+        }
+        
+        
+        .cards li .view {
+           position: absolute;
+           background: #fff;
+           padding: 10%; 
+           transition: transform 0.25s linear ;
+           background: #FCF8E8;
+           backface-visibility: hidden;
+           border-radius: 10px;
+           width: 100%;
+           height: 100%;
+           user-select: none;
+           pointer-events: none;
+        }
+        .cards li .view.front {
+              z-index: 10; 
+              transform: rotateY(0deg);      
+        }  
+        .cards li.flip .view.front {
+            transform: rotateY(180deg);
+        }      
+        .cards li .view.back {
+            transform: rotateY(-180deg);
+        }        
+        .cards li.flip .view.back {
+            transform: rotateY(0deg);
+        }
+        .cards li.shake {
+            animation: shake 0.35s ease-in-out;
+        }
+        @keyframes shake {
+            0% {transform: translateX(0);}
+            20% {transform: translateX(-13px);}
+            40% {transform: translateX(13px);}
+            60% {transform: translateX(-8px);}
+            80% {transform: translateX(8px);}
+            100% {transform: translateX(0);}
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap__card">
+        <div class="card__inner">
+            <ul class="cards">
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img02.png" alt="img02">
+                    </div>
+                </li>
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img03.png" alt="img03">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img04.png" alt="img04">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img05.png" alt="img05">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img06.png" alt="img06">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img07.png" alt="img07">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img08.png" alt="img08">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img09.png" alt="img09">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img02.png" alt="img02">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img03.png" alt="img03">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img04.png" alt="img04">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img05.png" alt="img05">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img06.png" alt="img06">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img07.png" alt="img07">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img08.png" alt="img08">
+                    </div>
+                </li> 
+                <li>
+                    <div class="view front">
+                        <img src="img/img01.png" alt="img01">
+                    </div>
+                    <div class="view back">
+                        <img src="img/img09.png" alt="img09">
+                    </div>
+                </li>                
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        //01. html/css 디자인 구성
+        //02. 클릭한 카드 뒤집기
+        //03. 두개의 카드 뒤집기 확인하기(첫번째, 두번째)
+        //04. 클릭한 카드 두개의 이미지 가져오기
+        //05. 두개의 이미지 비교하기
+        //06. 틀린 이미지 애니메이션 효과주기 (shake)
+        //07. 빨리 클릭하면 버그 발생 고치기
+
+        const cards = document.querySelectorAll(".cards li");
+
+        let cardOne, cardTwo;
+        let disableDeck = false;
+
+        function flipCard(e){            
+            let clickedCard = e.target;
+            if(clickedCard !== cardOne && !disableDeck){
+                clickedCard.classList.add("flip");
+
+                //cardOne의 데이터가 없으면 리턴으로 바로 넣어주기
+                if(!cardOne){
+                    return cardOne = clickedCard;
+                }
+                
+                cardTwo = clickedCard;
+                disableDeck = true;
+
+                let cardOneImg = cardOne.querySelector(".back img").src;    //태그안에 있는 src 가져오기 (문자열)
+                let cardTwoImg = cardTwo.querySelector(".back img").src;
+                
+
+                // console.log(cardOneImg,cardTwoImg);
+
+                matchCards(cardOneImg, cardTwoImg);
+            }
+            
+        }
+
+        function matchCards(img1, img2){
+            //두 이미지의 src 문자열 값을 비교
+             if(img1 == img2){
+                cardOne.removeEventListener("click", flipCard);
+                cardTwo.removeEventListener("click", flipCard);
+                cardOne = cardTwo = "";
+                disableDeck = false;
+             } else {                 
+                setTimeout(function(){
+                    cardOne.classList.add("shake");
+                    cardTwo.classList.add("shake");
+                },400);
+
+                setTimeout(function(){
+                    cardOne.classList.remove("shake", "flip");
+                    cardTwo.classList.remove("shake", "flip");
+                    cardOne = cardTwo = "";
+                    disableDeck = false;
+                },1200);
+             }
+        }
+        cards.forEach(card => {
+            card.addEventListener("click", flipCard);
+            
+        })
+    </script>
+</body>
+</html>

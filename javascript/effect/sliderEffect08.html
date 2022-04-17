@@ -82,6 +82,11 @@
         .slider__btn a.prev {
             left: 0;
             text-align: center;
+            
+        }
+        .noSlide {
+            user-select: none;
+            pointer-events: none;
         }
         .slider__btn a.next {
             right: 0;
@@ -162,7 +167,9 @@
             left: 10px;
             top: 0;
         }
-       
+        .slider__dot .dot.active {
+            background: rgba(255,255,255,0.9);
+        }
     </style>
 </head>
 <body class="img06">
@@ -463,8 +470,10 @@
             //세번째 이미지 = left : -2400px
             //네번째 이미지 = left : -3200px
             //다섯번째 이미지 = left : -4000px
+            dotActive();
         };
-
+        
+        
        //닷 메뉴 추가
        function dotInit(){
             for(let i =0; i<sliderLength; i++){
@@ -475,8 +484,19 @@
             sliderDot.innerHTML = dotIndex;
             sliderDot.firstElementChild.classList.add("active");
         }
+        // 닷 버튼 활성화
+        function dotActive(){
+            let dotAll = document.querySelectorAll(".slider__dot .dot");
+            dotAll.forEach(dot => {
+                dot.classList.remove("active");    //전체 닷 메뉴 비활성화            
+            });
+            if(currentIndex == sliderLength){   //마지막 이미지 왔을 때
+                dotAll[0].classList.add("active");
+            } else  {
+                dotAll[currentIndex].classList.add("active");   //현재 보고있는 닷 활성화
+            }
+        }
         dotInit();
-
         //오토 플레이
         function autoPlay(){
             sliderTimer = setInterval(()=>{                
@@ -492,12 +512,20 @@
         sliderBtnPrev.addEventListener("click", ()=>{
             let prevIndex = currentIndex -1
             gotoSlider(prevIndex);
+            sliderBtnPrev.classList.add("noSlide");
+            setTimeout(function(){
+                sliderBtnPrev.classList.remove("noSlide");
+            },1000);
         });
 
         //다음 버튼
         sliderBtnNext.addEventListener("click", ()=>{
             let nextIndex = currentIndex +1
             gotoSlider(nextIndex);
+            sliderBtnNext.classList.add("noSlide");
+            setTimeout(function(){
+                sliderBtnNext.classList.remove("noSlide");
+            },1000);
         });
         
         sliderInner.addEventListener("transitionend", ()=>{
@@ -534,8 +562,21 @@
             document.querySelector(".play").classList.add("show");                                  
             stopPlay();
         });
-
+        sliderBtnNext.addEventListener("mouseenter", ()=>{
+            stopPlay();
+        });
+        sliderBtnPrev.addEventListener("mouseenter", ()=>{
+            stopPlay();
+        });
         
+        document.querySelectorAll(".slider__dot .dot").forEach((el,i)=>{
+            el.addEventListener("mouseenter", () => {
+            stopPlay();
+            });
+            el.addEventListener("click",()=>{
+                gotoSlider(i);
+            })
+        });
     
         
 
