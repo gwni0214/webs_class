@@ -107,17 +107,37 @@
             cursor: pointer;  
             border: 0;                     
         }
-        
+        .card__start {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+        .card__start button {
+            line-height: 40px;
+            width: 40px;
+            height: 40px;
+            user-select: none; 
+            background: #fff;            
+            color: #ECB390;
+            text-align: center;           
+            border-radius: 50%;
+            cursor: pointer;  
+            border: 0; 
+        }
     </style>
 </head>
 <body>
     <div class="wrap__card">
+        <div class="card__start">
+            <button class="material-icons">catching_pokemon</button>
+        </div> 
         <div class="card__sound">
             <button class="material-icons">volume_off</button>
             <!-- <span class="material-icons">volume_off</span> -->
             <audio id="song" src="music/Jeremy_Black.mp3" loop="loop"></audio>
         </div>
-        <div class="card__inner">            
+        <div class="card__inner">
+                       
             <ul class="cards">
                 <li>
                     <div class="view front">
@@ -259,8 +279,14 @@
         //05. 두개의 이미지 비교하기
         //06. 틀린 이미지 애니메이션 효과주기 (shake)
         //07. 빨리 클릭하면 버그 발생 고치기
+        //08. 다 맞췄을 때. 
+        //09. 카드섞기
+        //10. 카드 스타트 버튼 누르면 한번 보여주기
 
         const cards = document.querySelectorAll(".cards li");
+
+        const cardStart = document.querySelector(".card__start");
+        
         const cardSound =document.querySelector(".card__sound button");
         const cardSong = document.querySelector("#song");
 
@@ -275,20 +301,7 @@
         let soundMatch = new Audio(sound[0]);
         let soundNoMatch = new Audio(sound[1]);
         let soundSuccess = new Audio(sound[2]);
-
-        //뮤직 재생
-        cardSound.addEventListener("click",()=>{
-            cardSound.classList.toggle("is-playing");
-
-            if(cardSound.classList.contains("is-playing")){
-                cardSound.innerText = "volume_up";
-                cardSong.play();
-            } else {
-                cardSound.innerText = "volume_off";
-                cardSong.pause();
-            }
-        });
-
+                        
         function flipCard(e){            
             let clickedCard = e.target;
             if(clickedCard !== cardOne && !disableDeck){
@@ -301,21 +314,29 @@
                 
                 cardTwo = clickedCard;
                 disableDeck = true;
-
+                
                 let cardOneImg = cardOne.querySelector(".back img").src;    //태그안에 있는 src 가져오기 (문자열)
                 let cardTwoImg = cardTwo.querySelector(".back img").src;
                 
-
                 // console.log(cardOneImg,cardTwoImg);
 
                 matchCards(cardOneImg, cardTwoImg);
             }
             
         }
+        //맞춘갯수
+        let matchedCard = 0;
 
         function matchCards(img1, img2){
             //두 이미지의 src 문자열 값을 비교
              if(img1 == img2){
+                matchedCard++;
+
+                if(matchedCard == 8){
+                    setTimeout(()=>{
+                        return shuffleCard();
+                    },1000);                                       
+                }
                 cardOne.removeEventListener("click", flipCard);
                 cardTwo.removeEventListener("click", flipCard);
                 cardOne = cardTwo = "";
@@ -336,10 +357,67 @@
                 soundNoMatch.play();
              }
         }
+
+         //카드 스타트
+         cardStart.addEventListener("click", ()=>{
+            shuffleCard();                                   
+        });
+
+        //카드 클릭하기
         cards.forEach(card => {
+            // card.classList.add("flip");
             card.addEventListener("click", flipCard);
             
-        })
+        });
+     
+        //카드 섞기
+        function shuffleCard(){
+            cardOne = cardTwo = "";
+            disableDeck = false;
+            matchedCard = 0;
+                    
+            let arr = [9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8];
+            let result = arr.sort(()=>Math.random() > 0.5 ? 1 : -1);
+            cards.forEach((card,index)=>{
+                card.classList.remove("flip");
+
+                setTimeout(()=>{
+                    card.classList.add("flip");
+                },200 * index)
+                
+                setTimeout(()=>{
+                    card.classList.remove("flip");
+                },4000);
+                let imgTag =card.querySelector(".back img");
+                imgTag.src = `img/img0${arr[index]}.png`;
+            })            
+        }
+       
+        shuffleCard();
+
+        //뮤직 재생
+        cardSound.addEventListener("click",()=>{
+            cardSound.classList.toggle("is-playing");
+
+            if(cardSound.classList.contains("is-playing")){
+                cardSound.innerText = "volume_up";
+                cardSong.play();
+            } else {
+                cardSound.innerText = "volume_off";
+                cardSong.pause();
+            }
+        });
+        // cardSound.addEventListener("click",function(){
+        //     this.classList.toggle("is-playing");
+
+        //     if(cardSound.classList.contains("is-playing")){
+        //         this.innerText = "volume_up";
+        //         cardSong.play();
+        //     } else {
+        //         this.innerText = "volume_off";
+        //         cardSong.pause();
+        //     }
+        // });
     </script>
 </body>
 </html>
