@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="bg.css">
+
+    <style>  
+        @font-face {
+        font-family: 'LABDigital';
+        font-weight: normal;    
+        font-style: normal;
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
+        src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
+            url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
+        font-display: swap;
+        } 
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            cursor: none;
+            
+        }    
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'LABDigital';           
+        }
+
+        img {
+            width: 100%;
+            vertical-align: top;
+            object-fit: cover;
+        }
+
+        #header {
+            height: 35px;
+            background-color: #e4dbee;
+            width: 100%;
+        }
+        #header h1 {
+            display: inline;
+            font-size: 22px;
+            line-height: 1.6;
+            margin-left: 10px;
+        }
+        #header .time {
+            float: right;
+            margin-right: 20px;
+        }
+        #header .time span {
+            font-size: 18px;
+            letter-spacing: 3px;
+            line-height: 1.9;
+        }
+        #main {
+            display: flex;
+        }
+        .btn {
+           margin: 20px;  
+               z-index: 11;           
+        }  
+        .btn a {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            border: 0;
+            background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+            opacity: 0.9;            
+            border-radius: 50%;
+            position: relative;  
+            cursor: none;          
+        } 
+        .btn a:hover {
+            background-image: linear-gradient(to top, #fbc2eb 100%,#a18cd1 0%);
+           
+        }           
+        .btn a img {
+            width: 50px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);           
+        }            
+        .btn span {
+            position: absolute;
+            left: 50%;
+            bottom: -20%;
+            transform: translateX(-50%);
+            display: block;
+            padding: 0 10px;
+            background: #31f8cc;
+            text-align: center;
+            font-size: 18px;
+            white-space: nowrap;
+        }         
+        .musicBox {
+            width: 500px;
+            height: 700px;
+            position: absolute;
+            right: -500px;
+            top: 10px;
+            z-index: 10;
+            transition: all 0.4s;            
+        }
+        .musicBox.show {
+            right: 10px;
+            transition: all 0.4s;             
+        }
+        .memoryBox {
+            width: 1000px;
+            height: 850px;            
+            position: absolute;
+            right: -1500px;
+            top: 50px;
+            z-index: 10;
+            transition: all 0.4s;
+        }
+        .memoryBox.show {
+            right: 10px;
+            transition: all 0.4s; 
+        }
+        .typingBox {
+            width: 1200px;
+            height: 700px;
+            position: absolute;
+            left: 50%;
+            top: -200%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease;
+        }
+        .typingBox.show {
+            top: 50%;
+            transition: all 0.4s; 
+        }
+        .music__frame {
+            display: none;                                   
+        }
+        .memory__frame {
+            border-radius: 20px;
+            display: none;
+        }
+        .typing__frame {
+            border-radius: 20px;
+            display: none;
+        }
+        .show {
+            display: block;        
+        }
+       .cursor {
+           position: absolute;
+           left: 0;
+           top: 0;
+           z-index: 100;
+           width: 50px;
+           user-select: none;
+           pointer-events: none;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="cursor">
+        <img src="https://assets.codepen.io/756881/pointer.svg" alt="커서">
+    </div>
+    <div class="wrap">
+        <header id="header">
+            <h1>GAME SITE</h1>
+            <div class="time">
+                <span id="clock"></span>
+            </div>
+        </header>
+        <div class="musicBox">
+            <iframe class="music__frame" src="../javascript/musicPlayer/index.html" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+        <div class="memoryBox">
+            <iframe class="memory__frame" src="../javascript/memoryGame/index.html" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+        <div class="typingBox">
+            <iframe class="typing__frame" src="../javascript/typingGame/index.html" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+        <main id="main">
+            <div class="btn btn1">
+                <a href="#">
+                    <img src="img/guitar-light.svg" alt="img">
+                    <span>MUSIC</span>
+                </a> 
+            </div>   
+            <div class="btn btn2">
+                <a href="#">
+                    <img src="img/camera-light.svg" alt="img">
+                    <span>MEMORY GAME</span>
+                </a> 
+            </div>
+            <div class="btn btn3">
+                <a href="#">
+                    <img src="img/personalcomputer-light.svg" alt="img">
+                    <span>TYPING GAME</span>
+                </a> 
+            </div>         
+        </main>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(".btn1").draggable();
+        $(".btn2").draggable();
+        $(".btn3").draggable();
+        
+        $(".btn1").click(function(){
+            $(".musicBox").toggleClass("show")
+        });
+        $(".btn2").click(function(){
+            $(".memoryBox").toggleClass("show")
+        });
+        $(".btn3").click(function(){
+            $(".typingBox").toggleClass("show")
+        });
+        const musicBtn = document.querySelector(".btn1");
+        const memoryBtn = document.querySelector(".btn2");
+        const typingBtn = document.querySelector(".btn3");
+        const musicFrame = document.querySelector(".music__frame");
+        const memoryFrame = document.querySelector(".memory__frame");
+        const typingFrame = document.querySelector(".typing__frame");
+        musicBtn.addEventListener("click",()=>{
+            musicFrame.classList.toggle("show");
+        });
+        memoryBtn.addEventListener("click",()=>{
+            memoryFrame.classList.toggle("show");
+        });
+        typingBtn.addEventListener("click",()=>{
+            typingFrame.classList.toggle("show");
+        });
+        window.addEventListener("mousemove",(e)=>{
+            // document.querySelector(".cursor").style.left = e.clientX - 25 + "px";   //원 안으로 중심이 들어가야해서 -25px 을 줌.
+            // document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
+
+            let x = e.clientX - 25 + "px";
+            let y = e.clientY - 25 + "px";
+            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;   //이렇게도 표현 가능.
+        });
+        //현재시간
+            function printTime() {
+                var clock = document.getElementById("clock");            // 출력할 장소 선택
+                var now = new Date();                                                  // 현재시간
+                var nowTime = now.getFullYear() + "년 " + (now.getMonth()+1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분" + now.getSeconds() + "초";
+                clock.innerHTML = nowTime;           // 현재시간을 출력
+                setTimeout("printTime()",1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+            }
+            window.onload = function() {                         // 페이지가 로딩되면 실행
+                printTime();
+            }
+
+
+
+    </script>
+</body>
+
+</html>

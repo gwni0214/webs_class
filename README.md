@@ -20,6 +20,9 @@ https://gwni0214.github.io/webs_class/site/webClass/index.html
 ## 팀 프로젝트
 https://gwni0214.github.io/webs_class/teamproject/index.html
 
+## 게임 사이트
+https://gwni0214.github.io/webs_class/game/index.html
+
 ## 뮤직 플레이어
 https://gwni0214.github.io/webs_class/javascript/musicPlayer/index.html
 
