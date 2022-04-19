@@ -138,22 +138,21 @@
             transition: all 0.6s ease;
         }
         .typingBox.show {
-            top: 50%;
-            transition: all 0.4s; 
+            top: 50%;            
         }
         .music__frame {
-            display: none;                                   
+            display: none;                                              
         }
         .memory__frame {
             border-radius: 20px;
-            display: none;
+            display: none;            
         }
         .typing__frame {
             border-radius: 20px;
-            display: none;
+            display: none;            
         }
         .show {
-            display: block;        
+            display: block;                   
         }
        .cursor {
            position: absolute;
@@ -216,30 +215,37 @@
         $(".btn2").draggable();
         $(".btn3").draggable();
         
-        $(".btn1").click(function(){
-            $(".musicBox").toggleClass("show")
-        });
-        $(".btn2").click(function(){
-            $(".memoryBox").toggleClass("show")
-        });
-        $(".btn3").click(function(){
-            $(".typingBox").toggleClass("show")
-        });
+        // $(".btn1").click(function(){
+        //     $(".musicBox").toggleClass("show")
+        // });
+        // $(".btn2").click(function(){
+        //     $(".memoryBox").toggleClass("show")
+        // });
+        // $(".btn3").click(function(){           
+        //     $(".typingBox").toggleClass("show")
+        // });
         const musicBtn = document.querySelector(".btn1");
         const memoryBtn = document.querySelector(".btn2");
         const typingBtn = document.querySelector(".btn3");
+        const musicBox = document.querySelector(".musicBox");
+        const memoryBox = document.querySelector(".memoryBox");
+        const typingBox = document.querySelector(".typingBox");
         const musicFrame = document.querySelector(".music__frame");
         const memoryFrame = document.querySelector(".memory__frame");
         const typingFrame = document.querySelector(".typing__frame");
         musicBtn.addEventListener("click",()=>{
+            musicBox.classList.toggle("show");
             musicFrame.classList.toggle("show");
         });
         memoryBtn.addEventListener("click",()=>{
+            memoryBox.classList.toggle("show");
             memoryFrame.classList.toggle("show");
         });
-        typingBtn.addEventListener("click",()=>{
+        typingBtn.addEventListener("click",()=>{            
+            typingBox.classList.toggle("show");
             typingFrame.classList.toggle("show");
         });
+        //커서
         window.addEventListener("mousemove",(e)=>{
             // document.querySelector(".cursor").style.left = e.clientX - 25 + "px";   //원 안으로 중심이 들어가야해서 -25px 을 줌.
             // document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
