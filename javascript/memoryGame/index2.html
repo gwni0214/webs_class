@@ -459,12 +459,12 @@
 <!--현재 점수 박스-->
 <div class="CS__box">
     <p>현재 점수</p>
-    <span>100</span>
+    <span></span>
 </div>
 <!--목숨 박스-->
 <div class="life__box">
     <p>LIFE</p>
-    <span>3</span>
+    <span></span>
 </div>
 <!--결과박스-->
 <div class="result__box">
@@ -496,7 +496,7 @@
         console.log(stop);
         let currentLife = lifeScore.innerText;
         let currentScore = csScore.innerText;
-        currentLife = 3;
+        currentLife = 7;
         currentScore = 100;        
         let cardOne, cardTwo;
         let disableDeck = false;
@@ -508,8 +508,8 @@
             "music/up.mp3",
         ];
         let soundMatch = new Audio(sound[0]);
-        let soundNoMatch = new Audio(sound[1]);
-        let soundSuccess = new Audio(sound[2]);
+        let soundNoMatch = new Audio(sound[2]);
+        let soundSuccess = new Audio(sound[1]);
 
         let timeGo;
         let maxTime = 100;
@@ -689,8 +689,8 @@
 
         //카드 섞기
         function shuffleCard(){
-            lifeScore.innerText = 3;
-            currentLife =3;
+            lifeScore.innerText = 7;
+            currentLife =7;
             currentScore = 100;
             csScore.innerText = 100;
             maxTime = 100;
