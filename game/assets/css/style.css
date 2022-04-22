@@ -53,10 +53,15 @@
     }
     #main {
         display: flex;
+        flex-direction: column;
+        
+        
     }
     .btn {
-       margin: 20px;  
-           z-index: 11;           
+       margin: 40px;  
+           z-index: 11; 
+           display: inline-block;
+
     }  
     .btn a {
         display: inline-block;
@@ -67,7 +72,7 @@
         opacity: 0.9;            
         border-radius: 50%;
         position: relative;  
-        cursor: none;          
+        cursor: none;                  
     } 
     .btn a:hover {
         background-image: linear-gradient(to top, #fbc2eb 100%,#a18cd1 0%);
@@ -136,7 +141,7 @@
         background: #fff;
         position: absolute;
         left: 0;
-        top: 0;
+        top: -200%;
         right: 0;
         bottom: 0;
         margin: auto;
@@ -145,16 +150,16 @@
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
                         0 6px 10px 0 rgba(0,0,0,0.17);
     }
-    .music__frame {
-        display: none;                                              
+    .memoryBox.show {
+        top: 0;
+    }
+    .music__frame {                                                     
     }
     .memory__frame {
-        border-radius: 20px;
-        display: none;            
+        border-radius: 10px;                    
     }
     .typing__frame {
-        border-radius: 20px;
-        display: none;            
+        border-radius: 20px;                    
     }
     .show {
         display: block;                   
