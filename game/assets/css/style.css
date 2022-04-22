@@ -61,6 +61,7 @@
        margin: 40px;  
            z-index: 11; 
            display: inline-block;
+           width: 103px;
 
     }  
     .btn a {
@@ -109,20 +110,7 @@
     .musicBox.show {
         right: 10px;
         transition: all 0.4s;             
-    }
-    .memoryBox {
-        width: 1000px;
-        height: 850px;            
-        position: absolute;
-        right: -1500px;
-        top: 50px;
-        z-index: 10;
-        transition: all 0.4s;
-    }
-    .memoryBox.show {
-        right: 10px;
-        transition: all 0.4s; 
-    }
+    }   
     .typingBox {
         width: 1200px;
         height: 700px;
@@ -144,19 +132,22 @@
         top: -200%;
         right: 0;
         bottom: 0;
-        margin: auto;
+        margin: auto;        
         border-radius: 10px;
         overflow: hidden;
+        transition: all 0.4s;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
                         0 6px 10px 0 rgba(0,0,0,0.17);
     }
     .memoryBox.show {
         top: 0;
+        transition: all 0.4s;
     }
     .music__frame {                                                     
     }
     .memory__frame {
-        border-radius: 10px;                    
+        border-radius: 10px;
+                            
     }
     .typing__frame {
         border-radius: 20px;                    
