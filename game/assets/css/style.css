@@ -107,6 +107,15 @@
         z-index: 10;
         transition: all 0.4s;            
     }
+    .musicBox .close {
+        font-size: 2em;
+        position: absolute;
+        top: 5%;
+        left: 0;
+        background: #fff;
+        border-radius: 50%;
+
+    }
     .musicBox.show {
         right: 10px;
         transition: all 0.4s;             
@@ -120,8 +129,24 @@
         transform: translate(-50%, -50%);
         transition: all 0.6s ease;
     }
+    .typingBox .close {
+        font-size: 2em;
+        position: absolute;
+        top: -5%;
+        left: 0;
+        background: #fff;
+        border-radius: 50%;
+    }
     .typingBox.show {
         top: 50%;            
+    }
+    .memoryBox .close {
+        font-size: 2em;
+        position: absolute;
+        top: 1%;
+        left: 1%;
+        background: #fff;
+        border-radius: 50%;
     }
     .memoryBox {
         width: 800px;

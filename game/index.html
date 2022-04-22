@@ -8,7 +8,9 @@
     <title>Game</title>
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/bg.css">
-    <link rel="stylesheet" href="assets/css/style.css">    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +27,7 @@
         
         <main id="main">
             <div class="btn btn4">
-                <a href="https://gwni0214react.netlify.app/">
+                <a href="https://gwni0214react.netlify.app/" target="_blank">
                     <img src="assets/img/surfer-light.svg" alt="img">
                     <span>REACT</span>
                 </a> 
@@ -51,12 +53,15 @@
                                     
         </main>
         <div class="musicBox">
+            <span class="material-icons close">close</span>
             <iframe class="music__frame" src="../javascript/musicPlayer/index.html" frameborder="0" width="100%" height="100%"></iframe>
         </div>        
         <div class="typingBox">
+            <span class="material-icons close">close</span>
             <iframe class="typing__frame" src="../javascript/typingGame/index.html" frameborder="0" width="100%" height="100%"></iframe>
         </div>
         <div class="memoryBox">
+            <span class="material-icons close">close</span>
             <iframe class="memory__frame" src="../javascript/memoryGame/index2.html" width="100%" height="100%"   frameborder="0"></iframe>
         </div>
     </div>
@@ -81,23 +86,47 @@
         const musicBtn = document.querySelector(".btn1");
         const memoryBtn = document.querySelector(".btn2");
         const typingBtn = document.querySelector(".btn3");
-
+        const closeBtn = document.querySelectorAll(".close");    
         const musicBox = document.querySelector(".musicBox");        
         const memoryBox = document.querySelector(".memoryBox");        
         const typingBox = document.querySelector(".typingBox");
         const musicFrame = document.querySelector(".music__frame");
         const memoryFrame = document.querySelector(".memory__frame");      
         const typingFrame = document.querySelector(".typing__frame");
-
+        
+        //프레임 닫기버튼
+        closeBtn.forEach(el=>{
+            el.onclick = ()=>{
+                musicBox.classList.remove("show");
+                memoryBox.classList.remove("show");
+                typingBox.classList.remove("show");
+                musicFrame.classList.remove("show");
+                memoryFrame.classList.remove("show");
+                typingFrame.classList.remove("show");
+            }
+        })
+        //아이콘 클릭하면 프레임 나오게
         musicBtn.addEventListener("click",()=>{
+            if(memoryBox.classList.contains("show")||typingBox.classList.contains("show")){
+                memoryBox.classList.remove("show");
+                musicBox.classList.remove("show");
+            } 
             musicBox.classList.toggle("show");
             musicFrame.classList.toggle("show");
         });
         memoryBtn.addEventListener("click",()=>{
+            if(typingBox.classList.contains("show")||musicBox.classList.contains("show")){
+                typingBox.classList.remove("show");
+                musicBox.classList.remove("show");
+            } 
             memoryBox.classList.toggle("show");
             memoryFrame.classList.toggle("show");
         });       
-        typingBtn.addEventListener("click",()=>{            
+        typingBtn.addEventListener("click",()=>{ 
+            if(memoryBox.classList.contains("show")||musicBox.classList.contains("show")){
+                memoryBox.classList.remove("show");
+                musicBox.classList.remove("show");
+            }           
             typingBox.classList.toggle("show");
             typingFrame.classList.toggle("show");
         });

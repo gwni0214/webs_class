@@ -98,7 +98,7 @@
         .CS__box {
             position: absolute;
             left: 50%;
-            bottom:    2%;
+            bottom:    2.5%;
             transform: translate(-50%, -50%);
             border-radius: 5px;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
@@ -514,8 +514,8 @@
             "music/up.mp3",
         ];
         let soundMatch = new Audio(sound[0]);
-        let soundNoMatch = new Audio(sound[2]);
-        let soundSuccess = new Audio(sound[1]);
+        let soundNoMatch = new Audio(sound[1]);
+        let soundSuccess = new Audio(sound[2]);
 
         let timeGo;
         let maxTime = 100;
@@ -701,21 +701,23 @@
             csScore.innerText = 100;
             maxTime = 100;
             cardOne = cardTwo = "";
-            disableDeck = false;
+            disableDeck = true;
             matchedCard = 0;
                     
             let arr = [9,2,3,4,5,6,7,8,9,2,3,4,5,6,7,8];
             let result = arr.sort(()=>Math.random() > 0.5 ? 1 : -1);
             cards.forEach((card,index)=>{
+                
                 card.classList.remove("flip");
                 card.addEventListener("click", flipCard);
 
                 setTimeout(()=>{
-                    card.classList.add("flip");
+                    card.classList.add("flip");                    
                 },200 * index)
                 
                 setTimeout(()=>{
                     card.classList.remove("flip");
+                    disableDeck = false;
                 },4000);
                 let imgTag =card.querySelector(".back img");
                 imgTag.src = `img/img0${arr[index]}.png`;
