@@ -77,21 +77,37 @@
             font-size: 20px;
             font-weight: normal;
             color: #006DDB;
-
+        }
+        .container {
+            width: 1400px;
+            margin: 0 auto;
+        }
+        .main__text {
+            text-align: center;
+            font-size: 88px;
+            white-space: nowrap;
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
     <div class="scrollTop">0</div>
     <header id="header">
-        <div class="contents">
+        <div class="contents"
+            
+        >
             <div class="bigmag">
                 <img class="fixed" src="assets/img/bigmag.png" alt="맥"
                 data-0 = "transform: translate(-50%, -20%) scale(3); top: 50%;"
                 data-500 = "transform: translate(-50%, -50%) scale(2); top: 50%;"
-                data-1500 = "transform: translate(-50%, -50%) scale(1); top: 50%;"
+                data-1500 = "transform: translate(-50%, -50%) scale(1.5); top: 50%;"
                 data-2000 = "transform: translate(-50%, -50%) scale(1); top: 50%;"
-                data-2500 = "transform: translate(-50%, -50%) scale(0.8); top: 50%;"
+                data-2500 = "transform: translate(-50%, -50%) scale(0.9); top: 50%;"
+                data-3000 = "transform: translate(-50%, -50%) scale(0.8); top: 50%;"
+                data-3500 = "transform: translate(-50%, -50%) scale(0.8); top: 0%;"
+                data-4000 = "transform: translate(-50%, -50%) scale(0.8); top: -100%;"
+                data-4500 = "transform: translate(-50%, -50%) scale(0.8); top: -200%;"
+                
                 
                 >
                 
@@ -99,11 +115,27 @@
             <div class="face fixed">
                 <img class="fixed" src="assets/img/face.png" alt="증명사진"
                 data-0 = "transform: translate(-50%, -170%) scale(1); top: 50%;"
-                data-1000 = "transform: translate(-50%, -170%) scale(1); top: 50%;"
+                data-500 = "transform: translate(-50%, -170%) scale(0.9); top: 50%;"
+                data-1500 = "transform: translate(-50%, -170%) scale(0.8); top: 50%;"
+                data-2000 = "transform: translate(-50%, -170%) scale(0.7); top: 50%;"
+                data-2500 = "transform: translate(-50%, -170%) scale(0.6); top: 50%;"
+                data-3000 = "transform: translate(-50%, -170%) scale(0.5); top: 50%;"
+                data-3500 = "transform: translate(-50%, -170%) scale(0.5); top: -100%;"
+                data-4000 = "transform: translate(-50%, -170%) scale(0.5); top: -170%;"
+                data-4500 = "transform: translate(-50%, -170%) scale(0.5); top: -200%;"
+                
                 >
                 <div class="text fixed"
                 data-0 = "transform:translate(-50%, -50%) scale(1); top: 50%;"
-                data-1000 = "transform:translate(-50%, -50%) scale(1); top: 50%;"
+                data-500 = "transform:translate(-50%, -50%) scale(0.9); top: 50%;"
+                data-1500 = "transform:translate(-50%, -60%) scale(0.8); top: 50%;"
+                data-2000 = "transform:translate(-50%, -80%) scale(0.7); top: 50%;"
+                data-2500 = "transform:translate(-50%, -100%) scale(0.6); top: 50%;"
+                data-3000 = "transform:translate(-50%, -120%) scale(0.5); top: 50%;"                
+                data-3500 = "transform:translate(-50%, -120%) scale(0.5); top: -120%;"                
+                data-4000 = "transform:translate(-50%, -120%) scale(0.5); top: -180%;"                
+                data-4500 = "transform:translate(-50%, -120%) scale(0.5); top: -300%;"                
+                               
                 >
                     <span>Gwni Park</span>
                     <h3>The New Developer</h3>
@@ -112,7 +144,22 @@
             </div>
         </div>
     </header>
-    <main id="main"></main>
+    <main id="main">
+        <div class="container">
+        <section class="main__text fixed"
+        data-4000 = "opacity:0 "
+        data-4001 = "opacity:1"
+        data-4001 = "transform: translate(-50%, -50%) scale(0); top: 50%;"
+        data-4500 = "transform: translate(-50%, -50%) scale(0.5); top: 50%;"
+        data-5000 = "transform: translate(-50%, -50%) scale(1); top: 50%;"
+
+        >
+            <div>WORLD-CLASS IS A Dream</div>
+                <div>IN THE NEAR FUTURE</div>
+                <div>LET’S DO BEST</div>
+        </section>
+    </div>
+    </main>
     <footer id="footer"></footer>
 
     <script src="assets/js/skrollr.min.js"></script>
