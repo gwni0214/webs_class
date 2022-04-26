@@ -41,6 +41,7 @@
             background-color: #f5f5f7;
             height: 40000px;
         }
+        
         .bigmag {
             
         }
@@ -49,13 +50,23 @@
         }
         .face {
             width: 213px;
-            height: 213px; 
-                                         
+            height: 213px;
+                                                 
         }
+        
         .face img {
+            
             object-fit: cover;
-            border-radius: 50%;              
+            border-radius: 50% !important;  
+            position: relative; 
+            border: 6px solid rgba(255,255,255,0.8);             
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            background: rgb(234,162,110);
+            background-image: linear-gradient(114deg, rgba(234,162,110,1) 0%, rgba(234,110,177,1) 24%, rgba(42,140,195,1) 44%, rgba(234,110,177,1) 68%, rgba(234,162,110,1) 86%, rgba(234,110,177,1) 100%);                                     
         }
+        
+        
         .text {
             text-align: center;
             top: 0;           
@@ -94,6 +105,40 @@
             text-transform: uppercase;
             line-height: 1.2;            
         }
+        .aboutme {
+
+        }
+        .aboutme h3 {
+            font-size: 92px;
+            text-transform: uppercase;
+            left: 0;
+            top: 0;
+        }
+        .aboutme h3 em {
+            display: block;
+        }
+        .aboutme h3 span {
+            background: -webkit-linear-gradient(114deg, rgba(234,162,110,1) 0%, rgba(234,110,177,1) 24%, rgba(42,140,195,1) 44%, rgba(234,110,177,1) 68%, rgba(234,162,110,1) 86%, rgba(234,110,177,1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .aboutme p {
+            float: right;
+        }
+        .aboutme .ipad {
+            
+          
+        }
+        .aboutme .ipad .ipad01 {
+            
+        }
+        .aboutme .ipad .ipad02 {
+            
+        }
+        .aboutme .ipad .ipad03 {
+            
+        }
     </style>
 </head>
 <body>
@@ -114,6 +159,7 @@
                 >                
             </div>
             <div class="face fixed">
+            
                 <img class="fixed" src="assets/img/face.png" alt="증명사진"
                 data-0 = "transform: translate(-50%, -170%) scale(1); top: 50%;"
                 data-500 = "transform: translate(-50%, -170%) scale(0.9); top: 50%;"
@@ -127,6 +173,7 @@
                 data-3400 = "transform: translate(-50%, -170%) scale(0.5); top: -150%;"
                 data-3500 = "transform: translate(-50%, -170%) scale(0.5); top: -300%;"                               
                 >
+           
                 <div class="text fixed"
                 data-0 = "transform:translate(-50%, -50%) scale(1); top: 50%;"
                 data-500 = "transform:translate(-50%, -50%) scale(0.9); top: 50%;"
@@ -154,11 +201,38 @@
         data-3201 = "display:block; transform: translate(-50%, -50%) scale(1); top: 200%;"
         data-3300 = "display:block; transform: translate(-50%, -50%) scale(1); top: 150%;"
         data-3501 = "transform: translate(-50%, -50%) scale(1); top: 100%;"
-        data-4001 = "transform: translate(-50%, -50%) scale(1); top: 50%;"        
+        data-4000 = "transform: translate(-50%, -50%) scale(1); top: 50%;"        
+        data-4100 = "transform: translate(-50%, -50%) scale(1); top: 30%;"        
+        data-4200 = "transform: translate(-50%, -50%) scale(1); top: 0%;"        
+        data-4300 = "transform: translate(-50%, -50%) scale(1); top: -30%;"        
+        data-4400 = "transform: translate(-50%, -50%) scale(1); top: -50%;"        
+        data-4500 = "transform: translate(-50%, -50%) scale(1); top: -100%;"        
         >
             <div>WORLD-CLASS IS A Dream</div>
                 <div>IN THE NEAR FUTURE</div>
                 <div>LET’S DO BEST</div>
+        </section>
+        <section class="aboutme fixed"
+        data-3900 = "display:none;"
+        data-4000 = "display:block; transform: translate(-50%, -50%) scale(1); top: 150%;"
+        data-4100 = "display:block; transform: translate(-50%, -50%) scale(1); top: 120%;"
+        data-4201 = "display:block; transform: translate(-50%, -50%) scale(1); top: 100%;"
+        data-4300 = "display:block; transform: translate(-50%, -50%) scale(1); top: 70%;"
+        data-4500 = "transform: translate(-50%, -50%) scale(1); top: 50%;"
+        data-5000 = "transform: translate(-50%, -50%) scale(1); top: 50%;"
+        >
+            <h3><em>about me</em>
+                <span>기본</span>이 되어있는,
+            </h3>
+            <p>도전을 두려워하지 않고 새로운것을 배우는 사람<br>
+                시간을 효율적으로 쓰는 경제적인 사람<br>
+                1픽셀의 디테일을 아는 섬세한 감성의 사람<br>
+                좋은 영향력을 주도하는 센스있는 사람</p>
+                <div class="ipad fixed">
+                    <img class="ipad01" src="assets/img/ipad.png" alt="ipad">
+                    <img class="ipad02" src="assets/img/ipad.png" alt="ipad">
+                    <img class="ipad03" src="assets/img/ipad.png" alt="ipad">
+                </div>                
         </section>
     </div>
     </main>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <style>
+        * {
+            font-family: 'GmarketSans';
+            color: #353945;
+        }
+        /*common*/
+        .fixed {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+        }
+        img {
+            width: 100%;
+            vertical-align: top;
+            object-fit: cover;
+        }
+        .scrollTop {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            z-index: 10000;
+        }
+        body {
+            width: 100%;
+            background-color: #f5f5f7;
+            height: 40000px;
+        }
+        #contents {}
+        #section01 {}
+        .section01__bg img {
+            width: 100%;                        
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .section01__text01 {
+            font-size: 30px;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .header__cont {           
+            display: flex;
+            justify-content: center;
+            align-items: center;           
+            flex-direction: column;            
+        }
+        .header__cont .face {
+            display: block;
+            width: 70px;
+            height: 70px;            
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 10px pink;            
+            transition: all 0.4s;
+            margin-bottom: 0.5em;
+        }
+        .header__cont .face img {
+            width: 100%;
+            border-radius: 50%;
+        }
+        .header__cont span {
+            font-size: 24px;
+            margin-bottom: 0.5em;
+        }
+        .header__cont h3 {
+            text-transform: uppercase;
+           line-height: 1;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+        .header__cont a {
+            text-transform: uppercase;
+            font-size: 20px;
+            color: #006DDB;
+        }
+        .section01__text02 {
+            font-size: 88px;
+            white-space: nowrap;
+            text-transform: uppercase;
+            text-align: center;
+            transform: translate(-50%, -50%) scale(1);
+            font-weight: 700;
+            line-height: 1.2;
+            background: -webkit-linear-gradient(114deg, rgba(234,162,110,1) 0%, rgba(234,110,177,1) 24%, rgba(42,140,195,1) 44%, rgba(234,110,177,1) 68%, rgba(234,162,110,1) 86%, rgba(234,110,177,1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            user-select: none;            
+        }
+        .container {
+            width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .main01 {
+            height: 100vh;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .main01__text01 {}
+        
+        .main01__text01 h3 {
+            position: absolute;
+            left: 0;
+            top: 1em;
+            font-size: 88px;
+            font-weight: 700;
+            line-height: 1;
+        }
+        .main01__text01 h3 em {
+            display: block;
+            margin-top: 0.2em;
+        }
+        
+        .main01__text01 h3 em span{
+            background: -webkit-linear-gradient(114deg, rgba(234,162,110,1) 0%, rgba(234,110,177,1) 24%, rgba(42,140,195,1) 44%, rgba(234,110,177,1) 68%, rgba(234,162,110,1) 86%, rgba(234,110,177,1) 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .main01__text01 p {
+            text-align: right;
+            position: absolute;
+            right: 0;
+            top: 420px;
+            font-size: 28px;
+            line-height: 1.4;
+        }
+        .ipad {
+            
+        }
+        .ipad img {
+            width: 50%;
+            
+        }
+        .ipad img:nth-child(1) {
+            transform: rotate(20deg);
+        }
+        .ipad img:nth-child(2) {}
+        .ipad img:nth-child(3) {}
+    </style>
+</head>
+<body>
+    <div id="contents">
+        <section id="section01"
+            data-4500 = "display: block;"
+            data-4501 = "display:none;"
+        >
+            <div class="section01__bg">
+                <img class="fixed" src="assets/img/bigmag.png" alt="빅맥"
+                    data-0 = "width: 75%; transform: translate(-50%, -50%) scale(1); top: 60%;"
+                    data-1000 = "width: 100%; transform: translate(-50%, -50%) scale(1); top: 65%;"
+                    data-1500 = "width: 100%; transform: translate(-50%, -50%) scale(2); top: 70%;"                    
+                    data-2000 = "width: 100%; transform: translate(-50%, -50%) scale(3); top: 50%;"                                                            
+                    data-3000 = "width: 100%; transform: translate(-50%, -50%) scale(100); top: 50%;"                                                            
+                >
+            </div>
+            <div class="section01__text01 fixed"
+            data-0 = " transform: translate(-50%, -50%) scale(1); top: 50%;"
+            data-1000 = " transform: translate(-50%, -50%) scale(1.5); top: 50%;"
+            data-1500 = " transform: translate(-50%, -50%) scale(2); top: 50%;"
+            data-2000 = " transform: translate(-50%, -50%) scale(3); top: 50%;"
+            data-2500 = " transform: translate(-50%, -50%) scale(3); top: 0%;"
+            data-3000 = " transform: translate(-50%, -50%) scale(3); top: -100%;"
+            >
+                <div class="header__cont">
+                    <div class="face"
+                    data-0 = " box-shadow: 0px 0px 10px 10px pink;"
+                    data-300 = " box-shadow: 0px 0px 10px 10px skyblue;"
+                    data-600 = " box-shadow: 0px 0px 10px 10px pink;"
+                    data-1000 = " box-shadow: 0px 0px 10px 10px skyblue;"
+                    data-1500 = " box-shadow: 0px 0px 10px 10px pink;"
+                    data-2000 = " box-shadow: 0px 0px 10px 10px skyblue;"
+                    >
+                        <img src="assets/img/face.png" alt="face">
+                    </div>
+                    <span>Gwni Park</span>
+                    <h3>The New Developer</h3>
+                    <a href="#">Contact ME</a>
+                </div>
+            </div>
+            <div class="section01__text02 fixed"
+            data-2000 = "display:none;"
+            data-2001 = "display:block;"
+            data-2100 = " transform: translate(-50%, -50%) scale(1); top: 150%;"
+            data-2500 = " transform: translate(-50%, -50%) scale(1); top: 100%;"
+            data-3000 = " transform: translate(-50%, -50%) scale(1); top: 50%;"
+            data-3500 = " transform: translate(-50%, -50%) scale(1); top: 50%;"
+            data-4000 = " transform: translate(-50%, -50%) scale(1); top: 0%;"
+            data-4500 = " transform: translate(-50%, -50%) scale(1); top: -50%;"
+            >
+                <div>WORLD CLASS IS A Dream</div>
+                <div>IN THE NEAR FUTURE</div>
+                <div>LET’S DO BEST</div>
+            </div>
+        </section>
+        <section class="section02"
+        
+        >
+            <div class="main01 fixed"
+            data-3000 = "display:none; "
+            data-3500 = "display:block; transform: translate(-50%, -50%) scale(1); top: 200%;"
+            data-4500 = " transform: translate(-50%, -50%) scale(1); top: 50%;" 
+            data-5000 = " transform: translate(-50%, -50%) scale(1); top: 50%;" 
+            data-5500 = " transform: translate(-50%, -50%) scale(1); top: 50%;"             
+            >
+            <div class="container">
+                <div class="main01__text01">
+                    <h3>ABOUT ME
+                        <em><span>기본</span>이 되어있는,</em></h3>
+                        <p>
+                            도전을 두려워하지 않고 새로운것을 배우는 사람<br>
+                            시간을 효율적으로 쓰는 경제적인 사람<br>
+                            1픽셀의 디테일을 아는 섬세한 감성의 사람<br>
+                            좋은 영향력을 주도하는 센스있는 사람
+                        </p>
+                </div>
+            </div>
+            <div class="ipad fixed">
+                <img src="assets/img/ipad.png" alt="ipad">
+                <img src="assets/img/ipad.png" alt="ipad">
+                <img src="assets/img/ipad.png" alt="ipad">
+            </div>
+            </div>
+        </section>
+    </div>
+    
+
+
+
+
+
+    <div class="scrollTop">0</div>
+    <script src="assets/js/skrollr.min.js"></script>
+    <script>
+        var s = skrollr.init();
+
+        function scroll(){
+            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
+            document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+                // document.querySelector(".section01__bg img").style.width = scrollTop + "px";                
+            requestAnimationFrame(scroll);   
+        }
+        scroll();
+    </script>
+</body>
+</html>
