@@ -140,17 +140,15 @@
             line-height: 1.4;
         }
         .ipad {
-            
+                                    
         }
         .ipad img {
-            width: 50%;
             
+
         }
-        .ipad img:nth-child(1) {
-            transform: rotate(20deg);
-        }
-        .ipad img:nth-child(2) {}
-        .ipad img:nth-child(3) {}
+        .ipad01 {transform: translate(-50%, -50%) skewX(20deg) scale(1);}
+        .ipad02 {transform: translate(-50%, -50%) skewX(20deg) scale(1);}
+        .ipad03 {transform: translate(-50%, -50%) skewX(20deg) scale(1);}
     </style>
 </head>
 <body>
@@ -217,23 +215,29 @@
             data-5000 = " transform: translate(-50%, -50%) scale(1); top: 50%;" 
             data-5500 = " transform: translate(-50%, -50%) scale(1); top: 50%;"             
             >
-            <div class="container">
-                <div class="main01__text01">
-                    <h3>ABOUT ME
-                        <em><span>기본</span>이 되어있는,</em></h3>
-                        <p>
-                            도전을 두려워하지 않고 새로운것을 배우는 사람<br>
-                            시간을 효율적으로 쓰는 경제적인 사람<br>
-                            1픽셀의 디테일을 아는 섬세한 감성의 사람<br>
-                            좋은 영향력을 주도하는 센스있는 사람
-                        </p>
+                <div class="container">
+                    <div class="main01__text01">
+                        <h3>ABOUT ME
+                            <em><span>기본</span>이 되어있는,</em></h3>
+                            <p>
+                                도전을 두려워하지 않고 새로운것을 배우는 사람<br>
+                                시간을 효율적으로 쓰는 경제적인 사람<br>
+                                1픽셀의 디테일을 아는 섬세한 감성의 사람<br>
+                                좋은 영향력을 주도하는 센스있는 사람
+                            </p>
+                    </div>
                 </div>
-            </div>
-            <div class="ipad fixed">
-                <img src="assets/img/ipad.png" alt="ipad">
-                <img src="assets/img/ipad.png" alt="ipad">
-                <img src="assets/img/ipad.png" alt="ipad">
-            </div>
+                <div class="ipad">               
+                    <img class="ipad01 fixed" src="assets/img/ipad.png" alt="ipad"
+                    data-4500 = " transform: translate(-50%, -50%) skewX(20deg) scale(0.8); top: 50%; left:10%;"
+                    >
+                    <img class="ipad02 fixed" src="assets/img/ipad.png" alt="ipad"
+                    data-4500 = " transform: translate(-50%, -50%) skewX(20deg) scale(0.8); top: 50%; left:50%;"
+                    > 
+                    <img class="ipad03 fixed" src="assets/img/ipad.png" alt="ipad"
+                    data-4500 = " transform: translate(-50%, -50%) skewX(20deg) scale(0.8); top: 50%; left:1%;"
+                    >                                                 
+                </div>
             </div>
         </section>
     </div>
