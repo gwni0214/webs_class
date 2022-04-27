@@ -72,19 +72,19 @@
             border-radius: 50%;
         }
         .header__cont span {
-            font-size: 24px;
-            margin-bottom: 0.5em;
+            font-size: 7px;
+            margin-bottom: 1em;
         }
         .header__cont h3 {
             text-transform: uppercase;
-           line-height: 1;
-            font-size: 24px;
+            line-height: 1;
+            font-size: 32px;
             font-weight: 700;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.2em;
         }
         .header__cont a {
-            text-transform: uppercase;
-            font-size: 20px;
+            
+            font-size: 7px;
             color: #006DDB;
         }
         .section01__text02 {
@@ -140,15 +140,32 @@
             line-height: 1.4;
         }
         .ipad {
-                                    
+                                  
         }
         .ipad img {
-            
+            z-index: -1;
 
         }
         .ipad01 {transform: translate(-50%, -50%) skewX(20deg) scale(1);}
         .ipad02 {transform: translate(-50%, -50%) skewX(20deg) scale(1);}
         .ipad03 {transform: translate(-50%, -50%) skewX(20deg) scale(1);}
+
+        @keyframes yAxis {
+            50% {
+                animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
+                
+            }
+        }
+ 
+        @keyframes xAxis {
+            50% {
+                animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
+                
+            }
+        }
+
+
+
     </style>
 </head>
 <body>
@@ -171,7 +188,7 @@
             data-1000 = " transform: translate(-50%, -50%) scale(1.5); top: 50%;"
             data-1500 = " transform: translate(-50%, -50%) scale(2); top: 50%;"
             data-2000 = " transform: translate(-50%, -50%) scale(3); top: 50%;"
-            data-2500 = " transform: translate(-50%, -50%) scale(3); top: 0%;"
+            data-2500 = " transform: translate(-50%, -50%) scale(3); top: 50%;"
             data-3000 = " transform: translate(-50%, -50%) scale(3); top: -100%;"
             >
                 <div class="header__cont">
@@ -187,14 +204,14 @@
                     </div>
                     <span>Gwni Park</span>
                     <h3>The New Developer</h3>
-                    <a href="#">Contact ME</a>
+                    <a href="#">Contact Me</a>
                 </div>
             </div>
             <div class="section01__text02 fixed"
             data-2000 = "display:none;"
             data-2001 = "display:block;"
             data-2100 = " transform: translate(-50%, -50%) scale(1); top: 150%;"
-            data-2500 = " transform: translate(-50%, -50%) scale(1); top: 100%;"
+            data-2500 = " transform: translate(-50%, -50%) scale(1); top: 150%;"
             data-3000 = " transform: translate(-50%, -50%) scale(1); top: 50%;"
             data-3500 = " transform: translate(-50%, -50%) scale(1); top: 50%;"
             data-4000 = " transform: translate(-50%, -50%) scale(1); top: 0%;"
@@ -214,6 +231,7 @@
             data-4500 = " transform: translate(-50%, -50%) scale(1); top: 50%;" 
             data-5000 = " transform: translate(-50%, -50%) scale(1); top: 50%;" 
             data-5500 = " transform: translate(-50%, -50%) scale(1); top: 50%;"             
+            data-6000 = " transform: translate(-50%, -50%) scale(1); top: 50%;"             
             >
                 <div class="container">
                     <div class="main01__text01">
@@ -227,15 +245,26 @@
                             </p>
                     </div>
                 </div>
-                <div class="ipad">               
+                <div class="ipad"
+                                
+                >               
                     <img class="ipad01 fixed" src="assets/img/ipad.png" alt="ipad"
-                    data-4500 = " transform: translate(-50%, -50%) skewX(20deg) scale(0.8); top: 50%; left:10%;"
+                    data-4500 = " transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 100%; left:80%; animation:xAxis,yAxis;"
+                    data-5000 = " transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 80%; left:60%;"
+                    data-5500 = " transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 60%; left:40%;"
+                    data-6000 = " transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 40%; left:20%;"
                     >
                     <img class="ipad02 fixed" src="assets/img/ipad.png" alt="ipad"
-                    data-4500 = " transform: translate(-50%, -50%) skewX(20deg) scale(0.8); top: 50%; left:50%;"
+                    data-4500 = " transform: translate(-50%, -50%) skew(0deg, 0deg) scale(0.7); top: 70%; left:40%;"
+                    data-5000 = " transform: translate(-50%, -50%) skew(-0deg, 0deg) scale(0.7); top: 50%; left:20%;"
+                    data-5500 = " transform: translate(-50%, -50%) skew(-0deg, 0deg) scale(0.7); top: 30%; left:0%;"
+                    data-6000 = " transform: translate(-50%, -50%) skew(-0deg, 0deg) scale(0.7); top: 20%; left:-20%;"
                     > 
                     <img class="ipad03 fixed" src="assets/img/ipad.png" alt="ipad"
-                    data-4500 = " transform: translate(-50%, -50%) skewX(20deg) scale(0.8); top: 50%; left:1%;"
+                    data-4500 = " transform: translate(-50%, -50%) skew(-20deg, 20deg) scale(0.7); top: 40%; left:0%;"
+                    data-5000 = " transform: translate(-50%, -50%) skew(-20deg, 20deg) scale(0.7); top: 20%; left:-20%;"
+                    data-5500 = " transform: translate(-50%, -50%) skew(-20deg, 20deg) scale(0.7); top: 0%; left:-40%;"
+                    data-6000 = " transform: translate(-50%, -50%) skew(-20deg, 20deg) scale(0.7); top: -20%; left:-60%;"
                     >                                                 
                 </div>
             </div>
