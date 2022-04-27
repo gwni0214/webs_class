@@ -290,7 +290,7 @@
     <div class="result__box">
         <div class="title">게임을 성공하였습니다.!!</div>
         <div class="score">
-            당신의 점수는 몇 <span>100</span>점입니다.
+            당신의 점수는 <span>0</span>점입니다.
         </div>
         <div class="buttons">
             <button class="stop">그만하기</button>
@@ -321,6 +321,7 @@
         const infoBoxStart = document.querySelector(".info__box .buttons .start");
         const scoreBox = document.querySelector(".CS__box");
         const csScore = document.querySelector(".CS__box span");
+        const score = document.querySelector(".score span");
 
         const tetrisWrap = document.querySelector(".tetris__wrap");
 
@@ -555,7 +556,8 @@
 
             //다시 시작 버튼(재도전하기)
             restart.onclick = () => {
-
+                score.innerText=0;
+                csScore.innerText=0;
 
 
                 setTimeout(() => {
@@ -752,7 +754,7 @@
         function gameover() {
             //게임끝났을때
             
-            csScore.innerText = 0;
+            score.innerText = gameScore;
             clearInterval(gameInterval);
             setTimeout(() => {
                 allRemove();
