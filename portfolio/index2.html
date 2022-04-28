@@ -1,293 +1,308 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PORTFOLIO</title>
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <style>
-        * {
-            font-family: 'GmarketSans';
-            color: #353945;
-        }
-        /*common*/
-        .fixed {
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1000;
-        }
-        img {
-            width: 100%;
-            vertical-align: top;
-            object-fit: cover;
-        }
-        .scrollTop {
-            position: fixed;
-            left: 20px;
-            top: 20px;
-            background: rgba(0,0,0,0.4);
-            color: #fff;
-            width: 60px;
-            height: 30px;
-            text-align: center;
-            line-height: 30px;
-            z-index: 10000;
-        }
-        body {
-            width: 100%;
-            background-color: #f5f5f7;
-            height: 40000px;
-        }
-        #contents {}
-        #section01 {}
-        .section01__bg img {
-            width: 100%;                        
-            transform: translate(-50%, -50%) scale(1);
-        }
-        .section01__text01 {
-            font-size: 30px;
-            transform: translate(-50%, -50%) scale(1);
-        }
-        .header__cont {           
-            display: flex;
-            justify-content: center;
-            align-items: center;           
-            flex-direction: column;            
-        }
-        .header__cont .face {
-            display: block;
-            width: 70px;
-            height: 70px;            
-            border-radius: 50%;
-            box-shadow: 0px 0px 10px 10px pink;            
-            transition: all 0.4s;
-            margin-bottom: 0.5em;
-        }
-        .header__cont .face img {
-            width: 100%;
-            border-radius: 50%;
-        }
-        .header__cont span {
-            font-size: 7px;
-            margin-bottom: 1em;
-        }
-        .header__cont h3 {
-            text-transform: uppercase;
-            line-height: 1;
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 0.2em;
-        }
-        .header__cont a {
-            
-            font-size: 7px;
-            color: #006DDB;
-        }
-        .section01__text02 {
-            font-size: 88px;
-            white-space: nowrap;
-            text-transform: uppercase;
-            text-align: center;
-            transform: translate(-50%, -50%) scale(1);
-            font-weight: 700;
-            line-height: 1.2;
-            background: -webkit-linear-gradient(114deg, rgba(234,162,110,1) 0%, rgba(234,110,177,1) 24%, rgba(42,140,195,1) 44%, rgba(234,110,177,1) 68%, rgba(234,162,110,1) 86%, rgba(234,110,177,1) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            user-select: none;            
-        }
-        .container {
-            width: 1400px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .main01 {
-            height: 100vh;
-            transform: translate(-50%, -50%) scale(1);
-        }
-        .main01__text01 {}
-        
-        .main01__text01 h3 {
-            position: absolute;
-            left: 0;
-            top: 1em;
-            font-size: 88px;
-            font-weight: 700;
-            line-height: 1;
-        }
-        .main01__text01 h3 em {
-            display: block;
-            margin-top: 0.2em;
-        }
-        
-        .main01__text01 h3 em span{
-            background: -webkit-linear-gradient(114deg, rgba(234,162,110,1) 0%, rgba(234,110,177,1) 24%, rgba(42,140,195,1) 44%, rgba(234,110,177,1) 68%, rgba(234,162,110,1) 86%, rgba(234,110,177,1) 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .main01__text01 p {
-            text-align: right;
-            position: absolute;
-            right: 0;
-            top: 420px;
-            font-size: 28px;
-            line-height: 1.4;
-        }
-        .ipad {
-                                  
-        }
-        .ipad img {
-            z-index: -1;
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-        }
-        .ipad01 {transform: translate(-50%, -50%) skewX(20deg) scale(1);}
-        .ipad02 {transform: translate(-50%, -50%) skewX(20deg) scale(1);}
-        .ipad03 {transform: translate(-50%, -50%) skewX(20deg) scale(1);}
-
-        @keyframes yAxis {
-            50% {
-                animation-timing-function: cubic-bezier(0.02, 0.01, 0.21, 1);
-                
-            }
-        }
- 
-        @keyframes xAxis {
-            50% {
-                animation-timing-function: cubic-bezier(0.3, 0.27, 0.07, 1.64);
-                
-            }
-        }
-
-
-
-    </style>
-</head>
-<body>
+  <body>
     <div id="contents">
-        <section id="section01"
-            data-4500 = "display: block;"
-            data-4501 = "display:none;"
+      <section
+        id="section01"
+        data-4500="display: block;"
+        data-4501="display:none;"
+      >
+        <div class="section01__bg">
+          <img
+            class="fixed"
+            src="assets/img/bigmag.png"
+            alt="빅맥"
+            data-0="width: 75%; transform: translate(-50%, -50%) scale(1); top: 60%;"
+            data-1000="width: 100%; transform: translate(-50%, -50%) scale(1); top: 65%;"
+            data-1500="width: 100%; transform: translate(-50%, -50%) scale(2); top: 70%;"
+            data-2000="width: 100%; transform: translate(-50%, -50%) scale(3); top: 50%;"
+            data-3000="width: 100%; transform: translate(-50%, -50%) scale(100); top: 50%;"
+          />
+        </div>
+        <div
+          class="section01__text01 fixed"
+          data-0=" transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-1000=" transform: translate(-50%, -50%) scale(1.5); top: 50%;"
+          data-1500=" transform: translate(-50%, -50%) scale(2); top: 50%;"
+          data-2000=" transform: translate(-50%, -50%) scale(3); top: 50%;"
+          data-2500=" transform: translate(-50%, -50%) scale(3); top: 50%;"
+          data-3000=" transform: translate(-50%, -50%) scale(3); top: -100%;"
         >
-            <div class="section01__bg">
-                <img class="fixed" src="assets/img/bigmag.png" alt="빅맥"
-                    data-0 = "width: 75%; transform: translate(-50%, -50%) scale(1); top: 60%;"
-                    data-1000 = "width: 100%; transform: translate(-50%, -50%) scale(1); top: 65%;"
-                    data-1500 = "width: 100%; transform: translate(-50%, -50%) scale(2); top: 70%;"                    
-                    data-2000 = "width: 100%; transform: translate(-50%, -50%) scale(3); top: 50%;"                                                            
-                    data-3000 = "width: 100%; transform: translate(-50%, -50%) scale(100); top: 50%;"                                                            
-                >
-            </div>
-            <div class="section01__text01 fixed"
-            data-0 = " transform: translate(-50%, -50%) scale(1); top: 50%;"
-            data-1000 = " transform: translate(-50%, -50%) scale(1.5); top: 50%;"
-            data-1500 = " transform: translate(-50%, -50%) scale(2); top: 50%;"
-            data-2000 = " transform: translate(-50%, -50%) scale(3); top: 50%;"
-            data-2500 = " transform: translate(-50%, -50%) scale(3); top: 50%;"
-            data-3000 = " transform: translate(-50%, -50%) scale(3); top: -100%;"
+          <div class="header__cont">
+            <div
+              class="face"
+              data-0=" box-shadow: 0px 0px 10px 10px pink;"
+              data-300=" box-shadow: 0px 0px 10px 10px skyblue;"
+              data-600=" box-shadow: 0px 0px 10px 10px pink;"
+              data-1000=" box-shadow: 0px 0px 10px 10px skyblue;"
+              data-1500=" box-shadow: 0px 0px 10px 10px pink;"
+              data-2000=" box-shadow: 0px 0px 10px 10px skyblue;"
             >
-                <div class="header__cont">
-                    <div class="face"
-                    data-0 = " box-shadow: 0px 0px 10px 10px pink;"
-                    data-300 = " box-shadow: 0px 0px 10px 10px skyblue;"
-                    data-600 = " box-shadow: 0px 0px 10px 10px pink;"
-                    data-1000 = " box-shadow: 0px 0px 10px 10px skyblue;"
-                    data-1500 = " box-shadow: 0px 0px 10px 10px pink;"
-                    data-2000 = " box-shadow: 0px 0px 10px 10px skyblue;"
-                    >
-                        <img src="assets/img/face.png" alt="face">
-                    </div>
-                    <span>Gwni Park</span>
-                    <h3>The New Developer</h3>
-                    <a href="#">Contact Me</a>
-                </div>
+              <img src="assets/img/face.png" alt="face" />
             </div>
-            <div class="section01__text02 fixed"
-            data-2000 = "display:none;"
-            data-2001 = "display:block;"
-            data-2100 = " transform: translate(-50%, -50%) scale(1); top: 150%;"
-            data-2500 = " transform: translate(-50%, -50%) scale(1); top: 150%;"
-            data-3000 = " transform: translate(-50%, -50%) scale(1); top: 50%;"
-            data-3500 = " transform: translate(-50%, -50%) scale(1); top: 50%;"
-            data-4000 = " transform: translate(-50%, -50%) scale(1); top: 0%;"
-            data-4500 = " transform: translate(-50%, -50%) scale(1); top: -50%;"
-            >
-                <div>WORLD CLASS IS A Dream</div>
-                <div>IN THE NEAR FUTURE</div>
-                <div>LET’S DO BEST</div>
-            </div>
-        </section>
-        <section class="section02"
-        
+            <span>Gwni Park</span>
+            <h3>The New Developer</h3>
+            <a href="#">Contact Me</a>
+          </div>
+        </div>
+        <div
+          class="section01__text02 fixed"
+          data-2000="display:none;"
+          data-2001="display:block;"
+          data-2100=" transform: translate(-50%, -50%) scale(1); top: 150%;"
+          data-2500=" transform: translate(-50%, -50%) scale(1); top: 150%;"
+          data-3000=" transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-3500=" transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-4000=" transform: translate(-50%, -50%) scale(1); top: 0%;"
+          data-4500=" transform: translate(-50%, -50%) scale(1); top: -50%;"
         >
-            <div class="main01 fixed"
-            data-3000 = "display:none; "
-            data-3500 = "display:block; transform: translate(-50%, -50%) scale(1); top: 200%;"
-            data-4500 = " transform: translate(-50%, -50%) scale(1); top: 50%;" 
-            data-5000 = " transform: translate(-50%, -50%) scale(1); top: 50%;" 
-            data-5500 = " transform: translate(-50%, -50%) scale(1); top: 50%;"             
-            data-6000 = " transform: translate(-50%, -50%) scale(1); top: 50%;"             
-            >
-                <div class="container">
-                    <div class="main01__text01">
-                        <h3>ABOUT ME
-                            <em><span>기본</span>이 되어있는,</em></h3>
-                            <p>
-                                도전을 두려워하지 않고 새로운것을 배우는 사람<br>
-                                시간을 효율적으로 쓰는 경제적인 사람<br>
-                                1픽셀의 디테일을 아는 섬세한 감성의 사람<br>
-                                좋은 영향력을 주도하는 센스있는 사람
-                            </p>
-                    </div>
-                </div>
-                <div class="ipad"
-                                
-                >               
-                    <img class="ipad01 fixed" src="assets/img/ipad.png" alt="ipad"
-                    data-4500 = " transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 100%; left:80%; animation:xAxis,yAxis;"
-                    data-5000 = " transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 80%; left:60%;"
-                    data-5500 = " transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 60%; left:40%;"
-                    data-6000 = " transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 40%; left:20%;"
-                    >
-                    <img class="ipad02 fixed" src="assets/img/ipad.png" alt="ipad"
-                    data-4500 = " transform: translate(-50%, -50%) skew(0deg, 0deg) scale(0.7); top: 70%; left:40%;"
-                    data-5000 = " transform: translate(-50%, -50%) skew(-0deg, 0deg) scale(0.7); top: 50%; left:20%;"
-                    data-5500 = " transform: translate(-50%, -50%) skew(-0deg, 0deg) scale(0.7); top: 30%; left:0%;"
-                    data-6000 = " transform: translate(-50%, -50%) skew(-0deg, 0deg) scale(0.7); top: 20%; left:-20%;"
-                    > 
-                    <img class="ipad03 fixed" src="assets/img/ipad.png" alt="ipad"
-                    data-4500 = " transform: translate(-50%, -50%) skew(-20deg, 20deg) scale(0.7); top: 40%; left:0%;"
-                    data-5000 = " transform: translate(-50%, -50%) skew(-20deg, 20deg) scale(0.7); top: 20%; left:-20%;"
-                    data-5500 = " transform: translate(-50%, -50%) skew(-20deg, 20deg) scale(0.7); top: 0%; left:-40%;"
-                    data-6000 = " transform: translate(-50%, -50%) skew(-20deg, 20deg) scale(0.7); top: -20%; left:-60%;"
-                    >                                                 
-                </div>
+          <div>WORLD CLASS IS A Dream</div>
+          <div>IN THE NEAR FUTURE</div>
+          <div>LET’S DO BEST</div>
+        </div>
+      </section>
+      <section class="section02">
+        <div
+          class="main01 fixed"
+          data-3000="display:none; "
+          data-3500="display:block; transform: translate(-50%, -50%) scale(1); top: 200%;"
+          data-4500=" transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-5000=" transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-5500=" transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-6000=" transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-6500=" transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-7000=" transform: translate(-50%, -50%) scale(1); top: -100%;"
+          data-7500=" transform: translate(-50%, -50%) scale(1); top: -100%;"
+        >
+          <div class="container">
+            <div class="main01__text01">
+              <h3>
+                ABOUT ME <em><span>기본</span>이 되어있는,</em>
+              </h3>
+              <p>
+                도전을 두려워하지 않고 새로운것을 배우는 사람<br />
+                시간을 효율적으로 쓰는 경제적인 사람<br />
+                1픽셀의 디테일을 아는 섬세한 감성의 사람<br />
+                좋은 영향력을 주도하는 센스있는 사람
+              </p>
             </div>
-        </section>
+          </div>
+          <div class="ipad">
+            <img
+              class="ipad01 fixed"
+              src="assets/img/ipadFace1.png"
+              alt="ipad"
+              data-4500=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 100%; left:70%;"
+              data-4600=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 99%; left:68%;"
+              data-4700=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 98%; left:66%;"
+              data-4800=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 97%; left:64%;"
+              data-4900=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 96%; left:62%;"
+              data-5250=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 85%; left:55%;"
+              data-5600=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 74%; left:48%;"
+              data-5700=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 70%; left:40%;"
+              data-5800=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 70%; left:40%;"
+              data-5900=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 70%; left:40%;"
+              data-6000=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 70%; left:40%;"
+            />
+            <img
+              class="ipad02 fixed"
+              src="assets/img/ipadFace2.png"
+              alt="ipad"
+              data-4500=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 70%; left:40%;"
+              data-4600=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 69%; left:38%;"
+              data-4700=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 68%; left:36%;"
+              data-4800=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 67%; left:34%;"
+              data-4900=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 66%; left:32%;"
+              data-5250=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 55%; left:25%;"
+              data-5600=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 44%; left:18%;"
+              data-5700=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 40%; left:10%;"
+              data-5800=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 40%; left:10%;"
+              data-5900=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 40%; left:10%;"
+              data-6000=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 40%; left:10%;"
+            />
+            <img
+              class="ipad03 fixed"
+              src="assets/img/ipadFace3.png"
+              alt="ipad"
+              data-4500=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 40%; left:10%;"
+              data-4600=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 39%; left:8%;"
+              data-4700=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 38%; left:6%;"
+              data-4800=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 37%; left:4%;"
+              data-4900=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 36%; left:2%;"
+              data-5250=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 25%; left:-5%;"
+              data-5600=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 14%; left:-12%;"
+              data-5700=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 10%; left:-20%;"
+              data-5800=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 10%; left:-20%;"
+              data-5900=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 10%; left:-20%;"
+              data-6000=" transform: translate(-50%, -50%) skew(20deg, -20deg) scale(0.7); top: 10%; left:-20%;"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="section03">
+        <div
+          class="main02 fixed"
+          data-6500="display:none;"
+          data-6501="display:block; transform: translate(-50%, -50%) scale(1); top: 250%;"
+          data-7000="transform: translate(-50%, -50%) scale(1); top: 150%;"
+          data-7500="transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-8000="transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-8500="transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-9000="transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-10000="transform: translate(-50%, -50%) scale(1); top: 50%;"
+          data-11500="transform: translate(-50%, -50%) scale(1); top: 0%;"
+          data-12000="transform: translate(-50%, -50%) scale(1); top: -25%;"
+        >
+          <div class="container">
+            <div class="title">
+              <span>Benefits</span>
+              <h3>
+                Your Perfect
+                <em>Webflow Partner.</em>
+              </h3>
+            </div>
+
+            <div class="box1">
+              <div class="box1__main1">
+                <h3>
+                  Webflow developer at the
+                  <em>intersection of design and code.</em>
+                </h3>
+                <p>
+                  UI/UX에 대한 개념부터 웹 접근성, 깔끔한 구조의 코딩까지. 좋은
+                  디자인이란 무엇인지에 대해서 끊임없이 고민하는 열정있는 신입
+                  웹 디벨로퍼입니다. 항상 새로운것을 배우는데 흥미를 느끼고
+                  식지않는 열정으로 재밌게 성장하고 있습니다.
+                </p>
+              </div>
+              <div class="box1__main2">
+                <div class="box1__sub">
+                  <div class="status1">70<span>%</span></div>
+                  <p>Javascript</p>
+                </div>
+                <div class="box1__sub">
+                  <div class="status2">80<span>%</span></div>
+                  <p>HTML</p>
+                </div>
+                <div class="box1__sub">
+                  <div class="status3">80<span>%</span></div>
+                  <p>CSS</p>
+                </div>
+                <div class="box1__sub">
+                  <div class="status4">100<span>%</span></div>
+                  <p>Passion</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="rowBox01"
+              data-8000="transform: translateX(0%);"
+              data-8500="transform: translateX(-10%);"
+              data-9000="transform: translateX(-25%);"
+              data-9500="transform: translateX(-35%);"
+              data-10000="transform: translateX(-50%);"
+              data-10500="transform: translateX(-60%);"
+              data-11000="transform: translateX(-75%);"
+              data-11500="transform: translateX(-75%);"
+              data-12000="transform: translateX(0%);"
+            >
+              <div class="box2">
+                <div class="box2__text">
+                  <h3>
+                    ROCKET
+                    <em>Animation</em>
+                  </h3>
+                  <p>애니메이션</p>
+                </div>
+                <div class="box2__img">
+                  <a
+                    href="https://codepen.io/cassie-codes/pen/ZaeaoO"
+                    target="_blank"
+                    ><img src="assets/img/rocket.png" alt="로켓"
+                  /></a>
+                </div>
+              </div>
+              <div class="box2">
+                <div class="box2__text">
+                  <h3>
+                    STARWARS
+                    <em>Animation</em>
+                  </h3>
+                  <p>애니메이션</p>
+                </div>
+                <div class="box2__img">
+                  <a href="https://codepen.io/r4ms3s/pen/gajVBG" target="_blank"
+                    ><img src="assets/img/starwars.png" alt="로켓"
+                  /></a>
+                </div>
+              </div>
+              <div class="box2">
+                <div class="box2__text">
+                  <h3>
+                    BURBLE
+                    <em>Animation</em>
+                  </h3>
+                  <p>애니메이션</p>
+                </div>
+                <div class="box2__img">
+                  <a
+                    href="https://codepen.io/cassie-codes/pen/ZaeaoO"
+                    target="_blank"
+                    ><img src="assets/img/burbble.png" alt="로켓"
+                  /></a>
+                </div>
+              </div>
+              <div class="box2">
+                <div class="box2__text">
+                  <h3>
+                    STARDUST
+                    <em>Animation</em>
+                  </h3>
+                  <p>애니메이션</p>
+                </div>
+                <div class="box2__img">
+                  <a
+                    href="https://codepen.io/YusukeNakaya/pen/XyOaBj"
+                    target="_blank"
+                    ><img src="assets/img/stardust.png" alt="로켓"
+                  /></a>
+                </div>
+              </div>
+            </div>
+            <div class="box1_main3">
+              <div class="mouseEF01"></div>
+              <div class="responWeb"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-    
-
-
-
-
 
     <div class="scrollTop">0</div>
     <script src="assets/js/skrollr.min.js"></script>
     <script>
-        var s = skrollr.init();
+      var s = skrollr.init();
 
-        function scroll(){
-            let scrollTop = window.screenY || window.pageYOffset || document.documentElement.scrollTop;
-            document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
-                // document.querySelector(".section01__bg img").style.width = scrollTop + "px";                
-            requestAnimationFrame(scroll);   
-        }
-        scroll();
+      function scroll() {
+        let scrollTop =
+          window.screenY ||
+          window.pageYOffset ||
+          document.documentElement.scrollTop;
+        document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+        // document.querySelector(".section01__bg img").style.width = scrollTop + "px";
+        requestAnimationFrame(scroll);
+      }
+      scroll();
     </script>
-</body>
+  </body>
 </html>
