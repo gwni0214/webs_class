@@ -1,21 +1,3 @@
-@charset "UTF-8";
-
-
-:root {
-  --white : #fff;
-  --black : #000;
-  --dark_bg : #000;
-  --dark_border : #2e2e30;
-  --light_bg : #f0eeeb;
-  --light_border : #dad8d1;
-  --hover_line : #eee;
-
-  --main_font : "Saol";
-  --sub_font : "Rajdhani";
-  --sunKor_font : "S-CoreDream";
-  --kor_font : "Chosunilbo";
-   
-}
 /* border-box 초기화 */
 *,
 *:before,

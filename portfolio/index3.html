@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>포트폴리오</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "GmarketSans";
+        color: #353945;
+      }
+      /*common*/
+      .fixed {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+      }
+      em {
+        display: block;
+      }
+      img {
+        width: 100%;
+        vertical-align: top;
+        object-fit: cover;
+      }
+
+      .scrollTop {
+        position: fixed;
+        left: 20px;
+        top: 20px;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        z-index: 10000;
+      }
+
+      body {
+        width: 100%;
+        background-color: #f5f5f7;
+        height: 40000px;
+      }
+      .container {
+        max-width: 1400px;
+        width: 100%;
+        margin: 0 auto;
+        background: rgba(0, 0, 0, 0.2);
+        height: inherit;
+      }
+      #section1 {
+        width: 100%;
+        height: 3000px;
+      }
+      .bigmac__bg {
+        width: inherit;
+        height: 100vh;
+        background-image: url(assets/img/bigmag.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .bigmac__bg .sec1__info {
+        top: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        opacity: 1;
+      }
+      .bigmac__bg .sec1__info .face {
+        display: block;
+        width: 4vw;
+        height: 4vw;
+        margin-bottom: 0.5em;
+      }
+      .bigmac__bg .sec1__info .face img {
+        border-radius: 50%;
+      }
+      .bigmac__bg .sec1__info span {
+        font-size: 0.6vw;
+
+        margin-bottom: 1em;
+      }
+      .bigmac__bg .sec1__info h3 {
+        font-size: 1.5vw;
+        line-height: 1;
+        font-weight: 700;
+        margin-bottom: 0.2em;
+      }
+      .bigmac__bg .sec1__info a {
+        font-size: 0.6vw;
+        color: #006ddb;
+      }
+      #section2 {
+        width: 100%;
+        height: 1000px;
+      }
+      .sec2__txt {
+        font-size: 4.5vw;
+        opacity: 0;
+        white-space: nowrap;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+        line-height: 1.2;
+        background: -webkit-linear-gradient(
+          114deg,
+          rgba(234, 162, 110, 1) 0%,
+          rgba(234, 110, 177, 1) 24%,
+          rgba(42, 140, 195, 1) 44%,
+          rgba(234, 110, 177, 1) 68%,
+          rgba(234, 162, 110, 1) 86%,
+          rgba(234, 110, 177, 1) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        user-select: none;
+      }
+      #section3 {
+        height: 5000px;
+        background: #ccc;
+        width: 100%;
+      }
+      .sec3 {
+      }
+      .sec3__txt {
+      }
+
+      .sec3__txt h3 {
+        white-space: nowrap;
+        position: absolute;
+        top: -180%;
+        left: -68%;
+        font-size: 4.5vw;
+        font-weight: 700;
+        line-height: 1;
+      }
+      .sec3__txt h3 em {
+        margin-top: 0.2em;
+      }
+      .sec3__txt h3 em span {
+        background: -webkit-linear-gradient(
+          114deg,
+          rgba(234, 162, 110, 1) 0%,
+          rgba(234, 110, 177, 1) 24%,
+          rgba(42, 140, 195, 1) 44%,
+          rgba(234, 110, 177, 1) 68%,
+          rgba(234, 162, 110, 1) 86%,
+          rgba(234, 110, 177, 1) 100%
+        );
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .sec3__txt p {
+        text-align: right;
+        position: relative;
+        left: 67%;
+        top: 0;
+        font-size: 1.5vw;
+        line-height: 1.4;
+      }
+      .sec3__imgWrap {
+        opacity: 1;
+        width: 600px;
+        height: 600px;
+        background: #fff;
+        transform: translate(-50%, -50%) rotate(10deg);
+      }
+      .sec3__img {
+        width: 50%;
+        background: #000;
+        position: relative;
+      }
+      .sec3__img img {
+      }
+      .sec3__img .ipad1 {
+        position: absolute;
+        top: 20vw;
+        left: 20vw;
+        transform: scale(2);
+      }
+      .sec3__img .ipad2 {
+        position: absolute;
+        top: 20vw;
+        left: -0;
+        transform: scale(2.5);
+      }
+      .sec3__img .ipad3 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(3);
+      }
+    </style>
+  </head>
+  <body>
+    <section id="section1">
+      <div class="container">
+        <div
+          class="bigmac__bg fixed"
+          data-0="transform: translate(-50%, -50%) scale(1) ;top:50%;"
+          data-500="transform: translate(-50%, -50%) scale(1.5) ;top:60%;"
+          data-1500="transform: translate(-50%, -50%) scale(2); top:65%;"
+          data-2000="transform: translate(-50%, -50%) scale(3); top:80%;"
+        >
+          <div
+            class="sec1__info fixed"
+            data-2000="transform: translate(-50%, -50%) scale(1) ;top:40%; opacity:1;"
+            data-3000="transform: translate(-50%, -50%) scale(1) ;top:0%; opacity:0;"
+          >
+            <div class="face">
+              <img src="assets/img/face.png" alt="" />
+            </div>
+            <span>Gwni Park</span>
+            <h3>The New Developer</h3>
+            <a href="#">Contact Me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section2">
+      <div class="container">
+        <div
+          class="sec2__txt fixed"
+          data-2500="transform: translate(-50%, -50%); top:100%; opacity:0;"
+          data-3000="transform: translate(-50%, -50%); top:50%; ;opacity:1;"
+          data-4000="transform: translate(-50%, -50%); top:-50%; ;opacity:0;"
+        >
+          <div>WORLD CLASS IS A Dream</div>
+          <div>IN THE NEAR FUTURE</div>
+          <div>LET’S DO BEST</div>
+        </div>
+      </div>
+    </section>
+    <section id="section3">
+      <div class="container">
+        <div
+          class="sec3 fixed"
+          data-3500="transform: translate(-50%, -50%); top:100%; opacity:0;"
+          data-4000="transform: translate(-50%, -50%); top:50%; opacity:1;"
+        >
+          <div class="sec3__txt">
+            <h3>
+              ABOUT ME <em><span>기본</span>이 되어있는,</em>
+            </h3>
+            <p>
+              도전을 두려워하지 않고 새로운것을 배우는 사람<br />
+              시간을 효율적으로 쓰는 경제적인 사람<br />
+              1픽셀의 디테일을 아는 섬세한 감성의 사람<br />
+              좋은 영향력을 주도하는 센스있는 사람
+            </p>
+          </div>
+          <div
+            class="sec3__imgWrap fixed"
+            data-4000="transform: translate(-50%, -50%) rotate(0deg);"
+            data-4500="transform: translate(-50%, -50%) rotate(-45deg);"
+            data-5000="transform: translate(-50%, -50%) rotate(-90deg);"
+          >
+            <div class="sec3__img">
+              <img
+                class="ipad1"
+                src="assets/img/ipadFace1.png"
+                alt="ipad"
+                data-4000="transform:  rotate(0deg) scale(2);"
+                data-4500="transform:  rotate(-0) scale(2);"
+                data-5000="transform:  rotate(-0) scale(2);"
+              />
+              <img
+                class="ipad2"
+                src="assets/img/ipadFace2.png"
+                alt="ipad"
+                data-4000="transform:  rotate(0deg) scale(2);"
+                data-4500="transform:  rotate(-0) scale(2);"
+                data-5000="transform:  rotate(-0) scale(2);"
+              />
+              <img
+                class="ipad3"
+                src="assets/img/ipadFace3.png"
+                alt="ipad"
+                data-4000="transform:  rotate(0deg) scale(2);"
+                data-4500="transform:  rotate(-0) scale(2);"
+                data-5000="transform:  rotate(-0) scale(2);"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="section4"></section>
+    <section id="section5"></section>
+    <section id="section6"></section>
+    <div class="scrollTop">0</div>
+    <script src="assets/js/skrollr.min.js"></script>
+    <script>
+      var s = skrollr.init();
+
+      function scroll() {
+        let scrollTop =
+          window.screenY ||
+          window.pageYOffset ||
+          document.documentElement.scrollTop;
+        document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+        // document.querySelector(".section01__bg img").style.width = scrollTop + "px";
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+    </script>
+  </body>
+</html>
