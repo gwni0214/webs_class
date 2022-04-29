@@ -1,191 +1,213 @@
 @font-face {
-    font-family: 'LABDigital';
-    font-weight: normal;    
-    font-style: normal;
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot');
-    src: url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix') format('embedded-opentype'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2') format('woff2'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff') format('woff'),
-        url('https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf') format("truetype");
-    font-display: swap;
-    } 
+  font-family: "LABDigital";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot");
+  src: url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.eot?#iefix")
+      format("embedded-opentype"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.woff")
+      format("woff"),
+    url("https://cdn.jsdelivr.net/gh/webfontworld/fontlab/LABDigital.ttf")
+      format("truetype");
+  font-display: swap;
+}
 
-   
-    body {
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-        cursor: none;
-        
-    }    
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-        font-family: 'LABDigital';           
-    }
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  cursor: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "LABDigital";
+}
 
-    img {
-        width: 100%;
-        vertical-align: top;
-        object-fit: cover;
-    }
+img {
+  width: 100%;
+  vertical-align: top;
+  object-fit: cover;
+}
 
-    #header {
-        height: 35px;
-        background-color: #e4dbee;
-        width: 100%;
-    }
-    #header h1 {
-        display: inline;
-        font-size: 22px;
-        line-height: 1.6;
-        margin-left: 10px;
-    }
-    #header .time {
-        float: right;
-        margin-right: 20px;
-    }
-    #header .time span {
-        font-size: 18px;
-        letter-spacing: 3px;
-        line-height: 1.9;
-    }
-    #main {
-        display: flex;
-        flex-direction: column;
-        
-        
-    }
-    .btn {
-       margin: 40px;  
-           z-index: 11; 
-           display: inline-block;
-           width: 103px;
-
-    }  
-    .btn a {
-        display: inline-block;
-        width: 100px;
-        height: 100px;
-        border: 0;
-        background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-        opacity: 0.9;            
-        border-radius: 50%;
-        position: relative;  
-        cursor: none;                  
-    } 
-    .btn a:hover {
-        background-image: linear-gradient(to top, #fbc2eb 100%,#a18cd1 0%);
-       
-    }           
-    .btn a img {
-        width: 50px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);           
-    }            
-    .btn span {
-        position: absolute;
-        left: 50%;
-        bottom: -20%;
-        transform: translateX(-50%);
-        display: block;
-        padding: 0 10px;
-        background: #31f8cc;
-        text-align: center;
-        font-size: 18px;
-        white-space: nowrap;
-    }         
-    .musicBox {
-        width: 500px;
-        height: 700px;
-        position: absolute;
-        right: -500px;
-        top: 10px;
-        z-index: 10;
-        transition: all 0.4s;            
-    }
-    .musicBox .close {
-        font-size: 2em;
-        position: absolute;
-        top: 5%;
-        left: 0;
-        background: #fff;
-        border-radius: 50%;
-
-    }
-    .musicBox.show {
-        right: 10px;
-        transition: all 0.4s;             
-    }   
-    .typingBox {
-        width: 1200px;
-        height: 700px;
-        position: absolute;
-        left: 50%;
-        top: -200%;
-        transform: translate(-50%, -50%);
-        transition: all 0.6s ease;
-    }
-    .typingBox .close {
-        font-size: 2em;
-        position: absolute;
-        top: -5%;
-        left: 0;
-        background: #fff;
-        border-radius: 50%;
-    }
-    .typingBox.show {
-        top: 50%;            
-    }
-    .memoryBox .close {
-        font-size: 2em;
-        position: absolute;
-        top: 1%;
-        left: 1%;
-        background: #fff;
-        border-radius: 50%;
-    }
-    .memoryBox {
-        width: 800px;
-        height: 800px;
-        background: #fff;
-        position: absolute;
-        left: 0;
-        top: -200%;
-        right: 0;
-        bottom: 0;
-        margin: auto;        
-        border-radius: 10px;
-        overflow: hidden;
-        transition: all 0.4s;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1),
-                        0 6px 10px 0 rgba(0,0,0,0.17);
-    }
-    .memoryBox.show {
-        top: 0;
-        transition: all 0.4s;
-    }
-    .music__frame {                                                     
-    }
-    .memory__frame {
-        border-radius: 10px;
-                            
-    }
-    .typing__frame {
-        border-radius: 20px;                    
-    }
-    .show {
-        display: block;                   
-    }
-   .cursor {
-       position: absolute;
-       left: 0;
-       top: 0;
-       z-index: 100;
-       width: 50px;
-       user-select: none;
-       pointer-events: none;
-   }
+#header {
+  height: 35px;
+  background-color: #e4dbee;
+  width: 100%;
+}
+#header h1 {
+  display: inline;
+  font-size: 22px;
+  line-height: 1.6;
+  margin-left: 10px;
+}
+#header .time {
+  float: right;
+  margin-right: 20px;
+}
+#header .time span {
+  font-size: 18px;
+  letter-spacing: 3px;
+  line-height: 1.9;
+}
+#main {
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  margin: 40px;
+  z-index: 11;
+  display: inline-block;
+  width: 103px;
+}
+.btn a {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 0;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+  opacity: 0.9;
+  border-radius: 50%;
+  position: relative;
+  cursor: none;
+}
+.btn a:hover {
+  background-image: linear-gradient(to top, #fbc2eb 100%, #a18cd1 0%);
+}
+.btn a img {
+  width: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.btn span {
+  position: absolute;
+  left: 50%;
+  bottom: -20%;
+  transform: translateX(-50%);
+  display: block;
+  padding: 0 10px;
+  background: #31f8cc;
+  text-align: center;
+  font-size: 18px;
+  white-space: nowrap;
+}
+.musicBox {
+  width: 500px;
+  height: 700px;
+  position: absolute;
+  right: -500px;
+  top: 10px;
+  z-index: 10;
+  transition: all 0.4s;
+}
+.musicBox .close {
+  font-size: 2em;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  background: #fff;
+  border-radius: 50%;
+}
+.musicBox.show {
+  right: 10px;
+  transition: all 0.4s;
+}
+.typingBox {
+  width: 1200px;
+  height: 700px;
+  position: absolute;
+  left: 50%;
+  top: -200%;
+  transform: translate(-50%, -50%);
+  transition: all 0.6s ease;
+}
+.typingBox .close {
+  font-size: 2em;
+  position: absolute;
+  top: -5%;
+  left: 0;
+  background: #fff;
+  border-radius: 50%;
+}
+.typingBox.show {
+  top: 50%;
+}
+.memoryBox .close {
+  font-size: 2em;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  background: #fff;
+  border-radius: 50%;
+}
+.memoryBox {
+  width: 800px;
+  height: 800px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: -200%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.17);
+}
+.memoryBox.show {
+  top: 0;
+  transition: all 0.4s;
+}
+.tetrisBox .close {
+  font-size: 2em;
+  position: absolute;
+  top: 1%;
+  left: 1%;
+  background: #fff;
+  border-radius: 50%;
+}
+.tetrisBox {
+  width: 800px;
+  height: 800px;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  top: -200%;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 10px 0 rgba(0, 0, 0, 0.17);
+}
+.tetrisBox.show {
+  top: 0;
+  transition: all 0.4s;
+}
+.music__frame {
+}
+.memory__frame {
+  border-radius: 10px;
+}
+.typing__frame {
+  border-radius: 20px;
+}
+.show {
+  display: block;
+}
+.cursor {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  width: 50px;
+  user-select: none;
+  pointer-events: none;
+}

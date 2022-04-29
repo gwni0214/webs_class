@@ -1,165 +1,240 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game</title>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bg.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/bg.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="cursor">
-        <img src="https://assets.codepen.io/756881/pointer.svg" alt="커서">
+      <img src="https://assets.codepen.io/756881/pointer.svg" alt="커서" />
     </div>
     <div class="wrap">
-        <header id="header">
-            <h1>GAME SITE</h1>
-            <div class="time">
-                <span id="clock"></span>
-            </div>
-        </header>
-        
-        <main id="main">
-            <div class="btn btn4">
-                <a href="https://gwni0214react.netlify.app/" target="_blank">
-                    <img src="assets/img/surfer-light.svg" alt="img">
-                    <span>REACT</span>
-                </a> 
-            </div>
-            <div class="btn btn1">
-                <a href="#">
-                    <img src="assets/img/guitar-light.svg" alt="img">
-                    <span>MUSIC</span>
-                </a> 
-            </div>   
-            <div class="btn btn2 memory">
-                <a href="#">
-                    <img src="assets/img/camera-light.svg" alt="img">
-                    <span>MEMORY GAME</span>
-                </a> 
-            </div>
-            <div class="btn btn3">
-                <a href="#">
-                    <img src="assets/img/personalcomputer-light.svg" alt="img">
-                    <span>TYPING GAME</span>
-                </a> 
-            </div> 
-            <div class="btn btn5">
-                <a href="#">
-                    <img src="assets/img/personalcomputer-light.svg" alt="img">
-                    <span>TETRIS GAME</span>
-                </a> 
-            </div>
-                                    
-        </main>
-        <div class="musicBox">
-            <span class="material-icons close">close</span>
-            <iframe class="music__frame" src="../javascript/musicPlayer/index.html" frameborder="0" width="100%" height="100%"></iframe>
-        </div>        
-        <div class="typingBox">
-            <span class="material-icons close">close</span>
-            <iframe class="typing__frame" src="../javascript/typingGame/index.html" frameborder="0" width="100%" height="100%"></iframe>
+      <header id="header">
+        <h1>GAME SITE</h1>
+        <div class="time">
+          <span id="clock"></span>
         </div>
-        <div class="memoryBox">
-            <span class="material-icons close">close</span>
-            <iframe class="memory__frame" src="../javascript/memoryGame/index2.html" width="100%" height="100%"   frameborder="0"></iframe>
+      </header>
+
+      <main id="main">
+        <div class="btn btn4">
+          <a href="https://gwni0214react.netlify.app/" target="_blank">
+            <img src="assets/img/surfer-light.svg" alt="img" />
+            <span>REACT</span>
+          </a>
         </div>
+        <div class="btn btn1">
+          <a href="#">
+            <img src="assets/img/guitar-light.svg" alt="img" />
+            <span>MUSIC</span>
+          </a>
+        </div>
+        <div class="btn btn2 memory">
+          <a href="#">
+            <img src="assets/img/camera-light.svg" alt="img" />
+            <span>MEMORY GAME</span>
+          </a>
+        </div>
+        <div class="btn btn3">
+          <a href="#">
+            <img src="assets/img/personalcomputer-light.svg" alt="img" />
+            <span>TYPING GAME</span>
+          </a>
+        </div>
+        <div class="btn btn5">
+          <a href="#">
+            <img src="assets/img/personalcomputer-light.svg" alt="img" />
+            <span>TETRIS GAME</span>
+          </a>
+        </div>
+      </main>
+      <div class="musicBox">
+        <span class="material-icons close">close</span>
+        <iframe
+          class="music__frame"
+          src="../javascript/musicPlayer/index.html"
+          frameborder="0"
+          width="100%"
+          height="100%"
+        ></iframe>
+      </div>
+      <div class="typingBox">
+        <span class="material-icons close">close</span>
+        <iframe
+          class="typing__frame"
+          src="../javascript/typingGame/index.html"
+          frameborder="0"
+          width="100%"
+          height="100%"
+        ></iframe>
+      </div>
+      <div class="memoryBox">
+        <span class="material-icons close">close</span>
+        <iframe
+          class="memory__frame"
+          src="../javascript/memoryGame/index2.html"
+          width="100%"
+          height="100%"
+          frameborder="0"
+        ></iframe>
+      </div>
+      <div class="tetrisBox">
+        <span class="material-icons close">close</span>
+        <iframe
+          class="tetris__frame"
+          src="./tetrisGame/index.html"
+          width="100%"
+          height="100%"
+          frameborder="0"
+        ></iframe>
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
-        $(".btn1").draggable();
-        $(".btn2").draggable();
-        $(".btn3").draggable();
-        $(".btn4").draggable();
-        
-        // $(".btn1").click(function(){
-        //     $(".musicBox").toggleClass("show")
-        // });
-        // $(".btn2").click(function(){
-        //     $(".memoryBox").toggleClass("show")
-        // });
-        // $(".btn3").click(function(){           
-        //     $(".typingBox").toggleClass("show")
-        // });
-        const musicBtn = document.querySelector(".btn1");
-        const memoryBtn = document.querySelector(".btn2");
-        const typingBtn = document.querySelector(".btn3");
-        const closeBtn = document.querySelectorAll(".close");    
-        const musicBox = document.querySelector(".musicBox");        
-        const memoryBox = document.querySelector(".memoryBox");        
-        const typingBox = document.querySelector(".typingBox");
-        const musicFrame = document.querySelector(".music__frame");
-        const memoryFrame = document.querySelector(".memory__frame");      
-        const typingFrame = document.querySelector(".typing__frame");
-        
-        //프레임 닫기버튼
-        closeBtn.forEach(el=>{
-            el.onclick = ()=>{
-                musicBox.classList.remove("show");
-                memoryBox.classList.remove("show");
-                typingBox.classList.remove("show");
-                musicFrame.classList.remove("show");
-                memoryFrame.classList.remove("show");
-                typingFrame.classList.remove("show");
-            }
-        })
-        //아이콘 클릭하면 프레임 나오게
-        musicBtn.addEventListener("click",()=>{
-            if(memoryBox.classList.contains("show")||typingBox.classList.contains("show")){
-                memoryBox.classList.remove("show");
-                musicBox.classList.remove("show");
-            } 
-            musicBox.classList.toggle("show");
-            musicFrame.classList.toggle("show");
-        });
-        memoryBtn.addEventListener("click",()=>{
-            if(typingBox.classList.contains("show")||musicBox.classList.contains("show")){
-                typingBox.classList.remove("show");
-                musicBox.classList.remove("show");
-            } 
-            memoryBox.classList.toggle("show");
-            memoryFrame.classList.toggle("show");
-        });       
-        typingBtn.addEventListener("click",()=>{ 
-            if(memoryBox.classList.contains("show")||musicBox.classList.contains("show")){
-                memoryBox.classList.remove("show");
-                musicBox.classList.remove("show");
-            }           
-            typingBox.classList.toggle("show");
-            typingFrame.classList.toggle("show");
-        });
-        //커서
-        window.addEventListener("mousemove",(e)=>{
-            // document.querySelector(".cursor").style.left = e.clientX - 25 + "px";   //원 안으로 중심이 들어가야해서 -25px 을 줌.
-            // document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
+      $(".btn1").draggable();
+      $(".btn2").draggable();
+      $(".btn3").draggable();
+      $(".btn4").draggable();
+      $(".btn5").draggable();
 
-            let x = e.clientX - 25 + "px";
-            let y = e.clientY - 25 + "px";
-            document.querySelector(".cursor").style.cssText = "left:" + x + "; top:" + y;   //이렇게도 표현 가능.
-        });
-        //현재시간
-            function printTime() {
-                var clock = document.getElementById("clock");            // 출력할 장소 선택
-                var now = new Date();                                                  // 현재시간
-                var nowTime = now.getFullYear() + "년 " + (now.getMonth()+1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분" + now.getSeconds() + "초";
-                clock.innerHTML = nowTime;           // 현재시간을 출력
-                setTimeout("printTime()",1000);         // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
-            }
-            window.onload = function() {                         // 페이지가 로딩되면 실행
-                printTime();
-            }
+      // $(".btn1").click(function(){
+      //     $(".musicBox").toggleClass("show")
+      // });
+      // $(".btn2").click(function(){
+      //     $(".memoryBox").toggleClass("show")
+      // });
+      // $(".btn3").click(function(){
+      //     $(".typingBox").toggleClass("show")
+      // });
+      const musicBtn = document.querySelector(".btn1");
+      const memoryBtn = document.querySelector(".btn2");
+      const typingBtn = document.querySelector(".btn3");
+      const tetrisBtn = document.querySelector(".btn5");
+      const closeBtn = document.querySelectorAll(".close");
+      const musicBox = document.querySelector(".musicBox");
+      const memoryBox = document.querySelector(".memoryBox");
+      const typingBox = document.querySelector(".typingBox");
+      const tetrisBox = document.querySelector(".tetrisBox");
+      const musicFrame = document.querySelector(".music__frame");
+      const memoryFrame = document.querySelector(".memory__frame");
+      const typingFrame = document.querySelector(".typing__frame");
+      const tetrisFrame = document.querySelector(".tetris__frame");
 
+      //프레임 닫기버튼
+      closeBtn.forEach((el) => {
+        el.onclick = () => {
+          musicBox.classList.remove("show");
+          memoryBox.classList.remove("show");
+          typingBox.classList.remove("show");
+          tetrisBox.classList.remove("show");
+          musicFrame.classList.remove("show");
+          memoryFrame.classList.remove("show");
+          typingFrame.classList.remove("show");
+          tetrisFrame.classList.remove("show");
+        };
+      });
+      //아이콘 클릭하면 프레임 나오게
+      musicBtn.addEventListener("click", () => {
+        if (
+          memoryBox.classList.contains("show") ||
+          typingBox.classList.contains("show") ||
+          tetrisBox.classList.contains("show")
+        ) {
+          memoryBox.classList.remove("show");
+          musicBox.classList.remove("show");
+          tetrisBox.classList.remove("show");
+        }
+        musicBox.classList.toggle("show");
+        musicFrame.classList.toggle("show");
+      });
+      memoryBtn.addEventListener("click", () => {
+        if (
+          typingBox.classList.contains("show") ||
+          musicBox.classList.contains("show") ||
+          tetrisBox.classList.contains("show")
+        ) {
+          typingBox.classList.remove("show");
+          musicBox.classList.remove("show");
+          tetrisBox.classList.remove("show");
+        }
+        memoryBox.classList.toggle("show");
+        memoryFrame.classList.toggle("show");
+      });
+      typingBtn.addEventListener("click", () => {
+        if (
+          memoryBox.classList.contains("show") ||
+          musicBox.classList.contains("show") ||
+          tetrisBox.classList.contains("show")
+        ) {
+          memoryBox.classList.remove("show");
+          musicBox.classList.remove("show");
+          tetrisBox.classList.remove("show");
+        }
+        typingBox.classList.toggle("show");
+        typingFrame.classList.toggle("show");
+      });
+      tetrisBtn.addEventListener("click", () => {
+        if (
+          memoryBox.classList.contains("show") ||
+          musicBox.classList.contains("show") ||
+          typingBox.classList.contains("show")
+        ) {
+          memoryBox.classList.remove("show");
+          musicBox.classList.remove("show");
+          typingBox.classList.remove("show");
+        }
+        tetrisBox.classList.toggle("show");
+        tetrisFrame.classList.toggle("show");
+      });
+      //커서
+      window.addEventListener("mousemove", (e) => {
+        // document.querySelector(".cursor").style.left = e.clientX - 25 + "px";   //원 안으로 중심이 들어가야해서 -25px 을 줌.
+        // document.querySelector(".cursor").style.top = e.clientY - 25 + "px";
 
-
+        let x = e.clientX - 25 + "px";
+        let y = e.clientY - 25 + "px";
+        document.querySelector(".cursor").style.cssText =
+          "left:" + x + "; top:" + y; //이렇게도 표현 가능.
+      });
+      //현재시간
+      function printTime() {
+        var clock = document.getElementById("clock"); // 출력할 장소 선택
+        var now = new Date(); // 현재시간
+        var nowTime =
+          now.getFullYear() +
+          "년 " +
+          (now.getMonth() + 1) +
+          "월 " +
+          now.getDate() +
+          "일 " +
+          now.getHours() +
+          "시 " +
+          now.getMinutes() +
+          "분" +
+          now.getSeconds() +
+          "초";
+        clock.innerHTML = nowTime; // 현재시간을 출력
+        setTimeout("printTime()", 1000); // setTimeout(“실행할함수”,시간) 시간은1초의 경우 1000
+      }
+      window.onload = function () {
+        // 페이지가 로딩되면 실행
+        printTime();
+      };
     </script>
-</body>
-
+  </body>
 </html>

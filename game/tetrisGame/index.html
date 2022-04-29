@@ -1,575 +1,713 @@
 <!DOCTYPE html>
 <html lang="ko">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        @font-face {
-            font-family: 'SF_IceLemon';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_IceLemon.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
+      @font-face {
+        font-family: "SF_IceLemon";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_IceLemon.woff")
+          format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+      }
 
-        ul {
-            list-style: none;
-        }
+      ul {
+        list-style: none;
+      }
 
-        body {
-            height: 100%;
-            overflow: hidden;
-            background-color: #000000;
-        }
+      body {
+        height: 100%;
+        overflow: hidden;
+        background-color: #000000;
+      }
 
-        .wrapper {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-        }
+      .wrapper {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        opacity: 0;
+      }
+      .wrapper.active {
+        opacity: 1;
+        z-index: 10;
+      }
+      .game-text {
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        left: 0;
+        top: 0;
+        color: #fff;
+        font-size: 90px;
+        font-family: "SF_IceLemon";
+      }
 
-        .game-text {
-            display: none;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            left: 0;
-            top: 0;
-            color: #fff;
-            font-size: 90px;
-            font-family: 'SF_IceLemon';
-        }
+      .game-text > button {
+        margin: 2rem;
+        padding: 0.5rem 1rem;
+        color: #fff;
+        background: #0028f0;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+      }
 
-        .game-text>button {
-            margin: 2rem;
-            padding: 0.5rem 1rem;
-            color: #fff;
-            background: #0028f0;
-            border: none;
-            cursor: pointer;
-            border-radius: 6px;
-        }
+      .game-text > button:hover {
+        background: #0099ff;
+      }
 
-        .game-text>button:hover {
-            background: #0099ff;
-        }
+      .scoreText {
+        width: 12vw;
+        text-align: center;
+        font-size: 60px;
+        color: #fff;
+        font-family: "SF_IceLemon";
+        margin-bottom: 10px;
+      }
 
-        .scoreText {
-            width: 12vw;
-            text-align: center;
-            font-size: 60px;
-            color: #fff;
-            font-family: 'SF_IceLemon';
-            margin-bottom: 10px;
-        }
+      .score {
+        width: 12vw;
+        text-align: center;
+        font-size: 50px;
+        color: #fff;
+        font-family: "SF_IceLemon";
+        margin-bottom: 20px;
+      }
 
-        .score {
-            width: 12vw;
-            text-align: center;
-            font-size: 50px;
-            color: #fff;
-            font-family: 'SF_IceLemon';
-            margin-bottom: 20px;
-        }
+      .playground > ul {
+        border: 2px solid #fff;
+        border-radius: 10px;
+        width: 300px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
 
-        .playground>ul {
-            border: 2px solid #fff;
-            border-radius: 10px;
-            width: 300px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
+      .playground > ul > li {
+        width: 100%;
+        height: 25px;
+      }
 
-        .playground>ul>li {
-            width: 100%;
-            height: 25px;
-        }
+      .playground > ul > li > ul {
+        display: flex;
+      }
 
-        .playground>ul>li>ul {
-            display: flex;
-        }
+      .playground > ul > li > ul > li {
+        width: 25px;
+        height: 25px;
+        outline: 0.25px solid #777;
+      }
+      /*TIOZSJL*/
+      .Tmino {
+        background: #0099ff;
+      }
 
-        .playground>ul>li>ul>li {
-            width: 25px;
-            height: 25px;
-            outline: 0.25px solid #777;
-        }
-/*TIOZSJL*/
-        .Tmino {
-            background: #0099ff;
-        }
+      .Imino {
+        background: #a1007c;
+      }
 
-        .Imino {
-            background: #a1007c;
-        }
+      .Omino {
+        background: #7bff00;
+      }
 
-        .Omino {
-            background: #7bff00;
-        }
+      .Zmino {
+        background: #ff0000;
+      }
 
-        .Zmino {
-            background: #ff0000;
-        }
+      .Smino {
+        background: #0028f0;
+      }
 
-        .Smino {
-            background: #0028f0;
-        }
+      .Jmino {
+        background: #ffae00;
+      }
+      .Lmino {
+        background: #ff5900;
+      }
 
-        .Jmino {
-            background: #ffae00;
-        }
-        .Lmino {
-            background: #ff5900;
-        }
+      .start__btn,
+      .info__box,
+      .result__box {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+          0 6px 10px 0 rgba(0, 0, 0, 0.17);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.33s ease;
+      }
+      .start__btn.active,
+      .info__box.active,
+      .result__box.active {
+        opacity: 1;
+        z-index: 10;
+        pointer-events: auto;
+        transform: translate(-50%, -50%) scale(1);
+      }
+      .start__btn button {
+        background: #fff;
+        padding: 0.8rem 3rem;
+        border-radius: 5px;
+        font-size: 1.3em;
+      }
+      .info__box {
+        width: 500px;
+        background: #fff;
+        border-radius: 5px;
+        font-size: 1.3em;
+      }
+      .info__box .title {
+        border-bottom: 1px solid #ccc;
+        padding: 0.8rem 2rem;
+        font-size: 1.3em;
+        text-align: center;
+      }
+      .info__box .list ol {
+        padding: 1.3rem 3rem;
+      }
+      .info__box .buttons {
+        border-top: 1px solid #ccc;
+        padding: 0.8rem 2rem;
+        text-align: center;
+      }
+      .info__box .buttons button {
+        margin: 0 0.3em;
+        background: #353945;
+        color: #fff;
+        padding: 0.4rem 2rem;
+        border-radius: 5px;
+        font-size: 1em;
+        border: 1px solid #353945;
+      }
+      .info__box .buttons button:first-child {
+        background: #fff;
+        border: 1px solid #353945;
+        color: #353945;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- 규칙 박스 -->
+    <div class="info__box">
+      <div class="title">테트리스를 하기 위한 규칙</div>
+      <div class="list">
+        <ol>
+          <li>점수가 10점씩 오를 때 마다 속도가 빨라집니다.</li>
+          <li>즐거운 게임 하세요!</li>
+        </ol>
+      </div>
+      <div class="buttons">
+        <button class="stop">그만하기</button>
+        <button class="start">도전하기</button>
+      </div>
+    </div>
+    <!-- 시작버튼 -->
+    <div class="start__btn active">
+      <button>Start</button>
+    </div>
     <div class="wrapper">
-        <div class="game-text">
-            <span>GAME OVER</span>
-            <button>RESTART</button>
+      <div class="game-text">
+        <span>GAME OVER</span>
+        <button>RESTART</button>
+        <button class="stop">STOP</button>
+      </div>
+      <div class="scoreText">score</div>
+      <div class="score">0</div>
+      <div class="playground-style">
+        <div class="playground">
+          <ul></ul>
         </div>
-        <div class="scoreText">score</div>
-        <div class="score">0</div>
-        <div class="playground-style">
-            <div class="playground">
-                <ul></ul>
-            </div>
-        </div>
+      </div>
     </div>
 
-
     <script>
-        // DOM
-        const playground = document.querySelector(".playground > ul");
-        const gameText = document.querySelector(".game-text");
-        const scoreDisplay = document.querySelector(".score");
-        const restartButton = document.querySelector(".game-text > button");
+      // DOM
+      const infoBox = document.querySelector(".info__box");
+      const infoBoxStart = document.querySelector(".info__box .buttons .start");
+      const infoStop = document.querySelector(".info__box .buttons .stop");
+      const startBtn = document.querySelector(".start__btn");
+      const wrapper = document.querySelector(".wrapper");
+      const playground = document.querySelector(".playground > ul");
+      const gameText = document.querySelector(".game-text");
+      const scoreDisplay = document.querySelector(".score");
+      const restartButton = document.querySelector(".game-text > button");
+      const stopButton = document.querySelector(".game-text > .stop");
 
+      //행렬 갯수
+      const game_rows = 20;
+      const game_cols = 12;
+      // variables
+      let score = 0;
+      let duration = 500;
+      let downInterval;
+      let tempMovingItem;
+      const blocks = {
+        Tmino: [
+          [
+            [2, 1],
+            [0, 1],
+            [1, 0],
+            [1, 1],
+          ],
+          [
+            [2, 1],
+            [1, 0],
+            [1, 2],
+            [1, 1],
+          ],
+          [
+            [1, 2],
+            [0, 1],
+            [2, 1],
+            [1, 1],
+          ],
+          [
+            [1, 2],
+            [0, 1],
+            [1, 0],
+            [1, 1],
+          ],
+        ],
+        Imino: [
+          [
+            [0, 0],
+            [0, 1],
+            [0, 2],
+            [0, 3],
+          ],
+          [
+            [0, 0],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+          ],
+          [
+            [0, 3],
+            [0, 2],
+            [0, 1],
+            [0, 0],
+          ],
+          [
+            [0, 0],
+            [1, 0],
+            [2, 0],
+            [3, 0],
+          ],
+        ],
+        Omino: [
+          [
+            [0, 0],
+            [1, 0],
+            [0, 1],
+            [1, 1],
+          ],
+          [
+            [0, 0],
+            [1, 0],
+            [0, 1],
+            [1, 1],
+          ],
+          [
+            [0, 0],
+            [1, 0],
+            [0, 1],
+            [1, 1],
+          ],
+          [
+            [0, 0],
+            [1, 0],
+            [0, 1],
+            [1, 1],
+          ],
+        ],
+        Zmino: [
+          [
+            [1, 0],
+            [2, 0],
+            [2, 1],
+            [3, 1],
+          ],
+          [
+            [2, 0],
+            [2, 1],
+            [1, 1],
+            [1, 2],
+          ],
+          [
+            [1, 0],
+            [2, 0],
+            [2, 1],
+            [3, 1],
+          ],
+          [
+            [2, 0],
+            [2, 1],
+            [1, 1],
+            [1, 2],
+          ],
+        ],
+        Smino: [
+          [
+            [2, 0],
+            [3, 0],
+            [1, 1],
+            [2, 1],
+          ],
+          [
+            [1, 0],
+            [1, 1],
+            [2, 1],
+            [2, 2],
+          ],
+          [
+            [2, 0],
+            [3, 0],
+            [1, 1],
+            [2, 1],
+          ],
+          [
+            [1, 0],
+            [1, 1],
+            [2, 1],
+            [2, 2],
+          ],
+        ],
+        Jmino: [
+          [
+            [2, 0],
+            [2, 1],
+            [2, 2],
+            [1, 2],
+          ],
+          [
+            [1, 0],
+            [1, 1],
+            [2, 1],
+            [3, 1],
+          ],
+          [
+            [1, 0],
+            [2, 0],
+            [1, 1],
+            [1, 2],
+          ],
+          [
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [3, 1],
+          ],
+        ],
+        Lmino: [
+          [
+            [1, 0],
+            [1, 1],
+            [1, 2],
+            [2, 2],
+          ],
+          [
+            [1, 0],
+            [2, 0],
+            [3, 0],
+            [1, 1],
+          ],
+          [
+            [1, 0],
+            [2, 0],
+            [2, 1],
+            [2, 2],
+          ],
+          [
+            [3, 0],
+            [1, 1],
+            [2, 1],
+            [3, 1],
+          ],
+        ],
+      };
+      const movingItem = {
+        type: "Tmino",
+        direction: 0,
+        top: 0,
+        left: 3,
+      };
 
-
-
-        //행렬 갯수
-        const game_rows = 20;
-        const game_cols = 12;
-        // variables
-        let score = 0;
-        let duration = 500;
-        let downInterval;
-        let tempMovingItem;
-        const blocks = {
-            Tmino: [
-                [
-                    [2, 1],
-                    [0, 1],
-                    [1, 0],
-                    [1, 1]
-                ],
-                [
-                    [2, 1],
-                    [1, 0],
-                    [1, 2],
-                    [1, 1]
-                ],
-                [
-                    [1, 2],
-                    [0, 1],
-                    [2, 1],
-                    [1, 1]
-                ],
-                [
-                    [1, 2],
-                    [0, 1],
-                    [1, 0],
-                    [1, 1]
-                ],
-            ],
-            Imino: [
-                [
-                    [0, 0],
-                    [0, 1],
-                    [0, 2],
-                    [0, 3]
-                ],
-                [
-                    [0, 0],
-                    [1, 0],
-                    [2, 0],
-                    [3, 0]
-                ],
-                [
-                    [0, 3],
-                    [0, 2],
-                    [0, 1],
-                    [0, 0]
-                ],
-                [
-                    [0, 0],
-                    [1, 0],
-                    [2, 0],
-                    [3, 0]
-                ],
-            ],
-            Omino: [
-                [
-                    [0, 0],
-                    [1, 0],
-                    [0, 1],
-                    [1, 1]
-                ],
-                [
-                    [0, 0],
-                    [1, 0],
-                    [0, 1],
-                    [1, 1]
-                ],
-                [
-                    [0, 0],
-                    [1, 0],
-                    [0, 1],
-                    [1, 1]
-                ],
-                [
-                    [0, 0],
-                    [1, 0],
-                    [0, 1],
-                    [1, 1]
-                ],
-            ],
-            Zmino: [
-                [
-                    [1, 0],
-                    [2, 0],
-                    [2, 1],
-                    [3, 1]
-                ],
-                [
-                    [2, 0],
-                    [2, 1],
-                    [1, 1],
-                    [1, 2]
-                ],
-                [
-                    [1, 0],
-                    [2, 0],
-                    [2, 1],
-                    [3, 1]
-                ],
-                [
-                    [2, 0],
-                    [2, 1],
-                    [1, 1],
-                    [1, 2]
-                ],
-            ],
-            Smino: [
-                [
-                    [2, 0],
-                    [3, 0],
-                    [1, 1],
-                    [2, 1]
-                ],
-                [
-                    [1, 0],
-                    [1, 1],
-                    [2, 1],
-                    [2, 2]
-                ],
-                [
-                    [2, 0],
-                    [3, 0],
-                    [1, 1],
-                    [2, 1]
-                ],
-                [
-                    [1, 0],
-                    [1, 1],
-                    [2, 1],
-                    [2, 2]
-                ],
-            ],
-            Jmino: [
-                [
-                    [2, 0],
-                    [2, 1],
-                    [2, 2],
-                    [1, 2]
-                ],
-                [
-                    [1, 0],
-                    [1, 1],
-                    [2, 1],
-                    [3, 1]
-                ],
-                [
-                    [1, 0],
-                    [2, 0],
-                    [1, 1],
-                    [1, 2]
-                ],
-                [
-                    [1, 0],
-                    [2, 0],
-                    [3, 0],
-                    [3, 1]
-                ],
-            ],
-            Lmino: [
-                [
-                    [1, 0],
-                    [1, 1],
-                    [1, 2],
-                    [2, 2]
-                ],
-                [
-                    [1, 0],
-                    [2, 0],
-                    [3, 0],
-                    [1, 1]
-                ],
-                [
-                    [1, 0],
-                    [2, 0],
-                    [2, 1],
-                    [2, 2]
-                ],
-                [
-                    [3, 0],
-                    [1, 1],
-                    [2, 1],
-                    [3, 1]
-                ],
-            ]
-        }
-        const movingItem = {
-            type: "Tmino",
-            direction: 0,
-            top: 0,
-            left: 3,
-        }
-
+      init();
+      startBtn.onclick = () => {
+        infoBox.classList.add("active");
+        startBtn.classList.remove("active");
+      };
+      //시작버튼
+      infoBoxStart.onclick = () => {
+        infoBox.classList.remove("active");
+        wrapper.classList.add("active");
+        startBtn.classList.remove("active");
+        // clearInterval(downInterval);]
+        playground.innerHTML = "";
+        duration = 500;
+        score = 0;
+        scoreDisplay.innerText = score;
         init();
+        generateNewBlock();
+      };
 
-        // functions
-        function init() {
+      // functions
+      function init() {
+        tempMovingItem = {
+          ...movingItem,
+        };
+
+        for (let i = 0; i < game_rows; i++) {
+          prependNewLine();
+        }
+        // clearInterval(downInterval);
+        // generateNewBlock();
+      }
+
+      function prependNewLine() {
+        const li = document.createElement("li");
+        const ul = document.createElement("ul");
+        for (let j = 0; j < game_cols; j++) {
+          const matrix = document.createElement("li");
+          ul.prepend(matrix);
+        }
+        li.prepend(ul);
+        playground.prepend(li);
+      }
+
+      function renderBlocks(moveType = "") {
+        const { type, direction, top, left } = tempMovingItem;
+        const movingBlocks = document.querySelectorAll(".moving");
+        movingBlocks.forEach((moving) => {
+          moving.classList.remove(type, "moving");
+        });
+        blocks[type][direction].some((block) => {
+          const x = block[0] + left;
+          const y = block[1] + top;
+          const target = playground.childNodes[y]
+            ? playground.childNodes[y].childNodes[0].childNodes[x]
+            : null;
+          const isAvailable = checkEmpty(target);
+          if (isAvailable) {
+            target.classList.add(type, "moving");
+          } else {
             tempMovingItem = {
-                ...movingItem
+              ...movingItem,
             };
-
-            for (let i = 0; i < game_rows; i++) {
-                prependNewLine()
+            if (moveType === "retry") {
+              clearInterval(downInterval);
+              showGameoverText();
             }
-            generateNewBlock()
-        }
-
-        function prependNewLine() {
-            const li = document.createElement("li");
-            const ul = document.createElement("ul");
-            for (let j = 0; j < game_cols; j++) {
-                const matrix = document.createElement("li");
-                ul.prepend(matrix);
-            }
-            li.prepend(ul);
-            playground.prepend(li)
-        }
-
-        function renderBlocks(moveType = "") {
-            const {
-                type,
-                direction,
-                top,
-                left
-            } = tempMovingItem;
-            const movingBlocks = document.querySelectorAll(".moving");
-            movingBlocks.forEach(moving => {
-                moving.classList.remove(type, "moving");
-            });
-            blocks[type][direction].some(block => {
-                const x = block[0] + left;
-                const y = block[1] + top;
-                const target = playground.childNodes[y] ? playground.childNodes[y].childNodes[0].childNodes[x] :
-                    null;
-                const isAvailable = checkEmpty(target);
-                if (isAvailable) {
-                    target.classList.add(type, "moving");
-                } else {
-                    tempMovingItem = {
-                        ...movingItem
-                    };
-                    if (moveType === 'retry') {
-                        clearInterval(downInterval);
-                        showGameoverText()
-                    }
-                    setTimeout(() => {
-                        renderBlocks('retry');
-                        if (moveType === "top") {
-                            seizeBlock();
-                        }
-                    }, 0);
-                    //renderBlocks();
-                    return true;
-                }
-            })
-            movingItem.left = left;
-            movingItem.top = top;
-            movingItem.direction = direction;
-        }
-
-        function seizeBlock() {
-            const movingBlocks = document.querySelectorAll(".moving");
-            movingBlocks.forEach(moving => {
-                moving.classList.remove("moving");
-                moving.classList.add("seized");
-            });
-            checkMatch()
-        }
-
-        function checkMatch() {
-            const childNodes = playground.childNodes;
-            childNodes.forEach(child => {
-                let matched = true;
-                child.children[0].childNodes.forEach(li => {
-                    if (!li.classList.contains("seized")) {
-                        matched = false;
-                    }
-                });
-                if (matched) {
-                    child.remove();
-                    prependNewLine();
-                    score++;
-                    scoreDisplay.innerText = score;
-                }
-            });
-            generateNewBlock()
-        }
-
-        function generateNewBlock() {
-            clearInterval(downInterval);
-            downInterval = setInterval(() => {
-                moveBlock('top', 1)
-            }, duration);
-            const blockArray = Object.entries(blocks);
-            const randomIndex = Math.floor(Math.random() * blockArray.length);
-            movingItem.type = blockArray[randomIndex][0];
-            movingItem.top = 0;
-            movingItem.left = 3;
-            movingItem.direction = 0;
-            tempMovingItem = {
-                ...movingItem
-            };
-            renderBlocks();
-        }
-
-        function checkEmpty(target) {
-            if (!target || target.classList.contains("seized")) {
-                return false;
-            }
+            setTimeout(() => {
+              renderBlocks("retry");
+              if (moveType === "top") {
+                seizeBlock();
+              }
+            }, 0);
+            //renderBlocks();
             return true;
-        }
+          }
+        });
+        movingItem.left = left;
+        movingItem.top = top;
+        movingItem.direction = direction;
+      }
 
-        function moveBlock(moveType, amount) {
-            tempMovingItem[moveType] += amount
-            renderBlocks(moveType)
-        }
+      function seizeBlock() {
+        const movingBlocks = document.querySelectorAll(".moving");
+        movingBlocks.forEach((moving) => {
+          moving.classList.remove("moving");
+          moving.classList.add("seized");
+        });
+        checkMatch();
+      }
 
-        function changeDirection() {
-            const direction = tempMovingItem.direction;
-            direction === 3 ? tempMovingItem.direction = 0 : tempMovingItem.direction += 1;
-            renderBlocks();
-        }
-
-        function dropBlock() {
-            clearInterval(downInterval);
-            downInterval = setInterval(() => {
-                moveBlock("top", 1);
-            }, 10);
-        }
-
-        function showGameoverText() {
-            gameText.style.display = "flex"
-        }
-
-       
-
-        // Event handling
-        document.addEventListener("keydown", e => {
-            switch (e.keyCode) {
-                case 39:
-                    moveBlock("left", 1);
-                    break;
-                case 37:
-                    moveBlock("left", -1);
-                    break;
-
-                case 40:
-                    moveBlock("top", 1);
-                    break;
-                case 38:
-                    changeDirection();
-                    break;
-                case 32:
-                    dropBlock();
-                    break;
-                default:
-                    break;
+      function checkMatch() {
+        const childNodes = playground.childNodes;
+        childNodes.forEach((child) => {
+          let matched = true;
+          child.children[0].childNodes.forEach((li) => {
+            if (!li.classList.contains("seized")) {
+              matched = false;
             }
-        });
-
-        restartButton.addEventListener("click", () => {
-            playground.innerHTML = "";
-            score = 0;
+          });
+          if (matched) {
+            new Audio("match.mp3");
+            child.remove();
+            prependNewLine();
+            score++;
             scoreDisplay.innerText = score;
-            gameText.style.display = "none";
-            init()
+            if (score > 9) {
+              duration = 300;
+            }
+            if (score > 19) {
+              duration = 200;
+            }
+            if (score > 29) {
+              duration = 100;
+            }
+          }
         });
-        // //재도전하면 생성된 블록 다 지우기
-        // function allRemove() {
-        //         const childNodes = playground.childNodes;
-        //         console.log(childNodes);
-        //         childNodes.forEach(child => {
+        generateNewBlock();
+      }
 
-        //             // console.log(child.childNodes);
-        //             child.childNodes.forEach(el => {
-        //                 // console.log(el.childNodes);
-        //                 el.childNodes.forEach(list => {
-        //                     console.log(list)
-        //                     if (list.classList.contains("seized") ||
-        //                         list.classList.contains("Tmino") ||
-        //                         list.classList.contains("Imino") ||
-        //                         list.classList.contains("Omino") ||
-        //                         list.classList.contains("Zmino") ||
-        //                         list.classList.contains("Smino") ||
-        //                         list.classList.contains("Jmino") ||
-        //                         list.classList.contains("Lmino")) {
-        //                             list.className = '';
-        //                         // list.classList.remove("seized");
-        //                         // list.classList.remove("Tmino");
-        //                         // list.classList.remove("Imino");
-        //                         // list.classList.remove("Omino");
-        //                         // list.classList.remove("Zmino");
-        //                         // list.classList.remove("Smino");
-        //                         // list.classList.remove("Jmino");
-        //                         // list.classList.remove("Lmino");
-        //                     }
-        //                 })
-        //             })
-        //         })
-        //     }
+      function generateNewBlock() {
+        clearInterval(downInterval);
+        downInterval = setInterval(() => {
+          //   console.log("멈춤");
+          moveBlock("top", 1);
+        }, duration);
+        const blockArray = Object.entries(blocks);
+        const randomIndex = Math.floor(Math.random() * blockArray.length);
+        movingItem.type = blockArray[randomIndex][0];
+        movingItem.top = 0;
+        movingItem.left = 3;
+        movingItem.direction = 0;
+        tempMovingItem = {
+          ...movingItem,
+        };
+        renderBlocks();
+      }
+
+      function checkEmpty(target) {
+        if (!target || target.classList.contains("seized")) {
+          return false;
+        }
+        return true;
+      }
+
+      function moveBlock(moveType, amount) {
+        tempMovingItem[moveType] += amount;
+        renderBlocks(moveType);
+      }
+
+      function changeDirection() {
+        const direction = tempMovingItem.direction;
+        direction === 3
+          ? (tempMovingItem.direction = 0)
+          : (tempMovingItem.direction += 1);
+        renderBlocks();
+      }
+
+      function dropBlock() {
+        clearInterval(downInterval);
+        downInterval = setInterval(() => {
+          moveBlock("top", 1);
+        }, 10);
+      }
+
+      function showGameoverText() {
+        gameText.style.display = "flex";
+      }
+
+      // Event handling
+      document.addEventListener("keydown", (e) => {
+        switch (e.keyCode) {
+          case 39:
+            moveBlock("left", 1);
+            break;
+          case 37:
+            moveBlock("left", -1);
+            break;
+
+          case 40:
+            moveBlock("top", 1);
+            break;
+          case 38:
+            changeDirection();
+            break;
+          case 32:
+            //이벤트 버블링 방지
+            e.preventDefault();
+            dropBlock();
+            break;
+
+          default:
+            break;
+        }
+      });
+
+      restartButton.addEventListener("click", () => {
+        playground.innerHTML = "";
+        score = 0;
+        scoreDisplay.innerText = score;
+        gameText.style.display = "none";
+        init();
+        generateNewBlock();
+      });
+      stopButton.addEventListener("click", () => {
+        wrapper.classList.remove("active");
+        startBtn.classList.add("active");
+        playground.innerHTML = "";
+        score = 0;
+        scoreDisplay.innerText = score;
+        init();
+        // generateNewBlock();
+        gameText.style.display = "none";
+      });
+      infoStop.addEventListener("click", () => {
+        wrapper.classList.remove("active");
+        infoBox.classList.remove("active");
+        startBtn.classList.add("active");
+        playground.innerHTML = "";
+        score = 0;
+        scoreDisplay.innerText = score;
+        init();
+        // generateNewBlock();
+        gameText.style.display = "none";
+      });
+
+      // //재도전하면 생성된 블록 다 지우기
+      // function allRemove() {
+      //         const childNodes = playground.childNodes;
+      //         console.log(childNodes);
+      //         childNodes.forEach(child => {
+
+      //             // console.log(child.childNodes);
+      //             child.childNodes.forEach(el => {
+      //                 // console.log(el.childNodes);
+      //                 el.childNodes.forEach(list => {
+      //                     console.log(list)
+      //                     if (list.classList.contains("seized") ||
+      //                         list.classList.contains("Tmino") ||
+      //                         list.classList.contains("Imino") ||
+      //                         list.classList.contains("Omino") ||
+      //                         list.classList.contains("Zmino") ||
+      //                         list.classList.contains("Smino") ||
+      //                         list.classList.contains("Jmino") ||
+      //                         list.classList.contains("Lmino")) {
+      //                             list.className = '';
+      //                         // list.classList.remove("seized");
+      //                         // list.classList.remove("Tmino");
+      //                         // list.classList.remove("Imino");
+      //                         // list.classList.remove("Omino");
+      //                         // list.classList.remove("Zmino");
+      //                         // list.classList.remove("Smino");
+      //                         // list.classList.remove("Jmino");
+      //                         // list.classList.remove("Lmino");
+      //                     }
+      //                 })
+      //             })
+      //         })
+      //     }
     </script>
-</body>
-
+  </body>
 </html>
