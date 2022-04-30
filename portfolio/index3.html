@@ -54,7 +54,7 @@
         max-width: 1400px;
         width: 100%;
         margin: 0 auto;
-        background: rgba(0, 0, 0, 0.2);
+        /* background: rgba(0, 0, 0, 0.2); */
         height: inherit;
       }
       #section1 {
@@ -129,7 +129,7 @@
       }
       #section3 {
         height: 5000px;
-        background: #ccc;
+        /* background: #ccc; */
         width: 100%;
       }
       .sec3 {
@@ -173,35 +173,41 @@
       }
       .sec3__imgWrap {
         opacity: 1;
-        width: 600px;
-        height: 600px;
-        background: #fff;
-        transform: translate(-50%, -50%) rotate(10deg);
+        width: 300px;
+        height: 300px;
+        /* background: #fff; */
+        border-radius: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
+        transform-origin: center;
+        top: 20vw;
+        left: 0;
+        z-index: -1;
       }
       .sec3__img {
         width: 50%;
         background: #000;
         position: relative;
+
       }
       .sec3__img img {
       }
       .sec3__img .ipad1 {
         position: absolute;
-        top: 20vw;
-        left: 20vw;
-        transform: scale(2);
+        top: 0vw;
+        left: 30vw;
+        transform: scale(1);
       }
       .sec3__img .ipad2 {
         position: absolute;
-        top: 20vw;
-        left: -0;
-        transform: scale(2.5);
+        top: 30vw;
+        left: 15vw;
+        transform: scale(1) ;
       }
       .sec3__img .ipad3 {
         position: absolute;
-        top: 0;
-        left: 0;
-        transform: scale(3);
+        top: 15vw;
+        left: -20vw;
+        transform: scale(1);
       }
     </style>
   </head>
@@ -264,34 +270,40 @@
           </div>
           <div
             class="sec3__imgWrap fixed"
-            data-4000="transform: translate(-50%, -50%) rotate(0deg);"
-            data-4500="transform: translate(-50%, -50%) rotate(-45deg);"
-            data-5000="transform: translate(-50%, -50%) rotate(-90deg);"
+            data-4000="transform: translate(-50%, -50%) rotate(45deg);"
+            
+            data-6000="transform: translate(-50%, -50%) rotate(-220deg);"
           >
             <div class="sec3__img">
               <img
                 class="ipad1"
                 src="assets/img/ipadFace1.png"
                 alt="ipad"
-                data-4000="transform:  rotate(0deg) scale(2);"
-                data-4500="transform:  rotate(-0) scale(2);"
-                data-5000="transform:  rotate(-0) scale(2);"
+                data-4000="transform:  rotate(50deg) scale(7); opacity:0;"
+                data-4500="transform:  rotate(50deg) scale(6); opacity:1;"
+                data-5000="transform:  rotate(50deg) scale(5); opacity:1;"
+                data-5500="transform:  rotate(50deg) scale(4); opacity:0;"
+                data-6000="transform:  rotate(50deg) scale(3); opacity:0;"
               />
               <img
                 class="ipad2"
                 src="assets/img/ipadFace2.png"
                 alt="ipad"
-                data-4000="transform:  rotate(0deg) scale(2);"
-                data-4500="transform:  rotate(-0) scale(2);"
-                data-5000="transform:  rotate(-0) scale(2);"
+                data-4000="transform:  rotate(120deg) scale(8); opacity:0;"
+                data-4500="transform:  rotate(120deg) scale(7); opacity:1"
+                data-5000="transform:  rotate(120deg) scale(6); opacity:1;"
+                data-5500="transform:  rotate(120deg) scale(5); opacity:1;"
+                data-6000="transform:  rotate(120deg) scale(4); opacity:0;"
               />
               <img
                 class="ipad3"
                 src="assets/img/ipadFace3.png"
                 alt="ipad"
-                data-4000="transform:  rotate(0deg) scale(2);"
-                data-4500="transform:  rotate(-0) scale(2);"
-                data-5000="transform:  rotate(-0) scale(2);"
+                data-4000="transform:  rotate(210deg) scale(9); opacity:0;"
+                data-4500="transform:  rotate(210deg) scale(8); opacity:0;"
+                data-5000="transform:  rotate(210deg) scale(7); opacity: 1;"
+                data-5500="transform:  rotate(210deg) scale(6); opacity:1;"
+                data-6000="transform:  rotate(210deg) scale(5); opacity:1;"
               />
             </div>
           </div>
