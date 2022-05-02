@@ -34,7 +34,8 @@
         background-color: #222;
         color: #fff;
         font-family: "NexonLv1Gothic";
-        font-weight: 300;        
+        font-weight: 300; 
+               
       }
       #parallax__title {
         position: fixed;
@@ -241,7 +242,7 @@
       const parallaxWidth = parallaxContents.offsetWidth;
       console.log(parallaxWidth);
       //body 높이값에 패럴랙스 박스 전체 가로값
-        document.body.style.height= (parallaxWidth*0.93) + "px";
+        document.body.style.height= parallaxWidth + "px";
         console.log(document.body.style.height);
 
       //스크롤 했을 때: left: scrollTop
@@ -251,8 +252,8 @@
           window.pageYOffset ||
           document.documentElement.scrollTop;
         document.querySelector(".srcollTop span").innerText = scrollTop;
-
-        gsap.to(parallaxContents, {left: -scrollTop});
+        
+        gsap.to(parallaxContents, {left: -(scrollTop)  });
 
         requestAnimationFrame(scroll);
       }
