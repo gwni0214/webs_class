@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>패럴랙스 효과</title>
+    <link
+      href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      body {
+        background-color: #222;
+        color: #fff;
+        font-family: "NexonLv1Gothic";
+        font-weight: 300;
+      }
+      #parallax__title {
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px;
+        z-index: 10000;
+      }
+      #parallax__title h1 {
+        font-size: 30px;
+        border-bottom: 1px dashed #fff;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        font-weight: 400;
+        display: inline-block;
+      }
+      #parallax__title p {
+        font-size: 16px;
+      }
+      #parallax__title li {
+        display: inline;
+      }
+
+      #parallax__title ul {
+        margin-top: 10px;
+      }
+      #parallax__title li a {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px dashed #fff;
+        display: inline-block;
+        text-align: center;
+        line-height: 20px;
+        font-size: 12px;
+      }
+      #parallax__title li.active a {
+        background: #fff;
+        color: #000;
+      }     
+      /*info*/
+      .srcollTop {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 10000;
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        padding: 10px 30px;
+        border-radius: 50px;
+      }
+      .srcollInfo {
+        position: fixed;
+        left: 20px;
+        bottom: 70px;
+        z-index: 10000;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 10px 20px;
+        border-radius: 10px;
+      }
+      .srcollInfo li {
+        list-style: none;
+        line-height: 1.6;
+      }
+      
+      #parallax__cont {
+         
+        
+                  
+      }
+      .content__item {
+          width: 100%;
+          height: 100vh;
+          position: relative;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+      }
+      .content__item__num {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+          font-size: 20vw;
+          font-weight: 100;
+          line-height: 1.3;
+          font-family: 'Lato';
+      }
+        #section01 {
+            background-color: #999;
+            background-image: url("img/image01.jpg");
+            z-index: 7000;
+        }
+        #section02 {
+            background-color: #888;
+            background-image: url("img/image02.jpg");
+            z-index: 6000;
+        }
+        #section03 {
+            background-color: #777;
+            background-image: url("img/image03.jpg");
+            z-index: 5000;
+        }
+        #section04 {           
+            background-color: #666;
+            background-image: url("img/image04.jpg");
+            z-index: 4000;
+            height: 400vh;
+           
+        }
+        #section04 .sec4 {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 400vh;
+            height: 100%;
+            background-image: url("img/image05.jpg");
+            background-repeat: repeat; 
+            background-size: contain;       
+        }
+        #section05 {
+            background-color: #555;
+            background-image: url("img/image06.jpg");
+            z-index: 5000;
+        }
+        #section06 {
+            background-color: #444;
+            background-image: url("img/image07.jpg");
+            z-index: 6000;
+        }
+        #section07 {
+            background-color: #333;
+            background-image: url("img/image08.jpg");
+            z-index: 7000;
+        }
+        #section08 {
+            background-color: #222;
+            background-image: url("img/image09.jpg");
+            z-index: 8000;
+        }
+        #section09 {
+            background-color: #111;
+            background-image: url("img/image10.jpg");
+            z-index: 9000;
+        }
+      
+    </style>
+  </head>
+
+  <body>
+    <header id="parallax__title">
+      <h1><a href="parallaxEffect.html">Javascript Parallax Effect09</a></h1>
+      <p>패럴랙스 스크롤링 효과 - 가로세로모드</p>
+      <ul>
+        <li><a href="parallaxEffect01.html">1</a></li>
+        <li><a href="parallaxEffect02.html">2</a></li>
+        <li><a href="parallaxEffect03.html">3</a></li>
+        <li><a href="parallaxEffect04.html">4</a></li>
+        <li><a href="parallaxEffect05.html">5</a></li>
+        <li><a href="parallaxEffect06.html">6</a></li>
+        <li><a href="parallaxEffect07.html">7</a></li>
+        <li><a href="parallaxEffect08.html">8</a></li>
+        <li class="active"><a href="parallaxEffect09.html">9</a></li>
+      </ul>
+    </header>
+    <!--//parallax__title-->
+
+    <!--//parallax__dot-->
+
+    <!--main-->
+    <main id="parallax__cont">
+      
+        <section id="section01" class="content__item">
+            <span class="content__item__num">01</span>        
+        </section>
+        <section id="section02" class="content__item">
+            <span class="content__item__num">02</span>
+        </section>
+        <section id="section03" class="content__item">
+            <span class="content__item__num">03</span>
+        </section>
+        <section id="section04" class="content__item">
+            <div class="sec4">
+                <span class="content__item__num">04</span>
+            </div>            
+        </section>
+        <section id="section05" class="content__item">
+            <span class="content__item__num">05</span>
+        </section>
+        <section id="section06" class="content__item">
+            <span class="content__item__num">06</span>
+        </section>
+        <section id="section07" class="content__item">
+            <span class="content__item__num">07</span>
+        </section>
+        <section id="section08" class="content__item">
+            <span class="content__item__num">08</span>
+        </section>
+        <section id="section09" class="content__item">
+            <span class="content__item__num">09</span>
+        </section>
+        <!--//section09-->
+      
+    </main>
+    <!--//main-->
+
+    <!--info-->
+    <div class="srcollTop">scrollTop : <span>0</span>px</div>
+    <!-- <div class="srcollInfo">
+        <ul>
+            <li>#section1 offset() : <span class="offset1">0</span>px</li>
+            <li>#section2 offset() : <span class="offset2">0</span>px</li>
+            <li>#section3 offset() : <span class="offset3">0</span>px</li>
+            <li>#section4 offset() : <span class="offset4">0</span>px</li>
+            <li>#section5 offset() : <span class="offset5">0</span>px</li>
+            <li>#section6 offset() : <span class="offset6">0</span>px</li>
+            <li>#section7 offset() : <span class="offset7">0</span>px</li>
+            <li>#section8 offset() : <span class="offset8">0</span>px</li>
+            <li>#section9 offset() : <span class="offset9">0</span>px</li>
+        </ul>
+    </div> -->
+
+    <!--script-->
+    <script src="../asset/js/gsap.min.js"></script>
+    <script>
+      //section 4에 왔을 때 red를 blue로 변경
+        const sec4 = document.querySelector("#section04");
+
+      function scroll(){
+        let scrollTop =
+          window.screenY ||
+          window.pageYOffset ||
+          document.documentElement.scrollTop;
+        document.querySelector(".srcollTop span").innerText = scrollTop;
+                       
+        //sec4에 왔을때 스크롤탑을 0으로 초기화해서 시작
+        let offset = scrollTop- sec4.offsetTop;
+
+        if(scrollTop > sec4.offsetTop){
+            // document.querySelector(".sec4").style.backgroundColor = "blue";
+            gsap.to(".sec4", {left: - offset , ease:"linear"})
+        }
+        // gsap.to(parallaxContents, {left: -scrollTop});
+
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+    </script>
+  </body>
+</html>

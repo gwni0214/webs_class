@@ -328,7 +328,7 @@ body {
 .main02 .rowBox01 {
   display: flex;
   width: 400%;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 28px;
 }
 
