@@ -128,8 +128,8 @@
         user-select: none;
       }
       #section3 {
-        height: 3000px;
-        /* background: #ccc; */
+        height: 2000px;
+        background: #333;
         width: 100%;
       }
       .sec3 {
@@ -175,12 +175,12 @@
         opacity: 1;
         width: 300px;
         height: 300px;
-        /* background: #fff; */
+        background: #fff;
         border-radius: 50%;
         transform: translate(-50%, -50%) rotate(0deg);
         transform-origin: center;
         top: 0vw;
-        left: 0;
+        left: 20vw;
         z-index: -1;
       }
       .sec3__img {
@@ -209,8 +209,8 @@
         z-index: 1998;
       }
       #section4 {
-        display: none;
         height: 5000px;
+
         background: #ccc;
       }
       .sec4 {
@@ -230,7 +230,7 @@
       }
       .sec4__box1 {
         width: 100%;
-        height: 20vw;
+        height: 21.5vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -240,7 +240,7 @@
       }
       .sec4__box1 .desc1 {
         width: 49%;
-        height: 130%;
+        height: 100%;
         background: #fff;
         border-radius: 28px;
       }
@@ -249,6 +249,9 @@
         text-align: left;
         font-size: 1.7vw;
       }
+      .sec4__box1 .desc1 h3 em {
+        white-space: nowrap;
+      }
       .sec4__box1 .desc1 p {
         text-align: left;
         font-size: 1vw;
@@ -256,7 +259,7 @@
       }
       .sec4__box1 .desc2 {
         width: 49%;
-        height: 130%;
+        height: 100%;
         /* background: #fff; */
         border-radius: 28px;
         display: flex;
@@ -266,7 +269,7 @@
       }
       .sec4__box1 .desc2 .box1__sub {
         border-radius: 28px;
-        width: 49%;
+        width: 48.5%;
         height: 48%;
         background: #fff;
       }
@@ -326,12 +329,50 @@
         );
       }
       .sec4 .rowBox01 {
+        display: flex;
+        width: 400%;
+        /* overflow: hidden; */
+        margin-bottom: 28px;
       }
       .sec4__box2 {
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(
+          114deg,
+          rgba(255, 81, 81, 1) 0%,
+          rgba(187, 109, 248, 1) 100%
+        );
+        border-radius: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transform: translateX(-0%);
+        margin-right: 28px;
       }
+
       .sec4__box2 .box2__text {
+        padding-left: 64px;
+      }
+      .sec4__box2 .box2__text h3 {
+        font-size: 64px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 40px;
+      }
+      .sec4__box2 .box2__text h3 em {
+        color: #fff;
+      }
+      .sec4__box2 .box2__text p {
+        font-size: 32px;
+        color: #fff;
       }
       .sec4__box2 .box2__img {
+        width: 500px;
+        margin-right: 64px;
+        transition: all 0.6s;
+      }
+      .sec4__box2 .box2__img:hover {
+        transform: scale(1.05);
       }
     </style>
   </head>
@@ -380,8 +421,9 @@
           class="sec3 fixed"
           data-3500="transform: translate(-50%, -50%); top:100%; opacity:0;"
           data-4000="transform: translate(-50%, -50%); top:50%; opacity:1;"
-          data-6500="transform: translate(-50%, -50%); top:50%; opacity:1;"
-          data-7000="transform: translate(-50%, -50%); top:0%; opacity:0;"
+          data-5000="transform: translate(-50%, -50%); top:50%; opacity:1;"
+          data-5500="transform: translate(-50%, -50%); top:50%; opacity:0.5;"
+          data-6000="transform: translate(-50%, -50%); top:0%; opacity:0;"
         >
           <div class="sec3__txt">
             <h3>
@@ -396,64 +438,91 @@
           </div>
           <div
             class="sec3__imgWrap fixed"
-            data-4000="transform: translate(-50%, -50%) rotate(0deg);"
-            data-4500="transform: translate(-50%, -50%) rotate(-180deg);"
-            data-5000="transform: translate(-50%, -50%) rotate(-180deg);"
-            data-5500="transform: translate(-50%, -50%) rotate(-180deg);"
-            data-6000="transform: translate(-50%, -50%) rotate(-180deg);"
+            data-3500="transform: translate(-50%, -50%) rotate(-60deg);"
+            data-4000="transform: translate(-50%, -50%) rotate(-20deg);"
+            data-4500="transform: translate(-50%, -50%) rotate(60deg);"
+            data-5000="transform: translate(-50%, -50%) rotate(100deg);"
+            data-5500="transform: translate(-50%, -50%) rotate(100deg);"
+            data-6000="transform: translate(-50%, -50%) rotate(100deg);"
+            data-6500="transform: translate(-50%, -50%) rotate(100deg);"
+            data-7000="transform: translate(-50%, -50%) rotate(100deg);"
+            data-7500="transform: translate(-50%, -50%) rotate(100deg);"
+            data-8000="transform: translate(-50%, -50%) rotate(100deg);"
           >
             <div class="sec3__img">
               <img
                 class="ipad1"
                 src="assets/img/ipadFace1.png"
                 alt="ipad"
-                data-4000="transform:  rotate(60deg) scale(6); opacity:1; top:40vw; left:10vw;"
-                data-4500="transform:  rotate(180deg) scale(6); opacity:1;top:7vw; left:10vw;"
-                data-5000="transform:  rotate(180deg) scale(6); opacity:1;top:7vw; left:10vw;"
-                data-5500="transform:  rotate(180deg) scale(6); opacity:1;top:7vw; left:10vw;"
-                data-6000="transform:  rotate(180deg) scale(6); opacity:1;top:7vw; left:10vw;"
+                data-4000="transform:  rotate(-60deg)  scale(4); opacity:1;top:35vw; left:5vw;"
+                data-4500="transform:  rotate(-60deg)  scale(4); opacity:1;top:35vw; left:5vw;"
+                data-5000="transform:  rotate(-60deg)  scale(4); opacity:1;top:35vw; left:5vw;"
+                data-5500="transform:  rotate(-60deg)  scale(4); opacity:1;top:35vw; left:5vw;"
+                data-6000="transform:  rotate(-60deg)  scale(4); opacity:1;top:35vw; left:5vw;"
+                data-6500="transform:  rotate(-60deg)  scale(4); opacity:1;top:35vw; left:5vw;"
+                data-7000="transform:  rotate(-60deg)  scale(4); opacity:1;top:35vw; left:5vw;"
+                data-7500="transform:  rotate(-60deg)  scale(4); opacity:1;top:35vw; left:5vw;"
+                data-8000="transform:  rotate(-60deg)  scale(4); opacity:1;top:35vw; left:5vw;"
               />
             </div>
           </div>
           <div
             class="sec3__imgWrap fixed"
-            data-4000="transform: translate(-50%, -50%) rotate(0deg);"
-            data-4500="transform: translate(-50%, -50%) rotate(-0deg);"
-            data-5000="transform: translate(-50%, -50%) rotate(-180deg);"
-            data-5500="transform: translate(-50%, -50%) rotate(-180deg);"
-            data-6000="transform: translate(-50%, -50%) rotate(-180deg);"
+            data-3500="transform: translate(-50%, -50%) rotate(-80deg);"
+            data-4000="transform: translate(-50%, -50%) rotate(-55deg);"
+            data-4500="transform: translate(-50%, -50%) rotate(15deg);"
+            data-5000="transform: translate(-50%, -50%) rotate(80deg);"
+            data-5500="transform: translate(-50%, -50%) rotate(80deg);"
+            data-6000="transform: translate(-50%, -50%) rotate(80deg);"
+            data-6500="transform: translate(-50%, -50%) rotate(80deg);"
+            data-7000="transform: translate(-50%, -50%) rotate(80deg);"
+            data-7500="transform: translate(-50%, -50%) rotate(80deg);"
+            data-8000="transform: translate(-50%, -50%) rotate(80deg);"
           >
             <div class="sec3__img">
               <img
                 class="ipad1"
                 src="assets/img/ipadFace2.png"
                 alt="ipad"
-                data-4000="transform:  rotate(60deg) scale(6); opacity:1; top:50vw; left:-30vw;"
-                data-4500="transform:  rotate(180deg) scale(6); opacity:1;top:50vw; left:-30vw;"
-                data-5000="transform:  rotate(180deg) scale(6); opacity:1;top:-3vw; left:-0vw;"
-                data-5500="transform:  rotate(180deg) scale(6); opacity:1;top:-3vw; left:-0vw;"
-                data-6000="transform:  rotate(180deg) scale(6); opacity:1;top:-3vw; left:-0vw;"
+                data-4000="transform:  rotate(-50deg)  scale(5); opacity:0;top:30vw; left:5vw;"
+                data-4500="transform:  rotate(-50deg)  scale(5); opacity:1;top:30vw; left:5vw;"
+                data-5000="transform:  rotate(-50deg)  scale(5); opacity:1;top:30vw; left:5vw;"
+                data-5500="transform:  rotate(-50deg)  scale(5); opacity:1;top:30vw; left:5vw;"
+                data-6000="transform:  rotate(-50deg)  scale(5); opacity:1;top:30vw; left:5vw;"
+                data-6500="transform:  rotate(-50deg)  scale(5); opacity:1;top:30vw; left:5vw;"
+                data-7000="transform:  rotate(-50deg)  scale(5); opacity:1;top:30vw; left:5vw;"
+                data-7500="transform:  rotate(-50deg)  scale(5); opacity:1;top:30vw; left:5vw;"
+                data-8000="transform:  rotate(-50deg)  scale(5); opacity:1;top:30vw; left:5vw;"
               />
             </div>
           </div>
           <div
             class="sec3__imgWrap fixed"
-            data-4000="transform: translate(-50%, -50%) rotate(0deg);"
-            data-4500="transform: translate(-50%, -50%) rotate(-0deg);"
-            data-5000="transform: translate(-50%, -50%) rotate(-0deg);"
-            data-5500="transform: translate(-50%, -50%) rotate(-180deg);"
-            data-6000="transform: translate(-50%, -50%) rotate(-180deg);"
+            data-3500="transform: translate(-50%, -50%) rotate(-100deg);"
+            data-4000="transform: translate(-50%, -50%) rotate(-80deg);"
+            data-4500="transform: translate(-50%, -50%) rotate(-30deg);"
+            data-5000="transform: translate(-50%, -50%) rotate(60deg);"
+            data-5500="transform: translate(-50%, -50%) rotate(60deg);"
+            data-6000="transform: translate(-50%, -50%) rotate(60deg);"
+            data-6500="transform: translate(-50%, -50%) rotate(60deg);"
+            data-7000="transform: translate(-50%, -50%) rotate(60deg);"
+            data-7500="transform: translate(-50%, -50%) rotate(60deg);"
+            data-8000="transform: translate(-50%, -50%) rotate(60deg);"
           >
             <div class="sec3__img">
               <img
                 class="ipad1"
                 src="assets/img/ipadFace3.png"
                 alt="ipad"
-                data-4000="transform:  rotate(60deg) scale(6); opacity:1; top:80vw; left:-50vw;"
-                data-4500="transform:  rotate(180deg) scale(6); opacity:1;top:80vw; left:-50vw;"
-                data-5000="transform:  rotate(180deg) scale(6); opacity:1;top:80vw; left:-50vw;"
-                data-5500="transform:  rotate(180deg) scale(6); opacity:1;top:-13vw; left:-10vw;"
-                data-6000="transform:  rotate(180deg) scale(6); opacity:1;top:-13vw; left:-10vw;"
+                data-4000="transform:  rotate(-40deg)  scale(6); opacity:0;top:25vw; left:12vw;"
+                data-4500="transform:  rotate(-40deg)  scale(6); opacity:1;top:25vw; left:12vw;"
+                data-5000="transform:  rotate(-40deg) scale(6); opacity:1;top:25vw; left:12vw;"
+                data-5500="transform:  rotate(-40deg) scale(6); opacity:1;top:25vw; left:12vw;"
+                data-6000="transform:  rotate(-40deg) scale(6); opacity:1;top:25vw; left:12vw;"
+                data-6500="transform:  rotate(-40deg) scale(6); opacity:1;top:25vw; left:12vw;"
+                data-7000="transform:  rotate(-40deg) scale(6); opacity:1;top:25vw; left:12vw;"
+                data-7500="transform:  rotate(-40deg) scale(6); opacity:1;top:25vw; left:12vw;"
+                data-8000="transform:  rotate(-40deg) scale(6); opacity:1;top:25vw; left:12vw;"
               />
             </div>
           </div>
@@ -461,7 +530,13 @@
       </div>
     </section>
     <section id="section4">
-      <div class="sec4 fixed">
+      <div
+        class="sec4 fixed"
+        data-6000="transform: translate(-50%, -50%); top:200%; opacity:0;"
+        data-6500="transform: translate(-50%, -50%); top:100%; opacity:1;"
+        data-7000="transform: translate(-50%, -50%); top:50%; opacity:1;"
+        data-7500="transform: translate(-50%, -50%); top:0%; opacity:1;"
+      >
         <div class="container">
           <div class="sec4__title">
             <span>Benefits</span>
@@ -502,7 +577,16 @@
               </div>
             </div>
           </div>
-          <div class="rowBox01">
+          <div
+            class="rowBox01"
+            data-7500="transform: translateX(0%);"
+            data-8000="transform: translateX(-10%);"
+            data-9000="transform: translateX(-25%);"
+            data-10000="transform: translateX(-35%);"
+            data-10500="transform: translateX(-50%);"
+            data-11000="transform: translateX(-60%);"
+            data-11500="transform: translateX(-75%);"
+          >
             <div class="sec4__box2">
               <div class="box2__text">
                 <h3>
@@ -516,6 +600,52 @@
                   href="https://codepen.io/cassie-codes/pen/ZaeaoO"
                   target="_blank"
                   ><img src="assets/img/rocket.png" alt="로켓"
+                /></a>
+              </div>
+            </div>
+            <div class="sec4__box2">
+              <div class="box2__text">
+                <h3>
+                  STARWARS
+                  <em>Animation</em>
+                </h3>
+                <p>애니메이션</p>
+              </div>
+              <div class="box2__img">
+                <a href="https://codepen.io/r4ms3s/pen/gajVBG" target="_blank"
+                  ><img src="assets/img/starwars.png" alt="로켓"
+                /></a>
+              </div>
+            </div>
+            <div class="sec4__box2">
+              <div class="box2__text">
+                <h3>
+                  BUBBLE
+                  <em>Animation</em>
+                </h3>
+                <p>애니메이션</p>
+              </div>
+              <div class="box2__img">
+                <a
+                  href="https://codepen.io/cassie-codes/pen/ZaeaoO"
+                  target="_blank"
+                  ><img src="assets/img/burbble.png" alt="로켓"
+                /></a>
+              </div>
+            </div>
+            <div class="sec4__box2">
+              <div class="box2__text">
+                <h3>
+                  STARDUST
+                  <em>Animation</em>
+                </h3>
+                <p>애니메이션</p>
+              </div>
+              <div class="box2__img">
+                <a
+                  href="https://codepen.io/cassie-codes/pen/ZaeaoO"
+                  target="_blank"
+                  ><img src="assets/img/stardust.png" alt="로켓"
                 /></a>
               </div>
             </div>
