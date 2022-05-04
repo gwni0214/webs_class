@@ -54,7 +54,7 @@
         max-width: 1400px;
         width: 100%;
         margin: 0 auto;
-        background: rgba(0, 0, 0, 0.2);
+        /* background: rgba(0, 0, 0, 0.2); */
         height: inherit;
       }
       #section1 {
@@ -87,15 +87,15 @@
         border-radius: 50%;
       }
       .bigmac__bg .sec1__info span {
-        font-size: 0.6vw;
+        font-size: 1vw;
 
-        margin-bottom: 1em;
+        margin-bottom: 0.5vw;
       }
       .bigmac__bg .sec1__info h3 {
         font-size: 1.5vw;
         line-height: 1;
         font-weight: 700;
-        margin-bottom: 0.2em;
+        margin-bottom: 0.5vw;
       }
       .bigmac__bg .sec1__info a {
         font-size: 0.6vw;
@@ -129,7 +129,7 @@
       }
       #section3 {
         height: 2000px;
-        background: #333;
+        /* background: #333; */
         width: 100%;
       }
       .sec3 {
@@ -175,7 +175,7 @@
         opacity: 1;
         width: 300px;
         height: 300px;
-        background: #fff;
+        /* background: #fff; */
         border-radius: 50%;
         transform: translate(-50%, -50%) rotate(0deg);
         transform-origin: center;
@@ -209,7 +209,7 @@
         z-index: 1998;
       }
       #section4 {
-        height: 5000px;
+        height: 6500px;
 
         background: #ccc;
       }
@@ -236,7 +236,7 @@
         align-items: center;
         margin-bottom: 1.2vw;
         border-radius: 28px;
-        background: #ccc;
+        /* background: #ccc; */
       }
       .sec4__box1 .desc1 {
         width: 49%;
@@ -330,7 +330,7 @@
       }
       .sec4 .rowBox01 {
         display: flex;
-        width: 400%;
+        width: 408%;
         /* overflow: hidden; */
         margin-bottom: 28px;
       }
@@ -373,6 +373,32 @@
       }
       .sec4__box2 .box2__img:hover {
         transform: scale(1.05);
+      }
+      #section5 {
+        height: 2000px;
+        background: #999;
+      }
+      .sec5 {
+        width: 100%;
+      }
+      .sec5__box1 {
+        width: 100%;
+        background: #fff;
+        height: 700px;
+        border-radius: 28px;
+        text-align: center;
+        position: relative;
+      }
+      .asd {
+        position: absolute;
+        top: 200px;
+        left: 300px;
+        width: 700px;
+        height: 700px;
+        background: #999;
+      }
+      .mac123 {
+        transform: scale(0.5);
       }
     </style>
   </head>
@@ -536,6 +562,8 @@
         data-6500="transform: translate(-50%, -50%); top:100%; opacity:1;"
         data-7000="transform: translate(-50%, -50%); top:50%; opacity:1;"
         data-7500="transform: translate(-50%, -50%); top:0%; opacity:1;"
+        data-11500="transform: translate(-50%, -50%); top:0%; opacity:1;"
+        data-12500="transform: translate(-50%, -50%); top:-100%; opacity:1;"
       >
         <div class="container">
           <div class="sec4__title">
@@ -546,7 +574,11 @@
             </h3>
           </div>
           <div class="sec4__box1">
-            <div class="desc1">
+            <div
+              class="desc1"
+              data-6500="transform: translateX(-10%); opacity:0;"
+              data-7000="transform: translateX(0%); opacity:1;"
+            >
               <h3>
                 Webflow developer at the
                 <em>intersection of design and code.</em>
@@ -559,19 +591,35 @@
               </p>
             </div>
             <div class="desc2">
-              <div class="box1__sub">
+              <div
+                class="box1__sub"
+                data-6500="transform: translate(-10%, -20%); opacity:0;"
+                data-7000="transform: translate(0%, 0%); opacity:1;"
+              >
                 <div class="status1">70<span>%</span></div>
                 <p>Javascript</p>
               </div>
-              <div class="box1__sub">
+              <div
+                class="box1__sub"
+                data-6500="transform: translate(10%, -20%); opacity:0;"
+                data-7000="transform: translate(0%, 0%); opacity:1;"
+              >
                 <div class="status2">80<span>%</span></div>
                 <p>HTML</p>
               </div>
-              <div class="box1__sub">
+              <div
+                class="box1__sub"
+                data-6500="transform: translate(-10%, 20%); opacity:0;"
+                data-7000="transform: translate(0%, 0%); opacity:1;"
+              >
                 <div class="status3">80<span>%</span></div>
                 <p>CSS</p>
               </div>
-              <div class="box1__sub">
+              <div
+                class="box1__sub"
+                data-6500="transform: translate(10%, 20%); opacity:0;"
+                data-7000="transform: translate(0%, 0%); opacity:1;"
+              >
                 <div class="status4">100<span>%</span></div>
                 <p>Passion</p>
               </div>
@@ -653,7 +701,21 @@
         </div>
       </div>
     </section>
-    <section id="section5"></section>
+    <section id="section5">
+      <div
+        class="sec5 fixed"
+        data-12000="transform: translate(-50%, -50%); top:100%; opacity:0;"
+        data-12500="transform: translate(-50%, -50%); top:50%; opacity:1;"
+        data-13000="transform: translate(-50%, -50%); top:50%; opacity:1;"
+      >
+        <div class="container">
+          <div class="sec5__box1">
+            <div class="asd">asdasdasd</div>
+            <img class="mac123" src="assets/img/macbookPNG.png" alt="asd" />
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="section6"></section>
     <div class="scrollTop">0</div>
     <script src="assets/js/skrollr.min.js"></script>
