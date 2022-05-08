@@ -55,7 +55,7 @@ img {
 }
 #main {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 .btn {
   margin: 40px;
@@ -146,12 +146,12 @@ img {
   border-radius: 50%;
 }
 .memoryBox {
-  width: 800px;
-  height: 800px;
+  width: 40vw;
+  height: 40vw;
   background: #fff;
   position: absolute;
   left: 0;
-  top: -200%;
+  top: -250%;
   right: 0;
   bottom: 0;
   margin: auto;
@@ -173,12 +173,12 @@ img {
   border-radius: 50%;
 }
 .tetrisBox {
-  width: 800px;
-  height: 800px;
+  width: 40vw;
+  height: 40vw;
   background: #fff;
   position: absolute;
   left: 0;
-  top: -200%;
+  top: -250%;
   right: 0;
   bottom: 0;
   margin: auto;
