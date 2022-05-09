@@ -217,13 +217,42 @@ body {
 .sec4__title {
   margin-left: 10vw;
 }
-.sec4__title span {
+.sec4__title .benefits {
+  display: block;
   font-size: 1.3vw;
   margin-bottom: 2vw;
 }
-.sec4__title h3 {
-  font-size: 4.5vw;
+.sec4__title .bgo2 {
   margin-bottom: 6vw;
+  position: relative;
+}
+.sec4__title .bgo2 span {
+  /* display: block; */
+  opacity: 1;
+  background: -webkit-linear-gradient(
+    114deg,
+    rgba(234, 162, 110, 1) 0%,
+    rgba(234, 110, 177, 1) 24%,
+    rgba(42, 140, 195, 1) 44%,
+    rgba(234, 110, 177, 1) 68%,
+    rgba(234, 162, 110, 1) 86%,
+    rgba(234, 110, 177, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec4__title .bgx2 {
+  position: absolute;
+  left: 0;
+  top: 23%;
+}
+.sec4__title .bgx2 span {
+  opacity: 1;  
+}
+.sec4__title span {
+  font-size: 4.5vw;  
+  /* margin-bottom: 6vw; */
   font-weight: 700;
 }
 .sec4__box1 {
