@@ -195,6 +195,7 @@ body {
   font-size: 1.4vw;
   line-height: 1.6;
   text-align: right;
+  /* filter: blur(2px); */
 }
 .sec3__imgWrap {
   position: fixed;
