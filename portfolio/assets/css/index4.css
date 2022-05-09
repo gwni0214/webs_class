@@ -38,7 +38,7 @@ img {
 body {
   width: 100%;
   background-color: #f5f5f7;
-  height: 40000px;
+  height: 100000px;
 }
 .container {
   max-width: 1400px;
@@ -178,6 +178,14 @@ body {
     rgba(234, 162, 110, 1) 86%,
     rgba(234, 110, 177, 1) 100%
   );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+.sec3__text h3 em .basicT {
+  position: absolute;
+  background: #353945;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
