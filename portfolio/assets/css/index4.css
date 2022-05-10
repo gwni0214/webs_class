@@ -467,3 +467,42 @@ body {
   width: 40vw;
   height: 30vw;
 }
+.js__ref2 {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.js__ref2 .js__ref__text {
+  transform: translate(70%, 30%);
+}
+.js__ref2 h3 {
+  font-size: 4.5vw;
+  font-weight: 700;
+  color: #fff;
+}
+.js__ref2 h3 em {
+  color: #fff;
+  /* background: -webkit-linear-gradient(
+    -30deg,
+    rgba(234, 162, 110, 1) 0%,
+    rgba(234, 110, 177, 1) 24%,
+    rgba(42, 140, 195, 1) 44%,
+    rgba(234, 110, 177, 1) 68%,
+    rgba(234, 162, 110, 1) 86%,
+    rgba(234, 110, 177, 1) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+.js__ref2 .js__ref__text p {
+  margin-top: 1vw;
+  font-size: 1.4vw;
+  color: #fff;
+}
+.js__ref2 .js__ref__img {
+  transform: translate(-50%, -30%);
+  width: 40vw;
+  height: 30vw;
+}
