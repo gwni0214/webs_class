@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      //최고순위 구하는 법
+      //최저 순위 구하는 법
+      //제로 카운트가 0이면
+      //제로 카운트가 1~6이면
+      //lottos 와 win_nums를 비교하는 법
+      //filter = 조건에 맞는 값들을 배열로 반환
+      const arr = [44, 1, 0, 0, 31, 25];
+      const brr = [31, 10, 45, 1, 6, 19];
+      function solution(lottos, win_nums) {
+        const result = [];
+        let winCount = lottos.filter((num) => win_nums.includes(num)).length;
+        let zeroCount = lottos.filter((num) => num === 0).length;
+
+        // 당첨 번호와 같은 번호의 개수가 0~1개라면 6위, 아니라면 7-winCount로 최저 순위 반환
+
+        let min = "";
+        if (7 - winCount >= 6) {
+          min = 6;
+        } else {
+          min = 7 - winCount;
+        }
+
+        // 0의 개수가 6개라면 최고 순위 1위 가능, 6개 아니라면 0의 개수 만큼 숫자를 빼서 순위 올림
+
+        let max = "";
+        if (zeroCount === 6) {
+          max = 1;
+        } else {
+          max = min - zeroCount;
+        }
+
+        result.push(max, min);
+        return result;
+      }
+      solution(arr, brr);
+    </script>
+  </body>
+</html>
