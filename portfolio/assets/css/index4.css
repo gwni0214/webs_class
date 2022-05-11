@@ -378,11 +378,13 @@ body {
 .sec5__text {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 62%;
+  width: 20vw;
 }
 .sec5__text h3 {
   text-transform: uppercase;
-  font-size: 3.4vw;
+  font-size: 3.5vw;
+  font-weight: 700;
   color: #fff;
   transform: translate(-130%, -100%) scale(1);
 }
@@ -392,5 +394,20 @@ body {
 .sec5__text p {
   font-size: 1.6vw;
   color: #fff;
-  transform: translate(-220%, -200%) scale(1);
+  transform: translate(-220%, -220%) scale(1);
+}
+.sec5__img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(30%, -50%) rotate(10deg);
+  transform-origin: top right;
+
+  width: 15vw;
+  height: 15vw;
+  /* background: #fff; */
+}
+.sec5__img img {
+  width: 100%;
+  transform: translate(-50%, 50%) scale(1);
 }
