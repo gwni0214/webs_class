@@ -483,7 +483,7 @@ body {
   top: 0%;
   left: 30%;
   transform: translate(50%, 50%) scale(1) rotate(0deg);
-  transform-origin: top left;
+  transform-origin: top right;
   width: 25vw;
   height: 25vw;
   background: rgba(0, 0, 0, 0.2);
