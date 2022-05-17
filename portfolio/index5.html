@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PORTFOLIO</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/index5.css" />
+  </head>
+  <body>
+    <!--section1-->
+    <section id="section1">
+      <div
+        class="sec1__bg"
+        data-0="transform: translate(-50%, -50%) scale(3); opacity:1;"
+        data-1000="transform: translate(-50%, -65%) scale(0.6); opacity:1;"
+        data-2000="transform: translate(-50%, -65%) scale(0.6); opacity:1;"
+        data-3000="transform: translate(-50%, -100%) scale(0.6); opacity:0;"
+      >
+        <img src="assets/img/bigmac.webp" alt="bicmac" />
+      </div>
+      <div
+        class="sec1__text"
+        data-0="transform: translate(-50%, -50%) scale(1); opacity:1;"
+        data-1000="transform: translate(-50%, -65%) scale(0.4); opacity:1;"
+        data-2000="transform: translate(-50%, -65%) scale(0.4); opacity:1;"
+        data-3000="transform: translate(-50%, -150%) scale(0.4); opacity:0;"
+      >
+        <div class="face">
+          <img src="assets/img/face.png" alt="face" />
+        </div>
+        <span>Gwni Park</span>
+        <h1>The New Developer</h1>
+      </div>
+    </section>
+    <!--section1-->
+    <!-- section2 -->
+    <section id="section2">
+      <div class="sec2__bg"></div>
+      <div class="sec2__text">
+        <div class="bgo">
+          <div><span>WORLD CLASS </span><span>IS A Dream</span></div>
+          <div>
+            <span>IN THE</span>
+            <span>NEAR FUTURE</span>
+          </div>
+          <div>
+            <span>LET’S DO</span>
+            <span>BEST</span>
+          </div>
+        </div>
+        <div class="bgx">
+          <div><span>WORLD CLASS </span><span>IS A Dream</span></div>
+          <div>
+            <span>IN THE</span>
+            <span>NEAR FUTURE</span>
+          </div>
+          <div>
+            <span>LET’S DO</span>
+            <span>BEST</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- section2 -->
+
+    <div class="scrollTop">0</div>
+    <script src="assets/js/skrollr.min.js"></script>
+    <script>
+      var s = skrollr.init();
+
+      function scroll() {
+        let scrollTop =
+          window.screenY ||
+          window.pageYOffset ||
+          document.documentElement.scrollTop;
+        document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
+        // document.querySelector(".section01__bg img").style.width = scrollTop + "px";
+        requestAnimationFrame(scroll);
+      }
+      scroll();
+    </script>
+  </body>
+</html>
