@@ -390,7 +390,7 @@ body {
 .sec6 {
   width: 100%;
   height: 100vh;
-  background: #ccc;
+  /* background: #ccc; */
 }
 .container2 {
   max-width: 980px;
@@ -449,7 +449,7 @@ body {
 .sec7 {
   width: 100%;
   height: 100vh;
-  background: #ccc;
+  /* background: #ccc; */
 }
 .sec7__text {
   padding-left: 490px;
@@ -471,7 +471,7 @@ body {
   perspective: 30vw;
   transform-origin: bottom left;
   transform: translate(-50%, -50%) scale(1) rotate(0deg);
-  background: #fff;
+  /* background: #fff; */
 }
 .sec7__img img {
   position: absolute;
@@ -482,33 +482,90 @@ body {
 .sec8 {
   width: 100%;
   height: 100vh;
-  background: #ccc;
+  /* background: #999; */
 }
 .sec8__bg {
+  position: fixed;
   width: 100%;
   height: 100vh;
   background: #000;
   opacity: 0;
 }
 .sec8__text {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 96px;
   font-weight: 700;
   line-height: 1.4;
 }
+.sec8__text p span {
+  background: -webkit-linear-gradient(
+    45deg,
+    #ffc170 0%,
+    #ec787f 44%,
+    #8980ed 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .sec8__text .bgx {
   position: relative;
-}
-.sec8__text .bgx p {
-  color: #353945;
   opacity: 1;
 }
 .sec8__text .bgo {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(73%, 0%);
-  opacity: 1;
+  opacity: 0;
 }
 .sec8__text .bgo p {
   color: #fff;
+}
+/* //sec8 */
+.sec9 {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+}
+.sec9__text {
+  font-size: 26px;
+  line-height: 1.3;
+}
+.sec9__text p {
+  color: #fff;
+}
+.sec9__text p span {
+  background: -webkit-linear-gradient(
+    45deg,
+    #ffc170 0%,
+    #ec787f 44%,
+    #8980ed 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec9__img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 20vw;
+  height: 20vw;
+  perspective: 30vw;
+  background: rgba(0, 0, 0, 0.2);
+  transform-origin: top right;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+.sec9__img img {
+  /* position: absolute; */
+  transform-origin: center;
+  transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
+}
+/* //sec9 */
+.sec10 {
+  width: 100%;
+  height: 100vh;
+  background: #ccc;
 }
