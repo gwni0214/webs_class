@@ -695,7 +695,7 @@ body {
 .sec12 {
   width: 100%;
   height: 100vh;
-  background: #999;
+  /* background: #999; */
 }
 .sec12__text {
   margin-left: 25.52vw;
@@ -727,7 +727,7 @@ body {
   transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
 }
 .sec12__text2 {
-  margin-top: 27vw;
+  margin-top: 26vw;
 }
 .sec12__text2 p {
   font-size: 1.35vw;
@@ -818,7 +818,7 @@ body {
 .sec13__imgwrap {
   width: 101%;
   height: 100vh;
-  background: #999;
+  background: #000;
 }
 .sec13__img {
   position: fixed;
@@ -827,7 +827,7 @@ body {
   width: 20vw;
   height: 20vw;
   perspective: 30vw;
-  background: rgba(255, 255, 255, 0.7);
+  /* background: rgba(255, 255, 255, 0.7); */
   transform-origin: top right;
   transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
@@ -835,4 +835,84 @@ body {
   /* position: absolute; */
   transform-origin: center;
   transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
+}
+/* //sec13 */
+.sec14 {
+  width: 101%;
+  height: 100vh;
+  background: #000;
+}
+.sec14__text {
+  font-size: 1.35vw;
+  line-height: 1.4;
+}
+.sec14__text p {
+  color: #fff;
+}
+.sec14__text p span {
+  background: -webkit-linear-gradient(
+    45deg,
+    #8980ed 0%,
+    #ec787f 44%,
+    #ffc170 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec14__img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 20vw;
+  height: 20vw;
+  perspective: 30vw;
+  /* background: rgba(255, 255, 255, 0.7); */
+  transform-origin: top left;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+.sec14__img img {
+  /* position: absolute; */
+  transform-origin: center;
+  transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
+}
+/* //sec14 */
+.sec15 {
+  width: 101%;
+  height: 100vh;
+  /* background: #999; */
+}
+.sec15__bg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 101vh;
+  background: #000;
+}
+.sec15__text {
+  margin-top: 10.62vw;
+  font-size: 5vw;
+  font-weight: 700;
+  line-height: 1.46;
+  position: relative;
+}
+.sec15__text .bgo {
+  opacity: 1;
+}
+.sec15__text .bgx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+.sec15__text .bgx p {
+  color: #fff;
+}
+.sec15__text p span {
+  background: -webkit-linear-gradient(45deg, #f56772 20%, #ba6bff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
