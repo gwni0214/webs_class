@@ -728,7 +728,7 @@ body {
   transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
 }
 .sec12__text2 {
-  margin-top: 26vw;
+  margin-top: 24vw;
 }
 .sec12__text2 p {
   font-size: 1.35vw;
@@ -928,6 +928,12 @@ body {
   margin-left: 40.26vw;
   font-size: 1.35vw;
   line-height: 1.4;
+}
+.sec16__text p span {
+  background: -webkit-linear-gradient(45deg, #f56772 20%, #ba6bff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .sec16__img {
   position: fixed;
