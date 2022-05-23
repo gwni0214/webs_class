@@ -1071,7 +1071,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.sec19__text .more {
+.more {
   font-size: 1vw;
   margin-top: 1vw;
   color: #0066cc;
