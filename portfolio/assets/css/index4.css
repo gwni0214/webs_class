@@ -38,7 +38,6 @@ img {
 body {
   width: 100%;
   background-color: #f5f5f7;
-  height: 100000px;
 }
 .container {
   max-width: 1400px;
@@ -1071,6 +1070,11 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.sec19__text .more {
+  font-size: 1vw;
+  margin-top: 1vw;
+  color: #0066cc;
 }
 .sec19__img {
   position: fixed;
