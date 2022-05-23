@@ -10,62 +10,243 @@
     <link rel="stylesheet" href="assets/css/index5.css" />
   </head>
   <body>
-    <!--section1-->
     <section id="section1">
       <div
-        class="sec1__bg"
-        data-0="transform: translate(-50%, -50%) scale(3); opacity:1;"
-        data-1000="transform: translate(-50%, -65%) scale(0.6); opacity:1;"
-        data-2000="transform: translate(-50%, -65%) scale(0.6); opacity:1;"
-        data-3000="transform: translate(-50%, -100%) scale(0.6); opacity:0;"
+        class="sec1__bg fixed"
+        data-0="transform: translate(-50%, -50%) scale(3); top:50%; left:50%; opacity:1;"
+        data-2000="transform: translate(-50%, -50%) scale(0.6); top:35%; left:50%; opacity:1;"
+        data-3000="transform: translate(-50%, -50%) scale(0.5); top:0%; left:50%; opacity:0;"
       >
-        <img src="assets/img/bigmac.webp" alt="bicmac" />
+        <img src="assets/img/bigmac.webp" alt="bigmac" />
       </div>
       <div
-        class="sec1__text"
-        data-0="transform: translate(-50%, -50%) scale(1); opacity:1;"
-        data-1000="transform: translate(-50%, -65%) scale(0.4); opacity:1;"
-        data-2000="transform: translate(-50%, -65%) scale(0.4); opacity:1;"
-        data-3000="transform: translate(-50%, -150%) scale(0.4); opacity:0;"
+        class="sec1__text fixed"
+        data-0="transform: translate(-50%, -50%) scale(1); top:50%; left:50%; opacity:1;"
+        data-2000="transform: translate(-50%, -50%) scale(0.4); top:40%; left:50%; opacity:1;"
+        data-3000="transform: translate(-50%, -50%) scale(0.3); top:0%; left:50%; opacity:0;"
       >
         <div class="face">
           <img src="assets/img/face.png" alt="face" />
         </div>
-        <span>Gwni Park</span>
+        <span>GeunHee Park</span>
         <h1>The New Developer</h1>
       </div>
     </section>
-    <!--section1-->
-    <!-- section2 -->
+    <!-- //sec1 -->
     <section id="section2">
-      <div class="sec2__bg"></div>
-      <div class="sec2__text">
-        <div class="bgo">
-          <div><span>WORLD CLASS </span><span>IS A Dream</span></div>
-          <div>
-            <span>IN THE</span>
-            <span>NEAR FUTURE</span>
+      <div
+        class="sec2 fixed"
+        data-2000="top:150%; opacity:1;"
+        data-3000="top:50%; opacity:1;"
+        data-4000="top:50%; opacity:1"
+        data-5000="top:40%; opacity:0"
+      >
+        <div
+          class="sec2__bg fixed"
+          data-2000="transform: translate(-50%, -50%) scale(0.9); opacity:1;"
+          data-3000="transform: translate(-50%, -50%) scale(1); opacity:1;"
+          data-4000="transform: translate(-50%, -50%) scale(1); opacity:0;"
+        ></div>
+        <div class="sec2__text fixed">
+          <div class="bgo">
+            <div>
+              <span data-3000="opacity:0" data-3200="opacity:1"
+                >WORLD CLASS </span
+              ><span data-3400="opacity:0" data-3700="opacity:1"
+                >IS A Dream</span
+              >
+            </div>
+            <div>
+              <span data-3000="opacity:0" data-3500="opacity:1">IN THE</span>
+              <span data-3300="opacity:0" data-3800="opacity:1"
+                >NEAR FUTURE</span
+              >
+            </div>
+            <div>
+              <span data-3200="opacity:0" data-3500="opacity:1">LET’S DO</span>
+              <span data-3400="opacity:0" data-4000="opacity:1">BEST</span>
+            </div>
           </div>
-          <div>
-            <span>LET’S DO</span>
-            <span>BEST</span>
-          </div>
-        </div>
-        <div class="bgx">
-          <div><span>WORLD CLASS </span><span>IS A Dream</span></div>
-          <div>
-            <span>IN THE</span>
-            <span>NEAR FUTURE</span>
-          </div>
-          <div>
-            <span>LET’S DO</span>
-            <span>BEST</span>
+          <div class="bgx">
+            <div>
+              <span data-3000="opacity:1" data-3200="opacity:0"
+                >WORLD CLASS </span
+              ><span data-3400="opacity:1" data-3700="opacity:0"
+                >IS A Dream</span
+              >
+            </div>
+            <div>
+              <span data-3000="opacity:1" data-3500="opacity:0">IN THE</span>
+              <span data-3300="opacity:1" data-3800="opacity:0"
+                >NEAR FUTURE</span
+              >
+            </div>
+            <div>
+              <span data-3200="opacity:1" data-3500="opacity:0">LET’S DO</span>
+              <span data-3400="opacity:1" data-4000="opacity:0">BEST</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- section2 -->
-
+    <!-- //sec2 -->
+    <section id="section3">
+      <div
+        class="sec3 fixed"
+        data-5000="top:150%; opacity:1;"
+        data-6000="top:50%; opacity:1;"
+        data-9000="top:50%; opacity:1;"
+        data-10000="top:30%; opacity:0;"
+      >
+        <div class="container">
+          <div class="sec3__text">
+            <div
+              class="sec3__title"
+              data-6000="transform:translate(0%,10%);opacity:0;"
+              data-6500="transform:translate(0%,0%);opacity:1;"
+            >
+              <h3>
+                ABOUT ME
+                <em
+                  ><span class="on">기본</span
+                  ><span data-6000="opacity:1;" data-7000="opacity:0;"
+                    >기본</span
+                  >이 되어있는</em
+                >
+              </h3>
+            </div>
+            <div class="sec3__desc">
+              <p
+                data-6000="transform: translate(150%, -50%) scale(4); filter:blur(10px); opacity:0;"
+                data-6500="transform: translate(0%, 0%) scale(1); filter:blur(0px); opacity:1;"
+              >
+                도전을 두려워하지 않고 새로운것을 배우는 사람
+              </p>
+              <p
+                data-6500="transform: translate(100%, -50%) scale(4); filter:blur(10px); opacity:0;"
+                data-7000="transform: translate(0%, 0%) scale(1); filter:blur(0px); opacity:1;"
+              >
+                시간을 효율적으로 쓰는 경제적인 사람
+              </p>
+              <p
+                data-7000="transform: translate(100%, -50%) scale(4); filter:blur(10px); opacity:0;"
+                data-7500="transform: translate(0%, 0%) scale(1); filter:blur(0px); opacity:1;"
+              >
+                1픽셀의 디테일을 아는 섬세한 감성의 사람
+              </p>
+              <p
+                data-7500="transform: translate(100%, -50%) scale(4); filter:blur(10px); opacity:0;"
+                data-8000="transform: translate(0%, 0%) scale(1); filter:blur(0px); opacity:1;"
+              >
+                좋은 영향력을 주도하는 센스있는 사람
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="sec3__img fixed"
+          data-8000="transform: translate(-50%, -50%) rotate(50deg) scale(1); top:60%; left:10%; opacity:0;"
+          data-9000="transform: translate(-50%, -50%) rotate(-30deg) scale(1); top:50%; left:50%; opacity:1;"
+          data-10000="transform: translate(-50%, -50%) rotate(-100deg) scale(1); top:0%; left:70%; opacity:1;"
+        >
+          <img
+            src="assets/img/face3.webp"
+            alt="face1"
+            data-8000="transform: translate(10%, 70%) rotate(120deg) rotate3d(1, 0, 0, -10deg) scale(1.3);"
+            data-9000="transform: translate(40%, 0%) rotate(80deg) rotate3d(1, 0, 0, 10deg) scale(1);"
+            data-10000="transform: translate(40%, 0%) rotate(80deg) rotate3d(1, 0, 0, 10deg) scale(0.9);"
+          />
+          <img
+            src="assets/img/face1.webp"
+            alt="face1"
+            data-8000="transform: translate(-80%, -50%) rotate(140deg) rotate3d(1, 0, 0, 10deg) scale(1.7);"
+            data-9000="transform: translate(-70%, -60%) rotate(130deg) rotate3d(1, 0, 0, 10deg) scale(1.3);"
+            data-10000="transform: translate(-70%, -60%) rotate(130deg) rotate3d(1, 0, 0, 10deg) scale(1.2);"
+          />
+          <img
+            src="assets/img/face2.webp"
+            alt="face1"
+            data-8000="transform: translate(-170%, -210%) rotate(160deg) rotate3d(0, 0, 0, 10deg) scale(2);"
+            data-9000="transform: translate(-190%, -210%) rotate(150deg) rotate3d(0, 0, 0, 10deg) scale(1.4);"
+            data-10000="transform: translate(-190%, -210%) rotate(150deg) rotate3d(0, 0, 0, 10deg) scale(1.3);"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- //sec3 -->
+    <section id="section4">
+      <div class="sec4 fixed" data-10000="top:150%;" data-11000="top:50%;">
+        <div class="container">
+          <div class="sec4__title">
+            <span class="benefits">Benefits</span>
+            <div class="bgo" data-11000="opacity:0;" data-12000="opacity:1;">
+              <p>
+                Your Perfect<br />
+                Developer Partner.
+              </p>
+            </div>
+            <div class="bgx" data-11000="opacity:1;" data-12000="opacity:0;">
+              <p>
+                Your Perfect<br />
+                Developer Partner.
+              </p>
+            </div>
+          </div>
+          <div class="sec4__box1">
+            <div
+              class="desc1"
+              data-11000="transform: translate(-20%,0%); opacity:0;"
+              data-12000="transform: translate(0%,0%); opacity:1;"
+            >
+              <h3>
+                New developer at the
+                <em>intersection of design and code.</em>
+              </h3>
+              <p>
+                UI/UX에 대한 개념부터 웹 접근성, 깔끔한 구조의 코딩까지. 좋은
+                디자인이란 무엇인지에 대해서 끊임없이 고민하는 열정있는 신입 웹
+                디벨로퍼입니다. 항상 새로운것을 배우는데 흥미를 느끼고 식지않는
+                열정으로 재밌게 성장하고 있습니다.
+              </p>
+            </div>
+            <div class="desc2">
+              <div
+                class="box1__sub"
+                data-11000="transform: translate(-10%,-20%); opacity:0;"
+                data-12000="transform: translate(0%,0%); opacity:1;"
+              >
+                <div class="status1">70<span>%</span></div>
+                <p>Javascript</p>
+              </div>
+              <div
+                class="box1__sub"
+                data-11000="transform: translate(10%,-20%); opacity:0;"
+                data-12000="transform: translate(0%,0%); opacity:1;"
+              >
+                <div class="status2">80<span>%</span></div>
+                <p>HTML</p>
+              </div>
+              <div
+                class="box1__sub"
+                data-11000="transform: translate(-10%,20%); opacity:0;"
+                data-12000="transform: translate(0%,0%); opacity:1;"
+              >
+                <div class="status3">80<span>%</span></div>
+                <p>CSS</p>
+              </div>
+              <div
+                class="box1__sub"
+                data-11000="transform: translate(10%,20%); opacity:0;"
+                data-12000="transform: translate(0%,0%); opacity:1;"
+              >
+                <div class="status4">100<span>%</span></div>
+                <p>Passion</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="scrollTop">0</div>
     <script src="assets/js/skrollr.min.js"></script>
     <script>

@@ -1149,3 +1149,12 @@ body {
 .sec20__text .bgo p {
   color: #fff;
 }
+.more2 {
+  margin-top: 2vw;
+  color: #0066cc;
+  font-size: 1vw;
+  transition: color 1s;
+}
+.more2:hover {
+  color: #fff;
+}
