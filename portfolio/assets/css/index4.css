@@ -665,6 +665,7 @@ body {
   color: #fff;
 }
 .sec11__desc p {
+  white-space: nowrap;
   font-size: 1.35vw;
   line-height: 1.4;
 }
@@ -698,6 +699,7 @@ body {
   /* background: #999; */
 }
 .sec12__text {
+  white-space: nowrap;
   margin-left: 25.52vw;
 }
 .sec12__text p {
