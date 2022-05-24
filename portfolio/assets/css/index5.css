@@ -620,11 +620,92 @@ body {
   width: 20vw;
   height: 20vw;
   perspective: 30vw;
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
   transform-origin: top right;
   transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
 .sec__js6__img img {
+  transform-origin: center;
+  transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
+}
+/* //sec__js6 */
+.sec__js7 {
+  width: 100%;
+  height: 100vh;
+}
+.sec__js7__title {
+  font-size: 5vw;
+  font-weight: 700;
+  line-height: 1.46;
+}
+.sec__js7__title p span {
+  background: -webkit-linear-gradient(
+    45deg,
+    #80d0f2 0%,
+    #5c82ff 50%,
+    #c480ff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec__js7__text {
+  margin-top: 4.8vw;
+  font-size: 1.35vw;
+  line-height: 1.4;
+}
+.sec__js7__text p span {
+  background: -webkit-linear-gradient(
+    45deg,
+    #80d0f2 0%,
+    #5c82ff 50%,
+    #c480ff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec__js7__img {
+  width: 20vw;
+  height: 20vw;
+  perspective: 30vw;
+  /* background: rgba(0, 0, 0, 0.2); */
+  transform-origin: top right;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+.sec__js7__img img {
+  transform-origin: center;
+  transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
+}
+/* //sec__js7 */
+.sec__js8 {
+  width: 100%;
+  height: 100vh;
+}
+.sec__js8__text {
+  font-size: 1.35vw;
+  line-height: 1.4;
+}
+.sec__js8__text p span {
+  background: -webkit-linear-gradient(
+    45deg,
+    #80d0f2 0%,
+    #5c82ff 50%,
+    #c480ff 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec__js8__img {
+  width: 20vw;
+  height: 20vw;
+  perspective: 30vw;
+  /* background: rgba(0, 0, 0, 0.2); */
+  transform-origin: top right;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+.sec__js8__img img {
   transform-origin: center;
   transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
 }
