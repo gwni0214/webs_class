@@ -781,11 +781,12 @@ body {
   width: 20vw;
   height: 20vw;
   perspective: 30vw;
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
   transform-origin: top right;
   transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
 .sec__site1__img img {
   transform-origin: center;
+
   transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
 }
