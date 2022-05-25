@@ -355,13 +355,14 @@ body {
   left: 5%;
 }
 .rowbox1__text p {
+  
   white-space: nowrap;
   line-height: 1.2;
   font-size: 4.5vw;
   font-weight: 700;
 }
 .rowbox1__text p span {
-  background: -webkit-linear-gradient(45deg, #5a9ad3 20%, #bc70ff 100%);
+  background: -webkit-linear-gradient(45deg, #0c6ec4 20%, #7f0ee2 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -491,10 +492,13 @@ body {
 }
 .sec_js3__title {
   margin-top: 10.62vw;
-  font-size: 5vw;
-  font-weight: 700;
+  
   line-height: 1.46;
   position: relative;
+}
+.sec_js3__title h3 {
+  font-size: 5vw;
+  font-weight: 700;
 }
 .sec_js3__title h3 em {
   background: -webkit-linear-gradient(
@@ -566,6 +570,7 @@ body {
   width: 101%;
   height: 100vh;
   background: #000;
+  
 }
 .sec__js4__text {
   font-size: 1.35vw;
