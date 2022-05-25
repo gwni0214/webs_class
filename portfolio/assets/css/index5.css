@@ -818,12 +818,114 @@ body {
   width: 20vw;
   height: 20vw;
   perspective: 30vw;
-  background: rgba(0, 0, 0, 0.2);
+  /* background: rgba(0, 0, 0, 0.2); */
   transform-origin: bottom left;
   transform: translate(-50%, -50%) scale(1) rotate(0deg);
 }
 .sec__site2__img img {
-  transform-origin: center;
   position: absolute;
+  transform-origin: center;
+  transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
+}
+/* //sec__site2 */
+.sec__site3 {
+  width: 101%;
+  height: 100vh;
+  background: #000;
+}
+.sec__site3_text {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 5vw;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.sec__site3_text p {
+  color: #fff;
+}
+.sec__site3_text p span {
+  background: -webkit-linear-gradient(
+    45deg,
+    #ffc170 0%,
+    #ec787f 44%,
+    #8980ed 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* sec__site3 */
+.sec__site4 {
+  width: 101%;
+  height: 100vh;
+  background: #000;
+}
+.sec__site4__text {
+  margin-top: 1vw;
+  font-size: 1.35vw;
+  line-height: 1.4;
+}
+.sec__site4__text p {
+  color: #fff;
+}
+.sec__site4__text p span {
+  background: -webkit-linear-gradient(
+    45deg,
+    #ffc170 0%,
+    #ec787f 44%,
+    #8980ed 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec__site4__img {
+  width: 20vw;
+  height: 20vw;
+  perspective: 30vw;
+  /* background: rgba(0, 0, 0, 0.2); */
+  transform-origin: top right;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+.sec__site4__img img {
+  transform-origin: center;
+  transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
+}
+/* //sec__site4 */
+.sec__site5 {
+  width: 101%;
+  height: 100vh;
+  background: #000;
+}
+.sec__text5__text {
+  margin-top: 1vw;
+  font-size: 1.35vw;
+  line-height: 1.4;
+}
+.sec__text5__text p {
+  color: #fff;
+}
+.sec__text5__text p span {
+  background: -webkit-linear-gradient(
+    45deg,
+    #ffc170 0%,
+    #ec787f 44%,
+    #8980ed 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec__site5__img {
+  width: 20vw;
+  height: 20vw;
+  perspective: 30vw;
+  /* background: rgba(0, 0, 0, 0.2); */
+  transform-origin: top right;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+.sec__site5__img img {
+  transform-origin: center;
   transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
 }
