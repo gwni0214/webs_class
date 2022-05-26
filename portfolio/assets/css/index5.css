@@ -95,11 +95,6 @@ body {
 .sec1__text .phone {
   font-size: 1.3vw;
 }
-@media (max-width: 1200px) {
-  .sec1__bg {
-    display: none;
-  }
-}
 /* //sec1 */
 .sec2 {
   width: 100%;
@@ -212,6 +207,15 @@ body {
   transform-origin: center;
   transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
 }
+@media (max-width: 480px) {
+  .sec3 {
+    height: 30vh;
+  }
+  .sec3__text {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 /* //sec3 */
 .sec4 {
   width: 100%;
@@ -261,6 +265,7 @@ body {
   border-radius: 1.5vw;
   /* background: #ccc; */
 }
+
 .sec4__box1 .desc1 {
   width: 49%;
   height: 100%;
