@@ -8,14 +8,78 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/fonts.css" />
     <link rel="stylesheet" href="assets/css/index5.css" />
+    <style>
+      .loading {
+    width: 100%; height: 100%;
+    background: #000 ;
+    z-index: 9999;
+  }  
+  .loading_text {
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+  }  
+  .loading_text_words  {
+    display: inline-block;
+    margin: 0 5px;
+    color:#fff;
+    animation: blur 1.5s infinite linear alternate;
+  }  
+  .loading_text_words:nth-child(1) {animation-delay:100ms;}
+  .loading_text_words:nth-child(2) {animation-delay:300ms;}
+  .loading_text_words:nth-child(3) {animation-delay:500ms;}
+  .loading_text_words:nth-child(4) {animation-delay:700ms;}
+  .loading_text_words:nth-child(5) {animation-delay:900ms;}
+  .loading_text_words:nth-child(6) {animation-delay:1100ms;}
+  .loading_text_words:nth-child(7) {animation-delay:1300ms;}
+  
+  @keyframes blur {
+    0%{filter: blur(0px);}
+    100% {filter: blur(4px);}
+  }
+  /*로딩*/
+  .progress {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 99999;
+    width: 100%;
+    height: 100vh;
+    background: -webkit-linear-gradient(
+      114deg,
+      rgba(234, 162, 110, 1) 0%,
+      rgba(234, 110, 177, 1) 24%,
+      rgba(42, 140, 195, 1) 44%,
+      rgba(234, 110, 177, 1) 68%,
+      rgba(234, 162, 110, 1) 86%,
+      rgba(234, 110, 177, 1) 100%
+    );
+  }  
+  .progress .progress-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    font-size: 6vw;
+    color: #fff;
+    font-family: "GmarketSans";
+  }
+    </style>
   </head>
   <body>
+     <!--로딩-->
+     <div class="progress"><span class="progress-text">0</span></div>
+     <!--로딩-->
     <section id="section1">
       <div
         class="sec1__bg fixed"
         data-0="transform: translate(-50%, -50%) scale(3); top:50%; left:50%; opacity:1;"
         data-2000="transform: translate(-50%, -50%) scale(0.6); top:35%; left:50%; opacity:1;"
         data-3000="transform: translate(-50%, -50%) scale(0.5); top:0%; left:50%; opacity:0;"
+        data-40000="transform: translate(-50%, -50%) scale(0.5); top:35%; left:50%; opacity:0;"
+        data-41000="transform: translate(-50%, -50%) scale(0.6); top:35%; left:50%; opacity:1;"
+        data-43000="transform: translate(-50%, -50%) scale(3); top:50%; left:50%; opacity:1;"
       >
         <img src="assets/img/bigmac.webp" alt="bigmac" />
       </div>
@@ -24,12 +88,23 @@
         data-0="transform: translate(-50%, -50%) scale(1); top:50%; left:50%; opacity:1;"
         data-2000="transform: translate(-50%, -50%) scale(0.4); top:40%; left:50%; opacity:1;"
         data-3000="transform: translate(-50%, -50%) scale(0.3); top:0%; left:50%; opacity:0;"
+        data-40000="transform: translate(-50%, -50%) scale(0.3); top:40%; left:50%; opacity:0;"
+        data-41000="transform: translate(-50%, -50%) scale(0.4); top:40%; left:50%; opacity:1;"
+        data-43000="transform: translate(-50%, -50%) scale(1); top:50%; left:50%; opacity:1;"
       >
         <div class="face">
           <img src="assets/img/face.png" alt="face" />
         </div>
         <span>GeunHee Park</span>
         <h1>The New Developer</h1>
+        <div class="address"
+        data-38000="display: none;"
+        data-39000="display: block;"
+        >
+          <p class="mail">sbxjs6999@naver.com</p>
+        <p class="phone">010-4104-6999</p>
+        </div>
+        
       </div>
     </section>
     <!-- //sec1 -->
@@ -181,6 +256,8 @@
         data-11000="top:50%;"
         data-12000="top:50%;"
         data-13000="top:-22%;"
+        data-38000="top:-22%;"
+        data-39000="top:-130%;"
       >
         <div class="container">
           <div class="sec4__title">
@@ -259,6 +336,10 @@
         class="sec5 fixed"
         data-12000="top:125%; opacity:0;"
         data-13000="top:50%; opacity:1;"
+        data-38000="top:50%; opacity:1;"
+        data-39000="top:-50%; opacity:1;"
+        
+
       >
         <div class="container">
           <div 
@@ -312,8 +393,66 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>    
     <!-- //sec5 -->
+    <section id="section6">
+      <div class="sec6 fixed"
+      data-38000="top:150%;"
+      data-39000="top:50%;"
+      data-40000="top:-100%;"
+      >
+        <div class="container2">
+          <div class="sec6__title">
+            <p>
+              <span>포트폴리오</span>를<br>
+              즐겨주셔서 감사합니다.
+            </p>
+          </div>
+          <div class="sec6__text">
+            <p>
+              제가 준비한 컨텐츠는 여기까지입니다.<br>
+              보여주려고 한 작업들은 여기서 끝이지만<br>
+              지금도, 앞으로도 계속 공부하며 <br>
+              보다 짜임새 있는 코딩과 뛰어난 디자인을<br>
+              향해서 달려나갈 것입니다.<br>
+              저의 작업물이 마음에 드셨다면 언제든지!<br>
+              <span>메일</span>과 <span>전화</span> 심지어 <span><a href="https://www.instagram.com/gwni0214/" target="_blank">Instagram까지</a></span>.<br>
+              어떤 방식으로든 연락해주시면 감사하겠습니다.
+            </p>
+            <p class="more"><a href="https://gwni0214.github.io/webs_class/" target="_blank">근희의 더 많은 작업 구경하기</a></p>
+          </div>
+        </div>
+        <div class="sec6__img fixed"
+        data-38700="transform: translate(-50%, -50%) scale(1) rotate(10deg); top:120%; left:70%;"
+        data-40000="transform: translate(-50%, -50%) scale(1) rotate(-30deg); top:50%; left:-30%;"
+        >
+          <img src="assets/img/final6.png" alt="asd"
+          data-38700="transform: translate(10%, 0%) rotate(0deg) rotate3d(1, 0, 0, 10deg) scale(1.5);"
+          data-40000="transform: translate(20%, -20%) rotate(-20deg) rotate3d(1, -1, 0, 10deg) scale(0.5);"
+          >
+          <img src="assets/img/final1.png" alt="asd"
+          data-38700="transform: translate(60%, -30%) rotate(20deg) rotate3d(1, 0, 0, 10deg) scale(1.6);"
+          data-40000="transform: translate(50%, -90%) rotate(0deg) rotate3d(1, -1, 0, 10deg) scale(0.7);"
+          >
+          <img src="assets/img/final2.png" alt="asd"
+          data-38700="transform: translate(110%, -90%) rotate(30deg) rotate3d(1, 0, 0, 5deg) scale(1.7);"
+          data-40000="transform: translate(100%, -120%) rotate(0deg) rotate3d(1, -1, 0, 5deg) scale(1);"
+          >
+          <img src="assets/img/final3.png" alt="asd"
+          data-38700="transform: translate(160%, -130%) rotate(40deg) rotate3d(1, 0, 0, 5deg) scale(1.8);"
+          data-40000="transform: translate(130%, -160%) rotate(10deg) rotate3d(1, -1, 0, 5deg) scale(1.2);"
+          >
+          <img src="assets/img/final4.png" alt="asd"
+          data-38700="transform: translate(210%, -200%) rotate(50deg) rotate3d(1, 0, 0, 5deg) scale(1.9);"
+          data-40000="transform: translate(180%, -150%) rotate(20deg) rotate3d(1, -1, 0, 5deg) scale(1.5);"
+          >
+          <img src="assets/img/final5.png" alt="asd"
+          data-38700="transform: translate(240%, -220%) rotate(50deg) rotate3d(1, 0, 0, 0deg) scale(2.3);"
+          data-40000="transform: translate(250%, -170%) rotate(40deg) rotate3d(1, -1, 0, 0deg) scale(1.7);"
+          >
+        </div>
+      </div>
+    </section>
     <section id="section__js1">
       <div
         class="sec__js1 fixed"
@@ -965,6 +1104,8 @@
       </div>
     </section>
     <div class="scrollTop">0</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="assets/js/skrollr.min.js"></script>
     <script>
       var s = skrollr.init();
@@ -979,6 +1120,69 @@
         requestAnimationFrame(scroll);
       }
       scroll();
+      // 로딩 페이지
+    function loading() {
+            console.log('loading')
+            let progress = $(".progress"),
+                progressText = progress.find(".progress-text"),
+                imgLoad = imagesLoaded("body"),
+                imgTotal = imgLoad.images.length,
+                imgLoaded = 0,
+                imgCurrent = 0,
+                progressTimer = setInterval(updateProgress, 1000 / 60);              
+            imgLoad.on("progress", function () {
+                imgLoaded++;
+            });
+
+            function updateProgress() {
+                let target = (imgLoaded / imgTotal) * 100;
+
+                imgCurrent += (target - imgCurrent) * 0.1;
+                progressText.text(Math.floor(imgCurrent) + "%");
+
+                if (imgCurrent >= 100) {
+                    clearInterval(progressTimer);
+                    progress.delay(1000).animate({
+                        top: "-130%"
+                    }, 400);
+
+                    $("body").addClass("show");
+
+                    let tl = new TimelineMax();
+                    let navtl = new TimelineMax();
+
+                    tl.staggerFromTo(".main-text span", 0.8, {
+                        ease: Back.easeOut.config(1.7),
+                        delay: 2,
+                        opacity: 0,
+                        y: 80
+                    }, {
+                        ease: Back.easeOut.config(1.7),
+                        delay: 2,
+                        opacity: 1,
+                        y: 0
+                    }, 0.05);
+
+                    navtl.staggerFromTo("#nav ul li", 0.6, {
+                        ease: Back.easeOut.config(1.7),
+                        delay: 3.5,
+                        opacity: 0,
+                        x: 40
+                    }, {
+                        ease: Back.easeOut.config(1.7),
+                        delay: 3.5,
+                        opacity: 1,
+                        x: 0
+                    }, 0.05);
+                }
+
+                if (imgCurrent > 99) {
+                    imgCurrent = 100;
+                    
+                }
+            }
+        }
+        loading();
     </script>
   </body>
 </html>

@@ -35,7 +35,6 @@ img {
 }
 body {
   width: 100%;
-  height: 60000px;
   background: #f5f5f7;
 }
 .container {
@@ -81,6 +80,19 @@ body {
   font-size: 6vw;
   font-weight: 700;
   white-space: nowrap;
+}
+.address {
+  text-align: center;
+}
+.sec1__text .mail {
+  font-size: 1.3vw;
+  color: #0066cc;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  z-index: 9999;
+}
+.sec1__text .phone {
+  font-size: 1.3vw;
 }
 /* //sec1 */
 .sec2 {
@@ -355,14 +367,13 @@ body {
   left: 5%;
 }
 .rowbox1__text p {
-  
   white-space: nowrap;
   line-height: 1.2;
   font-size: 4.5vw;
   font-weight: 700;
 }
 .rowbox1__text p span {
-  background: -webkit-linear-gradient(45deg, #0c6ec4 20%, #7f0ee2 100%);
+  background: -webkit-linear-gradient(45deg, #5a9ad3 20%, #bc70ff 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -401,6 +412,48 @@ body {
 }
 
 /* //sec5 */
+.sec6 {
+  width: 100%;
+  height: 100vh;
+}
+.sec6__title {
+  margin-top: 5vw;
+  font-size: 5vw;
+  font-weight: 700;
+  line-height: 1.46;
+}
+.sec6__title p span {
+  background: -webkit-linear-gradient(45deg, #f56772 20%, #ba6bff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec6__text {
+  margin-top: 5vw;
+  white-space: nowrap;
+  margin-top: 4.8vw;
+  margin-left: 35.26vw;
+  font-size: 1.35vw;
+  line-height: 1.6;
+}
+.sec6__text p span {
+  background: -webkit-linear-gradient(45deg, #f56772 20%, #ba6bff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sec6__img {
+  width: 20vw;
+  height: 20vw;
+  perspective: 30vw;
+  /* background: rgba(0, 0, 0, 0.2); */
+  transform-origin: top right;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+}
+.sec6__img img {
+  transform-origin: center;
+  transform: translate(0%, 0%) rotate(0deg) rotate3d(0, 0, 0, 0deg) scale(1);
+}
 /* sec__js */
 .sec__js1 {
   width: 100%;
@@ -492,7 +545,7 @@ body {
 }
 .sec_js3__title {
   margin-top: 10.62vw;
-  
+
   line-height: 1.46;
   position: relative;
 }
@@ -570,7 +623,6 @@ body {
   width: 101%;
   height: 100vh;
   background: #000;
-  
 }
 .sec__js4__text {
   font-size: 1.35vw;
