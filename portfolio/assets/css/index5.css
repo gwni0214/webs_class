@@ -67,6 +67,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 9999;
 }
 .sec1__text .face img {
   width: 10vw;
@@ -93,6 +94,11 @@ body {
 }
 .sec1__text .phone {
   font-size: 1.3vw;
+}
+@media (max-width: 1200px) {
+  .sec1__bg {
+    display: none;
+  }
 }
 /* //sec1 */
 .sec2 {

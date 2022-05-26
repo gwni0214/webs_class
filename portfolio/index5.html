@@ -40,8 +40,8 @@
   /*로딩*/
   .progress {
     position: fixed;
-    right: 10px;
-    top: 10px;
+    right: 0;
+    top: 0;
     z-index: 99999;
     width: 100%;
     height: 100vh;
@@ -101,7 +101,7 @@
         data-38000="display: none;"
         data-39000="display: block;"
         >
-          <p class="mail">sbxjs6999@naver.com</p>
+          <p class="mail"><a href="mailto:sbxjs6999@naver.com?subject=포트폴리오에서 보내는 메세지">sbxjs6999@naver.com</a></p>
         <p class="phone">010-4104-6999</p>
         </div>
         
@@ -861,7 +861,10 @@
       </div>
     </section>
     <!-- //sec__js8 -->
-    <section id="section__site1">
+    <section id="section__site1"
+    data-27000="display:none;"
+    data-27001="display:block;"
+    >
       <div class="sec__site1 fixed"
       data-28000="top:100%;"
       data-29000="top:50%;"
@@ -949,7 +952,10 @@
       </div>
     </section>
     <!-- //sec__site1 -->
-    <section id="section__site2">
+    <section id="section__site2"
+    data-27000="display:none;"
+    data-27001="display:block;"
+    >
       <div class="sec__site2 fixed"
       data-30500="opacity:0; top:50%; left:50%;"
       data-31500="opacity:1; top:50%; left:50%;"
@@ -999,7 +1005,10 @@
       </div>
     </section>
     <!-- //sec__site2 -->
-    <section id="section__site3">
+    <section id="section__site3"
+    data-27000="display:none;"
+    data-27001="display:block;"
+    >
       <div class="sec__site3 fixed"
       data-31500="transform: translate(-50%, -50%) scale(0); top:120%; left:100%; opacity:0;"
       data-33000="transform: translate(-50%, -50%) scale(1); top:50%; left:50%; opacity:1;"
@@ -1017,7 +1026,10 @@
       </div>
     </section>
     <!-- //sec__site3 -->
-    <section id="section__site4">
+    <section id="section__site4"
+    data-27000="display:none;"
+    data-27001="display:block;"
+    >
       <div class="sec__site4 fixed"
       data-33000="top:150%;"
       data-33001="top:149%;"
@@ -1062,7 +1074,10 @@
       </div>
     </section>
     <!-- //sec__site4 -->
-    <section id="section__site5">
+    <section id="section__site5"
+    data-27000="display:none;"
+    data-27001="display:block;"
+    >
       <div class="sec__site5 fixed"
       data-34000="top:150%; left:50%;"
       data-34001="top:149%; left:50%;"
@@ -1112,7 +1127,7 @@
 
       function scroll() {
         let scrollTop =
-          window.screenY ||
+          window.scrollY ||
           window.pageYOffset ||
           document.documentElement.scrollTop;
         document.querySelector(".scrollTop").innerText = Math.round(scrollTop);
@@ -1146,34 +1161,7 @@
                         top: "-130%"
                     }, 400);
 
-                    $("body").addClass("show");
-
-                    let tl = new TimelineMax();
-                    let navtl = new TimelineMax();
-
-                    tl.staggerFromTo(".main-text span", 0.8, {
-                        ease: Back.easeOut.config(1.7),
-                        delay: 2,
-                        opacity: 0,
-                        y: 80
-                    }, {
-                        ease: Back.easeOut.config(1.7),
-                        delay: 2,
-                        opacity: 1,
-                        y: 0
-                    }, 0.05);
-
-                    navtl.staggerFromTo("#nav ul li", 0.6, {
-                        ease: Back.easeOut.config(1.7),
-                        delay: 3.5,
-                        opacity: 0,
-                        x: 40
-                    }, {
-                        ease: Back.easeOut.config(1.7),
-                        delay: 3.5,
-                        opacity: 1,
-                        x: 0
-                    }, 0.05);
+                    $("body").addClass("show");                                        
                 }
 
                 if (imgCurrent > 99) {
