@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asnet</title>
+    <style>
+        @font-face {
+            font-family: "GmarketSans";
+            font-weight: 300;
+            font-style: normal;
+            src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot");
+            src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix") format("embedded-opentype"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2") format("woff2"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff") format("woff"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf") format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "GmarketSans";
+            font-weight: 500;
+            font-style: normal;
+            src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot");
+            src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix") format("embedded-opentype"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2") format("woff2"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff") format("woff"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf") format("truetype");
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: "GmarketSans";
+            font-weight: 700;
+            font-style: normal;
+            src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot");
+            src: url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix") format("embedded-opentype"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2") format("woff2"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff") format("woff"),
+                url("https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf") format("truetype");
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "GmarketSans";
+            color: #353945;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .business__card {
+            background-color: #fff;
+            border-radius: 15px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 450px;
+            aspect-ratio: 9/5;
+            border: 2px solid #666;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            transition: all 2s;
+        }
+
+        .business__card:hover {
+            width: 500px;
+            background: -webkit-linear-gradient(45deg,
+                    #80d0f2 0%,
+                    #5c82ff 50%,
+                    #c480ff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo__section {
+            text-align: right;
+            font-size: 20px;
+        }
+
+        .logo__section h1 {
+            line-height: 0.75;
+        }
+
+        .card__name {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info__section li {
+            text-align: left;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="business__card">
+        <div class="logo__section">
+            <h1>asnet</h1>
+            <small>www.asnet.co.kr</small>
+        </div>
+        <div class="name__section">
+            <div class="card__name">
+                <h2>박 근 희</h2>
+                <h3>geunhee park</h3>
+            </div>
+        </div>
+        <ul class="info__section">
+            <li>
+                <address>010-4104-6999</address>
+            </li>
+            <li>
+                <address>sbxjs6999@naver.com</address>
+            </li>
+            <li>
+                <address>Instagram: gwni0214</address>
+            </li>
+            <li>
+                <address>안산시 단원구 화정로1길 20</address>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

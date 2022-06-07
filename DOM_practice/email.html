@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이메일</title>
+</head>
+<body>
+    <form action="#" onsubmit="return emailCheck()">
+        <fieldset>
+            <legend>이메일</legend>
+            <div>
+                <label for="email">이메일</label>
+                <input type="text" id="email" name="email" placeholder="sample@gmail.com">
+            </div>
+            <button type="submit">이메일 체크</button>
+        </fieldset>
+    </form>
+
+    <script>
+        function emailCheck(){        
+        let getmail = RegExp(/[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i);
+        if(!getmail.test(document.querySelector("#email").value)){
+            alert("이메일 형식에 맞게 작성해주세요.")
+            console.log("false")
+        } else {
+            alert("형식이 맞습니다.");
+            console.log("true")
+        }
+    }
+    </script>
+</body>
+</html>
