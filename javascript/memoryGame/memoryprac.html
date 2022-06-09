@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link
+      href="https://webfontworld.github.io/NexonMaplestory/NexonMaplestory.css"
+      rel="stylesheet"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", "NexonMaplestory";
+      }
+      body {
+        background: #ecb390;
+      }
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+      button {
+        border: 0;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .card__wrap {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px;
+        height: 600px;
+        background: #fff;
+      }
+      .card__wrap li {
+        list-style: none;
+      }
+      .card_inner {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+      }
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: space-around;
+        width: 100%;
+        height: 100%;
+      }
+      .cards li {
+        width: calc(100% / 4 - 10px);
+        height: calc(100% / 4 - 10px);
+
+        perspective: 1000px; /*원근점 설정*/
+        transform-style: preserve-3d; /*3D 쓰겠다고 선언*/
+        position: relative;
+      }
+      .cards li .view {
+        position: absolute;
+        background: #fff;
+        padding: 10%;
+        transition: transform 0.25s linear;
+        background: #fcf8e8;
+        backface-visibility: hidden;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+        user-select: none;
+        pointer-events: none;
+      }
+      .cards li .view.front {
+        z-index: 10;
+        transform: rotateY(0deg);
+      }
+      .cards li.flip .view.front {
+        transform: rotateY(180deg);
+      }
+      .cards li .view.back {
+        transform: rotateY(-180deg);
+      }
+      .cards li.flip .view.back {
+        transform: rotateY(0deg);
+      }
+      .cards li.shake {
+        animation: shake 0.35s ease-in-out;
+      }
+      @keyframes shake {
+        0% {
+          transform: translateX(0);
+        }
+        20% {
+          transform: translateX(-13px);
+        }
+        40% {
+          transform: translateX(13px);
+        }
+        60% {
+          transform: translateX(-8px);
+        }
+        80% {
+          transform: translateX(8px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--카드박스-->
+    <div class="card__wrap">
+      <div class="card_inner">
+        <ul class="cards">
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img02.png" alt="img02" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img03.png" alt="img03" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img04.png" alt="img04" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img05.png" alt="img05" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img06.png" alt="img06" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img07.png" alt="img07" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img08.png" alt="img08" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img09.png" alt="img09" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img02.png" alt="img02" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img03.png" alt="img03" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img04.png" alt="img04" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img05.png" alt="img05" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img06.png" alt="img06" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img07.png" alt="img07" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img08.png" alt="img08" />
+            </div>
+          </li>
+          <li>
+            <div class="view front">
+              <img src="img/img01.png" alt="img01" />
+            </div>
+            <div class="view back">
+              <img src="img/img09.png" alt="img09" />
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const cards = document.querySelectorAll(".cards li");
+      let cardOne, cardTwo;
+      let disableDeck = false;
+      let matchedCard = 0;
+      //카드 섞기
+      shuffleCard();
+      // 카드 클릭하기
+      cards.forEach((card) => {
+        card.addEventListener("click", flipCard);
+        // console.log(card);
+      });
+      function flipCard(e) {
+        let clickedCard = e.target;
+        // console.log(clickedCard);
+        if (clickedCard !== cardOne && !disableDeck) {
+          clickedCard.classList.add("flip");
+          console.log(cardOne);
+          if (!cardOne) {
+            return (cardOne = clickedCard);
+          }
+          cardTwo = clickedCard;
+          console.log(cardTwo);
+          disableDeck = true;
+          let cardOneImg = cardOne.querySelector(".back img").src;
+          let cardTwoImg = cardTwo.querySelector(".back img").src;
+          // console.log(cardOneImg, cardTwoImg);
+
+          matchCards(cardOneImg, cardTwoImg);
+        }
+      }
+      //선택한 두개의 카드가 맞는지 확인
+      function matchCards(img1, img2) {
+        if (img1 == img2) {
+          matchedCard++;
+          // cardOne = cardTwo = "";
+          if (matchedCard == 8) {
+            shuffleCard();
+          }
+          console.log(matchedCard);
+          cardOne.removeEventListener("click", flipCard);
+          cardTwo.removeEventListener("click", flipCard);
+          cardOne = cardTwo = "";
+          disableDeck = false;
+        } else {
+          //같지 않음 else
+          setTimeout(() => {
+            cardOne.classList.add("shake");
+            cardTwo.classList.add("shake");
+          }, 400);
+
+          setTimeout(() => {
+            cardOne.classList.remove("shake", "flip");
+            cardTwo.classList.remove("shake", "flip");
+            cardOne = cardTwo = "";
+            disableDeck = false;
+          }, 1200);
+        }
+      }
+      //카드 섞기
+      function shuffleCard() {
+        cardOne = cardTwo = "";
+        disableDeck = true;
+        matchedCard = 0;
+        let arr = [9, 2, 3, 4, 5, 6, 7, 8, 9, 2, 3, 4, 5, 6, 7, 8];
+        let result = arr.sort(() => (Math.random() > 0.5 ? 1 : -1));
+        cards.forEach((card, index) => {
+          card.classList.remove("flip");
+          // card.addEventListener("click", flipCard);
+          setTimeout(() => {
+            card.classList.add("flip");
+          }, 200 * index);
+          setTimeout(() => {
+            card.classList.remove("flip");
+            disableDeck = false;
+          }, 4000);
+          let imgTag = card.querySelector(".back img");
+          imgTag.src = `img/img0${arr[index]}.png`;
+        });
+      }
+    </script>
+  </body>
+</html>

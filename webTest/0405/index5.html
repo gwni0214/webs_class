@@ -1,63 +1,157 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>쿡킷</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-       #header {}
-       li {
-           list-style: none;
-       }
-       #header ul {
-           display: flex;
-           justify-content: space-between;
-          
-       }
-       #header ul > li {
-           text-align: center;
-           position: relative;
-           
-       }
-       #header ul > li .sub {
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      img {
+        width: 100%;
+        vertical-align: top;
+      }
+      #wrap {
+        width: 1200px;
+        height: 10000px;
+        margin: 0 auto;
+        /* background: #999; */
+        padding: 50px;
+      }
+      #header {
         display: flex;
-        flex-direction: column;
-        position: absolute;        
-        left: 0;
-        top: 50px;
-       }
-       #header ul > li .sub > li {
-          width: 50px;
-       }
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        width: 100px;
+      }
+      .menu {
+        width: 600px;
+      }
+      .menu ul {
+        display: flex;
+        justify-content: space-between;
+      }
+      .menu ul li {
+        font-weight: bold;
+        font-size: 20px;
+      }
+      #contents {
+        margin-top: 20px;
+        overflow: hidden;
+      }
+      .slideList {
+        position: relative;
+        width: 3300px;
+        z-index: 50;
+        overflow: hidden;
+      }
+      .slideList .slideImg {
+        position: relative;
+        width: 1100px;
+        float: left;
+      }
+      .slideList .slideImg h2 {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.4);
+        padding: 10px 30px;
+        border-radius: 20px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="wrap">
-        <header id="header">
-            <ul>
-                <li>메뉴1
-                    <ul class="sub">
-                        <li>서브1</li>
-                        <li>서브2</li>
-                        <li>서브3</li>
-                    </ul>
-                </li>
-                <li>메뉴2
-                    <ul class="sub">
-                        <li>서브1</li>
-                        <li>서브2</li>
-                        <li>서브3</li>
-                    </ul>
-                </li>
-            </ul>
-        </header>
-        <main id="main"></main>
-        <footer id="footer"></footer>
+      <header id="header">
+        <div class="logo">
+          <img src="img/logo.jpg" alt="logo" />
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="#">COOKIT소개</a></li>
+            <li><a href="#">COOKIT메뉴</a></li>
+            <li><a href="#">리뷰</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">MY쿡킷</a></li>
+          </ul>
+        </div>
+      </header>
+      <!-- //header -->
+      <section id="contents">
+        <div class="slideList">
+          <div class="slideImg">
+            <h2>이미지1</h2>
+            <img
+              src="img/banner.jpg"
+              alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트1"
+            />
+          </div>
+          <div class="slideImg">
+            <h2>이미지2</h2>
+            <img
+              src="img/banner.jpg"
+              alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트2"
+            />
+          </div>
+          <div class="slideImg">
+            <h2>이미지3</h2>
+            <img
+              src="img/banner.jpg"
+              alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트3"
+            />
+          </div>
+        </div>
+        <!-- //slide -->
+        <div class="content">
+          <div class="cont1">
+            <div class="desc">
+              <h3>우리집도 COOKIT 배송이 되나요?</h3>
+              <p>배송이 가능한지 알려드려요</p>
+              <span>배송지 검색</span>
+              <!-- <img src="img/deli1.jpg" alt="deli1" /> -->
+            </div>
+          </div>
+          <div class="cont2">
+            <div class="desc">
+              <h3>우리집도 COOKIT 배송이 되나요?</h3>
+              <p>배송이 가능한지 알려드려요</p>
+              <span>배송지 검색</span>
+              <!-- <img src="img/deli1.jpg" alt="deli1" /> -->
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+      let slider = document.querySelector(".slideList");
+      let slideImg = document.querySelectorAll(".slideImg");
+      let sliderLength = slideImg.length; //3
+      let slideWidth = slider.clientWidth / sliderLength; //1100
+      let currentIndex = 0;
+      setInterval(function () {
+        if (currentIndex < 2) {
+          currentIndex++;
+        } else {
+          currentIndex = 0;
+        }
+        let slidePosition = currentIndex * -slideWidth + "px";
+        $(".slideList").animate({ left: slidePosition });
+      }, 3000);
+    </script>
+  </body>
 </html>
