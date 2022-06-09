@@ -7,7 +7,28 @@
     <title>Document</title>
 </head>
 <body>
+    <form action="#" onsubmit="return emailCheck()">
+        <fieldset>
+            <legend>이메일</legend>
+            <div>
+                <label for="email">이메일</label>
+                <input type="text" id="email" name="email" placeholder="sample@gmail.com" required>
+            </div>
+            <button type="submit">이메일 체크</button>
+        </fieldset>
+    </form>
     <script>
+        
+    function emailCheck(){        
+        let getmail = RegExp(/[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i);
+        if(!getmail.test(document.querySelector("#email").value)){
+            alert("이메일 형식에 맞게 작성해주세요.")
+            console.log("false")
+        } else {
+            alert("형식이 맞습니다.");
+            console.log("true")
+        }
+    }
 
         
     //     let data = function func(){};
@@ -139,30 +160,38 @@
         //     }
         //     console.log(i);
         // }
-        {
-            function sol(arr){
-                let answer = [];
-                let sum = 0, min = 1000;
-                for(let x of arr){
-                    if(x % 2 ===1){
-                        sum += x;
-                        if(x < min) min = x;
-                    }
-                }
-                answer.push(sum);
-                answer.push(min);
-                return answer;
-            }
-            arr = [12,77,38,41,53,92,85];
-            console.log(sol(arr));
-        }
-        {
-            arr = [1,2,3,4,5];
-            arr.map(el=>{
-                el
-                console.log(el);
-            })
-        }
+        // {
+        //     function sol(arr){
+        //         let answer = [];
+        //         let sum = 0, min = 1000;
+        //         for(let x of arr){
+        //             if(x % 2 ===1){
+        //                 sum += x;
+        //                 if(x < min) min = x;
+        //             }
+        //         }
+        //         answer.push(sum);
+        //         answer.push(min);
+        //         return answer;
+        //     }
+        //     arr = [12,77,38,41,53,92,85];
+        //     console.log(sol(arr));
+        // }
+        // {
+        //     arr = [1,2,3,4,5];
+        //     arr.map(el=>{
+        //         el
+        //         console.log(el);
+        //     })
+        // }
+        //         function func(str,a){
+        //             if(!a == " " || a == ""){
+        //                 a = " ";
+        //             }                        
+        //             result = str.split(a);
+        //             console.log(result);            
+        //         }
+        // func("Yesterday all my troubles seemed so far away","");
     </script>
 </body>
 </html>
