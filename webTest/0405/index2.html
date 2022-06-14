@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>원본</title>
   </head>
   <body>
     <!DOCTYPE html>
@@ -572,17 +572,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
       // 탭 메뉴
-      $(".best").click(function () {
-        $(this).removeClass("hide");
-        $(".review").addClass("hide");
-        $(".bestBox").css("display", "flex");
-        $(".reviewBox").css("display", "none");
+      // $(".best").click(function () {
+      //   $(this).removeClass("hide");
+      //   $(".review").addClass("hide");
+      //   $(".bestBox").css("display", "flex");
+      //   $(".reviewBox").css("display", "none");
+      // });
+      // $(".review").click(function () {
+      //   $(this).removeClass("hide");
+      //   $(".best").addClass("hide");
+      //   $(".reviewBox").css("display", "flex");
+      //   $(".bestBox").css("display", "none");
+      // });
+      document.querySelector(".best").addEventListener("click", function () {
+        document.querySelector(".best").classList.remove("hide");
+        document.querySelector(".review").classList.add("hide");
+        document.querySelector(".bestBox").style.display = "flex";
+        document.querySelector(".reviewBox").style.display = "none";
       });
-      $(".review").click(function () {
-        $(this).removeClass("hide");
-        $(".best").addClass("hide");
-        $(".reviewBox").css("display", "flex");
-        $(".bestBox").css("display", "none");
+      document.querySelector(".review").addEventListener("click", function () {
+        document.querySelector(".review").classList.remove("hide");
+        document.querySelector(".best").classList.add("hide");
+        document.querySelector(".reviewBox").style.display = "flex";
+        document.querySelector(".bestBox").style.display = "none";
       });
 
       //2단 메뉴

@@ -1,197 +1,229 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <form action="#" onsubmit="return emailCheck()">
-        <fieldset>
-            <legend>이메일</legend>
-            <div>
-                <label for="email">이메일</label>
-                <input type="text" id="email" name="email" placeholder="sample@gmail.com" required>
-            </div>
-            <button type="submit">이메일 체크</button>
-        </fieldset>
+      <fieldset>
+        <legend>이메일</legend>
+        <div>
+          <label for="email">이메일</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="sample@gmail.com"
+            required
+          />
+        </div>
+        <button type="submit">이메일 체크</button>
+      </fieldset>
     </form>
     <script>
-        
-    function emailCheck(){        
-        let getmail = RegExp(/[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i);
-        if(!getmail.test(document.querySelector("#email").value)){
-            alert("이메일 형식에 맞게 작성해주세요.")
-            console.log("false")
+      function emailCheck() {
+        let getmail = RegExp(
+          /[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]$/i
+        );
+        if (!getmail.test(document.querySelector("#email").value)) {
+          alert("이메일 형식에 맞게 작성해주세요.");
+          console.log("false");
         } else {
-            alert("형식이 맞습니다.");
-            console.log("true")
+          alert("형식이 맞습니다.");
+          console.log("true");
         }
-    }
+      }
 
-        
-    //     let data = function func(){};
-    // const n = data.split(" "); 
-    // const a = Number(n[0]), b = Number(n[1]); 
-    // for(let i=0; i<b; i++){ //i을 선언해주고 몇줄(b)만큼 반복
-    //     let str = ""; //출력할 변수 선언
-    //     for(let j=0; j<a; j++){ // j선언후 별을 한줄에 몇개 찍을지 반복
-    //         str = str + "*" //출력할 변수에 별을 담는다
-    //     } 
-    // console.log(str) // 출력
-    // }
+      //     let data = function func(){};
+      // const n = data.split(" ");
+      // const a = Number(n[0]), b = Number(n[1]);
+      // for(let i=0; i<b; i++){ //i을 선언해주고 몇줄(b)만큼 반복
+      //     let str = ""; //출력할 변수 선언
+      //     for(let j=0; j<a; j++){ // j선언후 별을 한줄에 몇개 찍을지 반복
+      //         str = str + "*" //출력할 변수에 별을 담는다
+      //     }
+      // console.log(str) // 출력
+      // }
 
-    // {
-    //     function func(){
-    //         for(i=1; i<=7; i++){
-    //             for(j=1; j<=i; j++){
-    //                 document.write(j);
-    //             }
-    //         document.write("<br>");    
-    //         }
-    //     }
-    //     func();
-    // }
-    // {
-    //     function func(){
-    //         let i=10;
-    //         let hap=0;
-    //         while(i > 1){
-    //             i--;
-    //             if(i % 3 ==1){
-    //                 hap += i ;
-    //             }                
-    //         }
-    //         document.write(hap);            
-    //     }
-    //     func();
-    // }
-    // {
-    //     function func(){
-    //         let a=0, sum=0;
-    //         while(a<10){
-    //             a++;
-    //             if(a % 2 ==1) continue;
-    //             console.log(a);
-    //             sum += a;
-    //         }
-    //         document.write(sum);
-    //     }
-    //     func();
-    // }
+      // {
+      //     function func(){
+      //         for(i=1; i<=7; i++){
+      //             for(j=1; j<=i; j++){
+      //                 document.write(j);
+      //             }
+      //         document.write("<br>");
+      //         }
+      //     }
+      //     func();
+      // }
+      // {
+      //     function func(){
+      //         let i=10;
+      //         let hap=0;
+      //         while(i > 1){
+      //             i--;
+      //             if(i % 3 ==1){
+      //                 hap += i ;
+      //             }
+      //         }
+      //         document.write(hap);
+      //     }
+      //     func();
+      // }
+      // {
+      //     function func(){
+      //         let a=0, sum=0;
+      //         while(a<10){
+      //             a++;
+      //             if(a % 2 ==1) continue;
+      //             console.log(a);
+      //             sum += a;
+      //         }
+      //         document.write(sum);
+      //     }
+      //     func();
+      // }
 
-// {
-//     function func(){
-//         let a = [1,2,3,4,5,6,7,8,9], cnt=0;
+      // {
+      //     function func(){
+      //         let a = [1,2,3,4,5,6,7,8,9], cnt=0;
 
-//         for(let i = 0; i<a.length; i++){
-//             if( a[i] % 2 ==0){
-//                 cnt = cnt +1;
-//             }
-//         }
-//         document.write(cnt);
-//     }
-//     func();
-// }
-// {
-//     function func(data,exp){
-//         let r = 1;
-//         for(i=1; i<exp; i++){
-//             r = r * i;
-//             console.log(r);
-//         }
-//         document.write(r+data);
-//     }
-//     func(1,5);
-// }
-// {
-//     function sol(n){
-//         let a = [];
-//         a= n.toString().split("").reverse().map(val=> parseInt(val));
-//         return a;
-//     }
-//     console.log(sol(12345));
-//     document.write(sol(12345));
-// }
-// {
-//     function sol(n){
-//         for(let i =1; i<n; i++){
-//             if(n%i ===1) return i
-//         }
-//     }
-//     document.write(sol(10))
-// }
-// {
-//     function func(){
-//         let i = 0, sum = 0;
-//         while(true){
-//             i++;
-//             if( i > 10) break;
-//             if( i % 5 == 0) continue;
-//             console.log(i);
-//             sum += i;
-//         }
-//         document.write(sum);
-//     }
-//     func();
-// }
-// {
-//     function func(){
-//         let i,j =0;
-//         for( i=0; i<=8; i++){
-            
-//             j +=i;
-//             console.log(j)
-//             console.log(i);
-//             console.log(j+i)
-//         }
-//         document.write(j);
-//         document.write(i);
-//         document.write(j+i);
-//     }
-//     func();
-// }
-        // {
-        //     let i = 0;
-        //     for(i =0; i<=8; i++){
-        //         i;
-        //         console.log(i)
-        //     }
-        //     console.log(i);
-        // }
-        // {
-        //     function sol(arr){
-        //         let answer = [];
-        //         let sum = 0, min = 1000;
-        //         for(let x of arr){
-        //             if(x % 2 ===1){
-        //                 sum += x;
-        //                 if(x < min) min = x;
-        //             }
-        //         }
-        //         answer.push(sum);
-        //         answer.push(min);
-        //         return answer;
-        //     }
-        //     arr = [12,77,38,41,53,92,85];
-        //     console.log(sol(arr));
-        // }
-        // {
-        //     arr = [1,2,3,4,5];
-        //     arr.map(el=>{
-        //         el
-        //         console.log(el);
-        //     })
-        // }
-        //         function func(str,a){
-        //             if(!a == " " || a == ""){
-        //                 a = " ";
-        //             }                        
-        //             result = str.split(a);
-        //             console.log(result);            
-        //         }
-        // func("Yesterday all my troubles seemed so far away","");
+      //         for(let i = 0; i<a.length; i++){
+      //             if( a[i] % 2 ==0){
+      //                 cnt = cnt +1;
+      //             }
+      //         }
+      //         document.write(cnt);
+      //     }
+      //     func();
+      // }
+      // {
+      //     function func(data,exp){
+      //         let r = 1;
+      //         for(i=1; i<exp; i++){
+      //             r = r * i;
+      //             console.log(r);
+      //         }
+      //         document.write(r+data);
+      //     }
+      //     func(1,5);
+      // }
+      // {
+      //     function sol(n){
+      //         let a = [];
+      //         a= n.toString().split("").reverse().map(val=> parseInt(val));
+      //         return a;
+      //     }
+      //     console.log(sol(12345));
+      //     document.write(sol(12345));
+      // }
+      // {
+      //     function sol(n){
+      //         for(let i =1; i<n; i++){
+      //             if(n%i ===1) return i
+      //         }
+      //     }
+      //     document.write(sol(10))
+      // }
+      // {
+      //     function func(){
+      //         let i = 0, sum = 0;
+      //         while(true){
+      //             i++;
+      //             if( i > 10) break;
+      //             if( i % 5 == 0) continue;
+      //             console.log(i);
+      //             sum += i;
+      //         }
+      //         document.write(sum);
+      //     }
+      //     func();
+      // }
+      // {
+      //     function func(){
+      //         let i,j =0;
+      //         for( i=0; i<=8; i++){
+
+      //             j +=i;
+      //             console.log(j)
+      //             console.log(i);
+      //             console.log(j+i)
+      //         }
+      //         document.write(j);
+      //         document.write(i);
+      //         document.write(j+i);
+      //     }
+      //     func();
+      // }
+      // {
+      //     let i = 0;
+      //     for(i =0; i<=8; i++){
+      //         i;
+      //         console.log(i)
+      //     }
+      //     console.log(i);
+      // }
+      // {
+      //     function sol(arr){
+      //         let answer = [];
+      //         let sum = 0, min = 1000;
+      //         for(let x of arr){
+      //             if(x % 2 ===1){
+      //                 sum += x;
+      //                 if(x < min) min = x;
+      //             }
+      //         }
+      //         answer.push(sum);
+      //         answer.push(min);
+      //         return answer;
+      //     }
+      //     arr = [12,77,38,41,53,92,85];
+      //     console.log(sol(arr));
+      // }
+      // {
+      //     arr = [1,2,3,4,5];
+      //     arr.map(el=>{
+      //         el
+      //         console.log(el);
+      //     })
+      // }
+      //         function func(str,a){
+      //             if(!a == " " || a == ""){
+      //                 a = " ";
+      //             }
+      //             result = str.split(a);
+      //             console.log(result);
+      //         }
+      // func("Yesterday all my troubles seemed so far away","");
+
+      var list = [
+        { id: "test1", pw: "test1" },
+        { id: "test2", pw: "test2" },
+      ];
+      function a(id) {
+        return id;
+      }
+      function b() {
+        var newList = [];
+        for (let i = 0; i < list.length; i++) {
+          let obj = list[i];
+          obj.pw = "test3";
+
+          newList.push(function () {
+            return {
+              id: obj.id,
+              pw: obj.pw,
+            };
+          });
+        }
+        for (let i = 0; i < list.length; i++) {
+          console.log(newList[i]());
+        }
+      }
+      b();
     </script>
-</body>
+  </body>
 </html>

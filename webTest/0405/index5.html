@@ -23,54 +23,89 @@
         vertical-align: top;
       }
       #wrap {
-        width: 1200px;
-        height: 10000px;
+        width: 1000px;
         margin: 0 auto;
-        /* background: #999; */
         padding: 50px;
       }
       #header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
       }
-      .logo {
-        width: 100px;
+      #header .logo img {
+        width: 130px;
       }
-      .menu {
-        width: 600px;
-      }
-      .menu ul {
+      #header ul {
         display: flex;
         justify-content: space-between;
+        width: 650px;
       }
-      .menu ul li {
-        font-weight: bold;
+      #header ul li {
         font-size: 20px;
+        font-weight: bold;
+        width: 120px;
+        text-align: center;
+        padding: 15px 5px;
+        margin-left: 20px;
+        cursor: pointer;
+        white-space: nowrap;
       }
       #contents {
         margin-top: 20px;
         overflow: hidden;
       }
       .slideList {
-        position: relative;
-        width: 3300px;
-        z-index: 50;
-        overflow: hidden;
+        width: 3000px;
+        display: flex;
       }
       .slideList .slideImg {
+        width: 1000px;
         position: relative;
-        width: 1100px;
-        float: left;
       }
       .slideList .slideImg h2 {
         position: absolute;
-        left: 50%;
         top: 50%;
+        left: 45%;
         transform: translate(-50%, -50%);
-        background: rgba(0, 0, 0, 0.4);
         padding: 10px 30px;
         border-radius: 20px;
+        background: rgba(0, 0, 0, 0.4);
+      }
+      .content {
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .content > div {
+        width: 430px;
+        display: flex;
+        background: #f2f2f2;
+        padding: 30px;
+      }
+      .content > div > img {
+        width: 80px;
+        height: 70px;
+        padding-top: 10px;
+      }
+      .content .desc h3 {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .content .desc p {
+        margin-top: 5px;
+        margin-bottom: 20px;
+        font-size: 12px;
+      }
+      .content .desc span {
+        display: flex;
+        align-items: top;
+      }
+      .content .desc span > img {
+        width: 20px;
+        margin-right: 5px;
+      }
+      .content .desc span > span {
+        font-size: 14px;
+        font-weight: bold;
       }
     </style>
   </head>
@@ -78,41 +113,30 @@
     <div id="wrap">
       <header id="header">
         <div class="logo">
-          <img src="img/logo.jpg" alt="logo" />
+          <a href="#"><img src="img/logo.jpg" alt="logo" /></a>
         </div>
-        <div class="menu">
-          <ul>
-            <li><a href="#">COOKIT소개</a></li>
-            <li><a href="#">COOKIT메뉴</a></li>
-            <li><a href="#">리뷰</a></li>
-            <li><a href="#">이벤트</a></li>
-            <li><a href="#">MY쿡킷</a></li>
-          </ul>
-        </div>
+        <ul>
+          <li><a href="#">COOKI 소개</a></li>
+          <li><a href="#">COOKI 메뉴</a></li>
+          <li><a href="#">리뷰</a></li>
+          <li><a href="#">이벤트</a></li>
+          <li><a href="#">MY 쿡킷</a></li>
+        </ul>
       </header>
       <!-- //header -->
       <section id="contents">
         <div class="slideList">
           <div class="slideImg">
             <h2>이미지1</h2>
-            <img
-              src="img/banner.jpg"
-              alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트1"
-            />
+            <img src="img/banner.jpg" alt="banner" />
           </div>
           <div class="slideImg">
             <h2>이미지2</h2>
-            <img
-              src="img/banner.jpg"
-              alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트2"
-            />
+            <img src="img/banner.jpg" alt="banner" />
           </div>
           <div class="slideImg">
             <h2>이미지3</h2>
-            <img
-              src="img/banner.jpg"
-              alt="쿡킷을 더 편리하게 COOKIT 앱 런칭기념 이벤트3"
-            />
+            <img src="img/banner.jpg" alt="banner" />
           </div>
         </div>
         <!-- //slide -->
@@ -121,37 +145,39 @@
             <div class="desc">
               <h3>우리집도 COOKIT 배송이 되나요?</h3>
               <p>배송이 가능한지 알려드려요</p>
-              <span>배송지 검색</span>
-              <!-- <img src="img/deli1.jpg" alt="deli1" /> -->
+              <span
+                ><img src="img/place.jpg" alt="이미지" /><span
+                  >배송지 검색</span
+                ></span
+              >
             </div>
+            <img src="img/deli1.jpg" alt="deli1" />
           </div>
           <div class="cont2">
             <div class="desc">
-              <h3>우리집도 COOKIT 배송이 되나요?</h3>
-              <p>배송이 가능한지 알려드려요</p>
-              <span>배송지 검색</span>
-              <!-- <img src="img/deli1.jpg" alt="deli1" /> -->
+              <h3>7월 30일(화)에 받을 수 있어요</h3>
+              <p>오전 7시까지 주문하시면 다음날 배송됩니다.</p>
+              <span
+                ><img src="img/time.jpg" alt="이미지" /><span
+                  >63:28:32<em>남은시간</em></span
+                ></span
+              >
             </div>
+            <img src="img/deli2.jpg" alt="이미지" />
+          </div>
+        </div>
+        <!-- //minicont -->
+        <div class="tab">
+          <h3>
+            <span class="best">실시간 베스트</span>
+          </h3>
+          <div class="bestBox">
+            <div class="cardImg1"></div>
+            <div class="cardImg2"></div>
+            <div class="cardImg3"></div>
           </div>
         </div>
       </section>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>
-      let slider = document.querySelector(".slideList");
-      let slideImg = document.querySelectorAll(".slideImg");
-      let sliderLength = slideImg.length; //3
-      let slideWidth = slider.clientWidth / sliderLength; //1100
-      let currentIndex = 0;
-      setInterval(function () {
-        if (currentIndex < 2) {
-          currentIndex++;
-        } else {
-          currentIndex = 0;
-        }
-        let slidePosition = currentIndex * -slideWidth + "px";
-        $(".slideList").animate({ left: slidePosition });
-      }, 3000);
-    </script>
   </body>
 </html>
