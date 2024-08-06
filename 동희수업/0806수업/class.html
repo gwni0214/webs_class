@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 수업</title>
+</head>
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <h1 class="big_title">이것은 큰 제목입니다.</h1>
+            <h2 class="small_title">이것은 작은 제목입니다.</h2>
+        </header>
+        <main></main>
+        <footer></footer>
+
+        <script>
+            //자바스크립트의 기능들은 '함수' 라는 것으로 이루어져 있습니다. 함수라는것이 말이 어려워서 그렇지 익숙해지면 어렵지 않아요!
+            //함수 = 특정한 기능을 실행 시키키위해 쓰는 일종의 공식. 언어의 문법에 해당한다고 보면 될것 같아요 예를들어 내가 이 문장을 말하려면 어떤 문법을 사용할까? 하는것과 비슷하게
+            // 이 기능을 만들기 위해 어떤 함수를 사용할까? 하는겁니다.
+            document.write("안녕하세요.");
+            document.write(document.querySelector(".big_title").innerHTML);
+            document.querySelector(".big_title").addEventListener("click", () => {
+                // .big_title 이라는 클래스를 가진 요소의  클릭 이벤트 함수를 넣는다.
+                alert("클릭했습니다!");
+                //alert 함수는 경고창을 띄우는 기능 이다.
+            });
+            // var, let, const - 변수의 종류 
+            //간단하게 설명하면 let 은 아무때나 쓰는 변수 선언
+            // const 는  바뀌어선 안되는 중요한 변수를 만들 때 선언
+
+            let title = document.querySelector(".small_title");
+            title.addEventListener("click", () => {
+                alert("작은 제목을 클릭했습니다");
+            });
+            
+        </script>
+    </body>
+    </html>
+</body>
+</html>
