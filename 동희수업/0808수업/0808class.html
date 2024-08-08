@@ -13,11 +13,40 @@
     <main>
         <input type="text" name="text" id="text" placeholder="텍스트">
         <button onclick="speak()">버튼</button>
+
+        <div style="margin-top: 50px;">
+            <input type="text" placeholder="Tu m'as porté chance" id="password" name="password">
+            <button onclick="동희()">말하기</button>
+            
+        </div>
     </main>
     <footer></footer>
 
     <script>
-        
+        function 동희 () {
+            //javascript의 document.querySelector 에서 html 요소를 선택하는 법. 
+            // 요소의 클래스를 불러오려면 ".class", 아이디를 불러오려면 "#id"
+            
+            // console.log(document.querySelector("#password").value);
+            //변수가 무엇이냐? 우리 나름대로의 약속을 통해 긴걸 줄여서 말하자. 갈어도 너무 길다
+            let password = document.querySelector("#password").value;
+           
+            const 말하기함수 = new SpeechSynthesisUtterance(password);
+
+            말하기함수.lang = 'fr-FR';
+
+            window.speechSynthesis.speak(말하기함수);
+           
+        }
+        function 동희2 () {
+            
+        }  
+        function 동희3 () {
+            
+        }      
+
+
+
         function speak () {
             console.log(document.querySelector("#text").value);
             const text = document.querySelector("#text").value;
