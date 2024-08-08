@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스피크기능 써보기</title>
+</head>
+<body>
+    <head>
+        <h1>자바스크립트의 스피크 기능</h1>
+        <h2>SpeechSynthesisUtterance 스피치 통합 표현 기능</h2>
+    </head>
+    <main>
+        <input type="text" name="text" id="text" placeholder="텍스트">
+        <button onclick="speak()">버튼</button>
+    </main>
+    <footer></footer>
+
+    <script>
+        
+        function speak () {
+            console.log(document.querySelector("#text").value);
+            const text = document.querySelector("#text").value;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            window.speechSynthesis.speak(utterance);
+
+            
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+<!-- 예제 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Pronunciation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>French Pronunciation</h1>
+        <input type="text" id="text" placeholder="Enter text in French">
+        <button onclick="speak()">Speak</button>
+    </div>
+
+    <script>
+        function speak() {
+            const text = document.getElementById('text').value;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'fr-FR';
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html> -->
