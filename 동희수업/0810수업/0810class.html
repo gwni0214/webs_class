@@ -4,9 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 데이터 다루기</title>
+
+    <style>
+        ul {
+            list-style: none;
+        }
+        .list_deco {
+            margin-right: 10px;
+            width: 10px;
+            height: 10px;
+            background-color: red;
+        }
+        li {
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-   
-    
+   <header></header>
+   <main>
+        <ul class="list1">
+            <li>
+                <div class="list_deco"></div>
+                <span>1</span>
+            </li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <ol>
+            <li>가</li>
+            <li>나</li>
+            <li>다</li>
+            <li>라</li>
+        </ol>
+        <!-- 리스트를 만들때 쓰는 태그 ul , ol -->
+         <!-- ol은 ordered list 약자입니다 -->
+   </main>
+   <footer></footer>
+
+
+
+    <script>
+        //데이터 저장하기
+
+        //변수
+
+        let x = 1;
+        const y = 2;
+        var z = 3;
+
+
+
+        //배열
+        //여러개의 데이터를 저장한다.
+
+        const 회원가입회원들 = ["박근희", "구동희", "홍길동"];
+        //배열은 대괄호를 쓴다.
+        //코드 내에서 새로운 배열을 내가 만들고 싶다.
+        const 새로운배열만들기 = new Array(); //<= 어레이(배열) 만들기 함수
+        새로운배열만들기[0] = 1;
+        새로운배열만들기[1] = 2;
+        새로운배열만들기[2] = 3;
+
+        const 배열2 = new Array("박근희", "구동희", "창균이");
+        //배열이라는 데이터의 형태를 어떻게 사용하느냐? 
+
+        const 배열3 = []; //<= 요렇게 해도 배열이 생성된다.
+        배열3[0] = 1;
+        배열3[1] = 2;
+        배열3[2] = 3;
+        //자바스크립트에서 html의 요소를 먼저 특정해주어야 사용할 수 있습니다.
+        const 리스트 = document.querySelector(".list1");
+        const 리스트안에들은요소 = 리스트.getElementsByTagName('li');
+        const 배열4 = Array.from(리스트안에들은요소);
+       
+        
+
+
+
+        //객체
+        // 객체는 키와 값으로 이우러져 있다
+        // 키 = key
+        //값 = value
+        //키가 밸리댄스를 춘다.
+
+        const 객체 = new Object();
+        객체.a = 1;
+        객체.b = 2;
+        객체.아기너구리 = "구동희";
+
+        const 객체2 = {};
+        객체2.a = 1;
+        객체2.아기강아지 = "박근희";
+
+        const 객체3 = {a:1, b:2, 아기강아지: "박근희", 아기너구리 : "구동희"};
+
+      
+
+        const 배열안에객체 = [ {a:"아기너구리",b:2},{c:3},{d:4,e:5} ]
+        // document.write(배열안에객체[0].a);
+
+        const 객체안에배열 = {
+            성이김씨인사람 : ["김길동","김수찬","김찬호","김김김"],
+            대한민국사람 : {
+                안산사람 : {
+                    와동사람 : "박근희",
+                    선부동사람: "이찬호"
+                    }, 
+                인천사람 : "구동희"
+            }
+        }
+        //변수의 집합체
+        const 변수1 = "빨강";
+        const 변수2 = "초록";
+        const 변수3 = "검정";
+
+        const 색깔 = {변수1, 변수2, 변수3, };
+        
+        // document.write(색깔.변수1);
+
+        //객체속에 함수 = 함수를 객체로 묶는다.
+
+        const 함수묶음 = {
+            함수1 : function(매개변수){
+                document.write(`아기너구리는 ${매개변수 * 9}를 사랑해.`);
+            },
+            함수2 : function(){
+                document.write("함수2을 실행했습니다.(행동에 옮겼습니다)");
+            }
+        }
+        함수묶음.함수2();
+
+
+
+
+        function 함수이름 (){
+
+        }
+
+        let 함수2 = function(){
+
+        }
+        // 말이 거창해서 그렇지 함수도 결국에는 데이터의 한 종류일 뿐이다.
+        //어떠한 행동을 하기위해서 쓸 뿐이지 그냥 함수도 데이터다.
+
+    </script>
 </body>
 </html>
