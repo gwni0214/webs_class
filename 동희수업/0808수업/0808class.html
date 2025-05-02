@@ -30,12 +30,9 @@
       font-size: 18px;
       color: #333;
       cursor: pointer;
-
-      /* ✨ 애니메이션 효과를 위한 초기 스타일 */
       max-height: 0;
       opacity: 0;
       overflow: hidden;
-      /* transition: all 0.4s ease; */
     }
 
     .meaning-text.visible {
@@ -45,7 +42,6 @@
 
     .viewer-controls {
       display: flex;
-      
       justify-content: center;
       gap: 20px;
       margin-top: 20px;
@@ -75,22 +71,22 @@
     }
 
     .controls {
-        display: flex;
-        flex-direction: column;
+      display: flex;
+      flex-direction: column;
       margin-top: 20px;
       text-align: center;
     }
 
     .controls label {
-        margin-bottom: 20px;
-      margin-right: 20px;
+      margin-bottom: 20px;
     }
 
     select, input[type=range] {
       margin-left: 8px;
     }
+
     .crwd {
-        user-select: none;
+      user-select: none;
     }
   </style>
 </head>
@@ -128,7 +124,7 @@
   </main>
 
   <script>
-const wordPairs = [
+    const wordPairs = [
       { word: "la bijouterie", meaning: "보석가게" },
       { word: "l'épicerie", meaning: "식료품 가게" },
       { word: "la boulangerie", meaning: "빵집" },
@@ -198,8 +194,6 @@ const wordPairs = [
       { word: "payer par cheque", meaning: "수표 결제" },
       { word: "a credit", meaning: "할부" },
       { word: "au comptant", meaning: "일시불" },
-      { word: "", meaning: "" },
-      { word: "", meaning: "" },
     ];
 
     let voices = [];
@@ -210,8 +204,9 @@ const wordPairs = [
       const voiceSelect = document.getElementById("voiceSelect");
       voiceSelect.innerHTML = "";
 
+      // 프랑스어 음성만 필터링
       const frenchVoices = voices.filter(voice => voice.lang.toLowerCase().startsWith("fr"));
-
+      
       frenchVoices.forEach((voice, index) => {
         const option = document.createElement("option");
         option.value = index;
@@ -220,7 +215,7 @@ const wordPairs = [
       });
 
       if (frenchVoices.length > 0) {
-        voiceSelect.selectedIndex = 20;
+        voiceSelect.selectedIndex = 0; // 기본 음성을 첫 번째 프랑스어 음성으로 설정
       }
 
       voices = frenchVoices;
@@ -247,14 +242,13 @@ const wordPairs = [
       speakText(inputText);
     }
 
-    // ✨ 뜻 토글 함수
+    // 뜻 토글 함수
     function toggleMeaning() {
         if (speechSynthesis.speaking) return;
       const meaningDiv = document.getElementById("currentMeaning");
       meaningDiv.classList.toggle("visible");
       const word = document.getElementById("currentWord").textContent;
       speakText(word);   
-    
     }
 
     function updateDisplay(index) {
@@ -288,12 +282,3 @@ const wordPairs = [
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
