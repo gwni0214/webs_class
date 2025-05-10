@@ -4,7 +4,7 @@ https://gwni0214.github.io/webs_class/
 
 
 ## 프랑스어 단어 학습기
-https://gwni0214.github.io/webs_class/%EB%8F%99%ED%9D%AC%EC%88%98%EC%97%85/0808%EC%88%98%EC%97%85/0808class.html
+https://gwni0214.github.io/webs_class/code_class/lang_class/french_study.html
 
 
 
