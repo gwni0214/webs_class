@@ -123,77 +123,10 @@
     </div>
   </main>
 
-  <script>
+  <!-- <script>
     const wordPairs = [
       { word: "la bijouterie", meaning: "보석가게" },
-      { word: "l'épicerie", meaning: "식료품 가게" },
-      { word: "la boulangerie", meaning: "빵집" },
-      { word: "la pharmacie", meaning: "약국" },
-      { word: "la librairie", meaning: "서점" },
-      { word: "le supermarché", meaning: "슈퍼마켓" },
-      { word: "le café", meaning: "카페" },
-      { word: "le chaussure", meaning: "신발" },
-      { word: "la papeterie", meaning: "문구점" },
-      { word: "la pâtisserie", meaning: "제과점" },
-      { word: "la teinturerie", meaning: "세탁소" },
-      { word: "le pressing", meaning: "세탁소" },
-      { word: "le coifure", meaning: "미장원" },
-      { word: "c'est pour offrir", meaning: "선물할 물건입니다" },
-      { word: "c'est pour faire un cadeau", meaning: "선물할 물건입니다" },
-      { word: "de bonne qualite", meaning: "품질이 좋은" },
-      { word: "faire les courses", meaning: "장을 보다" },
-      { word: "faire du leche-vitrine", meaning: "진열창 구경하기" },
-      { word: "Je peux vous renseigner?", meaning: "도와드릴까요?" },
-      { word: "Vous désirez?", meaning: "도와드릴까요?" },
-      { word: "Je peux vous aider?", meaning: "도와드릴까요?" },
-      { word: "les produits de grande marque", meaning: "유명상표 제품" },
-      { word: "le rabais", meaning: "할인" },
-      { word: "la reduction", meaning: "할인" },
-      { word: "le rayon", meaning: "판매코너, 진열대" },
-      { word: "le rayon accessoires", meaning: "액세서리 매장" },
-      { word: "le rayon cosmetiques", meaning: "화장품 매장" },
-      { word: "le rayon mode", meaning: "패션 매장" },
-      { word: "le rayon vaisselle", meaning: "식기 매장" },
-      { word: "Vous désirez autre chose?", meaning: "다른 것 더 필요하세요?" },
-      { word: "la caisse", meaning: "계산대" },
-      { word: "la vitrine", meaning: "진열장" },
-      { word: "le paquet-cadeau", meaning: "선물박스 포장" },
-      { word: "le chariot", meaning: "쇼핑카트" },
-      { word: "le panier", meaning: "장바구니" },
-      { word: "le client", meaning: "고객" },
-      { word: "etre econome", meaning: "알뜰하다" },
-      { word: "faire des economies", meaning: "절약하다" },
-      { word: "économiser", meaning: "절약하다" },
-      { word: "restreindre les depenses", meaning: "지출을 줄이다" },
-      { word: "chercher les promotions", meaning: "할인제품을 찾아다니다" },
-      { word: "acheter ce qui est essentiel", meaning: "꼭 필요한 것을 사다" },
-      { word: "etre depensier", meaning: "낭비하다" },
-      { word: "acheter du superflu", meaning: "불 필요한 것을 사다" },
-      { word: "dépenser sans compter", meaning: "계산하지 않고 지출하다" },
-      { word: "dépenser sans réfléchir", meaning: "생각 없이 지출하다" },
-      { word: "faire des folies", meaning: "과다지출을 하다" },
-      { word: "Cest combien?", meaning: "얼마입니까?" },
-      { word: "Combien ça coûte?", meaning: "얼마입니까?" },
-      { word: "Combien je vous dois?", meaning: "얼마입니까?" },
-      { word: "Ça fait combien?", meaning: "얼마입니까?" },
-      { word: "Quel est le prix?", meaning: "얼마입니까?" },
-      { word: "Cest bon marche", meaning: "저렴하다" },
-      { word: "le prix abordable", meaning: "적정 가격" },
-      { word: "1e prix avantageux", meaning: "적절한 가격" },
-      { word: "le prix interessant", meaning: "저렴한 가격" },
-      { word: "le prix modere", meaning: "싼 가격" },
-      { word: "le prix raisonnable", meaning: "적당한 가격" },
-      { word: "le prix eleve", meaning: "높은 가격" },
-      { word: "le prix exorbitant", meaning: "졸라 비싼 가격" },
-      { word: "le prix inabordable", meaning: "개비싼 가격" },
-      { word: "le prix prohibitif", meaning: "과도한 가격" },
-      { word: "hors de prix", meaning: "말할 수 없이 비쌈" },
-      { word: "le mode de paiement", meaning: "지불방식" },
-      { word: "Payer en especes", meaning: "현금 결제" },
-      { word: "Payer par carte", meaning: "카드 결제" },
-      { word: "payer par cheque", meaning: "수표 결제" },
-      { word: "a credit", meaning: "할부" },
-      { word: "au comptant", meaning: "일시불" },
+      
     ];
 
     let voices = [];
@@ -279,6 +212,97 @@
       populateVoiceList();
       updateDisplay(currentIndex);
     });
+  </script> -->
+
+
+  <script>
+    let wordPairs = [];
+    let voices = [];
+    let currentIndex = 0;
+  
+    function populateVoiceList() {
+      voices = speechSynthesis.getVoices();
+      const voiceSelect = document.getElementById("voiceSelect");
+      voiceSelect.innerHTML = "";
+  
+      const frenchVoices = voices.filter(voice => voice.lang.toLowerCase().startsWith("fr"));
+      
+      frenchVoices.forEach((voice, index) => {
+        const option = document.createElement("option");
+        option.value = index;
+        option.textContent = `${voice.name} (${voice.lang})`;
+        voiceSelect.appendChild(option);
+      });
+  
+      if (frenchVoices.length > 0) {
+        voiceSelect.selectedIndex = 0;
+      }
+  
+      voices = frenchVoices;
+    }
+  
+    speechSynthesis.onvoiceschanged = populateVoiceList;
+  
+    function speakText(text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      const rate = parseFloat(document.getElementById("rateControl").value);
+      const voiceIndex = parseInt(document.getElementById("voiceSelect").value);
+      const selectedVoice = voices[voiceIndex];
+  
+      utterance.lang = 'fr-FR';
+      utterance.rate = rate;
+      if (selectedVoice) utterance.voice = selectedVoice;
+  
+      window.speechSynthesis.speak(utterance);
+    }
+  
+    function toggleMeaning() {
+      if (speechSynthesis.speaking) return;
+      const meaningDiv = document.getElementById("currentMeaning");
+      meaningDiv.classList.toggle("visible");
+      const word = document.getElementById("currentWord").textContent;
+      speakText(word);
+    }
+  
+    function updateDisplay(index) {
+      const wordObj = wordPairs[index];
+      document.getElementById("currentWord").textContent = wordObj.word;
+      const meaningDiv = document.getElementById("currentMeaning");
+      meaningDiv.textContent = wordObj.meaning;
+      meaningDiv.classList.remove("visible");
+      speakText(wordObj.word);
+    }
+  
+    function prevWord() {
+      currentIndex = (currentIndex - 1 + wordPairs.length) % wordPairs.length;
+      updateDisplay(currentIndex);
+    }
+  
+    function nextWord() {
+      currentIndex = (currentIndex + 1) % wordPairs.length;
+      updateDisplay(currentIndex);
+    }
+  
+    function randomWord() {
+      currentIndex = Math.floor(Math.random() * wordPairs.length);
+      updateDisplay(currentIndex);
+    }
+  
+    document.addEventListener("DOMContentLoaded", () => {
+      populateVoiceList();
+  
+      // JSON 파일 로드
+      fetch("french_basic_words_1000.json")
+        .then(response => response.json())
+        .then(data => {
+          wordPairs = data;
+          updateDisplay(currentIndex);
+        })
+        .catch(error => {
+          console.error("JSON 파일 로드 실패:", error);
+        });
+    });
   </script>
+  
 </body>
 </html>
