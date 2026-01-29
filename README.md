@@ -3,10 +3,6 @@
 https://gwni0214.github.io/webs_class/
 
 
-## 프랑스어 단어 학습기
-https://gwni0214.github.io/webs_class/code_class/lang_class/french_study.html
-
-
 
 
 # 포트폴리오
